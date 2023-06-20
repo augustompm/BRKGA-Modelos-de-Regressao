@@ -1,0 +1,2 @@
+- criar função elitesize e mutantsize (transformar porcentagem em short)
+- conferir se a cauda(seeds) está no codigo fixado ou se está pelo maxconst

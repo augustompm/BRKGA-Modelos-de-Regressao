@@ -1,0 +1,9 @@
+*_test
+*.gcda
+*.gcno
+reports/
+*.data
+*.old
+tips.txt.*
+linux-4.16.12/
+
