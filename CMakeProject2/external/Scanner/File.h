@@ -66,10 +66,15 @@ public:
 		if (foo.is_open())
 			foo.close();
 		else
+		{
+			printf("Erro na leitura \n");
 			throw FileNotFound(filename);
+		}
+			
 		// ===============================
 
 		file = new std::ifstream(filename.c_str(), std::ifstream::in);
+		printf("Leitura feita com sucesso \n");
 	}
 
 	virtual ~File()

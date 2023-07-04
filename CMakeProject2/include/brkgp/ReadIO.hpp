@@ -6,8 +6,8 @@ using namespace scannerpp;
 typedef unsigned short chromosome;
 
 
-void readIO(double*** inputs,double** outputs,Scanner& scanner,int* nVars,int* tests,int* nConst,double** vConstMin,double** vConstMax);
-void changeIO(double*** inputs,double** outputs,int training,int nVars,int tests,int nConst);
+void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, vector<pair<double, double>>& vConst);
+void changeIO(double*** inputs, double** outputs, int training, int nVars, int tests, int nConst);
 
 
 #include <stdio.h>
@@ -24,19 +24,16 @@ using namespace std;
 using namespace scannerpp;
 typedef unsigned short chromosome;
 
-void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, double** vConstMin, double** vConstMax)
+void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, vector<pair<double, double>>& vConst)
 {
     (*nVars) = scanner.nextInt();
     (*tests) = scanner.nextInt();
     (*nConst) = scanner.nextInt();
 
-
     // for each test...
-
     (*inputs) = (double**)malloc((*tests) * sizeof(double*));
     (*outputs) = (double*)malloc((*tests) * sizeof(double));
-    (*vConstMin) = (double*)malloc(sizeof(double) * (*nConst));
-    (*vConstMax) = (double*)malloc(sizeof(double) * (*nConst));
+    vConst.resize((*nConst));
 
     for (int t = 0; t < (*tests); t++)
     {
@@ -47,10 +44,11 @@ void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, in
     }
     for (int i = 0; i < (*nConst); i++)
     {
-        (*vConstMin)[i] = scanner.nextDouble();
-        (*vConstMax)[i] = scanner.nextDouble();
+        vConst[i].first = scanner.nextDouble();
+        vConst[i].second = scanner.nextDouble();
     }
 }
+
 void changeIO(double*** inputs, double** outputs, int training, int nVars, int tests, int nConst)
 {
     double** auxInputs;
@@ -58,7 +56,6 @@ void changeIO(double*** inputs, double** outputs, int training, int nVars, int t
 
     auxInputs = (double**)malloc((tests) * sizeof(double*));
     auxOutputs = (double*)malloc((tests) * sizeof(double));
-
 
     for (int t = 0; t < (tests); t++)
     {

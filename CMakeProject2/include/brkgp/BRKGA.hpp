@@ -9,15 +9,15 @@ using namespace std;
 
 
 int percentToInt(int porcentagem, int total);
-void individualGenerator(chromosome* individual,int seed,int individualLen);
-void mutantGenerator(valuedChromosome* auxPopulation,int eliteSize,int mutantSize,int seed,int individualLen);
-void crossover(valuedChromosome *population, valuedChromosome *auxPopulation, int eliteSize, int mutantSize, int seed, unsigned short eliteBias,int populationLen,int individualLen);
-void populationGenerator(valuedChromosome* population,int seed,int populationLen,int individualLen);
-void decoder(valuedChromosome* population,int nVars,int nConst,char* operationsBi,char* operationsU,int tests, double** inputs,double* outputs,double* vConstMin,double* vConstMax,int seed,int populationLen,int stackLen,int maxConst,int operationsBiLen,int operationsULen);
-char isRestart(valuedChromosome* auxPopulation,valuedChromosome* population,int* noImproviment,int noImprovimentMax);
-void almostBestSolution(int restartMax,int noImprovimentMax,int eliteSize,int mutantSize,int seed,unsigned short eliteBias,int nVars,valuedChromosome* bestFoundSolution,
-                                    int nConst,char* operationsBi,char* operationsU,int tests, double** inputs,double* outputs,double* vConstMin,double* vConstMax,
-                                    int populationLen,int individualLen,int stackLen,int maxConst,int operationsBiLen,int operationsULen);
+void individualGenerator(chromosome* individual, int seed, int individualLen);
+void mutantGenerator(valuedChromosome* auxPopulation, int eliteSize, int mutantSize, int seed, int individualLen);
+void crossover(valuedChromosome* population, valuedChromosome* auxPopulation, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int populationLen, int individualLen);
+void populationGenerator(valuedChromosome* population, int seed, int populationLen, int individualLen);
+void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen);
+char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population, int* noImproviment, int noImprovimentMax);
+void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int nVars, valuedChromosome* bestFoundSolution,
+    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector< pair<double, double>>& vConst,
+    int populationLen, int individualLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen);
 
 
 #include <stdio.h>
@@ -124,14 +124,14 @@ void populationGenerator(valuedChromosome* auxPopulation, int seed, int populati
 
 }
 
-void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, double* vConstMin, double* vConstMax, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
+void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
 {
     for (int i = 0; i < populationLen; i++)
     {
         if (population[i].cost == 0)
         {
             population[i].trueStackSize = stackAdjustment(population[i].randomKeys, stackLen, nVars, nConst, maxConst, seed);
-            population[i].cost = solutionEvaluator(population[i].randomKeys, operationsBi, operationsU, stackLen, nVars, tests, inputs, outputs, vConstMin, vConstMax, nConst, 0, operationsBiLen, operationsULen);
+            population[i].cost = solutionEvaluator(population[i].randomKeys, operationsBi, operationsU, stackLen, nVars, tests, inputs, outputs, vConst, nConst, 0, operationsBiLen, operationsULen);
         }
     }
 }
@@ -149,11 +149,11 @@ char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population, in
     return 0;
 }
 
-void almostBestSolution(int restartMax, int noImprovimentMax, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int nVars, valuedChromosome* bestFoundSolution,
-    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, double* vConstMin, double* vConstMax,
+void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int nVars, valuedChromosome* bestFoundSolution,
+    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector< pair<double, double>>& vConst,
     int populationLen, int individualLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
 {
-    int noImproviment = 0;
+    int noImprovement = 0;
     valuedChromosome* mainPopulation; //populationLen
     valuedChromosome* auxPopulation;
     char end;
@@ -177,8 +177,8 @@ void almostBestSolution(int restartMax, int noImprovimentMax, int eliteSize, int
     {
         seed++;
         populationGenerator(mainPopulation, seed, populationLen, individualLen);
-        decoder(mainPopulation, nVars, nConst, operationsBi, operationsU, tests, inputs, outputs, vConstMin, vConstMax, seed, populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
-        std::sort(mainPopulation, mainPopulation + (populationLen), menorQue);
+        decoder(mainPopulation, nVars, nConst, operationsBi, operationsU, tests, inputs, outputs, vConst, seed, populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
+        std::sort(mainPopulation, mainPopulation + populationLen, menorQue);
         end = 0;
         while (!(end))
         {
@@ -188,17 +188,17 @@ void almostBestSolution(int restartMax, int noImprovimentMax, int eliteSize, int
                 memcpy(auxPopulation[i].randomKeys, mainPopulation[i].randomKeys, sizeof(chromosome) * individualLen);
                 auxPopulation[i].cost = mainPopulation[i].cost;
             }
-            mutationGrow = percentToInt(5 * (5 * (noImproviment / noImprovimentMax)), populationLen);
+            mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)), populationLen);
             mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow), seed, individualLen);
             crossover(mainPopulation, auxPopulation, eliteSize, (mutantSize + mutationGrow), seed, eliteBias, populationLen, individualLen);
             seed += 2 * individualLen;
-            decoder(auxPopulation, nVars, nConst, operationsBi, operationsU, tests, inputs, outputs, vConstMin, vConstMax, seed, populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
+            decoder(auxPopulation, nVars, nConst, operationsBi, operationsU, tests, inputs, outputs, vConst, seed, populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
             //printPopulationCost(auxPopulation,populationLen);
-            std::sort(auxPopulation, auxPopulation + (populationLen), menorQue);
+            std::sort(auxPopulation, auxPopulation + populationLen, menorQue);
             //printPopulationCost(auxPopulation,populationLen);
             //printSolution(auxPopulation[0].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
             //printf("cost = %f No Improviments = %d\n",auxPopulation[0].cost,noImproviment);    
-            end = isRestart(auxPopulation, mainPopulation, &noImproviment, noImprovimentMax);
+            end = isRestart(auxPopulation, mainPopulation, &noImprovement, noImprovementMax);
             //printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
             for (int i = 0; i < populationLen; i++)
             {
@@ -219,7 +219,7 @@ void almostBestSolution(int restartMax, int noImprovimentMax, int eliteSize, int
         }
         //printf("Chegou");
         printf("restart = %d \t best= %f\t", restart, (*bestFoundSolution).cost);
-        printSolution(bestFoundSolution->randomKeys, stackLen, nVars, nConst, operationsBi, operationsU, vConstMin, vConstMax, operationsBiLen, operationsULen);
+        printSolution(bestFoundSolution->randomKeys, stackLen, nVars, nConst, operationsBi, operationsU, vConst, operationsBiLen, operationsULen);
         restart++;
     }
     for (int i = 0; i < populationLen; i++)

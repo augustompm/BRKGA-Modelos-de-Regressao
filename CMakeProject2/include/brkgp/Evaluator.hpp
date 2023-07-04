@@ -2,10 +2,10 @@
 
 typedef unsigned short chromosome;
 
-int stackAdjustment(chromosome* individual,int stackLen,int nVars,int nConst,int maxConst,int seed);
-double solutionEvaluator (chromosome* individual,char operationsBi[],char operationsU[],int stackLen,int nVars,int tests,double** inputs,double* outputs,double* vConstMin,double* vConstMax,int nConst,int training,int operationsBiLen,int operationsULen);
-double execBinaryOp(int idop, double v1, double v2,char operationsBi[]);
-double execUnaryOp(int idop, double v1,char operationsU[]);
+int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst, int maxConst, int seed);
+double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen);
+double execBinaryOp(int idop, double v1, double v2, char operationsBi[]);
+double execUnaryOp(int idop, double v1, char operationsU[]);
 double computeError(double v1, double v2);
 
 #include <stdio.h>
@@ -88,7 +88,7 @@ int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
     return trueStackLen;
 }
 
-double solutionEvaluator(chromosome* individual, char operationsBi[], char operationsU[], int stackLen, int nVars, int tests, double** inputs, double* outputs, double* vConstMin, double* vConstMax, int nConst, int training, int operationsBiLen, int operationsULen)
+double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, std::vector<std::pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen)
 {
     double solutionValue = 0;
     int contSeed;
@@ -118,25 +118,23 @@ double solutionEvaluator(chromosome* individual, char operationsBi[], char opera
                 }
                 else {
                     idVar += nConst;
-                    if (vConstMin[idVar] == vConstMax[idVar]) {
-                        varValue = vConstMin[idVar];
+                    if (vConst[idVar].first == vConst[idVar].second) {
+                        varValue = vConst[idVar].first;
                         stk.push(varValue);
                     }
                     else {
                         seedConst = individual[3 * stackLen + contSeed];
                         srand(seedConst);
-                        varValue = rand() % (int)(vConstMax[idVar] - vConstMin[idVar] + 1) + vConstMin[idVar]; // only work for constant between -2b and +2b
+                        varValue = rand() % (int)(vConst[idVar].second - vConst[idVar].first + 1) + vConst[idVar].first;
                         stk.push(varValue);
                         contSeed++;
                     }
-
                 }
             }
-
             // case: pop
             if (individual[j] < 2500) {
                 // pop operation
-                int idOpBi = floor((individual[2 * stackLen + j] / 10000.0) * operationsBiLen); // 4 is lenght of operationBi
+                int idOpBi = floor((individual[2 * stackLen + j] / 10000.0) * operationsBiLen);// 4 is lenght of operationBi
                 //assert(idOp != -1); // guarantee that it's not "disabled" (-1)
                 //
                 double v1 = stk.top();
@@ -154,30 +152,30 @@ double solutionEvaluator(chromosome* individual, char operationsBi[], char opera
                 else
                     stk.push(binaryProduct);
             }
+
             if ((individual[j] < 5000) && (individual[j] >= 2500)) {
                 // pop operation
-                int idOpU = floor((individual[2 * stackLen + j] / 10000.0) * operationsULen); // 3 is lenght of operationU
+                int idOpU = floor((individual[2 * stackLen + j] / 10000.0) * operationsULen);// 3 is lenght of operationU
                 //assert(idOp != -1); // guarantee that it's not "disabled" (-1)
                 //
                 double v1 = stk.top();
                 stk.pop();
                 stk.push(execUnaryOp(idOpU, v1, operationsU));
             }
-            if (individual[j] >= 7500) {
 
+            if (individual[j] >= 7500) {
+                //
+                //cout << "i=" << i << " -> stack size = " << stk.size() << endl;
             }
+
             //
-            //cout << "i=" << i << " -> stack size = " << stk.size() << endl;
+            //cout << "finished t= " << t << endl;
+            // take value from stack
+            //assert(stk.size() == 1);
         }
 
-        //
-        //cout << "finished t= " << t << endl;
-        // take value from stack
-        //assert(stk.size() == 1);
         double val = stk.top();
-        //printf("val = %lf\n",val);
-        stk.pop(); // drop last
-
+        stk.pop();
         //
         // compare with expected valu
 

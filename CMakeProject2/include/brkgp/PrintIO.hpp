@@ -9,11 +9,11 @@ public:
     int trueStackSize;
 };
 
-void printFile (int nVars,int tests,int nConst,double** inputs,double* outputs,double* vConstMin,double* vConstMax);
-void printCodChromosome(chromosome* individual,int len);
-void printDecodChromosome(chromosome* individual,int stackLen,int nVars,int nConst,int operationsBiLen,int operationsULen);
-void printSolution(chromosome* individual,int stackLen,int nVars,int nConst,char* operationsBi,char* operationsU,double* vConstMin,double* vConstMax,int operationsBiLen,int operationsULen);
-void printPopulationCost(valuedChromosome* mainPopulation,int populationLen);
+void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, vector<pair<double, double>>& vConst);
+void printCodChromosome(chromosome* individual, int len);
+void printDecodChromosome(chromosome* individual, int stackLen, int nVars, int nConst, int operationsBiLen, int operationsULen);
+void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen);
+void printPopulationCost(valuedChromosome* mainPopulation, int populationLen);
 
 #include <stdio.h>
 #include <math.h>
@@ -23,7 +23,7 @@ void printPopulationCost(valuedChromosome* mainPopulation,int populationLen);
 using namespace std;
 
 
-void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, double* vConstMin, double* vConstMax)
+void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, vector<pair<double, double>>& vConst)
 {
     printf("%d %d %d\n", nVars, tests, nConst);
     for (int i = 0; i < tests; i++) {
@@ -33,10 +33,10 @@ void printFile(int nVars, int tests, int nConst, double** inputs, double* output
     }
     for (int i = 0; i < nConst; i++)
     {
-        printf("%.4f\t%.4f\n", vConstMin[i], vConstMax[i]);
+        printf("%.4f\t%.4f\n", vConst[i].first, vConst[i].second);
     }
-
 }
+
 
 void printCodChromosome(chromosome* individual, int len)
 {
@@ -77,7 +77,8 @@ void printDecodChromosome(chromosome* individual, int stackLen, int nVars, int n
     printf("\n");
 }
 
-void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, double* vConstMin, double* vConstMax, int operationsBiLen, int operationsULen)
+
+void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen)
 {
     int decodValue;
     int cont = 0;
@@ -98,12 +99,12 @@ void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, 
             decodValue = floor((individual[i + stackLen] / 10000.0) * (nVars + nConst)) - nConst;
             if (decodValue < 0) {
                 decodValue += nConst;
-                if (vConstMax[decodValue] == vConstMin[decodValue]) {
-                    printf("%f  ", vConstMin[decodValue]);
+                if (vConst[decodValue].second == vConst[decodValue].first) {
+                    printf("%f  ", vConst[decodValue].first);
                 }
                 else {
                     srand(individual[3 * stackLen + cont]);
-                    rangeConst = rand() % (int)(vConstMax[decodValue] - vConstMin[decodValue] + 1) + vConstMin[decodValue];
+                    rangeConst = rand() % (int)(vConst[decodValue].second - vConst[decodValue].first + 1) + vConst[decodValue].first;
                     cont++;
                     printf("%f  ", rangeConst);
                 }
@@ -114,6 +115,7 @@ void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, 
     }
     printf("\n");
 }
+
 
 void printPopulationCost(valuedChromosome* mainPopulation, int populationLen)
 {
