@@ -115,8 +115,9 @@ int main (int argc,char *argv[])
     bestFoundSolution.cost = INFINITY;
 
     //char instance[] = "instances/lit3_BSR_func1_1.in";
-    char instance[] = "instances/xcubic_xsquare_px_12.in";
+    //char instance[] = "instances/xcubic_xsquare_px_12.in";
     //char instance[] = "instances/xcubic_xsquare_px_5.in";
+    char instance[] = "instances/Test.in";
     
     //char instance[] = "C:/Users/Filip/OneDrive/Área de Trabalho/Temporário/Projeto/CMakeProject2/instances_short_range/generate_india_function_short_range_1.in";
     //char instance[] = "instances_short_range/generate_india_function_short_range_1.in";
