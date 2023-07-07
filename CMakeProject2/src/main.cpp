@@ -31,6 +31,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
+  int seed = 0;
+
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i'};
@@ -108,7 +110,6 @@ int main(int argc, char* argv[]) {  // BRKGA
   printf("2");
 
   Scanner scanner(new File(instance));
-  int seed = 0;
 
   //
   RProblem problem;
