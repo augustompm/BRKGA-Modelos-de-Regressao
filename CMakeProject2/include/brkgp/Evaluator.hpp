@@ -106,10 +106,8 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
       } else if (somador > 1) {
         if ((individual[i] >= 2500) && (individual[i] < 5000))
           individual[i] -= 2500;
-
         else if (individual[i] >= 7500)  // se der testar depois, no caso i=0
           individual[i] -= 7500;
-
         else  // se der testar depois, no caso i=0
           individual[i] -= 5000;
         auxSomador = somador - 1;
@@ -134,31 +132,18 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
 double solutionEvaluator(const RProblem& problem,
                          const Vec<chromosome>& individual,
                          const Scenario& other, int training) {
-  // problem
-  int nVars = problem.nVars;
-  int tests = problem.tests;
-  const Vec<Vec<double>>& inputs = problem.inputs;
-  const Vec<double>& outputs = problem.outputs;
-  const Vec<Pair<double, double>>& vConst = problem.vConst;
-  int nConst = problem.nConst;
+  // problem counters
+  const int nVars = problem.nVars;
+  const int nConst = problem.nConst;
   // scenario
-  auto& operationsBi = other.operationsBi;
-  auto& operationsU = other.operationsU;
-  int stackLen = other.stackLen;
-  int operationsBiLen = other.operationsBi.size();
-  int operationsULen = other.operationsU.size();
-  //
-  double solutionValue = 0;
-  int contSeed;
-  chromosome seedConst = 0;
+  const int stackLen = other.stackLen;
+  // local variables
   kfloat64 sum_error = 0;
-  // double sum_error = 0;
-  double binaryProduct;
   //
-  const int realTests = tests - training;
+  const int realTests = problem.tests - training;
   for (int i = 0; i < realTests; i++) {
     std::stack<double> stk;
-    contSeed = 0;
+    int contSeed = 0;
 
     for (int j = 0; j < stackLen; j++) {
       // cout << "begin var i=" << i << " / sol_size=" << rep.vstack.size() <<
@@ -166,45 +151,48 @@ double solutionEvaluator(const RProblem& problem,
       //  case: push
       //  -1 0 1 2
       //  2 3
+      // push variable or constant
       if ((individual[j] < 7500) && (individual[j] >= 5000)) {
-        // push variable
         int idVar =
             floor((individual[stackLen + j] / 10000.0) * (nVars + nConst)) -
             nConst;
         // printf("%d\n",idVar);
         double varValue = 0;
-
+        // push variable
         if (idVar >= 0) {
-          varValue = inputs[i][idVar];
+          varValue = problem.inputs[i][idVar];
           stk.push(varValue);
         } else {
+          // push constant
           idVar += nConst;
-          if (vConst[idVar].first == vConst[idVar].second) {
-            varValue = vConst[idVar].first;
+          if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
+            varValue = problem.vConst[idVar].first;
             stk.push(varValue);
           } else {
-            seedConst = individual[3 * stackLen + contSeed];
+            chromosome seedConst = individual[3 * stackLen + contSeed];
             srand(seedConst);
-            varValue =
-                rand() % (int)(vConst[idVar].second - vConst[idVar].first + 1) +
-                vConst[idVar].first;
+            varValue = rand() % (int)(problem.vConst[idVar].second -
+                                      problem.vConst[idVar].first + 1) +
+                       problem.vConst[idVar].first;
             stk.push(varValue);
             contSeed++;
           }
         }
       }
-      // case: pop
+
+      // case: pop Binary Operation
       if (individual[j] < 2500) {
         // pop operation
-        int idOpBi = floor((individual[2 * stackLen + j] / 10000.0) *
-                           operationsBiLen);  // 4 is lenght of operationBi
+        int idOpBi =
+            floor((individual[2 * stackLen + j] / 10000.0) *
+                  other.operationsBi.size());  // 4 is lenght of operationBi
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
         double v1 = stk.top();
         stk.pop();
         double v2 = stk.top();
         stk.pop();
-        binaryProduct = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
+        double binaryProduct = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
         // if for case: division by zero
         if (abs(binaryProduct) == INFINITY) {
           while (stk.size() > 0) stk.pop();
@@ -215,15 +203,16 @@ double solutionEvaluator(const RProblem& problem,
         }
       }
 
+      // pop: Unary Operation
       if ((individual[j] < 5000) && (individual[j] >= 2500)) {
-        // pop operation
-        int idOpU = floor((individual[2 * stackLen + j] / 10000.0) *
-                          operationsULen);  // 3 is lenght of operationU
+        int idOpU =
+            floor((individual[2 * stackLen + j] / 10000.0) *
+                  other.operationsU.size());  // 3 is lenght of operationU
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
         double v1 = stk.top();
         stk.pop();
-        stk.push(execUnaryOp(idOpU, v1, operationsU));
+        stk.push(execUnaryOp(idOpU, v1, other.operationsU));
       }
 
       if (individual[j] >= 7500) {
@@ -240,13 +229,13 @@ double solutionEvaluator(const RProblem& problem,
     double val = stk.top();
     stk.pop();
     //
-    // compare with expected valu
+    // compare with expected value
 
-    sum_error += computeError(val, outputs[i]);
+    sum_error += computeError(val, problem.outputs[i]);
     // printf("sum_error = %lf\n",sum_error);
   }
   // average erro
-  solutionValue = (double)sum_error / realTests;
+  double solutionValue = (double)sum_error / realTests;
   // printf("solutionValue = %lf\n",solutionValue);
   // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
   // printf("%f\n",solutionValue);

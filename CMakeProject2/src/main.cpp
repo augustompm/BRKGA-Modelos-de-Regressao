@@ -31,6 +31,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
+  int seed = 0;
+
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i'};
@@ -95,8 +97,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  // std::string instance = "instances/Test (2).in";
-  std::string instance = "instances/Test.in";
+   std::string instance = "instances/Set 1 - (2).in";
+  //std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
@@ -108,7 +110,6 @@ int main(int argc, char* argv[]) {  // BRKGA
   printf("2");
 
   Scanner scanner(new File(instance));
-  int seed = 0;
 
   //
   RProblem problem;

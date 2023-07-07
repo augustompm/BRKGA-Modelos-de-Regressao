@@ -25,7 +25,6 @@ void readIO(RProblem& problem, Scanner& scanner) {
   int& nVars = problem.nVars;
   int& tests = problem.tests;
   int& nConst = problem.nConst;
-  Vec<Pair<double, double>>& vConst = problem.vConst;
 
   std::cout << "1) READING PROBLEM" << std::endl;
 
@@ -38,7 +37,7 @@ void readIO(RProblem& problem, Scanner& scanner) {
   // for each test...
   inputs = Vec<Vec<double>>(tests);
   outputs = Vec<double>(tests);
-  vConst.resize(nConst);
+  problem.vConst.resize(nConst);
 
   for (int t = 0; t < tests; t++) {
     inputs[t] = Vec<double>(nVars);
@@ -49,8 +48,8 @@ void readIO(RProblem& problem, Scanner& scanner) {
   std::cout << "3) READING PROBLEM CONSTANTS" << std::endl;
 
   for (int i = 0; i < nConst; i++) {
-    vConst[i].first = scanner.nextDouble();
-    vConst[i].second = scanner.nextDouble();
+    problem.vConst[i].first = scanner.nextDouble();
+    problem.vConst[i].second = scanner.nextDouble();
   }
 
   std::cout << "4) FINISHED READING PROBLEM" << std::endl;

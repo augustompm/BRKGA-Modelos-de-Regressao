@@ -18,7 +18,6 @@ void printFile(const RProblem& problem) {
   int nConst = problem.nConst;
   const Vec<Vec<double>>& inputs = problem.inputs;
   const Vec<double>& outputs = problem.outputs;
-  const Vec<Pair<double, double>>& vConst = problem.vConst;
 
   printf("%d %d %d\n", nVars, tests, nConst);
   for (int i = 0; i < tests; i++) {
@@ -26,7 +25,7 @@ void printFile(const RProblem& problem) {
     printf("%.2f\n", outputs[i]);
   }
   for (int i = 0; i < nConst; i++) {
-    printf("%.4f\t%.4f\n", vConst[i].first, vConst[i].second);
+    printf("%.4f\t%.4f\n", problem.vConst[i].first, problem.vConst[i].second);
   }
 }
 
@@ -41,12 +40,10 @@ void printCodChromosome(const Vec<chromosome>& individual) {
 void printDecodChromosome(const Vec<chromosome>& individual,
                           const RProblem& problem, const Scenario& other) {
   // problem
-  int nVars = problem.nVars;
-  int nConst = problem.nConst;
+  const int nVars = problem.nVars;
+  const int nConst = problem.nConst;
   // scenario
-  int stackLen = other.stackLen;
-  int operationsBiLen = other.operationsBi.size();
-  int operationsULen = other.operationsU.size();
+  const int stackLen = other.stackLen;
   //
   int decodValue;
   for (int i = 0; i < stackLen; i++) {
@@ -59,11 +56,11 @@ void printDecodChromosome(const Vec<chromosome>& individual,
   }
   for (int i = (2 * stackLen); i < (3 * stackLen); i++) {
     if (individual[i - 2 * stackLen] < 2500) {
-      decodValue = floor((individual[i] / 10000.0) * operationsBiLen);
+      decodValue = floor((individual[i] / 10000.0) * other.operationsBi.size());
       printf("Bi:");
     } else if ((individual[i - 2 * stackLen] >= 2500) &&
                (individual[i - 2 * stackLen] < 5000)) {
-      decodValue = floor((individual[i] / 10000.0) * operationsULen);
+      decodValue = floor((individual[i] / 10000.0) * other.operationsU.size());
       printf("U:");
     } else {
       decodValue = individual[i];
@@ -76,15 +73,10 @@ void printDecodChromosome(const Vec<chromosome>& individual,
 void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
                    const Scenario& other) {
   // problem
-  const Vec<Pair<double, double>>& vConst = problem.vConst;
-  int nVars = problem.nVars;
-  int nConst = problem.nConst;
+  const int nVars = problem.nVars;
+  const int nConst = problem.nConst;
   // scenario
-  int stackLen = other.stackLen;
-  auto& operationsBi = other.operationsBi;
-  auto& operationsU = other.operationsU;
-  int operationsBiLen = other.operationsBi.size();
-  int operationsULen = other.operationsU.size();
+  const int stackLen = other.stackLen;
   //
   int decodValue;
   int cont = 0;
@@ -93,26 +85,27 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
     decodValue = floor((individual[i] / 10000.0) * 4) - 1;
     // printf("")
     if (decodValue == -1) {
-      decodValue =
-          floor((individual[i + 2 * stackLen] / 10000.0) * operationsBiLen);
-      printf("%c ", operationsBi[decodValue]);
+      decodValue = floor((individual[i + 2 * stackLen] / 10000.0) *
+                         other.operationsBi.size());
+      printf("%c ", other.operationsBi[decodValue]);
     } else if (decodValue == 0) {
-      decodValue =
-          floor((individual[i + 2 * stackLen] / 10000.0) * operationsULen);
-      printf("%c ", operationsU[decodValue]);
+      decodValue = floor((individual[i + 2 * stackLen] / 10000.0) *
+                         other.operationsU.size());
+      printf("%c ", other.operationsU[decodValue]);
     } else if (decodValue == 1) {
       decodValue =
           floor((individual[i + stackLen] / 10000.0) * (nVars + nConst)) -
           nConst;
       if (decodValue < 0) {
         decodValue += nConst;
-        if (vConst[decodValue].second == vConst[decodValue].first) {
-          printf("%f  ", vConst[decodValue].first);
+        if (problem.vConst[decodValue].second ==
+            problem.vConst[decodValue].first) {
+          printf("%f  ", problem.vConst[decodValue].first);
         } else {
           srand(individual[3 * stackLen + cont]);
-          rangeConst = rand() % (int)(vConst[decodValue].second -
-                                      vConst[decodValue].first + 1) +
-                       vConst[decodValue].first;
+          rangeConst = rand() % (int)(problem.vConst[decodValue].second -
+                                      problem.vConst[decodValue].first + 1) +
+                       problem.vConst[decodValue].first;
           cont++;
           printf("%f  ", rangeConst);
         }
