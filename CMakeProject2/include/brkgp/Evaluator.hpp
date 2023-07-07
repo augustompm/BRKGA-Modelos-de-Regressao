@@ -8,33 +8,62 @@
 #include <stack>
 #include <vector>
 //
-
 #include <brkgp/Evaluator.hpp>
 #include <brkgp/PrintIO.hpp>
 #include <kahan-float/src/kahan.hpp>
 
-/*
-typedef unsigned short chromosome;
-*/
-
-/*
-int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
-                    int maxConst, int seed);
-double solutionEvaluator(chromosome* individual, char* operationsBi,
-                         char* operationsU, int stackLen, int nVars, int tests,
-                         double** inputs, double* outputs,
-                         vector<pair<double, double>>& vConst, int nConst,
-                         int training, int operationsBiLen, int operationsULen);
-*/
+using namespace kahan;
 
 double execBinaryOp(int idop, double v1, double v2,
-                    const std::vector<char>& operationsBi);
-double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU);
-double computeError(double v1, double v2);
+                    const std::vector<char>& operationsBi) {
+  if (operationsBi[idop] == '+') {
+    if (abs(v1) == INFINITY) return INFINITY;
+    return v1 + v2;
+  }
+  if (operationsBi[idop] == '-') {
+    if (abs(v1) == INFINITY) return INFINITY;
+    return v1 - v2;
+  }
+  if (operationsBi[idop] == '*') {
+    if ((abs(v1) == INFINITY && v2 == 0) || (v1 == 0 && abs(v2) == INFINITY))
+      return INFINITY;
+    return v1 * v2;
+  }
+  if (operationsBi[idop] == '/') {
+    if (v2 < 0.000001) return INFINITY;
+    if (abs(v2) == INFINITY) return 0;
+    return v1 / v2;
+  }
+  return 0.0;
+}
 
-// using namespace std;
-using namespace kahan;
-// typedef unsigned short chromosome;
+double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
+  if (operationsU[idop] == 's') {
+    if (v1 == INFINITY) return INFINITY;
+    return sin(v1);
+  }
+
+  if (operationsU[idop] == 'c') {
+    if (v1 == INFINITY) return INFINITY;
+    return cos(v1);
+  }
+  if (operationsU[idop] == 'i') return v1;
+  if (operationsU[idop] == 'a') return v1 * v1;
+  if (operationsU[idop] == 'v') return v1 * v1 * v1;
+  if (operationsU[idop] == 'r') {
+    if (v1 < 0)
+      return INFINITY;
+    else
+      return pow(v1, 1 / 2);
+  }
+  return 0.0;
+}
+
+// error between values v1 and v2 RMSE
+double computeError(double v1, double v2) {
+  // square
+  return sqrt((v1 - v2) * (v1 - v2));
+}
 
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
@@ -98,15 +127,6 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
   }
   return trueStackLen;
 }
-
-/*
-double solutionEvaluator(chromosome* individual, char* operationsBi,
-                         char* operationsU, int stackLen, int nVars, int tests,
-                         double** inputs, double* outputs,
-                         vector<pair<double, double>>& vConst, int nConst,
-                         int training, int operationsBiLen,
-                         int operationsULen) {
-*/
 
 double solutionEvaluator(const RProblem& problem,
                          const Vec<chromosome>& individual,
@@ -226,55 +246,4 @@ double solutionEvaluator(const RProblem& problem,
   // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
   // printf("%f\n",solutionValue);
   return solutionValue;
-}
-
-double execBinaryOp(int idop, double v1, double v2,
-                    const std::vector<char>& operationsBi) {
-  if (operationsBi[idop] == '+') {
-    if (abs(v1) == INFINITY) return INFINITY;
-    return v1 + v2;
-  }
-  if (operationsBi[idop] == '-') {
-    if (abs(v1) == INFINITY) return INFINITY;
-    return v1 - v2;
-  }
-  if (operationsBi[idop] == '*') {
-    if ((abs(v1) == INFINITY && v2 == 0) || (v1 == 0 && abs(v2) == INFINITY))
-      return INFINITY;
-    return v1 * v2;
-  }
-  if (operationsBi[idop] == '/') {
-    if (v2 < 0.000001) return INFINITY;
-    if (abs(v2) == INFINITY) return 0;
-    return v1 / v2;
-  }
-  return 0.0;
-}
-
-double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
-  if (operationsU[idop] == 's') {
-    if (v1 == INFINITY) return INFINITY;
-    return sin(v1);
-  }
-
-  if (operationsU[idop] == 'c') {
-    if (v1 == INFINITY) return INFINITY;
-    return cos(v1);
-  }
-  if (operationsU[idop] == 'i') return v1;
-  if (operationsU[idop] == 'a') return v1 * v1;
-  if (operationsU[idop] == 'v') return v1 * v1 * v1;
-  if (operationsU[idop] == 'r') {
-    if (v1 < 0)
-      return INFINITY;
-    else
-      return pow(v1, 1 / 2);
-  }
-  return 0.0;
-}
-
-// error between values v1 and v2 RMSE
-double computeError(double v1, double v2) {
-  // square
-  return sqrt((v1 - v2) * (v1 - v2));
 }

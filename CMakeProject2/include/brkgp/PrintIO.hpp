@@ -9,36 +9,6 @@
 //
 #include <brkgp/Utils.hpp>
 
-// typedef unsigned short chromosome;
-
-class ValuedChromosome {
- public:
-  Vec<chromosome> randomKeys;
-  double cost;
-  int trueStackSize;
-};
-
-// void printFile(int nVars, int tests, int nConst, double** inputs,
-//               double* outputs, Vec<Pair<double, double>>& vConst);
-/*
-void printCodChromosome(chromosome* individual, int len);
-void printDecodChromosome(chromosome* individual, int stackLen, int nVars,
-                          int nConst, int operationsBiLen, int operationsULen);
-void printSolution(chromosome* individual, int stackLen, int nVars, int nConst,
-                   char* operationsBi, char* operationsU,
-                   Vec<Pair<double, double>>& vConst, int operationsBiLen,
-                   int operationsULen);
-void printPopulationCost(valuedChromosome* mainPopulation, int populationLen);
-*/
-
-// using namespace std;
-
-// void printFile(int nVars, int tests, int nConst, double** inputs, double*
-// outputs, vector<pair<double, double>>& vConst)
-// void printFile(int nVars, int tests, int nConst, const Vec<Vec<double>>&
-// inputs,
-//               const Vec<double>& outputs,
-//               const Vec<Pair<double, double>>& vConst) {
 void printFile(const RProblem& problem) {
   int nVars = problem.nVars;
   int tests = problem.tests;
@@ -92,8 +62,9 @@ void printDecodChromosome(const Vec<chromosome>& individual,
                (individual[i - 2 * stackLen] < 5000)) {
       decodValue = floor((individual[i] / 10000.0) * operationsULen);
       printf("U:");
-    } else
+    } else {
       decodValue = individual[i];
+    }
     printf("%d   ", decodValue);
   }
   printf("\n");

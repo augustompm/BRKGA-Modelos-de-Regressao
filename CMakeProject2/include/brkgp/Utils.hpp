@@ -35,12 +35,14 @@ struct BRKGAParams {
 struct Scenario {
   std::vector<char> operationsBi;
   std::vector<char> operationsU;
-
-  // int operationsBiLen;
-  // int operationsULen;
-
-  // int training;
   int stackLen;
   int maxConst;
   int individualLen;
+};
+
+class ValuedChromosome {
+ public:
+  Vec<chromosome> randomKeys;
+  double cost;
+  int trueStackSize;
 };
