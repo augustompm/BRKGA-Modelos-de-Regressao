@@ -154,7 +154,9 @@ double solutionEvaluator(const RProblem& problem,
   kfloat64 sum_error = 0;
   // double sum_error = 0;
   double binaryProduct;
-  for (int i = 0; (i + training) < tests; i++) {
+  //
+  const int realTests = tests - training;
+  for (int i = 0; i < realTests; i++) {
     std::stack<double> stk;
     contSeed = 0;
 
@@ -244,7 +246,7 @@ double solutionEvaluator(const RProblem& problem,
     // printf("sum_error = %lf\n",sum_error);
   }
   // average erro
-  solutionValue = (double)sum_error / (tests - training);
+  solutionValue = (double)sum_error / realTests;
   // printf("solutionValue = %lf\n",solutionValue);
   // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
   // printf("%f\n",solutionValue);
