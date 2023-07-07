@@ -48,8 +48,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.mutantSize = 5;
   params.eliteBias = 70;
   params.noImprovementMax = 10;
-  // params.restartMax = 1000;
-  params.restartMax = 10;
+  params.restartMax = 1000;
+  // params.restartMax = 10;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);

@@ -24,16 +24,15 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances DESTINATION ${CMAKE_CURRENT_BINA
 #==========
 #  TESTS
 #----------
-Include(FetchContent)
-
-# add_subdirectory(tests/thirdparty/catch2/)
-FetchContent_Declare(Catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG v3.3.1)
-FetchContent_MakeAvailable(Catch2)
+#Include(FetchContent)
 #
-list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
-include(CTest)
-include(Catch)
+#FetchContent_Declare(Catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG v3.3.1)
+#FetchContent_MakeAvailable(Catch2)
 #
-add_executable(my_test tests/get_data.test.cpp)
-target_link_libraries(my_test PRIVATE brkpg_biblioteca Minha_pasta_external Catch2::Catch2WithMain)
-catch_discover_tests(my_test)
+#list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+#include(CTest)
+#include(Catch)
+#
+#add_executable(my_test tests/get_data.test.cpp)
+#target_link_libraries(my_test PRIVATE brkpg_biblioteca Minha_pasta_external Catch2::Catch2WithMain)
+#catch_discover_tests(my_test)
