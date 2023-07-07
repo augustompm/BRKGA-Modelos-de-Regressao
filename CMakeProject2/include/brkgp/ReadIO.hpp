@@ -6,7 +6,7 @@ using namespace scannerpp;
 typedef unsigned short chromosome;
 
 
-void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, vector<pair<double, double>>& vConst);
+void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, const vector<pair<double, double>>& vConst);
 void changeIO(double*** inputs, double** outputs, int training, int nVars, int tests, int nConst);
 
 
@@ -24,7 +24,7 @@ using namespace std;
 using namespace scannerpp;
 typedef unsigned short chromosome;
 
-void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, vector<pair<double, double>>& vConst)
+void readIO(double*** inputs, double** outputs, Scanner& scanner, int* nVars, int* tests, int* nConst, const vector<pair<double, double>>& vConst)
 {
     (*nVars) = scanner.nextInt();
     (*tests) = scanner.nextInt();

@@ -13,10 +13,10 @@ void individualGenerator(chromosome* individual, int seed, int individualLen);
 void mutantGenerator(valuedChromosome* auxPopulation, int eliteSize, int mutantSize, int seed, int individualLen);
 void crossover(valuedChromosome* population, valuedChromosome* auxPopulation, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int populationLen, int individualLen);
 void populationGenerator(valuedChromosome* population, int seed, int populationLen, int individualLen);
-void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen);
+void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs,const vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen);
 char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population, int* noImproviment, int noImprovimentMax);
 void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int nVars, valuedChromosome* bestFoundSolution,
-    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector< pair<double, double>>& vConst,
+    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs,const vector< pair<double, double>>& vConst,
     int populationLen, int individualLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen);
 
 
@@ -124,7 +124,7 @@ void populationGenerator(valuedChromosome* auxPopulation, int seed, int populati
 
 }
 
-void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
+void decoder(valuedChromosome* population, int nVars, int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, const vector<pair<double, double>>& vConst, int seed, int populationLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
 {
     for (int i = 0; i < populationLen; i++)
     {
@@ -150,7 +150,7 @@ char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population, in
 }
 
 void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize, int mutantSize, int seed, unsigned short eliteBias, int nVars, valuedChromosome* bestFoundSolution,
-    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, vector< pair<double, double>>& vConst,
+    int nConst, char* operationsBi, char* operationsU, int tests, double** inputs, double* outputs, const vector< pair<double, double>>& vConst,
     int populationLen, int individualLen, int stackLen, int maxConst, int operationsBiLen, int operationsULen)
 {
     int noImprovement = 0;

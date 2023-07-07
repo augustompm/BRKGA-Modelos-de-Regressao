@@ -9,10 +9,10 @@ public:
     int trueStackSize;
 };
 
-void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, vector<pair<double, double>>& vConst);
+void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, const vector<pair<double, double>>& vConst);
 void printCodChromosome(chromosome* individual, int len);
 void printDecodChromosome(chromosome* individual, int stackLen, int nVars, int nConst, int operationsBiLen, int operationsULen);
-void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen);
+void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, const vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen);
 void printPopulationCost(valuedChromosome* mainPopulation, int populationLen);
 
 #include <stdio.h>
@@ -23,7 +23,7 @@ void printPopulationCost(valuedChromosome* mainPopulation, int populationLen);
 using namespace std;
 
 
-void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, vector<pair<double, double>>& vConst)
+void printFile(int nVars, int tests, int nConst, double** inputs, double* outputs, const vector<pair<double, double>>& vConst)
 {
     printf("%d %d %d\n", nVars, tests, nConst);
     for (int i = 0; i < tests; i++) {
@@ -78,7 +78,7 @@ void printDecodChromosome(chromosome* individual, int stackLen, int nVars, int n
 }
 
 
-void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen)
+void printSolution(chromosome* individual, int stackLen, int nVars, int nConst, char* operationsBi, char* operationsU, const vector<pair<double, double>>& vConst, int operationsBiLen, int operationsULen)
 {
     int decodValue;
     int cont = 0;

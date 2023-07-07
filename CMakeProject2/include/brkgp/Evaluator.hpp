@@ -3,7 +3,7 @@
 typedef unsigned short chromosome;
 
 int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst, int maxConst, int seed);
-double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, vector<pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen);
+double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, const vector<pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen);
 double execBinaryOp(int idop, double v1, double v2, char operationsBi[]);
 double execUnaryOp(int idop, double v1, char operationsU[]);
 double computeError(double v1, double v2);
@@ -88,7 +88,7 @@ int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
     return trueStackLen;
 }
 
-double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, std::vector<std::pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen)
+double solutionEvaluator(chromosome* individual, char* operationsBi, char* operationsU, int stackLen, int nVars, int tests, double** inputs, double* outputs, const vector<pair<double, double>>& vConst, int nConst, int training, int operationsBiLen, int operationsULen)
 {
     double solutionValue = 0;
     int contSeed;
