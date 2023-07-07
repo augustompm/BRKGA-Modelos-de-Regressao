@@ -31,13 +31,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   operationsU[1] = '\0';
   int operationsBiLen = 4;
   int operationsULen = 1;
-  vector<pair<double, double>> vConst;
-  double** inputs;
-  double* outputs;
-  int nVars;
-  int tests;
+
   int training = 70;
-  int nConst;
   int stackLen = 15;
   int maxConst = 3;
 
@@ -132,7 +127,14 @@ if(argc>11){
   Scanner scanner(new File(instance));
   int seed = 0;
 
-  readIO(&inputs, &outputs, scanner, &nVars, &tests, &nConst, vConst);
+  double** inputs;
+  double* outputs;
+  int nVars;
+  int tests;
+  int nConst;
+  vector<pair<double, double>> vConst;
+
+  readIO(&inputs, &outputs, scanner, nVars, tests, nConst, vConst);
   printFile(nVars, tests, nConst, inputs, outputs, vConst);
 
   training = percentToInt(training, tests);
