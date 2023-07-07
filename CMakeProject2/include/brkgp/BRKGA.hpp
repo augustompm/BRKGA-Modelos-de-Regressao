@@ -15,6 +15,8 @@
 #include <brkgp/Evaluator.hpp>
 #include <brkgp/PrintIO.hpp>
 
+#include "brkgp/Utils.hpp"
+
 // using namespace std;
 
 /*
@@ -56,12 +58,14 @@ void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
 int percentToInt(int porcentagem, int total) {
   return ceil((porcentagem / 100.0) * total);
 }
-bool menorQue(valuedChromosome i, valuedChromosome j) {
+
+bool menorQue(const ValuedChromosome& i, const ValuedChromosome& j) {
   return (i.cost < j.cost) ||
          ((i.cost == j.cost) && (i.trueStackSize < j.trueStackSize));
 }
 
-void individualGenerator(chromosome* individual, int seed, int individualLen) {
+void individualGenerator(Vec<chromosome>& individual, int seed,
+                         int individualLen) {
   // printStack(vStack,len);
   for (int i = 0; i < individualLen; i++) {
     srand(seed);
@@ -70,7 +74,7 @@ void individualGenerator(chromosome* individual, int seed, int individualLen) {
   }
 }
 
-void mutantGenerator(valuedChromosome* population, int eliteSize,
+void mutantGenerator(Vec<ValuedChromosome>& population, int eliteSize,
                      int mutantSize, int seed, int individualLen) {
   for (int i = eliteSize; i < (eliteSize + mutantSize); i++) {
     individualGenerator(population[i].randomKeys, seed, individualLen);
@@ -79,9 +83,10 @@ void mutantGenerator(valuedChromosome* population, int eliteSize,
   }
 }
 
-void crossover(valuedChromosome* population, valuedChromosome* auxPopulation,
-               int eliteSize, int mutantSize, int seed,
-               unsigned short eliteBias, int populationLen, int individualLen) {
+void crossover(Vec<ValuedChromosome>& population,
+               Vec<ValuedChromosome>& auxPopulation, int eliteSize,
+               int mutantSize, int seed, uint16_t eliteBias, int populationLen,
+               int individualLen) {
   int parentA;
   int parentB;
 
@@ -112,7 +117,7 @@ void crossover(valuedChromosome* population, valuedChromosome* auxPopulation,
   }
 }
 
-void populationGenerator(valuedChromosome* auxPopulation, int seed,
+void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed,
                          int populationLen, int individualLen) {
   for (int i = 0; i < populationLen; i++) {
     for (int j = 0; j < individualLen; j++) {
@@ -138,7 +143,7 @@ void decoder(valuedChromosome* population, int nVars, int nConst,
              int operationsULen) {
 */
 
-void decoder(valuedChromosome* population, char* operationsBi,
+void decoder(Vec<ValuedChromosome>& population, char* operationsBi,
              char* operationsU, const RProblem& problem, int seed,
              int populationLen, int stackLen, int maxConst, int operationsBiLen,
              int operationsULen) {
@@ -160,15 +165,16 @@ void decoder(valuedChromosome* population, char* operationsBi,
   }
 }
 
-char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population,
-               int* noImproviment, int noImprovimentMax) {
+char isRestart(const Vec<ValuedChromosome>& auxPopulation,
+               const Vec<ValuedChromosome>& population, int& noImprovement,
+               int noImprovementMax) {
   if (auxPopulation[0].cost < population[0].cost)
-    (*noImproviment) = 0;
+    noImprovement = 0;
   else
-    (*noImproviment)++;
-  if (((*noImproviment) ==
-       noImprovimentMax)) {  //|| (auxPopulation[0].cost <= 0.00001))
-    (*noImproviment) = 0;
+    noImprovement++;
+  if (noImprovement == noImprovementMax) {
+    //|| (auxPopulation[0].cost <= 0.00001))
+    noImprovement = 0;
     return 1;
   }
   return 0;
@@ -186,7 +192,7 @@ void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
 */
 
 void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
-                        int seed, valuedChromosome* bestFoundSolution,
+                        int seed, ValuedChromosome* bestFoundSolution,
                         char* operationsBi, char* operationsU, int training,
                         int individualLen, int stackLen, int maxConst,
                         int operationsBiLen, int operationsULen) {
@@ -208,23 +214,26 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
 
   //
   int noImprovement = 0;
-  valuedChromosome* mainPopulation;  // populationLen
-  valuedChromosome* auxPopulation;
+  Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
+  Vec<ValuedChromosome> auxPopulation(populationLen);
   char end;
   // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d individualLen1:
   // %d stackLen1:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
   (*bestFoundSolution).cost = INFINITY;
 
-  auxPopulation =
-      (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
-  mainPopulation =
-      (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
+  // auxPopulation =
+  //     (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
+  // mainPopulation =
+  //     (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
+
   for (int i = 0; i < populationLen; i++) {
-    auxPopulation[i].randomKeys =
-        (chromosome*)calloc(individualLen, sizeof(chromosome));
-    mainPopulation[i].randomKeys =
-        (chromosome*)calloc(individualLen, sizeof(chromosome));
+    // auxPopulation[i].randomKeys =
+    //     (chromosome*)calloc(individualLen, sizeof(chromosome));
+    auxPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
+    // mainPopulation[i].randomKeys =
+    //     (chromosome*)calloc(individualLen, sizeof(chromosome));
+    mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
   }
   eliteSize = percentToInt(eliteSize, populationLen);
   mutantSize = percentToInt(mutantSize, populationLen);
@@ -239,13 +248,15 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
     populationGenerator(mainPopulation, seed, populationLen, individualLen);
     decoder(mainPopulation, operationsBi, operationsU, problem, seed,
             populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
-    std::sort(mainPopulation, mainPopulation + populationLen, menorQue);
+    // std::sort(mainPopulation, mainPopulation + populationLen, menorQue);
+    std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
     while (!(end)) {
       // memcpy(auxPopulation,mainPopulation,sizeof(valuedChromosome)*populationLen);
       for (int i = 0; i < populationLen; i++) {
-        memcpy(auxPopulation[i].randomKeys, mainPopulation[i].randomKeys,
-               sizeof(chromosome) * individualLen);
+        // memcpy(auxPopulation[i].randomKeys, mainPopulation[i].randomKeys,
+        //        sizeof(chromosome) * individualLen);
+        auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
         auxPopulation[i].cost = mainPopulation[i].cost;
       }
       mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)),
@@ -260,17 +271,23 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
               populationLen, stackLen, maxConst, operationsBiLen,
               operationsULen);
       // printPopulationCost(auxPopulation,populationLen);
-      std::sort(auxPopulation, auxPopulation + populationLen, menorQue);
+      //
+      // std::sort(auxPopulation, auxPopulation + populationLen, menorQue);
+      std::sort(auxPopulation.begin(), auxPopulation.end(), menorQue);
+      //
       // printPopulationCost(auxPopulation,populationLen);
       // printSolution(auxPopulation[0].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
       // printf("cost = %f No Improviments =
       // %d\n",auxPopulation[0].cost,noImproviment);
-      end = isRestart(auxPopulation, mainPopulation, &noImprovement,
+      //
+      // IMPORTANT: PASS 'noImprovement' BY REFERENCE!
+      end = isRestart(auxPopulation, mainPopulation, noImprovement,
                       noImprovementMax);
       // printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
       for (int i = 0; i < populationLen; i++) {
-        memcpy(mainPopulation[i].randomKeys, auxPopulation[i].randomKeys,
-               sizeof(chromosome) * individualLen);
+        // memcpy(mainPopulation[i].randomKeys, auxPopulation[i].randomKeys,
+        //       sizeof(chromosome) * individualLen);
+        mainPopulation[i].randomKeys = auxPopulation[i].randomKeys;
         mainPopulation[i].cost = auxPopulation[i].cost;
       }
       // memcpy(mainPopulation,auxPopulation,sizeof(valuedChromosome)*populationLen);
@@ -279,15 +296,16 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
     }
     // printf("Erro Atual: %f\t",population[0].cost);
     // printf("Erro Best: %f\n",bestFoundSolution.cost);
-    if ((bestFoundSolution->cost - mainPopulation->cost) >
+    if ((bestFoundSolution->cost - mainPopulation[0].cost) >
         0.0000001) {  //|| (((bestFoundSolution->cost - mainPopulation->cost )<
                       // 0.0000001)  && (mainPopulation->trueStackSize <
                       // bestFoundSolution->trueStackSize))){
       // printf("Erro Melhorado: %f\n",population[0].cost);
       (*bestFoundSolution).cost = mainPopulation[0].cost;  // alterar para
                                                            // memcpy
-      memcpy((*bestFoundSolution).randomKeys, mainPopulation[0].randomKeys,
-             sizeof(chromosome) * individualLen);
+      // memcpy((*bestFoundSolution).randomKeys, mainPopulation[0].randomKeys,
+      //         sizeof(chromosome) * individualLen);
+      (*bestFoundSolution).randomKeys = mainPopulation[0].randomKeys;
       // printf("Chegou\n");
       restart = 0;
     }
@@ -297,11 +315,13 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
                   operationsBi, operationsU, operationsBiLen, operationsULen);
     restart++;
   }
-  for (int i = 0; i < populationLen;
-       i++) {  // printf("%p\t %p \n",mainPopulation,auxPopulation);
+  /*
+  for (int i = 0; i < populationLen; i++) {
+    // printf("%p\t %p \n",mainPopulation,auxPopulation);
     free(mainPopulation[i].randomKeys);
     free(auxPopulation[i].randomKeys);
   }
   free(mainPopulation);
   free(auxPopulation);
+  */
 }

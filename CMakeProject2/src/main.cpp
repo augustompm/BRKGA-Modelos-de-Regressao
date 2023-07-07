@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {  // BRKGA
       maxConst = atoi(argv[2]);*/
 
   int individualLen = 3 * stackLen + maxConst + 1;
-  valuedChromosome bestFoundSolution;
+
   double auxBestFoundSolutionCost;
 
   BRKGAParams params;
@@ -107,9 +107,13 @@ if(argc>11){
       operationsULen+= 3;
   }
 }*/
+
   printf("Aqui foi 1");
+  ValuedChromosome bestFoundSolution;
+  bestFoundSolution.cost = -1;
   bestFoundSolution.randomKeys =
-      (chromosome*)malloc(sizeof(chromosome) * individualLen);
+      //    (chromosome*)malloc(sizeof(chromosome) * individualLen);
+      Vec<chromosome>(individualLen, 0);
   bestFoundSolution.cost = INFINITY;
 
   // char instance[] = "instances/lit3_BSR_func1_1.in";

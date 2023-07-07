@@ -1,7 +1,22 @@
 #pragma once
 
-typedef unsigned short chromosome;
+// C
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+// C++
+#include <stack>
+//
 
+#include <brkgp/Evaluator.hpp>
+#include <brkgp/PrintIO.hpp>
+#include <kahan-float/src/kahan.hpp>
+
+/*
+typedef unsigned short chromosome;
+*/
+
+/*
 int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
                     int maxConst, int seed);
 double solutionEvaluator(chromosome* individual, char* operationsBi,
@@ -9,25 +24,18 @@ double solutionEvaluator(chromosome* individual, char* operationsBi,
                          double** inputs, double* outputs,
                          vector<pair<double, double>>& vConst, int nConst,
                          int training, int operationsBiLen, int operationsULen);
+*/
+
 double execBinaryOp(int idop, double v1, double v2, char operationsBi[]);
 double execUnaryOp(int idop, double v1, char operationsU[]);
 double computeError(double v1, double v2);
 
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include <brkgp/Evaluator.hpp>
-#include <brkgp/PrintIO.hpp>
-#include <kahan-float/src/kahan.hpp>
-#include <stack>
-
-using namespace std;
+// using namespace std;
 using namespace kahan;
-typedef unsigned short chromosome;
+// typedef unsigned short chromosome;
 
-int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
-                    int maxConst, int seed) {
+int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
+                    int nConst, int maxConst, int seed) {
   // 5303   358   3064   9156   4199   1320   636   7306   2445   6166   3572
   // 8249   4290   4389   4790   567   9692   202   3913   498 1      -1      0
   // 2     0      -1     -1     1     -1     1       0     2       0     0 0 -1
@@ -50,10 +58,10 @@ int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
       if (individual[i] < 2500)
         individual[i] += 5000;
 
-      else if (individual[i] >= 7500)  // se der testar depois, s� no caso i=0
+      else if (individual[i] >= 7500)  // se der testar depois, no caso i=0
         individual[i] -= 2500;
 
-      else  // se der testar depois, s� no caso i=0
+      else  // se der testar depois, no caso i=0
         individual[i] += 2500;
       auxSomador = somador + 1;
     }
@@ -65,10 +73,10 @@ int stackAdjustment(chromosome* individual, int stackLen, int nVars, int nConst,
         if ((individual[i] >= 2500) && (individual[i] < 5000))
           individual[i] -= 2500;
 
-        else if (individual[i] >= 7500)  // se der testar depois, s� no caso i=0
+        else if (individual[i] >= 7500)  // se der testar depois, no caso i=0
           individual[i] -= 7500;
 
-        else  // se der testar depois, s� no caso i=0
+        else  // se der testar depois, no caso i=0
           individual[i] -= 5000;
         auxSomador = somador - 1;
       }
@@ -98,10 +106,10 @@ double solutionEvaluator(chromosome* individual, char* operationsBi,
                          int operationsULen) {
 */
 
-double solutionEvaluator(const RProblem& problem, chromosome* individual,
-                         char* operationsBi, char* operationsU, int stackLen,
-                         int training, int operationsBiLen,
-                         int operationsULen) {
+double solutionEvaluator(const RProblem& problem,
+                         const Vec<chromosome>& individual, char* operationsBi,
+                         char* operationsU, int stackLen, int training,
+                         int operationsBiLen, int operationsULen) {
   //
   int nVars = problem.nVars;
   int tests = problem.tests;
@@ -117,7 +125,7 @@ double solutionEvaluator(const RProblem& problem, chromosome* individual,
   // double sum_error = 0;
   double binaryProduct;
   for (int i = 0; (i + training) < tests; i++) {
-    stack<double> stk;
+    std::stack<double> stk;
     contSeed = 0;
 
     for (int j = 0; j < stackLen; j++) {
@@ -170,8 +178,9 @@ double solutionEvaluator(const RProblem& problem, chromosome* individual,
           while (stk.size() > 0) stk.pop();
           stk.push(INFINITY);
           j = stackLen;
-        } else
+        } else {
           stk.push(binaryProduct);
+        }
       }
 
       if ((individual[j] < 5000) && (individual[j] >= 2500)) {

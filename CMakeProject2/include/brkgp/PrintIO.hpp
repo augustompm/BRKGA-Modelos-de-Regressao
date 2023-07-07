@@ -11,9 +11,9 @@
 
 // typedef unsigned short chromosome;
 
-class valuedChromosome {
+class ValuedChromosome {
  public:
-  chromosome* randomKeys;
+  Vec<chromosome> randomKeys;
   double cost;
   int trueStackSize;
 };
@@ -57,15 +57,16 @@ void printFile(const RProblem& problem) {
   }
 }
 
-void printCodChromosome(chromosome* individual, int len) {
+void printCodChromosome(const Vec<chromosome>& individual, int len) {
   for (int i = 0; i < len; i++) {
     printf("%d   ", individual[i]);
   }
   printf("\n");
 }
 
-void printDecodChromosome(chromosome* individual, int stackLen, int nVars,
-                          int nConst, int operationsBiLen, int operationsULen) {
+void printDecodChromosome(const Vec<chromosome>& individual, int stackLen,
+                          int nVars, int nConst, int operationsBiLen,
+                          int operationsULen) {
   int decodValue;
   for (int i = 0; i < stackLen; i++) {
     decodValue = floor((individual[i] / 10000.0) * 4) - 1;
@@ -90,7 +91,7 @@ void printDecodChromosome(chromosome* individual, int stackLen, int nVars,
   printf("\n");
 }
 
-void printSolution(const RProblem& problem, chromosome* individual,
+void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
                    int stackLen, char* operationsBi, char* operationsU,
                    int operationsBiLen, int operationsULen) {
   const Vec<Pair<double, double>>& vConst = problem.vConst;
@@ -127,14 +128,16 @@ void printSolution(const RProblem& problem, chromosome* individual,
           cont++;
           printf("%f  ", rangeConst);
         }
-      } else
+      } else {
         printf("V%d  ", decodValue);
+      }
     }
   }
   printf("\n");
 }
 
-void printPopulationCost(valuedChromosome* mainPopulation, int populationLen) {
+void printPopulationCost(const Vec<ValuedChromosome>& mainPopulation,
+                         int populationLen) {
   for (int i = 0; i < populationLen; i++) {
     printf("%lf  ", mainPopulation[i].cost);
   }
