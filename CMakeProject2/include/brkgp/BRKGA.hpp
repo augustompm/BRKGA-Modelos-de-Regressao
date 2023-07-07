@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (C) 2023
+
 #pragma once
 
 // C
@@ -27,11 +30,10 @@ bool menorQue(const ValuedChromosome& i, const ValuedChromosome& j) {
 
 void individualGenerator(Vec<chromosome>& individual, int seed,
                          int individualLen) {
-  // printStack(vStack,len);
+  srand(seed);
   for (int i = 0; i < individualLen; i++) {
-    srand(seed);
     individual[i] = (rand() % 10000);
-    seed++;
+    // seed++;
   }
 }
 
@@ -85,12 +87,6 @@ void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed,
       auxPopulation[i].randomKeys[j] = 0;
     }
     individualGenerator(auxPopulation[i].randomKeys, seed, individualLen);
-    // printCodChromosome(population[i].randomKeys,LEN);
-    // printDecodChromosome(population[i].randomKeys,N,nVars,nConst);
-
-    // printCodChromosome(population[i].randomKeys,LEN);
-    // printDecodChromosome(population[i].randomKeys,N,nVars,nConst);
-    // printf("%.4f \n",population[i].cost);
     seed += 2 * individualLen;
     auxPopulation[i].cost = 0;
   }
@@ -139,9 +135,9 @@ char isRestart(const Vec<ValuedChromosome>& auxPopulation,
   return 0;
 }
 
-void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
-                        int seed, ValuedChromosome& bestFoundSolution,
-                        const Scenario& other, int training) {
+void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
+               ValuedChromosome& bestFoundSolution, const Scenario& other,
+               int training) {
   // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
@@ -166,27 +162,29 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
   int operationsULen = operationsU.size();
 
   //
-  int noImprovement = 0;
   Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
   Vec<ValuedChromosome> auxPopulation(populationLen);
-  char end;
   // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d individualLen1:
   // %d stackLen1:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
-  bestFoundSolution.cost = INFINITY;
 
   for (int i = 0; i < populationLen; i++) {
     auxPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
     mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
   }
+
+  bestFoundSolution.cost = INFINITY;
+
   eliteSize = percentToInt(eliteSize, populationLen);
   mutantSize = percentToInt(mutantSize, populationLen);
   // printf("populationLen2: %d eliteSize2: %d mutanteSize2: %d individualLen2:
   // %d stackLen2:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
   // printf("%d\t%d\n",eliteSize,mutantSize);
-  int restart = 0;
   int mutationGrow = 0;
+  int noImprovement = 0;
+  uint8_t end{0};
+  int restart = 0;
   while (restart < restartMax) {
     seed++;
     populationGenerator(mainPopulation, seed, populationLen, individualLen);
@@ -222,24 +220,20 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
                       noImprovementMax);
       // printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
       for (int i = 0; i < populationLen; i++) {
-        // memcpy(mainPopulation[i].randomKeys, auxPopulation[i].randomKeys,
-        //       sizeof(chromosome) * individualLen);
         mainPopulation[i].randomKeys = auxPopulation[i].randomKeys;
         mainPopulation[i].cost = auxPopulation[i].cost;
       }
-      // memcpy(mainPopulation,auxPopulation,sizeof(valuedChromosome)*populationLen);
       // printf("auxPopulation:%f\t
       // population:%f\n",auxPopulation[0].cost,population[0].cost);
     }
     // printf("Erro Atual: %f\t",population[0].cost);
     // printf("Erro Best: %f\n",bestFoundSolution.cost);
     if ((bestFoundSolution.cost - mainPopulation[0].cost) >
-        0.0000001) {  //|| (((bestFoundSolution->cost - mainPopulation->cost )<
-                      // 0.0000001)  && (mainPopulation->trueStackSize <
-                      // bestFoundSolution->trueStackSize))){
+        0.000001) {  //|| (((bestFoundSolution->cost - mainPopulation->cost )<
+                     // 0.0000001)  && (mainPopulation->trueStackSize <
+                     // bestFoundSolution->trueStackSize))){
       // printf("Erro Melhorado: %f\n",population[0].cost);
-      bestFoundSolution.cost = mainPopulation[0].cost;  // alterar para
-                                                        // memcpy
+      bestFoundSolution.cost = mainPopulation[0].cost;
       bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
       // printf("Chegou\n");
       restart = 0;

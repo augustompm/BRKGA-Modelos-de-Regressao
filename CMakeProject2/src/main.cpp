@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (C) 2023
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,8 +48,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.mutantSize = 5;
   params.eliteBias = 70;
   params.noImprovementMax = 10;
-  params.restartMax = 1000;
-  // params.restartMax = 10;
+  // params.restartMax = 1000;
+  params.restartMax = 10;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -83,17 +86,15 @@ int main(int argc, char* argv[]) {  // BRKGA
   printf("Aqui foi 1");
   ValuedChromosome bestFoundSolution;
   bestFoundSolution.cost = -1;
-  bestFoundSolution.randomKeys =
-      //    (chromosome*)malloc(sizeof(chromosome) * individualLen);
-      Vec<chromosome>(other.individualLen, 0);
+  bestFoundSolution.randomKeys = Vec<chromosome>(other.individualLen, 0);
   bestFoundSolution.cost = INFINITY;
 
   // char instance[] = "instances/lit3_BSR_func1_1.in";
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  // std::string instance = "instances/Test.in";
-  std::string instance = "instances/Test (2).in";
+  // std::string instance = "instances/Test (2).in";
+  std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
@@ -140,7 +141,7 @@ int main(int argc, char* argv[]) {  // BRKGA
 
   */
 
-  almostBestSolution(problem, params, seed, bestFoundSolution, other, training);
+  run_brkga(problem, params, seed, bestFoundSolution, other, training);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
@@ -156,7 +157,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   changeIO(problem.inputs, problem.outputs, training, problem.nVars,
            problem.tests, problem.nConst);
   printFile(problem);
-  almostBestSolution(problem, params, seed, bestFoundSolution, other, training);
+  run_brkga(problem, params, seed, bestFoundSolution, other, training);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
@@ -172,10 +173,5 @@ int main(int argc, char* argv[]) {  // BRKGA
   printf("Validation Mean: %lf  \n",
          (auxBestFoundSolutionCost + bestFoundSolution.cost) / 2);
 
-  // for (int i = 0; i < problem.tests; i++) {
-  //   free(inputs[i]);
-  // }
-  // free(inputs);
-  // free(outputs);
   return 0;
 }
