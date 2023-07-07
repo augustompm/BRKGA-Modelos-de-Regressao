@@ -27,16 +27,22 @@
 int main(int argc, char* argv[]) {  // BRKGA
   // arguments sequence
   // stackLen,maxConst,populationLen,eliteSize,mutantSize,eliteBias,restartMax,noImprovmentMax,validation
-  char operationsBi[] = {'+', '-', '*', '/', '\0'};
-  char operationsU[7];
-  operationsU[0] = 'i';
-  operationsU[1] = '\0';
-  int operationsBiLen = 4;
-  int operationsULen = 1;
 
   int training = 70;
-  int stackLen = 15;
-  int maxConst = 3;
+
+  Scenario other;
+  // char operationsBi[] = {'+', '-', '*', '/', '\0'};
+  other.operationsBi = {'+', '-', '*', '/'};
+  // char operationsU[7];
+  // operationsU[0] = 'i';
+  // operationsU[1] = '\0';
+  other.operationsU = {'i'};
+  //
+  // other.operationsBiLen = other.operationsBi.size();  // 4;
+  // other.operationsULen = other.operationsU.size();    // 1;
+  //
+  other.stackLen = 15;
+  other.maxConst = 3;
 
   // tirar elses
 
@@ -45,9 +51,7 @@ int main(int argc, char* argv[]) {  // BRKGA
    if(argc>2)
       maxConst = atoi(argv[2]);*/
 
-  int individualLen = 3 * stackLen + maxConst + 1;
-
-  double auxBestFoundSolutionCost;
+  other.individualLen = 3 * other.stackLen + other.maxConst + 1;
 
   BRKGAParams params;
   params.populationLen = 30;
@@ -76,10 +80,14 @@ int main(int argc, char* argv[]) {  // BRKGA
       if (argv[10][0] == 't')
     */
   {
+    /*
     operationsU[operationsULen] = 's';
     operationsU[operationsULen + 1] = 'c';
     operationsU[operationsULen + 2] = '\0';
     operationsULen += 2;
+    */
+    other.operationsU.push_back('s');
+    other.operationsU.push_back('c');
   }
   /*else if (argv[10][0] == 'e')
   {
@@ -113,7 +121,7 @@ if(argc>11){
   bestFoundSolution.cost = -1;
   bestFoundSolution.randomKeys =
       //    (chromosome*)malloc(sizeof(chromosome) * individualLen);
-      Vec<chromosome>(individualLen, 0);
+      Vec<chromosome>(other.individualLen, 0);
   bestFoundSolution.cost = INFINITY;
 
   // char instance[] = "instances/lit3_BSR_func1_1.in";
@@ -167,43 +175,33 @@ if(argc>11){
 
   */
 
-  almostBestSolution(problem, params, seed, &bestFoundSolution, operationsBi,
-                     operationsU, training, individualLen, stackLen, maxConst,
-                     operationsBiLen, operationsULen);
+  almostBestSolution(problem, params, seed, bestFoundSolution, other, training);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
   // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
-  printCodChromosome(bestFoundSolution.randomKeys, individualLen);
-  printDecodChromosome(bestFoundSolution.randomKeys, stackLen, problem.nVars,
-                       problem.nConst, operationsBiLen, operationsULen);
-  printSolution(problem, bestFoundSolution.randomKeys, stackLen, operationsBi,
-                operationsU, operationsBiLen, operationsULen);
-  bestFoundSolution.cost = solutionEvaluator(
-      problem, bestFoundSolution.randomKeys, operationsBi, operationsU,
-      stackLen, training, operationsBiLen, operationsULen);
+  printCodChromosome(bestFoundSolution.randomKeys);
+  printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
+  printSolution(problem, bestFoundSolution.randomKeys, other);
+  bestFoundSolution.cost =
+      solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
   printf("best: %lf \n", bestFoundSolution.cost);
-  auxBestFoundSolutionCost = bestFoundSolution.cost;
+  double auxBestFoundSolutionCost = bestFoundSolution.cost;
 
   changeIO(problem.inputs, problem.outputs, training, problem.nVars,
            problem.tests, problem.nConst);
   printFile(problem);
-  almostBestSolution(problem, params, seed, &bestFoundSolution, operationsBi,
-                     operationsU, training, individualLen, stackLen, maxConst,
-                     operationsBiLen, operationsULen);
+  almostBestSolution(problem, params, seed, bestFoundSolution, other, training);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
   // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
-  printCodChromosome(bestFoundSolution.randomKeys, individualLen);
-  printDecodChromosome(bestFoundSolution.randomKeys, stackLen, problem.nVars,
-                       problem.nConst, operationsBiLen, operationsULen);
-  printSolution(problem, bestFoundSolution.randomKeys, stackLen, operationsBi,
-                operationsU, operationsBiLen, operationsULen);
+  printCodChromosome(bestFoundSolution.randomKeys);
+  printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
+  printSolution(problem, bestFoundSolution.randomKeys, other);
   printf("best after: %lf\n", bestFoundSolution.cost);
-  bestFoundSolution.cost = solutionEvaluator(
-      problem, bestFoundSolution.randomKeys, operationsBi, operationsU,
-      stackLen, training, operationsBiLen, operationsULen);
+  bestFoundSolution.cost =
+      solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
   printf("best after: %lf \n", bestFoundSolution.cost);
 
   printf("Validation Mean: %lf  \n",

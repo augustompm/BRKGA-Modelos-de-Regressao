@@ -6,6 +6,7 @@
 #include <stdlib.h>
 // C++
 #include <stack>
+#include <vector>
 //
 
 #include <brkgp/Evaluator.hpp>
@@ -26,8 +27,9 @@ double solutionEvaluator(chromosome* individual, char* operationsBi,
                          int training, int operationsBiLen, int operationsULen);
 */
 
-double execBinaryOp(int idop, double v1, double v2, char operationsBi[]);
-double execUnaryOp(int idop, double v1, char operationsU[]);
+double execBinaryOp(int idop, double v1, double v2,
+                    const std::vector<char>& operationsBi);
+double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU);
 double computeError(double v1, double v2);
 
 // using namespace std;
@@ -107,16 +109,21 @@ double solutionEvaluator(chromosome* individual, char* operationsBi,
 */
 
 double solutionEvaluator(const RProblem& problem,
-                         const Vec<chromosome>& individual, char* operationsBi,
-                         char* operationsU, int stackLen, int training,
-                         int operationsBiLen, int operationsULen) {
-  //
+                         const Vec<chromosome>& individual,
+                         const Scenario& other, int training) {
+  // problem
   int nVars = problem.nVars;
   int tests = problem.tests;
   const Vec<Vec<double>>& inputs = problem.inputs;
   const Vec<double>& outputs = problem.outputs;
   const Vec<Pair<double, double>>& vConst = problem.vConst;
   int nConst = problem.nConst;
+  // scenario
+  auto& operationsBi = other.operationsBi;
+  auto& operationsU = other.operationsU;
+  int stackLen = other.stackLen;
+  int operationsBiLen = other.operationsBi.size();
+  int operationsULen = other.operationsU.size();
   //
   double solutionValue = 0;
   int contSeed;
@@ -172,7 +179,7 @@ double solutionEvaluator(const RProblem& problem,
         stk.pop();
         double v2 = stk.top();
         stk.pop();
-        binaryProduct = execBinaryOp(idOpBi, v1, v2, operationsBi);
+        binaryProduct = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
         // if for case: division by zero
         if (abs(binaryProduct) == INFINITY) {
           while (stk.size() > 0) stk.pop();
@@ -221,7 +228,8 @@ double solutionEvaluator(const RProblem& problem,
   return solutionValue;
 }
 
-double execBinaryOp(int idop, double v1, double v2, char operationsBi[]) {
+double execBinaryOp(int idop, double v1, double v2,
+                    const std::vector<char>& operationsBi) {
   if (operationsBi[idop] == '+') {
     if (abs(v1) == INFINITY) return INFINITY;
     return v1 + v2;
@@ -243,7 +251,7 @@ double execBinaryOp(int idop, double v1, double v2, char operationsBi[]) {
   return 0.0;
 }
 
-double execUnaryOp(int idop, double v1, char operationsU[]) {
+double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
   if (operationsU[idop] == 's') {
     if (v1 == INFINITY) return INFINITY;
     return sin(v1);

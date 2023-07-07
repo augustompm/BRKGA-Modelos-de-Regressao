@@ -57,16 +57,24 @@ void printFile(const RProblem& problem) {
   }
 }
 
-void printCodChromosome(const Vec<chromosome>& individual, int len) {
+void printCodChromosome(const Vec<chromosome>& individual) {
+  int len = individual.size();
   for (int i = 0; i < len; i++) {
     printf("%d   ", individual[i]);
   }
   printf("\n");
 }
 
-void printDecodChromosome(const Vec<chromosome>& individual, int stackLen,
-                          int nVars, int nConst, int operationsBiLen,
-                          int operationsULen) {
+void printDecodChromosome(const Vec<chromosome>& individual,
+                          const RProblem& problem, const Scenario& other) {
+  // problem
+  int nVars = problem.nVars;
+  int nConst = problem.nConst;
+  // scenario
+  int stackLen = other.stackLen;
+  int operationsBiLen = other.operationsBi.size();
+  int operationsULen = other.operationsU.size();
+  //
   int decodValue;
   for (int i = 0; i < stackLen; i++) {
     decodValue = floor((individual[i] / 10000.0) * 4) - 1;
@@ -92,11 +100,17 @@ void printDecodChromosome(const Vec<chromosome>& individual, int stackLen,
 }
 
 void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
-                   int stackLen, char* operationsBi, char* operationsU,
-                   int operationsBiLen, int operationsULen) {
+                   const Scenario& other) {
+  // problem
   const Vec<Pair<double, double>>& vConst = problem.vConst;
   int nVars = problem.nVars;
   int nConst = problem.nConst;
+  // scenario
+  int stackLen = other.stackLen;
+  auto& operationsBi = other.operationsBi;
+  auto& operationsU = other.operationsU;
+  int operationsBiLen = other.operationsBi.size();
+  int operationsULen = other.operationsU.size();
   //
   int decodValue;
   int cont = 0;

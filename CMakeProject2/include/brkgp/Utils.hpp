@@ -31,3 +31,16 @@ struct BRKGAParams {
   // int restartMax = 1000;
   int restartMax = 10;
 };
+
+struct Scenario {
+  std::vector<char> operationsBi;
+  std::vector<char> operationsU;
+
+  // int operationsBiLen;
+  // int operationsULen;
+
+  // int training;
+  int stackLen;
+  int maxConst;
+  int individualLen;
+};

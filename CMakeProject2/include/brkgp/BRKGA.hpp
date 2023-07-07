@@ -143,10 +143,9 @@ void decoder(valuedChromosome* population, int nVars, int nConst,
              int operationsULen) {
 */
 
-void decoder(Vec<ValuedChromosome>& population, char* operationsBi,
-             char* operationsU, const RProblem& problem, int seed,
-             int populationLen, int stackLen, int maxConst, int operationsBiLen,
-             int operationsULen) {
+void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
+             int seed, int populationLen, const Scenario& other) {
+  // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
   int tests = problem.tests;
@@ -154,13 +153,20 @@ void decoder(Vec<ValuedChromosome>& population, char* operationsBi,
   const Vec<double>& outputs = problem.outputs;
   const Vec<Pair<double, double>>& vConst = problem.vConst;
   //
+  auto& operationsBi = other.operationsBi;
+  auto& operationsU = other.operationsU;
+
+  int stackLen = other.stackLen;
+  int maxConst = other.maxConst;
+  int operationsBiLen = other.operationsBi.size();
+  int operationsULen = other.operationsU.size();
+  //
   for (int i = 0; i < populationLen; i++) {
     if (population[i].cost == 0) {
       population[i].trueStackSize = stackAdjustment(
           population[i].randomKeys, stackLen, nVars, nConst, maxConst, seed);
-      population[i].cost = solutionEvaluator(
-          problem, population[i].randomKeys, operationsBi, operationsU,
-          stackLen, 0, operationsBiLen, operationsULen);
+      population[i].cost =
+          solutionEvaluator(problem, population[i].randomKeys, other, 0);
     }
   }
 }
@@ -192,25 +198,31 @@ void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
 */
 
 void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
-                        int seed, ValuedChromosome* bestFoundSolution,
-                        char* operationsBi, char* operationsU, int training,
-                        int individualLen, int stackLen, int maxConst,
-                        int operationsBiLen, int operationsULen) {
-  //
+                        int seed, ValuedChromosome& bestFoundSolution,
+                        const Scenario& other, int training) {
+  // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
   int tests = problem.tests;
   const Vec<Vec<double>>& inputs = problem.inputs;
   const Vec<double>& outputs = problem.outputs;
   const Vec<Pair<double, double>>& vConst = problem.vConst;
-  //
-
+  // params
   int restartMax = params.restartMax;
   int noImprovementMax = params.noImprovementMax;
   int eliteSize = params.eliteSize;
   int mutantSize = params.mutantSize;
   uint16_t eliteBias = params.eliteBias;
   int populationLen = params.populationLen;
+  // other
+
+  auto& operationsBi = other.operationsBi;
+  auto& operationsU = other.operationsU;
+  int individualLen = other.individualLen;
+  int stackLen = other.stackLen;
+  int maxConst = other.maxConst;
+  int operationsBiLen = operationsBi.size();
+  int operationsULen = operationsU.size();
 
   //
   int noImprovement = 0;
@@ -220,7 +232,7 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
   // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d individualLen1:
   // %d stackLen1:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
-  (*bestFoundSolution).cost = INFINITY;
+  bestFoundSolution.cost = INFINITY;
 
   // auxPopulation =
   //     (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
@@ -246,8 +258,7 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
   while (restart < restartMax) {
     seed++;
     populationGenerator(mainPopulation, seed, populationLen, individualLen);
-    decoder(mainPopulation, operationsBi, operationsU, problem, seed,
-            populationLen, stackLen, maxConst, operationsBiLen, operationsULen);
+    decoder(problem, mainPopulation, seed, populationLen, other);
     // std::sort(mainPopulation, mainPopulation + populationLen, menorQue);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
@@ -267,9 +278,7 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
                 (mutantSize + mutationGrow), seed, eliteBias, populationLen,
                 individualLen);
       seed += 2 * individualLen;
-      decoder(auxPopulation, operationsBi, operationsU, problem, seed,
-              populationLen, stackLen, maxConst, operationsBiLen,
-              operationsULen);
+      decoder(problem, auxPopulation, seed, populationLen, other);
       // printPopulationCost(auxPopulation,populationLen);
       //
       // std::sort(auxPopulation, auxPopulation + populationLen, menorQue);
@@ -296,23 +305,22 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
     }
     // printf("Erro Atual: %f\t",population[0].cost);
     // printf("Erro Best: %f\n",bestFoundSolution.cost);
-    if ((bestFoundSolution->cost - mainPopulation[0].cost) >
+    if ((bestFoundSolution.cost - mainPopulation[0].cost) >
         0.0000001) {  //|| (((bestFoundSolution->cost - mainPopulation->cost )<
                       // 0.0000001)  && (mainPopulation->trueStackSize <
                       // bestFoundSolution->trueStackSize))){
       // printf("Erro Melhorado: %f\n",population[0].cost);
-      (*bestFoundSolution).cost = mainPopulation[0].cost;  // alterar para
-                                                           // memcpy
+      bestFoundSolution.cost = mainPopulation[0].cost;  // alterar para
+                                                        // memcpy
       // memcpy((*bestFoundSolution).randomKeys, mainPopulation[0].randomKeys,
       //         sizeof(chromosome) * individualLen);
-      (*bestFoundSolution).randomKeys = mainPopulation[0].randomKeys;
+      bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
       // printf("Chegou\n");
       restart = 0;
     }
     // printf("Chegou");
-    printf("restart = %d \t best= %f\t", restart, (*bestFoundSolution).cost);
-    printSolution(problem, bestFoundSolution->randomKeys, stackLen,
-                  operationsBi, operationsU, operationsBiLen, operationsULen);
+    printf("restart = %d \t best= %f\t", restart, bestFoundSolution.cost);
+    printSolution(problem, bestFoundSolution.randomKeys, other);
     restart++;
   }
   /*
