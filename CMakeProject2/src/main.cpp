@@ -128,7 +128,8 @@ if(argc>11){
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/Test.in";
+  // std::string instance = "instances/Test.in";
+  std::string instance = "instances/Test (2).in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
