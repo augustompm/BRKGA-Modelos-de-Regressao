@@ -37,6 +37,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   other.stackLen = 15;
   other.maxConst = 3;
 
+  std::cout << "|ARGS| = " << argc << std::endl;
+
   if (argc > 1) other.stackLen = atoi(argv[1]);
   if (argc > 2) other.maxConst = atoi(argv[2]);
 
