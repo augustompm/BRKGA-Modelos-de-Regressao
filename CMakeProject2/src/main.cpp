@@ -12,44 +12,30 @@
 #include <brkgp/Evaluator.hpp>
 #include <brkgp/PrintIO.hpp>
 #include <brkgp/ReadIO.hpp>
-
-#include "brkgp/Utils.hpp"
-
-// using namespace std;
-
-// typedef unsigned short chromosome;
-
-// typedef struct{
-// chromosome randomKeys[LEN];
-// double cost;
-//} valuedChromosome;
+#include <brkgp/Utils.hpp>
 
 int main(int argc, char* argv[]) {  // BRKGA
   // arguments sequence
-  // stackLen,maxConst,populationLen,eliteSize,mutantSize,eliteBias,restartMax,noImprovmentMax,validation
-
-  int training = 70;
+  // 1: stackLen
+  // 2: maxConst
+  // 3: populationLen
+  // 4: eliteSize
+  // 5: mutantSize
+  // 6: eliteBias
+  // 7: restartMax
+  // 8: noImprovementMax
+  // 9: training (validation)
+  // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
+  // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
   Scenario other;
-  // char operationsBi[] = {'+', '-', '*', '/', '\0'};
   other.operationsBi = {'+', '-', '*', '/'};
-  // char operationsU[7];
-  // operationsU[0] = 'i';
-  // operationsU[1] = '\0';
   other.operationsU = {'i'};
-  //
-  // other.operationsBiLen = other.operationsBi.size();  // 4;
-  // other.operationsULen = other.operationsU.size();    // 1;
-  //
   other.stackLen = 15;
   other.maxConst = 3;
 
-  // tirar elses
-
-  /*if (argc>1)
-      stackLen = atoi(argv[1]);
-   if(argc>2)
-      maxConst = atoi(argv[2]);*/
+  if (argc > 1) other.stackLen = atoi(argv[1]);
+  if (argc > 2) other.maxConst = atoi(argv[2]);
 
   other.individualLen = 3 * other.stackLen + other.maxConst + 1;
 
@@ -59,62 +45,40 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.mutantSize = 5;
   params.eliteBias = 70;
   params.noImprovementMax = 10;
-  // params.restartMax = 1000;
-  params.restartMax = 10;
+  params.restartMax = 1000;
+  // params.restartMax = 10;
 
-  /*if (argc>3)
-      populationLen = atoi(argv[3]);
-   if(argc>4)
-      eliteSize = atoi(argv[4]);
-  if(argc>5)
-      mutantSize = atoi(argv[5]);
-   if(argc>6)
-      eliteBias = atoi(argv[6]);
-  if(argc>7)
-      restartMax = atoi(argv[7]);
-   if(argc>8)
-      noImprovimentMax = atoi(argv[8]);
-  if(argc>9)
-      training = atoi(argv[9]);
-  if(argc>10){
-      if (argv[10][0] == 't')
-    */
-  {
-    /*
-    operationsU[operationsULen] = 's';
-    operationsU[operationsULen + 1] = 'c';
-    operationsU[operationsULen + 2] = '\0';
-    operationsULen += 2;
-    */
-    other.operationsU.push_back('s');
-    other.operationsU.push_back('c');
+  if (argc > 3) params.populationLen = atoi(argv[3]);
+  if (argc > 4) params.eliteSize = atoi(argv[4]);
+  if (argc > 5) params.mutantSize = atoi(argv[5]);
+  if (argc > 6) params.eliteBias = atoi(argv[6]);
+  if (argc > 7) params.restartMax = atoi(argv[7]);
+  if (argc > 8) params.noImprovementMax = atoi(argv[8]);
+
+  int training = 70;
+  if (argc > 9) training = atoi(argv[9]);
+
+  if (argc > 10) {
+    if (argv[10][0] == 't') {
+      other.operationsU.push_back('s');
+      other.operationsU.push_back('c');
+    } else if (argv[10][0] == 'e') {
+      other.operationsU.push_back('a');
+      other.operationsU.push_back('v');
+      other.operationsU.push_back('r');
+    }
   }
-  /*else if (argv[10][0] == 'e')
-  {
-      operationsU[operationsULen] = 'a';
-      operationsU[operationsULen+1] = 'v';
-      operationsU[operationsULen+2] = 'r';
-      operationsU[operationsULen+3] = '\0';
-      operationsULen+= 3;
+
+  if (argc > 11) {
+    if (argv[11][0] == 't') {
+      other.operationsU.push_back('s');
+      other.operationsU.push_back('c');
+    } else if (argv[11][0] == 'e') {
+      other.operationsU.push_back('a');
+      other.operationsU.push_back('v');
+      other.operationsU.push_back('r');
+    }
   }
-}
-if(argc>11){
-  if (argv[11][0] == 't')
-  {
-      operationsU[operationsULen] = 's';
-      operationsU[operationsULen+1] = 'c';
-      operationsU[operationsULen+2] = '\0';
-      operationsULen+= 2;
-  }
-  else if (argv[11][0] == 'e')
-  {
-      operationsU[operationsULen] = 'a';
-      operationsU[operationsULen+1] = 'v';
-      operationsU[operationsULen+2] = 'r';
-      operationsU[operationsULen+3] = '\0';
-      operationsULen+= 3;
-  }
-}*/
 
   printf("Aqui foi 1");
   ValuedChromosome bestFoundSolution;

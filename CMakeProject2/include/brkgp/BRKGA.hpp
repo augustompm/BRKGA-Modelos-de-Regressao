@@ -14,46 +14,7 @@
 #include <brkgp/BRKGA.hpp>
 #include <brkgp/Evaluator.hpp>
 #include <brkgp/PrintIO.hpp>
-
-#include "brkgp/Utils.hpp"
-
-// using namespace std;
-
-/*
-int percentToInt(int porcentagem, int total);
-void individualGenerator(chromosome* individual, int seed, int individualLen);
-void mutantGenerator(valuedChromosome* auxPopulation, int eliteSize,
-                     int mutantSize, int seed, int individualLen);
-void crossover(valuedChromosome* population, valuedChromosome* auxPopulation,
-               int eliteSize, int mutantSize, int seed,
-               unsigned short eliteBias, int populationLen, int individualLen);
-void populationGenerator(valuedChromosome* population, int seed,
-                         int populationLen, int individualLen);
-void decoder(valuedChromosome* population, int nVars, int nConst,
-             char* operationsBi, char* operationsU, int tests, double** inputs,
-             double* outputs, vector<pair<double, double>>& vConst, int seed,
-             int populationLen, int stackLen, int maxConst, int operationsBiLen,
-             int operationsULen);
-char isRestart(valuedChromosome* auxPopulation, valuedChromosome* population,
-               int* noImproviment, int noImprovimentMax);
-void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
-                        int mutantSize, int seed, unsigned short eliteBias,
-                        int nVars, valuedChromosome* bestFoundSolution,
-                        int nConst, char* operationsBi, char* operationsU,
-                        int tests, double** inputs, double* outputs,
-                        vector<pair<double, double>>& vConst, int populationLen,
-                        int individualLen, int stackLen, int maxConst,
-                        int operationsBiLen, int operationsULen);
-                        */
-
-// using namespace std;
-
-// typedef unsigned short chromosome;
-
-// typedef struct{
-// chromosome randomKeys[LEN];
-// double cost;
-//} valuedChromosome;
+#include <brkgp/Utils.hpp>
 
 int percentToInt(int porcentagem, int total) {
   return ceil((porcentagem / 100.0) * total);
@@ -135,14 +96,6 @@ void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed,
   }
 }
 
-/*
-void decoder(valuedChromosome* population, int nVars, int nConst,
-             char* operationsBi, char* operationsU, int tests, double** inputs,
-             double* outputs, vector<pair<double, double>>& vConst, int seed,
-             int populationLen, int stackLen, int maxConst, int operationsBiLen,
-             int operationsULen) {
-*/
-
 void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
              int seed, int populationLen, const Scenario& other) {
   // problem
@@ -186,17 +139,6 @@ char isRestart(const Vec<ValuedChromosome>& auxPopulation,
   return 0;
 }
 
-/*
-void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
-                        int mutantSize, int seed, unsigned short eliteBias,
-                        int nVars, valuedChromosome* bestFoundSolution,
-                        int nConst, char* operationsBi, char* operationsU,
-                        int tests, double** inputs, double* outputs,
-                        vector<pair<double, double>>& vConst, int populationLen,
-                        int individualLen, int stackLen, int maxConst,
-                        int operationsBiLen, int operationsULen) {
-*/
-
 void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
                         int seed, ValuedChromosome& bestFoundSolution,
                         const Scenario& other, int training) {
@@ -215,7 +157,6 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
   uint16_t eliteBias = params.eliteBias;
   int populationLen = params.populationLen;
   // other
-
   auto& operationsBi = other.operationsBi;
   auto& operationsU = other.operationsU;
   int individualLen = other.individualLen;
@@ -234,17 +175,8 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
   bestFoundSolution.cost = INFINITY;
 
-  // auxPopulation =
-  //     (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
-  // mainPopulation =
-  //     (valuedChromosome*)calloc(populationLen, sizeof(valuedChromosome));
-
   for (int i = 0; i < populationLen; i++) {
-    // auxPopulation[i].randomKeys =
-    //     (chromosome*)calloc(individualLen, sizeof(chromosome));
     auxPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
-    // mainPopulation[i].randomKeys =
-    //     (chromosome*)calloc(individualLen, sizeof(chromosome));
     mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
   }
   eliteSize = percentToInt(eliteSize, populationLen);
@@ -259,14 +191,10 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
     seed++;
     populationGenerator(mainPopulation, seed, populationLen, individualLen);
     decoder(problem, mainPopulation, seed, populationLen, other);
-    // std::sort(mainPopulation, mainPopulation + populationLen, menorQue);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
     while (!(end)) {
-      // memcpy(auxPopulation,mainPopulation,sizeof(valuedChromosome)*populationLen);
       for (int i = 0; i < populationLen; i++) {
-        // memcpy(auxPopulation[i].randomKeys, mainPopulation[i].randomKeys,
-        //        sizeof(chromosome) * individualLen);
         auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
         auxPopulation[i].cost = mainPopulation[i].cost;
       }
@@ -281,13 +209,13 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
       decoder(problem, auxPopulation, seed, populationLen, other);
       // printPopulationCost(auxPopulation,populationLen);
       //
-      // std::sort(auxPopulation, auxPopulation + populationLen, menorQue);
       std::sort(auxPopulation.begin(), auxPopulation.end(), menorQue);
       //
       // printPopulationCost(auxPopulation,populationLen);
       // printSolution(auxPopulation[0].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
       // printf("cost = %f No Improviments =
       // %d\n",auxPopulation[0].cost,noImproviment);
+      //
       //
       // IMPORTANT: PASS 'noImprovement' BY REFERENCE!
       end = isRestart(auxPopulation, mainPopulation, noImprovement,
@@ -312,8 +240,6 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
       // printf("Erro Melhorado: %f\n",population[0].cost);
       bestFoundSolution.cost = mainPopulation[0].cost;  // alterar para
                                                         // memcpy
-      // memcpy((*bestFoundSolution).randomKeys, mainPopulation[0].randomKeys,
-      //         sizeof(chromosome) * individualLen);
       bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
       // printf("Chegou\n");
       restart = 0;
@@ -323,13 +249,4 @@ void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
     printSolution(problem, bestFoundSolution.randomKeys, other);
     restart++;
   }
-  /*
-  for (int i = 0; i < populationLen; i++) {
-    // printf("%p\t %p \n",mainPopulation,auxPopulation);
-    free(mainPopulation[i].randomKeys);
-    free(auxPopulation[i].randomKeys);
-  }
-  free(mainPopulation);
-  free(auxPopulation);
-  */
 }
