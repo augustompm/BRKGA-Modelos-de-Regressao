@@ -20,6 +20,7 @@ class valuedChromosome {
 
 // void printFile(int nVars, int tests, int nConst, double** inputs,
 //               double* outputs, Vec<Pair<double, double>>& vConst);
+/*
 void printCodChromosome(chromosome* individual, int len);
 void printDecodChromosome(chromosome* individual, int stackLen, int nVars,
                           int nConst, int operationsBiLen, int operationsULen);
@@ -28,6 +29,7 @@ void printSolution(chromosome* individual, int stackLen, int nVars, int nConst,
                    Vec<Pair<double, double>>& vConst, int operationsBiLen,
                    int operationsULen);
 void printPopulationCost(valuedChromosome* mainPopulation, int populationLen);
+*/
 
 // using namespace std;
 

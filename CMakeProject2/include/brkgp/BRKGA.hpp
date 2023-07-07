@@ -185,11 +185,9 @@ void almostBestSolution(int restartMax, int noImprovementMax, int eliteSize,
                         int operationsBiLen, int operationsULen) {
 */
 
-void almostBestSolution(const RProblem& problem, int restartMax,
-                        int noImprovementMax, int eliteSize, int mutantSize,
-                        int seed, unsigned short eliteBias,
-                        valuedChromosome* bestFoundSolution, char* operationsBi,
-                        char* operationsU, int training, int populationLen,
+void almostBestSolution(const RProblem& problem, const BRKGAParams& params,
+                        int seed, valuedChromosome* bestFoundSolution,
+                        char* operationsBi, char* operationsU, int training,
                         int individualLen, int stackLen, int maxConst,
                         int operationsBiLen, int operationsULen) {
   //
@@ -199,6 +197,14 @@ void almostBestSolution(const RProblem& problem, int restartMax,
   const Vec<Vec<double>>& inputs = problem.inputs;
   const Vec<double>& outputs = problem.outputs;
   const Vec<Pair<double, double>>& vConst = problem.vConst;
+  //
+
+  int restartMax = params.restartMax;
+  int noImprovementMax = params.noImprovementMax;
+  int eliteSize = params.eliteSize;
+  int mutantSize = params.mutantSize;
+  uint16_t eliteBias = params.eliteBias;
+  int populationLen = params.populationLen;
 
   //
   int noImprovement = 0;

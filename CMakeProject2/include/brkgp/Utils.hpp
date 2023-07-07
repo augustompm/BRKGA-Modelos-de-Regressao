@@ -21,3 +21,13 @@ struct RProblem {
   Vec<double> outputs;
   Vec<Pair<double, double>> vConst;
 };
+
+struct BRKGAParams {
+  int populationLen = 30;
+  int eliteSize = 25;
+  int mutantSize = 5;
+  uint16_t eliteBias = 70;
+  int noImprovementMax = 10;
+  // int restartMax = 1000;
+  int restartMax = 10;
+};

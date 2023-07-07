@@ -13,9 +13,11 @@
 #include <brkgp/PrintIO.hpp>
 #include <brkgp/ReadIO.hpp>
 
-using namespace std;
+#include "brkgp/Utils.hpp"
 
-typedef unsigned short chromosome;
+// using namespace std;
+
+// typedef unsigned short chromosome;
 
 // typedef struct{
 // chromosome randomKeys[LEN];
@@ -47,13 +49,14 @@ int main(int argc, char* argv[]) {  // BRKGA
   valuedChromosome bestFoundSolution;
   double auxBestFoundSolutionCost;
 
-  int populationLen = 30;
-  int eliteSize = 25;
-  int mutantSize = 5;
-  uint16_t eliteBias = 70;
-  int noImprovementMax = 10;
-  // int restartMax = 1000;
-  int restartMax = 10;
+  BRKGAParams params;
+  params.populationLen = 30;
+  params.eliteSize = 25;
+  params.mutantSize = 5;
+  params.eliteBias = 70;
+  params.noImprovementMax = 10;
+  // params.restartMax = 1000;
+  params.restartMax = 10;
 
   /*if (argc>3)
       populationLen = atoi(argv[3]);
@@ -160,11 +163,9 @@ if(argc>11){
 
   */
 
-  almostBestSolution(problem, restartMax, noImprovementMax, eliteSize,
-                     mutantSize, seed, eliteBias, &bestFoundSolution,
-                     operationsBi, operationsU, training, populationLen,
-                     individualLen, stackLen, maxConst, operationsBiLen,
-                     operationsULen);
+  almostBestSolution(problem, params, seed, &bestFoundSolution, operationsBi,
+                     operationsU, training, individualLen, stackLen, maxConst,
+                     operationsBiLen, operationsULen);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
@@ -183,11 +184,9 @@ if(argc>11){
   changeIO(problem.inputs, problem.outputs, training, problem.nVars,
            problem.tests, problem.nConst);
   printFile(problem);
-  almostBestSolution(problem, restartMax, noImprovementMax, eliteSize,
-                     mutantSize, seed, eliteBias, &bestFoundSolution,
-                     operationsBi, operationsU, training, populationLen,
-                     individualLen, stackLen, maxConst, operationsBiLen,
-                     operationsULen);
+  almostBestSolution(problem, params, seed, &bestFoundSolution, operationsBi,
+                     operationsU, training, individualLen, stackLen, maxConst,
+                     operationsBiLen, operationsULen);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
