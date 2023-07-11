@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <chrono>
 //
 #include <Scanner/Scanner.hpp>
 #include <brkgp/BRKGA.hpp>
@@ -18,6 +19,10 @@
 #include <brkgp/Utils.hpp>
 
 int main(int argc, char* argv[]) {  // BRKGA
+
+          // Início da contagem de tempo
+  auto start = std::chrono::high_resolution_clock::now();
+
   // arguments sequence
   // 1: stackLen
   // 2: maxConst
@@ -31,7 +36,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
-  int seed = 400002;
+  int seed = 876543210;
 
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
@@ -57,9 +62,9 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.mutantSize = 10;
   //params.eliteBias = 70;
   params.eliteBias = 85;
-  params.noImprovementMax = 500;
+  params.noImprovementMax = 20000;
   // params.restartMax = 1000;
-  params.restartMax = 20;
+  params.restartMax =20;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -103,7 +108,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-   std::string instance = "instances/Set1(1).in";
+   std::string instance = "instances/Eq. Feynman  (1).in";
   //std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -181,6 +186,19 @@ int main(int argc, char* argv[]) {  // BRKGA
 
   printf("Validation Mean: %lf  \n",
          (auxBestFoundSolutionCost + bestFoundSolution.cost) / 2);
+
+  //código para medir o tempo, abaixo;
+
+  // Fim da contagem de tempo
+  auto end = std::chrono::high_resolution_clock::now();
+
+  // Cálculo do tempo decorrido em segundos
+  std::chrono::duration<double> duration = end - start;
+  double executionTime = duration.count();
+
+  // Exibição do tempo de execução
+  std::cout << "Tempo de execucao: " << executionTime << " segundos"
+            << std::endl;
 
   return 0;
 }
