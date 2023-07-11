@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.eliteBias = 70;
   params.noImprovementMax = 10;
   // params.restartMax = 1000;
-  params.restartMax = 10;
+  params.restartMax = 20;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-   std::string instance = "instances/Set 1 - (2).in";
+   std::string instance = "instances/Set 1 - (4).in";
   //std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
