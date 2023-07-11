@@ -31,13 +31,15 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
-  int seed = 0;
+  int seed = 400002;
 
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i'};
-  other.stackLen = 15;
-  other.maxConst = 3;
+  //other.stackLen = 15;
+  other.stackLen = 41;
+  //other.maxConst = 3;
+  other.maxConst = 6;
 
   std::cout << "|ARGS| = " << argc << std::endl;
 
@@ -47,11 +49,15 @@ int main(int argc, char* argv[]) {  // BRKGA
   other.individualLen = 3 * other.stackLen + other.maxConst + 1;
 
   BRKGAParams params;
-  params.populationLen = 30;
+  //params.populationLen = 30;
+  params.populationLen = 100;
   params.eliteSize = 25;
-  params.mutantSize = 5;
-  params.eliteBias = 70;
-  params.noImprovementMax = 10;
+  //params.eliteSize = 25;
+  //params.mutantSize = 5;
+  params.mutantSize = 10;
+  //params.eliteBias = 70;
+  params.eliteBias = 85;
+  params.noImprovementMax = 500;
   // params.restartMax = 1000;
   params.restartMax = 20;
 
@@ -97,7 +103,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-   std::string instance = "instances/Set 1 - (4).in";
+   std::string instance = "instances/Set1(1).in";
   //std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -168,7 +174,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   printCodChromosome(bestFoundSolution.randomKeys);
   printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
   printSolution(problem, bestFoundSolution.randomKeys, other);
-  printf("best after: %lf\n", bestFoundSolution.cost);
+  printf("best before: %lf\n", bestFoundSolution.cost);
   bestFoundSolution.cost =
       solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
   printf("best after: %lf \n", bestFoundSolution.cost);

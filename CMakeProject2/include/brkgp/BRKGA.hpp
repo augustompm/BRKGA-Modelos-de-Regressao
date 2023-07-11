@@ -183,6 +183,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   // printf("%d\t%d\n",eliteSize,mutantSize);
   int mutationGrow = 0;
   int noImprovement = 0;
+  //int noImprovement = 5000;
   uint8_t end{0};
   int restart = 0;
   while (restart < restartMax) {
