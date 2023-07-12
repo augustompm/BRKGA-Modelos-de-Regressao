@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-   std::string instance = "instances/Eq. Feynman  (1).in";
+   std::string instance = "instances/Eq. Feynman  (1) (4).in";
   //std::string instance = "instances/Test.in";
   // std::string instance = "instances/xcubic_xsquare_px_5.in";
 
