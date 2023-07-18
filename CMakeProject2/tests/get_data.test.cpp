@@ -6,9 +6,9 @@
 #include <Scanner/Scanner.hpp>
 #include <brkgp/ReadIO.hpp>
 
-using namespace scannerpp;
+using namespace scannerpp;  // NOLINT
 
-TEST_CASE("Teste1") {
+TEST_CASE("Teste1-X") {
   int x = 10;
   REQUIRE(x == 10);
 }

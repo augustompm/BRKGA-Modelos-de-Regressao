@@ -6,10 +6,10 @@
 #include <stdlib.h>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <chrono>
 //
 #include <Scanner/Scanner.hpp>
 #include <brkgp/BRKGA.hpp>
@@ -20,7 +20,7 @@
 
 int main(int argc, char* argv[]) {  // BRKGA
 
-          // Início da contagem de tempo
+  // Início da contagem de tempo
   auto start = std::chrono::high_resolution_clock::now();
 
   // arguments sequence
@@ -41,9 +41,9 @@ int main(int argc, char* argv[]) {  // BRKGA
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i'};
-  //other.stackLen = 15;
+  // other.stackLen = 15;
   other.stackLen = 41;
-  //other.maxConst = 3;
+  // other.maxConst = 3;
   other.maxConst = 6;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -54,17 +54,17 @@ int main(int argc, char* argv[]) {  // BRKGA
   other.individualLen = 3 * other.stackLen + other.maxConst + 1;
 
   BRKGAParams params;
-  //params.populationLen = 30;
+  // params.populationLen = 30;
   params.populationLen = 100;
   params.eliteSize = 25;
-  //params.eliteSize = 25;
-  //params.mutantSize = 5;
+  // params.eliteSize = 25;
+  // params.mutantSize = 5;
   params.mutantSize = 10;
-  //params.eliteBias = 70;
+  // params.eliteBias = 70;
   params.eliteBias = 85;
   params.noImprovementMax = 20000;
   // params.restartMax = 1000;
-  params.restartMax =20;
+  params.restartMax = 20;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -108,9 +108,9 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-   std::string instance = "instances/Eq. Feynman  (1) (4).in";
-  //std::string instance = "instances/Test.in";
-  // std::string instance = "instances/xcubic_xsquare_px_5.in";
+  std::string instance = "instances/Eq. Feynman  (1) (4).in";
+  // std::string instance = "instances/Test.in";
+  //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
   // Trabalho/Temporário/Projeto/CMakeProject2/instances_short_range/generate_india_function_short_range_1.in";
@@ -155,7 +155,24 @@ int main(int argc, char* argv[]) {  // BRKGA
 
   */
 
-  run_brkga(problem, params, seed, bestFoundSolution, other, training);
+  // =====================================================================
+  // FOR EUCLIDEAN DISTANCE!
+  // STACKLEN = 9
+  // 5001   5001      0      3000  5001 5001  0 3000  3000        | 4000  2000
+  // ?   ?  8000 6000 ?  ? ?      | ?   ?   4000  8000  ? ? 4000 8000  4000
+  Vec<chromosome> initialSol = {5001, 5001, 0,    3000, 5001, 5001, 0,
+                                3000, 3000, 4000, 2000, 9999, 9999, 8000,
+                                6000, 9999, 9999, 9999, 9999, 9999, 4000,
+                                8000, 9999, 9999, 4000, 8000, 4000};
+
+  std::optional<Vec<chromosome>> opInitialSol = std::nullopt;
+
+  // IF EUCLEAN DISTANCE & STACKLEN = 9
+  opInitialSol = initialSol;
+  // =====================================================================
+
+  run_brkga(problem, params, seed, bestFoundSolution, other, training,
+            opInitialSol);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
@@ -171,7 +188,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   changeIO(problem.inputs, problem.outputs, training, problem.nVars,
            problem.tests, problem.nConst);
   printFile(problem);
-  run_brkga(problem, params, seed, bestFoundSolution, other, training);
+  run_brkga(problem, params, seed, bestFoundSolution, other, training,
+            opInitialSol);
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
@@ -187,7 +205,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   printf("Validation Mean: %lf  \n",
          (auxBestFoundSolutionCost + bestFoundSolution.cost) / 2);
 
-  //código para medir o tempo, abaixo;
+  // código para medir o tempo, abaixo;
 
   // Fim da contagem de tempo
   auto end = std::chrono::high_resolution_clock::now();

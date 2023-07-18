@@ -11,6 +11,7 @@
 // C++
 #include <algorithm>
 #include <iostream>
+#include <optional>  // C++17
 #include <stack>
 #include <vector>
 //
@@ -137,7 +138,7 @@ char isRestart(const Vec<ValuedChromosome>& auxPopulation,
 
 void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
-               int training) {
+               int training, std::optional<Vec<chromosome>> initialSolution) {
   // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
@@ -183,12 +184,17 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   // printf("%d\t%d\n",eliteSize,mutantSize);
   int mutationGrow = 0;
   int noImprovement = 0;
-  //int noImprovement = 5000;
+  // int noImprovement = 5000;
   uint8_t end{0};
   int restart = 0;
   while (restart < restartMax) {
     seed++;
     populationGenerator(mainPopulation, seed, populationLen, individualLen);
+    if (initialSolution) {
+      // if exists 'initialSolution'
+      mainPopulation[0].randomKeys = *initialSolution;
+      initialSolution = std::nullopt;  // disable optional input
+    }
     decoder(problem, mainPopulation, seed, populationLen, other);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
