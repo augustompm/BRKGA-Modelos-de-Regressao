@@ -42,7 +42,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i'};
   // other.stackLen = 15;
-  other.stackLen = 41;
+  // other.stackLen = 41;
+  other.stackLen = 9;
   // other.maxConst = 3;
   other.maxConst = 6;
 
