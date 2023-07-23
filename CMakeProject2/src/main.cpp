@@ -40,10 +40,10 @@ int main(int argc, char* argv[]) {  // BRKGA
 
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
-  other.operationsU = {'i'};
+  other.operationsU = {'i', 'r', 'a'};
   // other.stackLen = 15;
-  // other.stackLen = 41;
-  other.stackLen = 9;
+  // other.stackLen = 9;
+  other.stackLen = 41;
   // other.maxConst = 3;
   other.maxConst = 6;
 
@@ -109,7 +109,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/Eq. Feynman  (1) (4).in";
+  std::string instance = "instances/Eq. Feynman  (5) (1).in";
   // std::string instance = "instances/Test.in";
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
