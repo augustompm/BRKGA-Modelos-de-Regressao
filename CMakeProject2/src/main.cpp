@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   int seed = 876543210;
 
   Scenario other;
-  other.operationsBi = {'+', '-', '*', '/'};
+  other.operationsBi = { '+','-', '*', '/'};
   other.operationsU = {'i', 'r', 'a'};
   // other.stackLen = 15;
   // other.stackLen = 9;
@@ -109,7 +109,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/Eq. Feynman  (5) (1).in";
+  std::string instance = "instances/Eq. Feynman  (3) (1).in";
   // std::string instance = "instances/Test.in";
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
