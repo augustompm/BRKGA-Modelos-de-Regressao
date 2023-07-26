@@ -36,11 +36,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
-  int seed = 876543210;
+  int seed = 728462315;
 
   Scenario other;
   other.operationsBi = { '+','-', '*', '/'};
-  other.operationsU = {'i', 'r', 'a'};
+  other.operationsU = {'i', 'r'};
   // other.stackLen = 15;
   // other.stackLen = 9;
   other.stackLen = 41;
