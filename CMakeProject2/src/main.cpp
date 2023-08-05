@@ -36,11 +36,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
-  int seed = 728462315;
+  int seed = 876543210;
 
   Scenario other;
   other.operationsBi = { '+','-', '*', '/'};
-  other.operationsU = {'i', 'r'};
+  other.operationsU = {'i'};
   // other.stackLen = 15;
   // other.stackLen = 9;
   other.stackLen = 41;
@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {  // BRKGA
     }
   }
 
-  printf("Aqui foi 1");
+  //printf("Aqui foi 1");
   ValuedChromosome bestFoundSolution;
   bestFoundSolution.cost = -1;
   bestFoundSolution.randomKeys = Vec<chromosome>(other.individualLen, 0);
@@ -109,19 +109,19 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/Eq. Feynman  (3) (1).in";
+  std::string instance = "instances/Eq. Feynman  (2) (5).in";
   // std::string instance = "instances/Test.in";
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
-  // Trabalho/Temporário/Projeto/CMakeProject2/instances_short_range/generate_india_function_short_range_1.in";
   // char instance[] =
   // "instances_short_range/generate_india_function_short_range_1.in"; char
   // instance[] = "instances_short_range/lit3_BSR_func1_short_range1.in";
 
-  printf("2");
+  //printf("2");
 
   Scanner scanner(new File(instance));
+  //printf("3");
 
   //
   RProblem problem;
