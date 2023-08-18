@@ -36,11 +36,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   // 10: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
-  int seed = 876543210;
+  int seed = 728462315;
 
   Scenario other;
   other.operationsBi = { '+','-', '*', '/'};
-  other.operationsU = {'i'};
+  other.operationsU = {'i', 'r','a'};
   // other.stackLen = 15;
   // other.stackLen = 9;
   other.stackLen = 41;
@@ -109,7 +109,7 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/xcubic_xsquare_px_1.in";
+  std::string instance = "instances/Eq. Feynman  (10) (4).in";
   // std::string instance = "instances/Test.in";
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
