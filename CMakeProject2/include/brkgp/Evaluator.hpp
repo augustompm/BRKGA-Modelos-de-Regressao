@@ -78,6 +78,8 @@ double computeError(double v1, double v2) {
 //  - Hipótese: quando stack size = 1?
 //  - TALVEZ... Marcador de chave aleatória que só é ativado se stack size = 1.
 // IDEIA 3: INVOCAR 'mathomatic' para simplificar equações... Fazer só no Best?
+// IDEIA 4: USAR UNIDADE SIMBOLICA COMO CRITERIO DE SIMPLICIDADE AO LONGO DA
+// EXECUCAO...
 //
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
