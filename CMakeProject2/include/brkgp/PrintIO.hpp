@@ -169,7 +169,11 @@ std::string stringExecUnaryOp(int idop, std::string v1,
     ss << "\\cos(" << v1 << ")";
     return ss.str();
   }
-  if (operationsU[idop] == 'i') return v1;
+  if (operationsU[idop] == 'i') {
+    std::stringstream ss;
+    ss << "(" << v1 << ")";
+    return ss.str();
+  }
   if (operationsU[idop] == 'a') {
     std::stringstream ss;
     ss << "{" << v1 << "^2}";
