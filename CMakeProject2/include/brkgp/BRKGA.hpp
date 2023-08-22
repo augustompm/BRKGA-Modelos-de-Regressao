@@ -113,8 +113,14 @@ void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
   //
   for (int i = 0; i < populationLen; i++) {
     if (population[i].cost == 0) {
-      population[i].trueStackSize = stackAdjustment(
-          population[i].randomKeys, stackLen, nVars, nConst, maxConst, seed);
+      // store seed used on stack adjustment...
+      population[i].seed = seed;
+      population[i].trueStackSize =
+          stackAdjustment(population[i].randomKeys, stackLen, nVars, nConst,
+                          maxConst, population[i].seed);
+      // std::cout << "i=" << i << " trueStackSize=" <<
+      // population[i].trueStackSize
+      //           << "/" << stackLen << " seed = " << seed << std::endl;
       population[i].cost =
           solutionEvaluator(problem, population[i].randomKeys, other, 0);
     }
@@ -240,8 +246,11 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                      // 0.0000001)  && (mainPopulation->trueStackSize <
                      // bestFoundSolution->trueStackSize))){
       // printf("Erro Melhorado: %f\n",population[0].cost);
-      bestFoundSolution.cost = mainPopulation[0].cost;
-      bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
+      //
+      // bestFoundSolution.cost = mainPopulation[0].cost;
+      // bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
+      bestFoundSolution = mainPopulation[0];
+      //
       // printf("Chegou\n");
       restart = 0;
     }

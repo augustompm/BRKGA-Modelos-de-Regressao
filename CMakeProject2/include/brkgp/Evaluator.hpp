@@ -68,6 +68,17 @@ double computeError(double v1, double v2) {
   return sqrt((v1 - v2) * (v1 - v2));
 }
 
+// stackAdjustment: ajusta chaves aleatórias do indivíduo, caso seja
+// impossível decodificá-lo! Por exemplo, operações binárias seguidas
+// sem operandos disponíveis na pilha!
+// IDEIA: usar realStackValue para representar o fim do indivíduo, ao
+// invés de ajustá-lo!
+// EXEMPLO: fazer vetor simples para x² (só precisa de stackLen=2)!
+// IDEIA 2: QUANDO PARAR DECODIFICAÇÃO?
+//  - Hipótese: quando stack size = 1?
+//  - TALVEZ... Marcador de chave aleatória que só é ativado se stack size = 1.
+// IDEIA 3: INVOCAR 'mathomatic' para simplificar equações... Fazer só no Best?
+//
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
   // 5303   358   3064   9156   4199   1320   636   7306   2445   6166   3572
@@ -82,34 +93,45 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
   int idConst = 0;
   int trueStackLen = 0;
   for (int i = 0; i < stackLen; i++) {
+    // TODO(igormcoelho): verificar esse número 4!!!
     decodValue = floor((individual[i] / 10000.0) * 4) - 1;
     idConst =
         floor((individual[stackLen + i] / 10000.0) * (nVars + nConst)) - nConst;
+    // TODO(igormcoelho): verificar esse número 2!!!
     if (decodValue != 2) {
       auxSomador += decodValue;
     }
     if (auxSomador < 1) {
-      if (individual[i] < 2500)
+      // ALTERANDO OPERAÇÕES!
+      if (individual[i] < 2500) {
+        // std::cout << "WARNING! ALTERANDO individual COD0!" << std::endl;
         individual[i] += 5000;
-
-      else if (individual[i] >= 7500)  // se der testar depois, no caso i=0
+      } else if (individual[i] >= 7500) {  // se der testar depois, no caso i=0
+        // std::cout << "WARNING! ALTERANDO individual COD1!" << std::endl;
         individual[i] -= 2500;
-
-      else  // se der testar depois, no caso i=0
+      } else {  // se der testar depois, no caso i=0
+        // std::cout << "WARNING! ALTERANDO individual COD2!" << std::endl;
         individual[i] += 2500;
+      }
       auxSomador = somador + 1;
     }
     if (auxSomador > (stackLen - i)) {
       if (somador == 1) {
+        // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
         individual[i] += 2500;
         auxSomador = 1;
       } else if (somador > 1) {
-        if ((individual[i] >= 2500) && (individual[i] < 5000))
+        if ((individual[i] >= 2500) && (individual[i] < 5000)) {
+          // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
           individual[i] -= 2500;
-        else if (individual[i] >= 7500)  // se der testar depois, no caso i=0
+        } else if (individual[i] >=
+                   7500) {  // se der testar depois, no caso i=0
+          // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
           individual[i] -= 7500;
-        else  // se der testar depois, no caso i=0
+        } else {  // se der testar depois, no caso i=0
+          // std::cout << "WARNING! ALTERANDO individual COD6!" << std::endl;
           individual[i] -= 5000;
+        }
         auxSomador = somador - 1;
       }
     }
@@ -117,6 +139,7 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
       contConst++;
       if (contConst > maxConst) {
         srand(seed);
+        // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
         individual[stackLen + i] =
             ((10000.0 / (nVars + nConst)) * nConst) +
             ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);

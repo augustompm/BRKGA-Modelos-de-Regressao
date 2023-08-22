@@ -48,4 +48,6 @@ class ValuedChromosome {
   Vec<chromosome> randomKeys;
   double cost;
   int trueStackSize;
+  // seed parameter used during StackAdjustment!
+  int seed;
 };

@@ -8,7 +8,11 @@
 #include <stdio.h>
 #include <string.h>
 // C++
+#include <sstream>
+#include <stack>
+#include <string>
 #include <utility>
+#include <vector>
 //
 #include <brkgp/Utils.hpp>
 
@@ -81,20 +85,21 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
   int decodValue;
   int cont = 0;
   double rangeConst = 0;
-  for (int i = 0; i < stackLen; i++) {
-    decodValue = floor((individual[i] / 10000.0) * 4) - 1;
+  std::cout << "stackLen: " << stackLen << " => ";
+  for (int j = 0; j < stackLen; j++) {
+    decodValue = floor((individual[j] / 10000.0) * 4) - 1;
     // printf("")
     if (decodValue == -1) {
-      decodValue = floor((individual[i + 2 * stackLen] / 10000.0) *
+      decodValue = floor((individual[j + 2 * stackLen] / 10000.0) *
                          other.operationsBi.size());
       printf("%c ", other.operationsBi[decodValue]);
     } else if (decodValue == 0) {
-      decodValue = floor((individual[i + 2 * stackLen] / 10000.0) *
+      decodValue = floor((individual[j + 2 * stackLen] / 10000.0) *
                          other.operationsU.size());
       printf("%c ", other.operationsU[decodValue]);
     } else if (decodValue == 1) {
       decodValue =
-          floor((individual[i + stackLen] / 10000.0) * (nVars + nConst)) -
+          floor((individual[j + stackLen] / 10000.0) * (nVars + nConst)) -
           nConst;
       if (decodValue < 0) {
         decodValue += nConst;
@@ -115,6 +120,180 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
     }
   }
   printf("\n");
+}
+
+// =================================================
+//                  LaTeX printing
+// =================================================
+
+std::string stringExecBinaryOp(int idop, std::string v1, std::string v2,
+                               const std::vector<char>& operationsBi) {
+  if (operationsBi[idop] == '+') {
+    std::stringstream ss;
+    ss << "(" << v1 << " + " << v2 << ")";
+    return ss.str();
+  }
+  if (operationsBi[idop] == '-') {
+    std::stringstream ss;
+    ss << "(" << v1 << " - " << v2 << ")";
+    return ss.str();
+  }
+  if (operationsBi[idop] == '*') {
+    std::stringstream ss;
+    ss << "(" << v1 << " * " << v2 << ")";
+    return ss.str();
+  }
+  if (operationsBi[idop] == '/') {
+    std::stringstream ss;
+#ifdef STRING_FRAC
+    ss << "\\frac{" << v1 << "}{" << v2 << "}";
+#else
+    ss << "(" << v1 << "/" << v2 << ")";
+#endif
+    return ss.str();
+  }
+  // NO OPERATION BINARY
+  return "NOP";
+}
+
+std::string stringExecUnaryOp(int idop, std::string v1,
+                              const std::vector<char>& operationsU) {
+  if (operationsU[idop] == 's') {
+    std::stringstream ss;
+    ss << "\\sin(" << v1 << ")";
+    return ss.str();
+  }
+
+  if (operationsU[idop] == 'c') {
+    std::stringstream ss;
+    ss << "\\cos(" << v1 << ")";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'i') return v1;
+  if (operationsU[idop] == 'a') {
+    std::stringstream ss;
+    ss << "{" << v1 << "^2}";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'v') {
+    std::stringstream ss;
+    ss << "{" << v1 << "^3}";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'r') {
+    std::stringstream ss;
+    ss << "\\sqrt{" << v1 << "}";
+    return ss.str();
+  }
+  // NOP UNARY
+  return "NOPU";
+}
+
+std::string printSolution2(const RProblem& problem,
+                           const Vec<chromosome>& individual,
+                           const Scenario& other) {
+  // problem counters
+  const int nVars = problem.nVars;
+  const int nConst = problem.nConst;
+  // scenario
+  const int stackLen = other.stackLen;
+
+  std::stack<std::string> stk;
+  int contSeed = 0;
+
+  for (int j = 0; j < stackLen; j++) {
+    // cout << "begin var i=" << i << " / sol_size=" << rep.vstack.size() <<
+    // endl;
+    //  case: push
+    //  -1 0 1 2
+    //  2 3
+    // push variable or constant
+    if ((individual[j] < 7500) && (individual[j] >= 5000)) {
+      int idVar =
+          floor((individual[stackLen + j] / 10000.0) * (nVars + nConst)) -
+          nConst;
+      // printf("%d\n",idVar);
+      double varValue = 0;
+      // push variable
+      if (idVar >= 0) {
+        // VARIABLE NAME!
+        std::stringstream ss;
+        if (idVar == 0)
+          ss << "x";
+        else if (idVar == 1)
+          ss << "y";
+        else if (idVar == 2)
+          ss << "z";
+        else
+          ss << "var" << idVar;
+        stk.push(ss.str());
+      } else {
+        // push constant
+        idVar += nConst;
+        if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
+          varValue = problem.vConst[idVar].first;
+          std::stringstream ss;
+          ss << varValue;
+          stk.push(ss.str());
+        } else {
+          chromosome seedConst = individual[3 * stackLen + contSeed];
+          srand(seedConst);
+          varValue = rand() % (int)(problem.vConst[idVar].second -
+                                    problem.vConst[idVar].first + 1) +
+                     problem.vConst[idVar].first;
+          std::stringstream ss;
+          ss << varValue;
+          stk.push(ss.str());
+          contSeed++;
+        }
+      }
+    }
+
+    // case: pop Binary Operation
+    if (individual[j] < 2500) {
+      // pop operation
+      int idOpBi =
+          floor((individual[2 * stackLen + j] / 10000.0) *
+                other.operationsBi.size());  // 4 is lenght of operationBi
+      // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
+      //
+      std::string v1 = stk.top();
+      stk.pop();
+      std::string v2 = stk.top();
+      stk.pop();
+      std::string binaryProduct =
+          stringExecBinaryOp(idOpBi, v1, v2, other.operationsBi);
+      stk.push(binaryProduct);
+    }
+
+    // pop: Unary Operation
+    if ((individual[j] < 5000) && (individual[j] >= 2500)) {
+      int idOpU = floor((individual[2 * stackLen + j] / 10000.0) *
+                        other.operationsU.size());  // 3 is lenght of operationU
+      // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
+      //
+      std::string v1 = stk.top();
+      stk.pop();
+      stk.push(stringExecUnaryOp(idOpU, v1, other.operationsU));
+    }
+
+    if (individual[j] >= 7500) {
+      //
+      // cout << "i=" << i << " -> stack size = " << stk.size() << endl;
+    }
+
+    //
+    // cout << "finished t= " << t << endl;
+    // take value from stack
+    // assert(stk.size() == 1);
+  }
+
+  std::string val = stk.top();
+  stk.pop();
+  //
+  // compare with expected value
+
+  return val;
 }
 
 void printPopulationCost(const Vec<ValuedChromosome>& mainPopulation,

@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: MIT
 // Copyright (C) 2023
 
+#include <assert.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+//
 
 #include <algorithm>
 #include <chrono>
@@ -39,8 +41,10 @@ int main(int argc, char* argv[]) {  // BRKGA
   int seed = 728462315;
 
   Scenario other;
-  other.operationsBi = { '+','-', '*', '/'};
-  other.operationsU = {'i', 'r','a'};
+  other.operationsBi = {'+', '-', '*', '/'};
+  // other.operationsU = {'i', 'r', 'a'};
+  other.operationsU = {'i', 'a'};
+
   // other.stackLen = 15;
   // other.stackLen = 9;
   other.stackLen = 41;
@@ -63,9 +67,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   params.mutantSize = 10;
   // params.eliteBias = 70;
   params.eliteBias = 85;
-  params.noImprovementMax = 20000;
+  // params.noImprovementMax = 20000;
+  params.noImprovementMax = 10;
   // params.restartMax = 1000;
-  params.restartMax = 20;
+  // params.restartMax = 20;
+  params.restartMax = 5;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -99,7 +105,7 @@ int main(int argc, char* argv[]) {  // BRKGA
     }
   }
 
-  //printf("Aqui foi 1");
+  // printf("Aqui foi 1");
   ValuedChromosome bestFoundSolution;
   bestFoundSolution.cost = -1;
   bestFoundSolution.randomKeys = Vec<chromosome>(other.individualLen, 0);
@@ -109,8 +115,10 @@ int main(int argc, char* argv[]) {  // BRKGA
   // char instance[] = "instances/xcubic_xsquare_px_12.in";
   // char instance[] = "instances/xcubic_xsquare_px_5.in";
   //
-  std::string instance = "instances/Eq. Feynman  (10) (4).in";
-  // std::string instance = "instances/Test.in";
+  //
+  // std::string instance = "instances/Eq. Feynman  (10) (4).in";
+  //
+  std::string instance = "instances/Test.in";
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
@@ -118,10 +126,10 @@ int main(int argc, char* argv[]) {  // BRKGA
   // "instances_short_range/generate_india_function_short_range_1.in"; char
   // instance[] = "instances_short_range/lit3_BSR_func1_short_range1.in";
 
-  //printf("2");
+  // printf("2");
 
   Scanner scanner(new File(instance));
-  //printf("3");
+  // printf("3");
 
   //
   RProblem problem;
@@ -180,7 +188,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
   printCodChromosome(bestFoundSolution.randomKeys);
   printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
-  printSolution(problem, bestFoundSolution.randomKeys, other);
+  std::cout << "printSolution: NOT USED" << std::endl;
+  // printSolution(problem, bestFoundSolution.randomKeys, other);
+  std::cout << "trueStackSize=" << bestFoundSolution.trueStackSize << std::endl;
+  std::string eq = printSolution2(problem, bestFoundSolution.randomKeys, other);
+  std::cout << "printSolution2: " << eq << std::endl;
   bestFoundSolution.cost =
       solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
   printf("best: %lf \n", bestFoundSolution.cost);
@@ -197,7 +209,11 @@ int main(int argc, char* argv[]) {  // BRKGA
   // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
   printCodChromosome(bestFoundSolution.randomKeys);
   printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
+  std::cout << "printSolution (ENTENDER E REMOVER): " << std::endl;
   printSolution(problem, bestFoundSolution.randomKeys, other);
+  std::string eq2 =
+      printSolution2(problem, bestFoundSolution.randomKeys, other);
+  std::cout << "printSolution2: " << eq2 << std::endl;
   printf("best before: %lf\n", bestFoundSolution.cost);
   bestFoundSolution.cost =
       solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
