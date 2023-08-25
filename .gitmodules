@@ -1,0 +1,6 @@
+[submodule "CMakeProject2/ginac"]
+	path = CMakeProject2/ginac
+	url = git://www.ginac.de/ginac.git
+[submodule "CMakeProject2/cln"]
+	path = CMakeProject2/cln
+	url = git://www.ginac.de/cln.git

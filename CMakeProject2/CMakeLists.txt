@@ -21,6 +21,26 @@ target_include_directories(Minha_pasta_external INTERFACE external/)
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances_short_range DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
+# =================== GINAC + CLN ======================
+
+# INSTALL CLN: https://www.ginac.de/CLN/
+#
+## Set the path to the CLN library
+##set(CLN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/cln)
+## Add the CLN library
+##add_subdirectory(${CLN_INCLUDE_DIR})
+# ON UBUNTU:
+#RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#&& apt-get -y install --no-install-recommends libcln-dev
+
+# Set the path to the GiNaC library
+set(GINAC_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/ginac)
+
+# Add the GiNaC library
+add_subdirectory(${GINAC_INCLUDE_DIR})
+
+target_link_libraries(aplicacao PRIVATE ginac)
+
 #==========
 #  TESTS
 #----------
