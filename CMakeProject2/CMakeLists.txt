@@ -21,6 +21,13 @@ target_include_directories(Minha_pasta_external INTERFACE external/)
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances_short_range DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
+# ============ GMP from CONAN ==============
+
+# ...
+find_package(gmp REQUIRED)
+# ...
+target_link_libraries(aplicacao PRIVATE gmp::gmp)
+
 # =================== GINAC + CLN ======================
 
 # INSTALL CLN: https://www.ginac.de/CLN/

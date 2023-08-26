@@ -52,6 +52,9 @@ RUN pip install cpplint
 RUN python3 -m pip install bumpver
 
 # install CLN
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-     && apt-get -y install --no-install-recommends libcln-dev
+#RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends libcln-dev
      
+RUN python3 -m pip install conan
+
+RUN conan profile detect

@@ -57,7 +57,7 @@ double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
     if (v1 < 0)
       return INFINITY;
     else
-      return pow(v1, 1 / 2);
+      return ::pow(v1, 1 / 2);
   }
   return 0.0;
 }
