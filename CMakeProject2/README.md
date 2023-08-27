@@ -16,7 +16,7 @@ conan profile detect
 On CMakeProject2, load conan auto-generated cmake files into build/ folder:
 
 ```
-conan install conanfile.txt --output-folder=build --build=missing
+conan install conanfile.txt --output-folder=build-conan --build=missing
 ```
 
 Update your CMakePresets.json to include conan:
@@ -24,7 +24,7 @@ Update your CMakePresets.json to include conan:
 ```{.json}
 "cacheVariables": {
     "CMAKE_BUILD_TYPE": "Release",
-    "CMAKE_TOOLCHAIN_FILE": "build/conan_toolchain.cmake"
+    "CMAKE_TOOLCHAIN_FILE": "build-conan/conan_toolchain.cmake"
 },
 ```
 

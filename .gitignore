@@ -365,3 +365,5 @@ FodyWeavers.xsd
 # GENERAL
 
 build/
+build-conan/
+CMakeUserPresets.json

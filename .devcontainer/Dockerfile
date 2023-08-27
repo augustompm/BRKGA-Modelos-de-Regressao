@@ -20,6 +20,33 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
      fi \
      && rm -f /tmp/reinstall-cmake.sh
 
+# NOTE on cmake:
+# ubuntu 22 by default is 3.22.1 (old)
+# conan requires at least 3.23 for preset functionalities
+# next steps will get latest stable version... currently 3.27.4
+
+# install base for latest cmake
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+     && apt-get -y install --no-install-recommends gpg wget git
+
+# ==== get cmake/kitware keys
+# RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
+
+# ==== cmake on ubuntu 22
+# RUN echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ jammy main' | sudo tee /etc/apt/sources.list.d/kitware.list >/dev/null
+
+# ==== rotate kitware keys
+#RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends kitware-archive-keyring
+
+# ==== latest cmake
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends cmake
+
+# =============================
+# =============================
+# =============================
+
 # [Optional] Uncomment this section to install additional vcpkg ports.
 # RUN su vscode -c "${VCPKG_ROOT}/vcpkg install <your-port-name-here>"
 

@@ -21,32 +21,45 @@ target_include_directories(Minha_pasta_external INTERFACE external/)
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances_short_range DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-# ============ GMP from CONAN ==============
+# ============ SETUP GINAC, CLN AND GMP ==============
 
-# ...
-find_package(gmp REQUIRED)
-# ...
+# =============================
+# MAKE CLN FIND THE GMP LIBRARY
+# =============================
+#
+# First, activate conan on CMakePresets.json with:
+#    =>  "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake",
+# Note that conan should get local GMP library and setup cmake paths to include it!
+message(STATUS "MAIN CMAKE_LIBRARY_PATH:" ${CMAKE_LIBRARY_PATH})
+message(STATUS "MAIN CMAKE_INCLUDE_PATH:" ${CMAKE_INCLUDE_PATH})
+# Expects (for linux/devcontainer):
+# [cmake] -- MAIN CMAKE_LIBRARY_PATH:/root/.conan2/p/gmp4ac8a4314e429/p/lib
+# [cmake] -- MAIN CMAKE_INCLUDE_PATH:/root/.conan2/p/gmp4ac8a4314e429/p/include
+# ---------------------------------------------
+# Allow cln/cmake/modules/FindGMP.cmake to work
+# ---------------------------------------------
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+# -----------------------------------------------------------------------------------------
+# Override build/gmp-config.cmake from conan (if toolchain is activated) - prefix is first!
+# Note that we need to follow CLN recipes, not conan... as they are slightly different!
+# conan demands find_package(gmp ...) while CLN deals with find_package(GMP ...)
+# So, conan works with gmp_INCLUDE_DIR and CLN requires GMP_INCLUDE_DIR
+# -----------------------------------------------------------------------------------------
+set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+# invoke FindGMP.cmake from CLN
+find_package(GMP REQUIRED)
+# This is just a small test, to make sure GMP is included in application, at this point.
 target_link_libraries(aplicacao PRIVATE gmp::gmp)
 
-# =================== GINAC + CLN ======================
-
-# INSTALL CLN: https://www.ginac.de/CLN/
+# Allow GINAC to find CLN source files
+set(CLN_SOURCE_DIR ${CMAKE_SOURCE_DIR}/cln)
 #
-## Set the path to the CLN library
-##set(CLN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/cln)
-## Add the CLN library
-##add_subdirectory(${CLN_INCLUDE_DIR})
-# ON UBUNTU:
-#RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#&& apt-get -y install --no-install-recommends libcln-dev
-
-# Set the path to the GiNaC library
-set(GINAC_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/ginac)
-
-# Add the GiNaC library
-add_subdirectory(${GINAC_INCLUDE_DIR})
-
+add_subdirectory(ginac)
+# ------------------------------------
+# build ginac into current application
+# ------------------------------------
 target_link_libraries(aplicacao PRIVATE ginac)
+
 
 #==========
 #  TESTS

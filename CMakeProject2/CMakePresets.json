@@ -45,7 +45,7 @@
             "installDir": "${sourceDir}/out/install/${presetName}",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_TOOLCHAIN_FILE": "build/conan_toolchain.cmake"
+                "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake"
             },
             "condition": {
                 "type": "equals",
@@ -66,7 +66,7 @@
             "installDir": "${sourceDir}/out/install/${presetName}",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_TOOLCHAIN_FILE": "build/conan_toolchain.cmake"
+                "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake"
             },
             "condition": {
                 "type": "equals",
