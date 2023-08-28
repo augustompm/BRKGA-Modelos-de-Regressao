@@ -38,23 +38,23 @@ message(STATUS "MAIN CMAKE_INCLUDE_PATH:" ${CMAKE_INCLUDE_PATH})
 # ---------------------------------------------
 # Allow cln/cmake/modules/FindGMP.cmake to work
 # ---------------------------------------------
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/cln/cmake/modules")
 # -----------------------------------------------------------------------------------------
 # Override build/gmp-config.cmake from conan (if toolchain is activated) - prefix is first!
 # Note that we need to follow CLN recipes, not conan... as they are slightly different!
 # conan demands find_package(gmp ...) while CLN deals with find_package(GMP ...)
 # So, conan works with gmp_INCLUDE_DIR and CLN requires GMP_INCLUDE_DIR
 # -----------------------------------------------------------------------------------------
-set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/external/cln/cmake/modules")
 # invoke FindGMP.cmake from CLN
 find_package(GMP REQUIRED)
 # This is just a small test, to make sure GMP is included in application, at this point.
 target_link_libraries(aplicacao PRIVATE gmp::gmp)
 
 # Allow GINAC to find CLN source files
-set(CLN_SOURCE_DIR ${CMAKE_SOURCE_DIR}/cln)
+set(CLN_SOURCE_DIR ${CMAKE_SOURCE_DIR}/external/cln)
 #
-add_subdirectory(ginac)
+add_subdirectory(external/ginac)
 # ------------------------------------
 # build ginac into current application
 # ------------------------------------
