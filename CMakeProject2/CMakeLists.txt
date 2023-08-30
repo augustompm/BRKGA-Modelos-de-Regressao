@@ -1,4 +1,7 @@
 ﻿cmake_minimum_required(VERSION 3.22)
+
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/build-conan/conan_toolchain.cmake" CACHE STRING "")
+
 project(brkgp-project LANGUAGES CXX VERSION 0.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
