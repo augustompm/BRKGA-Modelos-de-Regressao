@@ -18,25 +18,25 @@
             }
         },
         {
-            "name": "x64-debug",
+            "name": "win-x64-debug",
             "displayName": "x64 Debug",
             "inherits": "windows-base",
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
             },
+            "toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake"
+                "CMAKE_BUILD_TYPE": "Debug"
             }
         },
         {
-            "name": "x64-release",
+            "name": "win-x64-release",
             "displayName": "x64 Release",
-            "inherits": "x64-debug",
+            "inherits": "win-x64-debug",
+            "toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake"
+                "CMAKE_BUILD_TYPE": "Release"
             }
         },
         {
@@ -45,6 +45,7 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "installDir": "${sourceDir}/out/install/${presetName}",
+            "toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
             },
@@ -65,6 +66,7 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "installDir": "${sourceDir}/out/install/${presetName}",
+            "toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             },

@@ -27,4 +27,9 @@ Update your CMakePresets.json to include conan:
     "CMAKE_TOOLCHAIN_FILE": "build-conan/conan_toolchain.cmake"
 },
 ```
+or, to add vcpkg:
+
+```{.json}
+"toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
+```
 
