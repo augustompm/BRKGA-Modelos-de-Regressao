@@ -33,3 +33,5 @@ or, to add vcpkg:
 "toolchainFile": "${sourceDir}/../deps/vcpkg/scripts/buildsystems/vcpkg.cmake",
 ```
 
+Read more on vcpkg integration: https://learn.microsoft.com/pt-br/vcpkg/users/buildsystems/cmake-integration
+
