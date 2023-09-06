@@ -1,9 +1,16 @@
 #!/bin/bash
 
+conan profile detect
+
 VCPKG_DIR=./deps/vcpkg
 VCPKG_TRIPLET=x64-windows
 
-VCPKG_TRIPLET=x64-linux
+COUNT_LINUX=`conan profile show | grep Linux | wc -l`
+if [[ "$COUNT_LINUX" -ne 0 ]]; then
+    VCPKG_TRIPLET=x64-linux
+fi
+
+echo "VCPKG_TRIPLET=$VCPKG_TRIPLET"
 
 mkdir -p deps
 git submodule add https://github.com/microsoft/vcpkg $VCPKG_DIR
