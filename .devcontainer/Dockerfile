@@ -85,3 +85,8 @@ RUN python3 -m pip install bumpver
 RUN python3 -m pip install conan
 
 RUN conan profile detect
+
+
+# dependencies for gmp in vcpkg
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+     && apt-get -y install --no-install-recommends autoconf automake libtool
