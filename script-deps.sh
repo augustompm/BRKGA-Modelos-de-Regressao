@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git submodule update --init --recursive
+git pull --recurse-submodules
+
 conan profile detect
 
 VCPKG_DIR=./deps/vcpkg
@@ -16,6 +19,7 @@ mkdir -p deps
 git submodule add https://github.com/microsoft/vcpkg $VCPKG_DIR
 $VCPKG_DIR/bootstrap-vcpkg.sh
 
+# mpir for windows?
 $VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR search gmp
 
 (cd $VCPKG_DIR && git pull)
