@@ -1,0 +1,12 @@
+{
+    "dependencies": [
+        {
+            "name": "mpir",
+            "platform": "windows"
+        },
+        {
+            "name": "gmp",
+            "platform": "!windows"
+        }
+    ]
+}
