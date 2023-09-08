@@ -367,3 +367,4 @@ FodyWeavers.xsd
 build/
 build-conan/
 CMakeUserPresets.json
+vcpkg_installed/

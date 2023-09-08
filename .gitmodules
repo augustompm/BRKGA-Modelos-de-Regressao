@@ -7,3 +7,6 @@
 [submodule "deps/vcpkg"]
 	path = deps/vcpkg
 	url = https://github.com/microsoft/vcpkg
+[submodule "CMakeProject2/deps/vcpkg"]
+	path = CMakeProject2/deps/vcpkg
+	url = https://github.com/microsoft/vcpkg
