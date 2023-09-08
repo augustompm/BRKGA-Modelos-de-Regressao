@@ -41,15 +41,17 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/instances DESTINATION ${CMAKE_CURRENT_BINA
 # First, activate conan on CMakePresets.json with:
 #    =>  "CMAKE_TOOLCHAIN_FILE": "./build-conan/conan_toolchain.cmake",
 # Note that conan should get local GMP library and setup cmake paths to include it!
-message(STATUS "MAIN CMAKE_LIBRARY_PATH:" ${CMAKE_LIBRARY_PATH})
-message(STATUS "MAIN CMAKE_INCLUDE_PATH:" ${CMAKE_INCLUDE_PATH})
+message(STATUS "MAIN CMAKE_LIBRARY_PATH:" "${CMAKE_LIBRARY_PATH}")
+message(STATUS "MAIN CMAKE_INCLUDE_PATH:" "${CMAKE_INCLUDE_PATH}")
 # Expects (for linux/devcontainer):
 # [cmake] -- MAIN CMAKE_LIBRARY_PATH:/root/.conan2/p/gmp4ac8a4314e429/p/lib
 # [cmake] -- MAIN CMAKE_INCLUDE_PATH:/root/.conan2/p/gmp4ac8a4314e429/p/include
 # ---------------------------------------------
 # Allow cln/cmake/modules/FindGMP.cmake to work
 # ---------------------------------------------
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+#find_path(GMP_INCLUDE_DIR NAMES gmp.h)
+#find_library(GMP_LIBRARIES NAMES gmp libgmp)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
 # -----------------------------------------------------------------------------------------
 # Override build/gmp-config.cmake from conan (if toolchain is activated) - prefix is first!
 # Note that we need to follow CLN recipes, not conan... as they are slightly different!
@@ -57,6 +59,28 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cln/cmake/module
 # So, conan works with gmp_INCLUDE_DIR and CLN requires GMP_INCLUDE_DIR
 # -----------------------------------------------------------------------------------------
 set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/cln/cmake/modules")
+
+message(STATUS "MAIN INCLUDE:" ${INCLUDE})
+message(STATUS "MAIN PATH:" ${PATH})
+message(STATUS "MAIN CMAKE_FRAMEWORK_PATH:" ${CMAKE_FRAMEWORK_PATH})
+# MUST USE QUOTES ON VARIABLE, IF THEY ARE LISTS!! SO THEY GET ';' BETWEEN
+message(STATUS "MAIN CMAKE_FIND_ROOT_PATH:" "${CMAKE_FIND_ROOT_PATH}")
+list(LENGTH CMAKE_FIND_ROOT_PATH MY_SIZE)
+message(STATUS "MAIN MY_SIZE:" ${MY_SIZE})
+foreach(P ${CMAKE_FIND_ROOT_PATH})
+  message(STATUS "MAIN P:" ${P})
+endforeach()
+
+message(STATUS "\nMAIN BEGIN TESTING find_path and find_library")
+find_path(MAIN_GMP_INCLUDE_DIR NAMES gmp.h  ) 
+find_library(MAIN_GMP_LIBRARIES NAMES gmp libgmp  )
+message(STATUS "MAIN_GMP_INCLUDE_DIR:" "${MAIN_GMP_INCLUDE_DIR}")
+message(STATUS "MAIN_GMP_LIBRARIES:" "${MAIN_GMP_LIBRARIES}")
+message(STATUS "MAIN FINISHED TESTING find_path and find_library\n")
+
+#set(GMP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/../deps/vcpkg/installed/x64-linux/include")
+#set(GMP_LIBRARIES "${CMAKE_SOURCE_DIR}/../deps/vcpkg/installed/x64-linux/lib/libgmp.a")
+
 # invoke FindGMP.cmake from CLN
 find_package(GMP REQUIRED)
 # This is just a small test, to make sure GMP is included in application, at this point.
