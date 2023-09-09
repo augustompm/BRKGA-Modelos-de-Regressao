@@ -82,6 +82,32 @@ find_library(MAIN_GMP_LIBRARIES NAMES gmp libgmp  )
 message(STATUS "MAIN_GMP_INCLUDE_DIR:" "${MAIN_GMP_INCLUDE_DIR}")
 message(STATUS "MAIN_GMP_LIBRARIES:" "${MAIN_GMP_LIBRARIES}")
 message(STATUS "MAIN FINISHED TESTING find_path and find_library\n")
+# CLEAR UNIMPORTANT STUFF
+unset(MAIN_GMP_INCLUDE_DIR)
+unset(MAIN_GMP_LIBRARIES)
+# CLEAR IMPORTANT STUFF
+unset(CMAKE_FIND_ROOT_PATH)
+unset(GMP_INCLUDE_DIR)
+unset(GMP_LIBRARIES)
+# ================================================
+# EXPLICIT LOCATION FOR GMP FILES ON VCPKG!
+# NOT USING TOOLCHAIN CMAKE/VCPKG AT THE MOMENT...
+# ================================================
+if(UNIX)
+message(STATUS "MAIN THIS IS LINUX!")
+set(GMP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-linux/include")
+set(GMP_LIBRARIES "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-linux/lib/libgmp.a")
+else() # WINDOWS?
+message(STATUS "MAIN THIS IS WINDOWS!")
+set(GMP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows-static/include")
+set(GMP_LIBRARIES "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows-static/lib") 
+endif()
+#
+message(STATUS "\nMAIN MANUAL GMP_INCLUDE_DIR: ${GMP_INCLUDE_DIR}")
+message(STATUS "MAIN MANUAL GMP_LIBRARIES: ${GMP_LIBRARIES}\n")
+message(STATUS "MAIN MANUAL CMAKE_CXX_LIBRARY_ARCHITECTURE: ${CMAKE_CXX_LIBRARY_ARCHITECTURE}\n")
+#
+
 
 #set(GMP_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/../deps/vcpkg/installed/x64-linux/include")
 #set(GMP_LIBRARIES "${CMAKE_SOURCE_DIR}/../deps/vcpkg/installed/x64-linux/lib/libgmp.a")
