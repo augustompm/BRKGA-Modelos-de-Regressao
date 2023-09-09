@@ -71,6 +71,11 @@ foreach(P ${CMAKE_FIND_ROOT_PATH})
   message(STATUS "MAIN P:" ${P})
 endforeach()
 
+
+
+list(APPEND CMAKE_FIND_ROOT_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows-static")
+message(STATUS "MAIN FORCE CMAKE_FIND_ROOT_PATH:" "${CMAKE_FIND_ROOT_PATH}")
+
 message(STATUS "\nMAIN BEGIN TESTING find_path and find_library")
 find_path(MAIN_GMP_INCLUDE_DIR NAMES gmp.h  ) 
 find_library(MAIN_GMP_LIBRARIES NAMES gmp libgmp  )
