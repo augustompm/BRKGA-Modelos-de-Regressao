@@ -6,7 +6,7 @@ git pull --recurse-submodules
 conan profile detect
 
 VCPKG_DIR=../deps/vcpkg
-VCPKG_TRIPLET=x64-windows
+VCPKG_TRIPLET=x64-windows-static
 VCPKG_BOOTSTRAP=bootstrap-vcpkg.bat
 
 COUNT_LINUX=`conan profile show | grep Linux | wc -l`
@@ -32,7 +32,7 @@ $VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR search mpir
 
 $VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR integrate install
 
-$VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR install
+$VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR install --triplet=$VCPKG_TRIPLET
 
 #$VCPKG_DIR/vcpkg --vcpkg-root $VCPKG_DIR remove gmp # --triplet=$VCPKG_TRIPLET
 
