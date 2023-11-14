@@ -127,6 +127,7 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
     if (population[i].cost == 0) {
       // store seed used on stack adjustment...
       population[i].seed = seed;
+      // 'stackAdjustment' modifica as randomKeys...
       population[i].trueStackSize =
           stackAdjustment(population[i].randomKeys, stackLen, nVars, nConst,
                           maxConst, population[i].seed);

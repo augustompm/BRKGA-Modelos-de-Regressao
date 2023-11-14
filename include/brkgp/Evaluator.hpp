@@ -4,6 +4,7 @@
 #pragma once
 
 // C
+#include <assert.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -94,15 +95,20 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
   int trueStackLen = 0;
   for (int i = 0; i < stackLen; i++) {
     // TODO(igormcoelho): verificar esse número 4!!!
-    int my_floor1 = ::floor((individual[i] / 10000.0) * 4);
-    decodValue = my_floor1 - 1;
+    int my_floor1 = ::floor((individual[i] / 10000.0) * 4);  // [0,3]
+    assert(my_floor1 <= 3 && my_floor1 >= 0);                // NOLINT
+    decodValue = my_floor1 - 1;                              // [-1,2]
+    //
     int my_floor2 =
         ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
     idConst = my_floor2 - nConst;
     // TODO(igormcoelho): verificar esse número 2!!!
+    // [-1,0,1] ?
     if (decodValue != 2) {
       auxSomador += decodValue;
     }
+    // se == 2, faz nada???
+    // ???
     if (auxSomador < 1) {
       // ALTERANDO OPERAÇÕES!
       if (individual[i] < 2500) {
@@ -166,7 +172,7 @@ double solutionEvaluator(const RProblem& problem,
   kahan::kfloat64 sum_error = 0;
   //
   const int realTests = problem.tests - training;
-  for (int i = 0; i < realTests; i++) {
+  for (int t = 0; t < realTests; t++) {
     std::stack<double> stk;
     int contSeed = 0;
 
@@ -185,7 +191,7 @@ double solutionEvaluator(const RProblem& problem,
         double varValue = 0;
         // push variable
         if (idVar >= 0) {
-          varValue = problem.inputs[i][idVar];
+          varValue = problem.inputs[t][idVar];
           stk.push(varValue);
         } else {
           // push constant
@@ -257,7 +263,7 @@ double solutionEvaluator(const RProblem& problem,
     //
     // compare with expected value
 
-    sum_error += computeError(val, problem.outputs[i]);
+    sum_error += computeError(val, problem.outputs[t]);
     // printf("sum_error = %lf\n",sum_error);
   }
   // average erro
