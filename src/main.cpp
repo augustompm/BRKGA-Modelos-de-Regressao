@@ -281,6 +281,8 @@ int main(int argc, char* argv[]) {  // BRKGA
   std::cout << "Tempo de execucao: " << executionTime << " segundos"
             << std::endl;
 
+  std::cout << "BEGIN GINAC TESTS!" << std::endl;
+
   // testing GINAC
   {
     unsigned result = 0;
