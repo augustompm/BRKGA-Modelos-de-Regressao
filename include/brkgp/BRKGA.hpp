@@ -97,8 +97,8 @@ void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed,
   }
 }
 
-void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
-             int seed, int populationLen, const Scenario& other) {
+void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
+             const Scenario& other, int seed) {
   // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
@@ -115,7 +115,7 @@ void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
   // int operationsBiLen = other.operationsBi.size();
   // int operationsULen = other.operationsU.size();
   //
-  for (int i = 0; i < populationLen; i++) {
+  for (int i = 0; i < (int)population.size(); i++) {
     if (population[i].cost == 0) {
       // store seed used on stack adjustment...
       population[i].seed = seed;
@@ -209,7 +209,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       mainPopulation[0].randomKeys = *initialSolution;
       initialSolution = std::nullopt;  // disable optional input
     }
-    decoder(problem, mainPopulation, seed, populationLen, other);
+    decoder(mainPopulation, problem, other, seed);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
     while (!(end)) {
@@ -225,7 +225,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                 (mutantSize + mutationGrow), seed, eliteBias, populationLen,
                 individualLen);
       seed += 2 * individualLen;
-      decoder(problem, auxPopulation, seed, populationLen, other);
+      decoder(auxPopulation, problem, other, seed);
       // printPopulationCost(auxPopulation,populationLen);
       //
       std::sort(auxPopulation.begin(), auxPopulation.end(), menorQue);
