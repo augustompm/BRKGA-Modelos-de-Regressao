@@ -55,5 +55,11 @@ class ValuedChromosome {
   double cost;
   int trueStackSize;
   // seed parameter used during StackAdjustment!
+  // Why seed?
+  // - initial generation / mutant (OK)
+  // - given input solution (PROBLEM)
+  // - crossover solution (PROBLEM)
+  // IDEA: seed could be used ONLY on StackAdjustment,
+  // not for random key generation...
   int seed;
 };

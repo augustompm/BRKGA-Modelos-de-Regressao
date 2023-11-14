@@ -157,13 +157,6 @@ bool isRestart(const Vec<ValuedChromosome>& auxPopulation,
 void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
                int training, std::optional<Vec<chromosome>> initialSolution) {
-  // problem
-  // int nVars = problem.nVars;
-  // int nConst = problem.nConst;
-  // int tests = problem.tests;
-  // const Vec<Vec<double>>& inputs = problem.inputs;
-  // const Vec<double>& outputs = problem.outputs;
-  // const Vec<Pair<double, double>>& vConst = problem.vConst;
   // ------
   // params
   // ------
@@ -176,14 +169,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   // -----
   // other
   // -----
-  // auto& operationsBi = other.operationsBi;
-  // auto& operationsU = other.operationsU;
   int individualLen = other.individualLen;
-  // int stackLen = other.stackLen;
-  // int maxConst = other.maxConst;
-  // int operationsBiLen = operationsBi.size();
-  // int operationsULen = operationsU.size();
-
   //
   Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
   Vec<ValuedChromosome> auxPopulation(populationLen);
@@ -204,7 +190,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   // %d stackLen2:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
   // printf("%d\t%d\n",eliteSize,mutantSize);
-  int mutationGrow = 0;
+  // 'noImprovement' is used to compute 'mutantGrow'
   int noImprovement = 0;
   // int noImprovement = 5000;
   bool end = false;
@@ -222,16 +208,11 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = false;
     while (!end) {
-      // for (int i = 0; i < (int)auxPopulation.size(); i++) {
-      //   auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
-      //   auxPopulation[i].cost = mainPopulation[i].cost;
-      // }
-      assert(auxPopulation.size() == mainPopulation.size());
-      // copy mainPopulation into auxPopulation
-      auxPopulation = mainPopulation;
+      assert(auxPopulation.size() == mainPopulation.size());  // NOLINT
+      auxPopulation = mainPopulation;                         // copy population
       // use 'noImprovement' to grow mutation
-      mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)),
-                                  populationLen);
+      int mutationGrow = percentToInt(
+          5 * (5 * (noImprovement / noImprovementMax)), populationLen);
       // [0 ... eliteSize] is elite
       // [eliteSize to mutantSize+mutationGrow] is mutant
       mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
