@@ -13,19 +13,6 @@ call .\tools\vcpkg\bootstrap-vcpkg.bat
 :: vcpkg.exe install --triplet=x64-windows-static
 .\tools\vcpkg\vcpkg.exe --vcpkg-root .\tools\vcpkg install --triplet=x64-windows-static
 
-echo "INVOKING cmake FOR win-x64-release"
+echo "INVOKING bazel for windows /MT"
 
-:: cmake -B build -S .
-cmake -B build -S . --preset=win-x64-release
-
-echo "BUILDING WITH cmake"
-
-cmake --build build --config Release
-
-echo "LISTING files in build/ folder"
-
-dir build
-
-echo "RUNNING my_test"
-
-.\build\my_test.exe
+call .\run-bazel.bat

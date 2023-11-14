@@ -164,7 +164,9 @@ int main(int argc, char* argv[]) {  // BRKGA
   //
   // std::string instance = "instances/Eq. Feynman  (10) (4).in";
   //
-  std::string instance = "instances/Test.in";
+  // std::string instance = "instances/Test.in";
+  std::string instance = "instances/Eq. Feynman  (1) (1).in";
+
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
   // char instance[] = "C:/Users/Filip/OneDrive/Área de
