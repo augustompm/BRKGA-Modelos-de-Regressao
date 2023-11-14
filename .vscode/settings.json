@@ -7,9 +7,11 @@
         "-log=verbose",
         "-pretty",
         "--background-index",
-        "--compile-commands-dir=${workspaceFolder}/CMakeProject2/out/build/linux-release",
+        "--compile-commands-dir=${workspaceFolder}/",
     ],
+    // "--compile-commands-dir=${workspaceFolder}/CMakeProject2/out/build/linux-release",
     "C_Cpp.intelliSenseEngine": "disabled",
+    // "C_Cpp.intelliSenseEngine": "default",
     "testMate.cpp.test.advancedExecutables": [
         {
             //"pattern": "{bazel-bin}/**/*{test}*"
@@ -17,7 +19,7 @@
         }
     ],
     "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
-    "C_Cpp.default.compileCommands": "${workspaceFolder}/CMakeProject2/out/build/linux-release/compile_commands.json",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/compile_commands.json",
     //
     "files.associations": {
         "array": "cpp",
