@@ -8,6 +8,8 @@
         "-pretty",
         "--background-index",
         "--compile-commands-dir=${workspaceFolder}/",
+        "--header-insertion=never",
+        "--query-driver=**",
     ],
     // "--compile-commands-dir=${workspaceFolder}/CMakeProject2/out/build/linux-release",
     "C_Cpp.intelliSenseEngine": "disabled",

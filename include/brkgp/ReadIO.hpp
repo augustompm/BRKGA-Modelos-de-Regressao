@@ -5,9 +5,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 //
 #include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
 //
@@ -28,6 +28,8 @@ void readIO(RProblem& problem, Scanner& scanner) {
 
   std::cout << "1) READING PROBLEM" << std::endl;
 
+  std::string stype = scanner.nextLine();
+  std::cout << "TYPE: '" << stype << "'" << std::endl;
   nVars = scanner.nextInt();
   tests = scanner.nextInt();
   nConst = scanner.nextInt();

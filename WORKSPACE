@@ -67,7 +67,9 @@ load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_
 hedron_compile_commands_setup()
 # RUN (remember to build first):
 # bazel build ... --config linux
-# bazel run @hedron_compile_commands//:refresh_all --config linux
+# bazel run @hedron_compile_commands//:refresh_all -- --config linux
+# OR...
+# bazel run :refresh_compile_commands
 
 # ADD SKYLIB: requirement for catch2
 http_archive(

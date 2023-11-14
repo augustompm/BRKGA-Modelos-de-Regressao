@@ -11,5 +11,5 @@ cc_library(
         "**/*.h",
     ]),
     include_prefix = "brkgp/",
-    deps = ["@cln//:cln", "@ginac//:ginac", "@kahan-float//:kahan-float"]
+    deps = ["@cln//:cln", "@ginac//:ginac", "@kahan-float//:kahan-float", "@Scanner//:Scanner"]
 )
