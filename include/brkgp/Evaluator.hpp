@@ -15,8 +15,6 @@
 #include <brkgp/PrintIO.hpp>
 #include <kahan-float/kahan.hpp>
 
-using namespace kahan;
-
 double execBinaryOp(int idop, double v1, double v2,
                     const std::vector<char>& operationsBi) {
   if (operationsBi[idop] == '+') {
@@ -90,15 +88,17 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
   // -1     1       0     2       0     0      0     -1     2      -1     0 1
   int somador = 0;
   int auxSomador = 0;
-  int decodValue;
+  int decodValue = 0;
   int contConst = 0;
   int idConst = 0;
   int trueStackLen = 0;
   for (int i = 0; i < stackLen; i++) {
     // TODO(igormcoelho): verificar esse número 4!!!
-    decodValue = floor((individual[i] / 10000.0) * 4) - 1;
-    idConst =
-        floor((individual[stackLen + i] / 10000.0) * (nVars + nConst)) - nConst;
+    int my_floor1 = ::floor((individual[i] / 10000.0) * 4);
+    decodValue = my_floor1 - 1;
+    int my_floor2 =
+        ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
+    idConst = my_floor2 - nConst;
     // TODO(igormcoelho): verificar esse número 2!!!
     if (decodValue != 2) {
       auxSomador += decodValue;
@@ -144,7 +144,7 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
         individual[stackLen + i] =
             ((10000.0 / (nVars + nConst)) * nConst) +
-            ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);
+            ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);  // NOLINT
         seed++;
       }
     }
@@ -163,7 +163,7 @@ double solutionEvaluator(const RProblem& problem,
   // scenario
   const int stackLen = other.stackLen;
   // local variables
-  kfloat64 sum_error = 0;
+  kahan::kfloat64 sum_error = 0;
   //
   const int realTests = problem.tests - training;
   for (int i = 0; i < realTests; i++) {
