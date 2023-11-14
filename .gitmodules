@@ -1,12 +1,12 @@
-[submodule "CMakeProject2/ginac"]
-	path = CMakeProject2/ginac
+[submodule "tools/vcpkg"]
+	path = tools/vcpkg
+	url = https://github.com/Microsoft/vcpkg.git
+[submodule "thirdparty/ginac"]
+	path = thirdparty/ginac
 	url = git://www.ginac.de/ginac.git
-[submodule "CMakeProject2/cln"]
-	path = CMakeProject2/cln
+[submodule "thirdparty/cln"]
+	path = thirdparty/cln
 	url = git://www.ginac.de/cln.git
-[submodule "deps/vcpkg"]
-	path = deps/vcpkg
-	url = https://github.com/microsoft/vcpkg
-[submodule "CMakeProject2/deps/vcpkg"]
-	path = CMakeProject2/deps/vcpkg
-	url = https://github.com/microsoft/vcpkg
+[submodule "thirdparty/mpir"]
+	path = thirdparty/mpir
+	url = https://github.com/BrianGladman/mpir

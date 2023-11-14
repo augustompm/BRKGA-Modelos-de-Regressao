@@ -1,0 +1,20 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+sh_binary(
+    name = "vcpkg-install",
+    srcs = ["vcpkg-install.sh"],
+)
+
+cc_binary(
+    name = "app_demo",
+    srcs = glob([
+        "src/main.cpp", 
+    ]),
+    deps = ["//include:brkgp-lib", "@Scanner//:Scanner", "@gmp//:gmp", "@cln//:cln", "@ginac//:ginac"],
+    linkstatic=1
+)
+
