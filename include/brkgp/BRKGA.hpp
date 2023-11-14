@@ -139,21 +139,6 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   }
 }
 
-bool isRestart(const Vec<ValuedChromosome>& auxPopulation,
-               const Vec<ValuedChromosome>& population, int& noImprovement,
-               int noImprovementMax) {
-  if (auxPopulation[0].cost < population[0].cost)
-    noImprovement = 0;
-  else
-    noImprovement++;
-  if (noImprovement == noImprovementMax) {
-    //|| (auxPopulation[0].cost <= 0.00001))
-    noImprovement = 0;
-    return true;
-  }
-  return false;
-}
-
 void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
                int training, std::optional<Vec<chromosome>> initialSolution) {
@@ -231,14 +216,28 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       // %d\n",auxPopulation[0].cost,noImproviment);
       //
       //
-      // IMPORTANT: PASS 'noImprovement' BY REFERENCE!
-      end = isRestart(auxPopulation, mainPopulation, noImprovement,
-                      noImprovementMax);
-      // printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
-      for (int i = 0; i < populationLen; i++) {
-        mainPopulation[i].randomKeys = auxPopulation[i].randomKeys;
-        mainPopulation[i].cost = auxPopulation[i].cost;
+      const ValuedChromosome& newBest = auxPopulation[0];
+      const ValuedChromosome& prevBest = mainPopulation[0];
+
+      // check best (old method 'isRestart')
+      if (newBest.cost < prevBest.cost)
+        noImprovement = 0;
+      else
+        noImprovement++;
+      if (noImprovement == noImprovementMax) {
+        //|| (auxPopulation[0].cost <= 0.00001))
+        noImprovement = 0;
+        end = true;
+      } else {
+        end = false;
       }
+
+      // printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
+      // for (int i = 0; i < populationLen; i++) {
+      //  mainPopulation[i].randomKeys = auxPopulation[i].randomKeys;
+      //  mainPopulation[i].cost = auxPopulation[i].cost;
+      //}
+      mainPopulation = auxPopulation;  // copy
       // printf("auxPopulation:%f\t
       // population:%f\n",auxPopulation[0].cost,population[0].cost);
     }
