@@ -24,6 +24,7 @@ int percentToInt(int porcentagem, int total) {
   return ceil((porcentagem / 100.0) * total);
 }
 
+// ordena por menor '.cost' e, caso empate, menor '.trueStackSize'
 bool menorQue(const ValuedChromosome& i, const ValuedChromosome& j) {
   return (i.cost < j.cost) ||
          ((i.cost == j.cost) && (i.trueStackSize < j.trueStackSize));
@@ -131,7 +132,7 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   }
 }
 
-char isRestart(const Vec<ValuedChromosome>& auxPopulation,
+bool isRestart(const Vec<ValuedChromosome>& auxPopulation,
                const Vec<ValuedChromosome>& population, int& noImprovement,
                int noImprovementMax) {
   if (auxPopulation[0].cost < population[0].cost)
@@ -141,9 +142,9 @@ char isRestart(const Vec<ValuedChromosome>& auxPopulation,
   if (noImprovement == noImprovementMax) {
     //|| (auxPopulation[0].cost <= 0.00001))
     noImprovement = 0;
-    return 1;
+    return true;
   }
-  return 0;
+  return false;
 }
 
 void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
@@ -199,7 +200,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   int mutationGrow = 0;
   int noImprovement = 0;
   // int noImprovement = 5000;
-  uint8_t end{0};
+  bool end = false;
   int restart = 0;
   while (restart < restartMax) {
     seed++;
@@ -212,7 +213,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
     decoder(mainPopulation, problem, other, seed);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = 0;
-    while (!(end)) {
+    while (!end) {
       for (int i = 0; i < populationLen; i++) {
         auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
         auxPopulation[i].cost = mainPopulation[i].cost;
