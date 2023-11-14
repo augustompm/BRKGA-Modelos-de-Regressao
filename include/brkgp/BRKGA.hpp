@@ -4,15 +4,16 @@
 #pragma once
 
 // C
+#include <assert.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 // C++
 #include <algorithm>
 #include <iostream>
 #include <optional>  // C++17
 #include <stack>
+#include <string>
 #include <vector>
 //
 #include <brkgp/BRKGA.hpp>
@@ -51,12 +52,14 @@ void mutantGenerator(Vec<ValuedChromosome>& population, int eliteSize,
   }
 }
 
-void crossover(Vec<ValuedChromosome>& population,
+void crossover(const Vec<ValuedChromosome>& population,
                Vec<ValuedChromosome>& auxPopulation, int eliteSize,
-               int mutantSize, int seed, uint16_t eliteBias, int populationLen,
-               int individualLen) {
+               int mutantSize, uint16_t eliteBias, int seed) {
   int parentA = 0;
   int parentB = 0;
+
+  assert(population.size() == auxPopulation.size());  // NOLINT
+  int populationLen = (int)auxPopulation.size();
 
   for (int i = (eliteSize + mutantSize); i < populationLen; i++) {
     srand(seed);
@@ -75,6 +78,7 @@ void crossover(Vec<ValuedChromosome>& population,
     // memcpy(parentB, population[eliteSize + rand() % (POPULATIONLEN -
     // eliteSize)].randomKeys, sizeof(chromosome) * LEN);
     seed++;
+    int individualLen = (int)auxPopulation[i].randomKeys.size();
     for (int j = 0; j < individualLen; j++) {
       srand(seed);
       // NOLINTNEXTLINE
@@ -211,23 +215,29 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
     if (initialSolution) {
       // if exists 'initialSolution'
       mainPopulation[0].randomKeys = *initialSolution;
+      // TODO: what to do with 'seed' here? seed=-1? flag as unused?
       initialSolution = std::nullopt;  // disable optional input
     }
     decoder(mainPopulation, problem, other, seed);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
     end = false;
     while (!end) {
-      for (int i = 0; i < (int)auxPopulation.size(); i++) {
-        auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
-        auxPopulation[i].cost = mainPopulation[i].cost;
-      }
+      // for (int i = 0; i < (int)auxPopulation.size(); i++) {
+      //   auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
+      //   auxPopulation[i].cost = mainPopulation[i].cost;
+      // }
+      assert(auxPopulation.size() == mainPopulation.size());
+      // copy mainPopulation into auxPopulation
+      auxPopulation = mainPopulation;
+      // use 'noImprovement' to grow mutation
       mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)),
                                   populationLen);
+      // [0 ... eliteSize] is elite
+      // [eliteSize to mutantSize+mutationGrow] is mutant
       mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
                       seed);
       crossover(mainPopulation, auxPopulation, eliteSize,
-                (mutantSize + mutationGrow), seed, eliteBias, populationLen,
-                individualLen);
+                (mutantSize + mutationGrow), eliteBias, seed);
       seed += 2 * individualLen;
       decoder(auxPopulation, problem, other, seed);
       // printPopulationCost(auxPopulation,populationLen);
