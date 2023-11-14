@@ -30,10 +30,9 @@ bool menorQue(const ValuedChromosome& i, const ValuedChromosome& j) {
          ((i.cost == j.cost) && (i.trueStackSize < j.trueStackSize));
 }
 
-void individualGenerator(Vec<chromosome>& individual, int seed,
-                         int individualLen) {
+void individualGenerator(Vec<chromosome>& individual, int seed) {
   srand(seed);
-  for (int i = 0; i < individualLen; i++) {
+  for (int i = 0; i < (int)individual.size(); i++) {
     // NOLINTNEXTLINE
     individual[i] = (rand() % 10000);
     // seed++;
@@ -41,9 +40,12 @@ void individualGenerator(Vec<chromosome>& individual, int seed,
 }
 
 void mutantGenerator(Vec<ValuedChromosome>& population, int eliteSize,
-                     int mutantSize, int seed, int individualLen) {
+                     int mutantSize, int seed) {
   for (int i = eliteSize; i < (eliteSize + mutantSize); i++) {
-    individualGenerator(population[i].randomKeys, seed, individualLen);
+    // store individual seed before creation
+    population[i].seed = seed;
+    int individualLen = (int)(population[i].randomKeys.size());
+    individualGenerator(population[i].randomKeys, seed);
     seed += 2 * individualLen;
     population[i].cost = 0;
   }
@@ -86,13 +88,14 @@ void crossover(Vec<ValuedChromosome>& population,
   }
 }
 
-void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed,
-                         int populationLen, int individualLen) {
-  for (int i = 0; i < populationLen; i++) {
-    for (int j = 0; j < individualLen; j++) {
-      auxPopulation[i].randomKeys[j] = 0;
-    }
-    individualGenerator(auxPopulation[i].randomKeys, seed, individualLen);
+void populationGenerator(Vec<ValuedChromosome>& auxPopulation, int seed) {
+  for (int i = 0; i < (int)auxPopulation.size(); i++) {
+    // zero individual
+    int individualLen = (int)(auxPopulation[i].randomKeys.size());
+    for (int j = 0; j < individualLen; j++) auxPopulation[i].randomKeys[j] = 0;
+    // store individual seed before creation
+    auxPopulation[i].seed = seed;
+    individualGenerator(auxPopulation[i].randomKeys, seed);
     seed += 2 * individualLen;
     auxPopulation[i].cost = 0;
   }
@@ -204,7 +207,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   int restart = 0;
   while (restart < restartMax) {
     seed++;
-    populationGenerator(mainPopulation, seed, populationLen, individualLen);
+    populationGenerator(mainPopulation, seed);
     if (initialSolution) {
       // if exists 'initialSolution'
       mainPopulation[0].randomKeys = *initialSolution;
@@ -212,16 +215,16 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
     }
     decoder(mainPopulation, problem, other, seed);
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
-    end = 0;
+    end = false;
     while (!end) {
-      for (int i = 0; i < populationLen; i++) {
+      for (int i = 0; i < (int)auxPopulation.size(); i++) {
         auxPopulation[i].randomKeys = mainPopulation[i].randomKeys;
         auxPopulation[i].cost = mainPopulation[i].cost;
       }
       mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)),
                                   populationLen);
       mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
-                      seed, individualLen);
+                      seed);
       crossover(mainPopulation, auxPopulation, eliteSize,
                 (mutantSize + mutationGrow), seed, eliteBias, populationLen,
                 individualLen);
