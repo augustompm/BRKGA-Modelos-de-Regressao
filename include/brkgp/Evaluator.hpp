@@ -229,7 +229,12 @@ double solutionEvaluator(const RProblem& problem,
         if (abs(binaryProduct) == INFINITY) {
           while (stk.size() > 0) stk.pop();
           stk.push(INFINITY);
-          j = stackLen;
+          // =========================================
+          // MUITO IMPORTANTE!!!
+          // TODO: AVALIAR SE ISSO É UM BREAK MESMO...
+          // =========================================
+          // j = stackLen;  // break?
+          break;
         } else {
           stk.push(binaryProduct);
         }
@@ -256,7 +261,8 @@ double solutionEvaluator(const RProblem& problem,
       // cout << "finished t= " << t << endl;
       // take value from stack
       // assert(stk.size() == 1);
-    }
+      //
+    }  // for j < stackLen
 
     double val = stk.top();
     stk.pop();
