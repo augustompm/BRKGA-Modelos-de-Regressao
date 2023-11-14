@@ -256,10 +256,16 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       //
       // printf("Chegou\n");
       restart = 0;
+      //
     }
     // printf("Chegou");
     printf("restart = %d \t best= %f\t", restart, bestFoundSolution.cost);
     printSolution(problem, bestFoundSolution.randomKeys, other);
     restart++;
+    if (bestFoundSolution.cost < 0.00001) {
+      std::cout << "OPTIMAL FOUND! ABORTING..." << std::endl;
+      break;
+    }
   }
+  std::cout << "FINISHED BRKGP!" << std::endl;
 }
