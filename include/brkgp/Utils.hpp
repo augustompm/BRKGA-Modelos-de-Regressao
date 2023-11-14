@@ -24,7 +24,10 @@ struct RProblem {
   Vec<Vec<double>> inputs;
   Vec<double> outputs;
   Vec<Pair<double, double>> vConst;
-  Vec<std::string> units;
+  // units
+  Vec<std::string> varUnits;
+  std::string outUnit;
+  Vec<std::string> constUnits;
 };
 
 struct BRKGAParams {

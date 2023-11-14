@@ -25,7 +25,9 @@ void readIO(RProblem& problem, Scanner& scanner) {
   int& nVars = problem.nVars;
   int& tests = problem.tests;
   int& nConst = problem.nConst;
-  auto& units = problem.units;
+  auto& varUnits = problem.varUnits;
+  auto& outUnit = problem.outUnit;
+  auto& constUnits = problem.constUnits;
 
   std::cout << "1) READING PROBLEM" << std::endl;
 
@@ -36,6 +38,17 @@ void readIO(RProblem& problem, Scanner& scanner) {
   nVars = scanner.nextInt();
   tests = scanner.nextInt();
   nConst = scanner.nextInt();
+
+  if (has_units) {
+    for (auto i = 0; i < nVars; i++) varUnits.push_back(scanner.nextLine());
+    outUnit = scanner.nextLine();
+  } else {
+    for (auto i = 0; i < nVars; i++) varUnits.push_back("*");
+  }
+  // print units (var + out)
+  for (auto& vun : varUnits)
+    std::cout << "var unit: '" << vun << "'" << std::endl;
+  std::cout << "out unit: '" << outUnit << "'" << std::endl;
 
   std::cout << "2) READING PROBLEM TESTS" << std::endl;
 
@@ -55,7 +68,13 @@ void readIO(RProblem& problem, Scanner& scanner) {
   for (int i = 0; i < nConst; i++) {
     problem.vConst[i].first = scanner.nextDouble();
     problem.vConst[i].second = scanner.nextDouble();
+    if (has_units) {
+      constUnits.push_back(Scanner::trim(scanner.nextLine()));
+    }
   }
+  // print units (const)
+  for (auto& cun : constUnits)
+    std::cout << "const unit: '" << cun << "'" << std::endl;
 
   std::cout << "4) FINISHED READING PROBLEM" << std::endl;
 }
