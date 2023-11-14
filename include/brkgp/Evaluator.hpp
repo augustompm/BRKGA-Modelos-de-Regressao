@@ -178,9 +178,9 @@ double solutionEvaluator(const RProblem& problem,
       //  2 3
       // push variable or constant
       if ((individual[j] < 7500) && (individual[j] >= 5000)) {
-        int idVar =
-            floor((individual[stackLen + j] / 10000.0) * (nVars + nConst)) -
-            nConst;
+        int my_floor =
+            ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
+        int idVar = my_floor - nConst;
         // printf("%d\n",idVar);
         double varValue = 0;
         // push variable
@@ -196,6 +196,7 @@ double solutionEvaluator(const RProblem& problem,
           } else {
             chromosome seedConst = individual[3 * stackLen + contSeed];
             srand(seedConst);
+            // NOLINTNEXTLINE
             varValue = rand() % (int)(problem.vConst[idVar].second -
                                       problem.vConst[idVar].first + 1) +
                        problem.vConst[idVar].first;
@@ -208,9 +209,9 @@ double solutionEvaluator(const RProblem& problem,
       // case: pop Binary Operation
       if (individual[j] < 2500) {
         // pop operation
-        int idOpBi =
-            floor((individual[2 * stackLen + j] / 10000.0) *
-                  other.operationsBi.size());  // 4 is lenght of operationBi
+        int idOpBi = floor(
+            (individual[2 * stackLen + j] / 10000.0) *
+            (double)other.operationsBi.size());  // 4 is lenght of operationBi
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
         double v1 = stk.top();
@@ -230,9 +231,9 @@ double solutionEvaluator(const RProblem& problem,
 
       // pop: Unary Operation
       if ((individual[j] < 5000) && (individual[j] >= 2500)) {
-        int idOpU =
-            floor((individual[2 * stackLen + j] / 10000.0) *
-                  other.operationsU.size());  // 3 is lenght of operationU
+        int idOpU = floor(
+            (individual[2 * stackLen + j] / 10000.0) *
+            (double)other.operationsU.size());  // 3 is lenght of operationU
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
         double v1 = stk.top();

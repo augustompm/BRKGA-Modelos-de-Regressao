@@ -25,6 +25,7 @@ struct RProblem {
   Vec<double> outputs;
   Vec<Pair<double, double>> vConst;
   // units
+  bool hasUnits;
   Vec<std::string> varUnits;
   std::string outUnit;
   Vec<std::string> constUnits;

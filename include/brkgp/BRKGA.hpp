@@ -33,6 +33,7 @@ void individualGenerator(Vec<chromosome>& individual, int seed,
                          int individualLen) {
   srand(seed);
   for (int i = 0; i < individualLen; i++) {
+    // NOLINTNEXTLINE
     individual[i] = (rand() % 10000);
     // seed++;
   }
@@ -51,19 +52,21 @@ void crossover(Vec<ValuedChromosome>& population,
                Vec<ValuedChromosome>& auxPopulation, int eliteSize,
                int mutantSize, int seed, uint16_t eliteBias, int populationLen,
                int individualLen) {
-  int parentA;
-  int parentB;
+  int parentA = 0;
+  int parentB = 0;
 
   for (int i = (eliteSize + mutantSize); i < populationLen; i++) {
     srand(seed);
     // printf("sizeof %d\n",sizeof(chromosome)* LEN);
     // printf("%d",LEN);
+    // NOLINTNEXTLINE
     parentA = rand() % eliteSize;
     // printf("parentA: %d\n",parentA);
     // memcpy(parentA, population[rand() % eliteSize].randomKeys,
     // sizeof(chromosome) * 63);
     seed++;
     srand(seed);
+    // NOLINTNEXTLINE
     parentB = eliteSize + rand() % (populationLen - eliteSize);
     // printf("parentB: %d\n",parentB);
     // memcpy(parentB, population[eliteSize + rand() % (POPULATIONLEN -
@@ -71,6 +74,7 @@ void crossover(Vec<ValuedChromosome>& population,
     seed++;
     for (int j = 0; j < individualLen; j++) {
       srand(seed);
+      // NOLINTNEXTLINE
       if ((rand() % 100) < eliteBias)
         auxPopulation[i].randomKeys[j] = population[parentA].randomKeys[j];
       else
@@ -98,18 +102,18 @@ void decoder(const RProblem& problem, Vec<ValuedChromosome>& population,
   // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
-  int tests = problem.tests;
-  const Vec<Vec<double>>& inputs = problem.inputs;
-  const Vec<double>& outputs = problem.outputs;
-  const Vec<Pair<double, double>>& vConst = problem.vConst;
+  // int tests = problem.tests;
+  // const Vec<Vec<double>>& inputs = problem.inputs;
+  // const Vec<double>& outputs = problem.outputs;
+  // const Vec<Pair<double, double>>& vConst = problem.vConst;
   //
-  auto& operationsBi = other.operationsBi;
-  auto& operationsU = other.operationsU;
+  // auto& operationsBi = other.operationsBi;
+  // auto& operationsU = other.operationsU;
 
   int stackLen = other.stackLen;
   int maxConst = other.maxConst;
-  int operationsBiLen = other.operationsBi.size();
-  int operationsULen = other.operationsU.size();
+  // int operationsBiLen = other.operationsBi.size();
+  // int operationsULen = other.operationsU.size();
   //
   for (int i = 0; i < populationLen; i++) {
     if (population[i].cost == 0) {
@@ -146,27 +150,31 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
                int training, std::optional<Vec<chromosome>> initialSolution) {
   // problem
-  int nVars = problem.nVars;
-  int nConst = problem.nConst;
-  int tests = problem.tests;
-  const Vec<Vec<double>>& inputs = problem.inputs;
-  const Vec<double>& outputs = problem.outputs;
-  const Vec<Pair<double, double>>& vConst = problem.vConst;
+  // int nVars = problem.nVars;
+  // int nConst = problem.nConst;
+  // int tests = problem.tests;
+  // const Vec<Vec<double>>& inputs = problem.inputs;
+  // const Vec<double>& outputs = problem.outputs;
+  // const Vec<Pair<double, double>>& vConst = problem.vConst;
+  // ------
   // params
+  // ------
   int restartMax = params.restartMax;
   int noImprovementMax = params.noImprovementMax;
   int eliteSize = params.eliteSize;
   int mutantSize = params.mutantSize;
   uint16_t eliteBias = params.eliteBias;
   int populationLen = params.populationLen;
+  // -----
   // other
-  auto& operationsBi = other.operationsBi;
-  auto& operationsU = other.operationsU;
+  // -----
+  // auto& operationsBi = other.operationsBi;
+  // auto& operationsU = other.operationsU;
   int individualLen = other.individualLen;
-  int stackLen = other.stackLen;
-  int maxConst = other.maxConst;
-  int operationsBiLen = operationsBi.size();
-  int operationsULen = operationsU.size();
+  // int stackLen = other.stackLen;
+  // int maxConst = other.maxConst;
+  // int operationsBiLen = operationsBi.size();
+  // int operationsULen = operationsU.size();
 
   //
   Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen

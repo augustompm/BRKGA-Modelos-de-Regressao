@@ -28,18 +28,19 @@ void readIO(RProblem& problem, Scanner& scanner) {
   auto& varUnits = problem.varUnits;
   auto& outUnit = problem.outUnit;
   auto& constUnits = problem.constUnits;
+  auto& hasUnits = problem.hasUnits;
 
   std::cout << "1) READING PROBLEM" << std::endl;
 
   std::string stype = scanner.nextLine();
   std::cout << "TYPE: '" << stype << "'" << std::endl;
-  bool has_units = (stype == "HAS_UNITS");
+  hasUnits = (stype == "HAS_UNITS");
 
   nVars = scanner.nextInt();
   tests = scanner.nextInt();
   nConst = scanner.nextInt();
 
-  if (has_units) {
+  if (hasUnits) {
     for (auto i = 0; i < nVars; i++) varUnits.push_back(scanner.nextLine());
     outUnit = scanner.nextLine();
   } else {
@@ -59,7 +60,7 @@ void readIO(RProblem& problem, Scanner& scanner) {
 
   for (int t = 0; t < tests; t++) {
     inputs[t] = Vec<double>(nVars);
-    for (unsigned i = 0; i < nVars; i++) inputs[t][i] = scanner.nextDouble();
+    for (auto i = 0; i < nVars; i++) inputs[t][i] = scanner.nextDouble();
     outputs[t] = scanner.nextDouble();
   }
 
@@ -68,7 +69,7 @@ void readIO(RProblem& problem, Scanner& scanner) {
   for (int i = 0; i < nConst; i++) {
     problem.vConst[i].first = scanner.nextDouble();
     problem.vConst[i].second = scanner.nextDouble();
-    if (has_units) {
+    if (hasUnits) {
       constUnits.push_back(Scanner::trim(scanner.nextLine()));
     }
   }
