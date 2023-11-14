@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 #include <utility>
 #include <vector>
 
@@ -23,6 +24,7 @@ struct RProblem {
   Vec<Vec<double>> inputs;
   Vec<double> outputs;
   Vec<Pair<double, double>> vConst;
+  Vec<std::string> units;
 };
 
 struct BRKGAParams {

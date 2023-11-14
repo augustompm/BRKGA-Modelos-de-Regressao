@@ -25,11 +25,14 @@ void readIO(RProblem& problem, Scanner& scanner) {
   int& nVars = problem.nVars;
   int& tests = problem.tests;
   int& nConst = problem.nConst;
+  auto& units = problem.units;
 
   std::cout << "1) READING PROBLEM" << std::endl;
 
   std::string stype = scanner.nextLine();
   std::cout << "TYPE: '" << stype << "'" << std::endl;
+  bool has_units = (stype == "HAS_UNITS");
+
   nVars = scanner.nextInt();
   tests = scanner.nextInt();
   nConst = scanner.nextInt();

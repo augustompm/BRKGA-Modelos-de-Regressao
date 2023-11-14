@@ -66,8 +66,8 @@ class my_visitor : public visitor,           // this is required
 #include <brkgp/ReadIO.hpp>
 #include <brkgp/Utils.hpp>
 
-int main(int argc, char* argv[]) {  // BRKGA
-
+int main(int argc, char* argv[]) {
+  // BRKGA
   // Início da contagem de tempo
   auto start = std::chrono::high_resolution_clock::now();
 
