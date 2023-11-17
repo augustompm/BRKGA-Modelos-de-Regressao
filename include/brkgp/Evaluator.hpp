@@ -86,30 +86,27 @@ double computeError(double v1, double v2) {
 //
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
-  // 5303   358   3064   9156   4199   1320   636   7306   2445   6166   3572
-  // 8249   4290   4389   4790   567   9692   202   3913   498 1      -1      0
-  // 2     0      -1     -1     1     -1     1       0     2       0     0 0 -1
-  // 2      -1     0     -1 1       1       0     2     0       -1     1     1
-  // -1     1       0     2       0     0      0     -1     2      -1     0 1
   int somador = 0;
   int auxSomador = 0;
-  int decodValue = 0;
   int contConst = 0;
   int idConst = 0;
   int trueStackLen = 0;
   for (int i = 0; i < stackLen; i++) {
-    // TODO(igormcoelho): verificar esse número 4!!!
-    int my_floor1 = ::floor((individual[i] / 10000.0) * 4);  // [0,3]
-    assert(my_floor1 <= 3 && my_floor1 >= 0);                // NOLINT
-    decodValue = my_floor1 - 1;                              // [-1,2]
+    int stackDiff = 2;  // DEFAULT = 2 (why?)
+    // Binary: remove two elements and add one
+    if (isOperation(individual[i], OpType::BIN)) stackDiff = -1;
+    // Unary: remove one element and add one
+    if (isOperation(individual[i], OpType::UN)) stackDiff = 0;
+    // Push: add one
+    if (isOperation(individual[i], OpType::PUSH)) stackDiff = 1;
     //
     int my_floor2 =
         ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
     idConst = my_floor2 - nConst;
     // TODO(igormcoelho): verificar esse número 2!!!
     // [-1,0,1] ?
-    if (decodValue != 2) {
-      auxSomador += decodValue;
+    if (stackDiff != 2) {
+      auxSomador += stackDiff;
     }
     // se == 2, faz nada???
     // ???
@@ -147,7 +144,7 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         auxSomador = somador - 1;
       }
     }
-    if ((decodValue == 1) && idConst < 0) {
+    if ((stackDiff == 1) && idConst < 0) {
       contConst++;
       if (contConst > maxConst) {
         srand(seed);
