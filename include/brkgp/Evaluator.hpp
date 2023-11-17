@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 // C++
+#include <optional>
 #include <stack>
 #include <vector>
 //
@@ -16,55 +17,44 @@
 #include <brkgp/PrintIO.hpp>
 #include <kahan-float/kahan.hpp>
 
-double execBinaryOp(int idop, double v1, double v2,
-                    const std::vector<char>& operationsBi) {
-  if (operationsBi[idop] == '+') {
-    if (abs(v1) == INFINITY) return INFINITY;
-    return v1 + v2;
-  }
-  if (operationsBi[idop] == '-') {
-    if (abs(v1) == INFINITY) return INFINITY;
-    return v1 - v2;
-  }
-  if (operationsBi[idop] == '*') {
-    if ((abs(v1) == INFINITY && v2 == 0) || (v1 == 0 && abs(v2) == INFINITY))
-      return INFINITY;
-    return v1 * v2;
-  }
+template <class T>
+using opt = std::optional<T>;
+
+opt<double> execBinaryOp(int idop, double v1, double v2,
+                         const std::vector<char>& operationsBi) {
+  if (operationsBi[idop] == '+') return std::make_optional<double>(v1 + v2);
+  if (operationsBi[idop] == '-') return std::make_optional<double>(v1 - v2);
+  if (operationsBi[idop] == '*') return std::make_optional<double>(v1 * v2);
   if (operationsBi[idop] == '/') {
-    if (v2 < 0.000001) return INFINITY;
-    if (abs(v2) == INFINITY) return 0;
-    return v1 / v2;
+    if (v2 < 0.000001)
+      return std::nullopt;
+    else
+      return std::make_optional<double>(v1 / v2);
   }
-  return 0.0;
+  return std::nullopt;
 }
 
-double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
-  if (operationsU[idop] == 's') {
-    if (v1 == INFINITY) return INFINITY;
-    return sin(v1);
-  }
-
-  if (operationsU[idop] == 'c') {
-    if (v1 == INFINITY) return INFINITY;
-    return cos(v1);
-  }
-  if (operationsU[idop] == 'i') return v1;
-  if (operationsU[idop] == 'a') return v1 * v1;
-  if (operationsU[idop] == 'v') return v1 * v1 * v1;
+opt<double> execUnaryOp(int idop, double v1,
+                        const std::vector<char>& operationsU) {
+  if (operationsU[idop] == 's') return std::make_optional<double>(::sin(v1));
+  if (operationsU[idop] == 'c') return std::make_optional<double>(cos(v1));
+  if (operationsU[idop] == 'i') return std::make_optional<double>(v1);
+  if (operationsU[idop] == 'a') return std::make_optional<double>(v1 * v1);
+  if (operationsU[idop] == 'v') return std::make_optional<double>(v1 * v1 * v1);
   if (operationsU[idop] == 'r') {
     if (v1 < 0)
-      return INFINITY;
+      return std::nullopt;
     else
-      return ::pow(v1, 1.0 / 2.0);
+      // return std::make_optional<double>(::pow(v1, 1.0 / 2.0));
+      return std::make_optional<double>(::sqrt(v1));
   }
-  return 0.0;
+  return std::nullopt;
 }
 
 // error between values v1 and v2 RMSE
 double computeError(double v1, double v2) {
   // square
-  return sqrt((v1 - v2) * (v1 - v2));
+  return ::sqrt((v1 - v2) * (v1 - v2));
 }
 
 // stackAdjustment: ajusta chaves aleatórias do indivíduo, caso seja
@@ -238,30 +228,19 @@ double solutionEvaluator(const RProblem& problem,
         double v2 = stk.top();
         stk.pop();
         // RETORNAR opcional VAZIO!
-        double binaryProduct = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
-        // if for case: division by zero
-        if (abs(binaryProduct) == INFINITY) {
-          //
-          // std::cout << "WARNING: INFINITY!" << std::endl;
-          //
+        opt<double> binResult =
+            execBinaryOp(idOpBi, v1, v2, other.operationsBi);
+        // error in binary operation
+        if (!binResult) {
+          // LIMPA PILHA E ABORTA TESTE!
           while (stk.size() > 0) stk.pop();
           stk.push(INFINITY);
-          // =========================================
-          // MUITO IMPORTANTE!!!
-          // TODO: AVALIAR SE ISSO É UM BREAK MESMO...
-          // =========================================
-          // j = stackLen;  // break?
-          //
-          // SIGNIFICA QUE O ERRO DEVE SER INFINITO!!!
-          // EXPRESSÃO MAL FORMADA!!!
-          // PENALIZAR MUUUUUITO ALTO!!!
           break;
         } else {
-          if (idSol == 0 && t == 0) {
-            std::cout << "DEBUG[idSol=0] bin result: " << binaryProduct
+          if (idSol == 0 && t == 0)
+            std::cout << "DEBUG[idSol=0] bin result: " << *binResult
                       << std::endl;
-          }
-          stk.push(binaryProduct);
+          stk.push(*binResult);
         }
       }
 
@@ -278,13 +257,20 @@ double solutionEvaluator(const RProblem& problem,
         double v1 = stk.top();
         stk.pop();
 
-        double unResult = execUnaryOp(idOpU, v1, other.operationsU);
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] un func: " << other.operationsU[idOpU]
-                    << " un param:" << v1 << std::endl;
-          std::cout << "DEBUG[idSol=0] un result: " << unResult << std::endl;
+        opt<double> unResult = execUnaryOp(idOpU, v1, other.operationsU);
+
+        // error in unary operation
+        if (!unResult) {
+          // LIMPA PILHA E ABORTA TESTE!
+          while (stk.size() > 0) stk.pop();
+          stk.push(INFINITY);
+          break;
+        } else {
+          if (idSol == 0 && t == 0)
+            std::cout << "DEBUG[idSol=0] un result: " << *unResult << std::endl;
+
+          stk.push(*unResult);
         }
-        stk.push(unResult);
       }
 
       if (individual[j] >= 7500) {
