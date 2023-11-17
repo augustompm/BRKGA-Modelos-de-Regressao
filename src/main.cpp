@@ -88,12 +88,15 @@ int main(int argc, char* argv[]) {
 
   Scenario other;
   other.operationsBi = {'+', '-', '*', '/'};
-  // other.operationsU = {'i', 'r', 'a'};
-  other.operationsU = {'i', 'a'};
+  other.operationsU = {'i', 'r', 'a'};
+  // other.operationsU = {'i', 'a'};
 
   // other.stackLen = 15;
   // other.stackLen = 9;
-  other.stackLen = 41;
+  //
+  // other.stackLen = 41;
+  other.stackLen = 10;
+
   // other.maxConst = 3;
   other.maxConst = 6;
 
@@ -103,6 +106,7 @@ int main(int argc, char* argv[]) {
   if (argc > 2) other.maxConst = atoi(argv[2]);
 
   other.individualLen = 3 * other.stackLen + other.maxConst + 1;
+  std::cout << "individualLen:" << other.individualLen << std::endl;
 
   BRKGAParams params;
   // params.populationLen = 30;
@@ -115,6 +119,7 @@ int main(int argc, char* argv[]) {
   params.eliteBias = 85;
   // params.noImprovementMax = 20000;
   params.noImprovementMax = 10;
+  //
   // params.restartMax = 1000;
   // params.restartMax = 20;
   params.restartMax = 5;
@@ -217,16 +222,29 @@ int main(int argc, char* argv[]) {
   // STACKLEN = 9
   // 5001   5001      0      3000  5001 5001  0 3000  3000        | 4000  2000
   // ?   ?  8000 6000 ?  ? ?      | ?   ?   4000  8000  ? ? 4000 8000  4000
-  Vec<chromosome> initialSol = {5001, 5001, 0,    3000, 5001, 5001, 0,
-                                3000, 3000, 4000, 2000, 9999, 9999, 8000,
-                                6000, 9999, 9999, 9999, 9999, 9999, 4000,
-                                8000, 9999, 9999, 4000, 8000, 4000};
+
+  Vec<chromosome> is_segI = {6000, 6000, 1000, 3500, 6000,
+                             6000, 1000, 3500, 1000, 3500};
+  Vec<chromosome> is_segII = {3000, 5000, 0, 0, 7000, 9000, 0, 0, 0, 0};
+  Vec<chromosome> is_segIII = {0, 0, 4000, 7000, 0, 0, 4000, 7000, 1500, 5500};
+  Vec<chromosome> initialSol;
+  initialSol.insert(initialSol.end(), is_segI.begin(), is_segI.end());
+  initialSol.insert(initialSol.end(), is_segII.begin(), is_segII.end());
+  initialSol.insert(initialSol.end(), is_segIII.begin(), is_segIII.end());
+  Vec<chromosome> vMaxConst(other.maxConst, 0);
+  initialSol.insert(initialSol.end(), vMaxConst.begin(), vMaxConst.end());
+  initialSol.push_back(0);
 
   std::optional<Vec<chromosome>> opInitialSol = std::nullopt;
 
-  // IF EUCLEAN DISTANCE & STACKLEN = 9
-  opInitialSol = initialSol;
-  // =====================================================================
+  // =====================
+  // USE INITIAL SOLUTION?
+  // =====================
+  if (false) {
+    assert((int)initialSol.size() == (int)other.individualLen);
+    opInitialSol = initialSol;
+  }
+  // ==========================
 
   run_brkga(problem, params, seed, bestFoundSolution, other, training,
             opInitialSol);
@@ -241,8 +259,8 @@ int main(int argc, char* argv[]) {
   std::cout << "trueStackSize=" << bestFoundSolution.trueStackSize << std::endl;
   std::string eq = printSolution2(problem, bestFoundSolution.randomKeys, other);
   std::cout << "printSolution2: " << eq << std::endl;
-  bestFoundSolution.cost =
-      solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
+  bestFoundSolution.cost = solutionEvaluator(
+      problem, bestFoundSolution.randomKeys, other, training, -1);
   printf("best: %lf \n", bestFoundSolution.cost);
   double auxBestFoundSolutionCost = bestFoundSolution.cost;
 
@@ -263,8 +281,8 @@ int main(int argc, char* argv[]) {
       printSolution2(problem, bestFoundSolution.randomKeys, other);
   std::cout << "printSolution2: " << eq2 << std::endl;
   printf("best before: %lf\n", bestFoundSolution.cost);
-  bestFoundSolution.cost =
-      solutionEvaluator(problem, bestFoundSolution.randomKeys, other, training);
+  bestFoundSolution.cost = solutionEvaluator(
+      problem, bestFoundSolution.randomKeys, other, training, -1);
   printf("best after: %lf \n", bestFoundSolution.cost);
 
   printf("Validation Mean: %lf  \n",

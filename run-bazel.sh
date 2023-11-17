@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "REMEMBER TO RUN: vcpkg-install.sh"
 

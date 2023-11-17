@@ -56,7 +56,7 @@ double execUnaryOp(int idop, double v1, const std::vector<char>& operationsU) {
     if (v1 < 0)
       return INFINITY;
     else
-      return ::pow(v1, 1 / 2);
+      return ::pow(v1, 1.0 / 2.0);
   }
   return 0.0;
 }
@@ -162,7 +162,8 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
 
 double solutionEvaluator(const RProblem& problem,
                          const Vec<chromosome>& individual,
-                         const Scenario& other, int training) {
+                         const Scenario& other, int training, int idSol) {
+  // idSol: Identifier of Solution in Population (Good for DEBUG!)
   // problem counters
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
@@ -170,6 +171,9 @@ double solutionEvaluator(const RProblem& problem,
   const int stackLen = other.stackLen;
   // local variables
   kahan::kfloat64 sum_error = 0;
+  if (idSol == 0) {
+    std::cout << "DEBUG[idSol=0] BEGIN sum_error:" << sum_error << std::endl;
+  }
   //
   const int realTests = problem.tests - training;
   for (int t = 0; t < realTests; t++) {
@@ -187,12 +191,18 @@ double solutionEvaluator(const RProblem& problem,
         int my_floor =
             ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
         int idVar = my_floor - nConst;
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] idVar=" << idVar << std::endl;
+        }
         // printf("%d\n",idVar);
         double varValue = 0;
         // push variable
         if (idVar >= 0) {
           varValue = problem.inputs[t][idVar];
           stk.push(varValue);
+          if (idSol == 0 && t == 0) {
+            std::cout << "DEBUG[idSol=0] pushvar: " << varValue << std::endl;
+          }
         } else {
           // push constant
           idVar += nConst;
@@ -220,13 +230,20 @@ double solutionEvaluator(const RProblem& problem,
             (double)other.operationsBi.size());  // 4 is lenght of operationBi
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] idOpBi=" << idOpBi << std::endl;
+        }
         double v1 = stk.top();
         stk.pop();
         double v2 = stk.top();
         stk.pop();
+        // RETORNAR opcional VAZIO!
         double binaryProduct = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
         // if for case: division by zero
         if (abs(binaryProduct) == INFINITY) {
+          //
+          // std::cout << "WARNING: INFINITY!" << std::endl;
+          //
           while (stk.size() > 0) stk.pop();
           stk.push(INFINITY);
           // =========================================
@@ -234,8 +251,16 @@ double solutionEvaluator(const RProblem& problem,
           // TODO: AVALIAR SE ISSO É UM BREAK MESMO...
           // =========================================
           // j = stackLen;  // break?
+          //
+          // SIGNIFICA QUE O ERRO DEVE SER INFINITO!!!
+          // EXPRESSÃO MAL FORMADA!!!
+          // PENALIZAR MUUUUUITO ALTO!!!
           break;
         } else {
+          if (idSol == 0 && t == 0) {
+            std::cout << "DEBUG[idSol=0] bin result: " << binaryProduct
+                      << std::endl;
+          }
           stk.push(binaryProduct);
         }
       }
@@ -247,12 +272,25 @@ double solutionEvaluator(const RProblem& problem,
             (double)other.operationsU.size());  // 3 is lenght of operationU
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] idOpU=" << idOpU << std::endl;
+        }
         double v1 = stk.top();
         stk.pop();
-        stk.push(execUnaryOp(idOpU, v1, other.operationsU));
+
+        double unResult = execUnaryOp(idOpU, v1, other.operationsU);
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] un func: " << other.operationsU[idOpU]
+                    << " un param:" << v1 << std::endl;
+          std::cout << "DEBUG[idSol=0] un result: " << unResult << std::endl;
+        }
+        stk.push(unResult);
       }
 
       if (individual[j] >= 7500) {
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] NOP" << std::endl;
+        }
         //
         // cout << "i=" << i << " -> stack size = " << stk.size() << endl;
       }
@@ -269,11 +307,28 @@ double solutionEvaluator(const RProblem& problem,
     //
     // compare with expected value
 
+    if (idSol == 0 && t == 0) {
+      std::cout << "DEBUG[idSol=0] val:" << val << std::endl;
+      std::cout << "DEBUG[idSol=0] expected:" << problem.outputs[t]
+                << std::endl;
+      std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_error << std::endl;
+    }
+
     sum_error += computeError(val, problem.outputs[t]);
+
+    if (idSol == 0 && t == 0) {
+      std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_error << std::endl;
+    }
     // printf("sum_error = %lf\n",sum_error);
   }
   // average erro
   double solutionValue = (double)sum_error / realTests;
+
+  if (idSol == 0) {
+    std::cout << "DEBUG[idSol=0] Final sum_error:" << sum_error << std::endl;
+    std::cout << "DEBUG[idSol=0] Final solutionValue:" << solutionValue
+              << std::endl;
+  }
   // printf("solutionValue = %lf\n",solutionValue);
   // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
   // printf("%f\n",solutionValue);

@@ -134,8 +134,10 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
       // std::cout << "i=" << i << " trueStackSize=" <<
       // population[i].trueStackSize
       //           << "/" << stackLen << " seed = " << seed << std::endl;
+      int idSol = i;
+      idSol = -1;  // DISABLE DEBUG
       population[i].cost =
-          solutionEvaluator(problem, population[i].randomKeys, other, 0);
+          solutionEvaluator(problem, population[i].randomKeys, other, 0, idSol);
     }
   }
 }
@@ -185,13 +187,23 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
     seed++;
     populationGenerator(mainPopulation, seed);
     if (initialSolution) {
+      std::cout << "WARNING: BRKGP RECEIVED INITIAL SOLUTION!" << std::endl;
       // if exists 'initialSolution'
       mainPopulation[0].randomKeys = *initialSolution;
       // TODO: what to do with 'seed' here? seed=-1? flag as unused?
       initialSolution = std::nullopt;  // disable optional input
     }
     decoder(mainPopulation, problem, other, seed);
+    if (false) {
+      mainPopulation[0].print();
+      std::cout << "after decode mainPopulation[0].cost: "
+                << mainPopulation[0].cost << std::endl;
+    }
     std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
+    if (false) {
+      std::cout << "after sort mainPopulation[0].cost: "
+                << mainPopulation[0].cost << std::endl;
+    }
     end = false;
     while (!end) {
       assert(auxPopulation.size() == mainPopulation.size());  // NOLINT

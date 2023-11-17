@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstdint>
+#include <iostream>
 #include <string>
 #include <utility>
 #include <vector>
@@ -62,4 +63,12 @@ class ValuedChromosome {
   // IDEA: seed could be used ONLY on StackAdjustment,
   // not for random key generation...
   int seed;
+
+  void print() const {
+    std::cout << "ValuedChromossome(cost=" << cost << "; seed=" << seed;
+    std::cout << "; trueStackSize=" << trueStackSize
+              << "; size=" << randomKeys.size() << "): " << std::endl;
+    for (auto rk : randomKeys) std::cout << rk << " ";
+    std::cout << std::endl;
+  }
 };
