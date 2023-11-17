@@ -220,6 +220,7 @@ double solutionEvaluator(const RProblem& problem,
         if (idSol == 0 && t == 0) {
           std::cout << "DEBUG[idSol=0] idOpBi=" << idOpBi << std::endl;
         }
+        assert(stk.size() >= 2);
         double v1 = stk.top();
         stk.pop();
         double v2 = stk.top();
@@ -249,6 +250,7 @@ double solutionEvaluator(const RProblem& problem,
         if (idSol == 0 && t == 0) {
           std::cout << "DEBUG[idSol=0] idOpU=" << idOpU << std::endl;
         }
+        assert(stk.size() >= 1);
         double v1 = stk.top();
         stk.pop();
 
@@ -319,6 +321,7 @@ double solutionEvaluator(const RProblem& problem,
       //
     }  // for j < stackLen
 
+    assert(stk.size() == 1);
     double val = stk.top();
     stk.pop();
     //
