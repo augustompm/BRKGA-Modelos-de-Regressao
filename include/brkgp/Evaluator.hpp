@@ -87,43 +87,46 @@ double computeError(double v1, double v2) {
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
   int somador = 0;
-  int auxSomador = 0;
   int contConst = 0;
-  int idConst = 0;
   int trueStackLen = 0;
   for (int i = 0; i < stackLen; i++) {
-    int stackDiff = 2;  // DEFAULT = 2 (why?)
+    int stackDiff = 2;  // DEFAULT = 2 (FLAG)
     // Binary: remove two elements and add one
-    if (isOperation(individual[i], OpType::BIN)) stackDiff = -1;
     // Unary: remove one element and add one
-    if (isOperation(individual[i], OpType::UN)) stackDiff = 0;
     // Push: add one
+    if (isOperation(individual[i], OpType::BIN)) stackDiff = -1;
+    if (isOperation(individual[i], OpType::UN)) stackDiff = 0;
     if (isOperation(individual[i], OpType::PUSH)) stackDiff = 1;
     //
-    int my_floor2 =
+    // varConstInt: [0, ..., var+const)
+    int varConstInt =
         ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
-    idConst = my_floor2 - nConst;
-    // TODO(igormcoelho): verificar esse número 2!!!
-    // [-1,0,1] ?
-    if (stackDiff != 2) {
-      auxSomador += stackDiff;
-    }
-    // se == 2, faz nada???
-    // ???
+    // idConstOrVar: constant is negative, var is non-negative
+    int idConstOrVar = varConstInt - nConst;
+    //
+    int auxSomador = somador;
+    //
+    // if not flag, update 'auxSomador'
+    if (stackDiff != 2) auxSomador += stackDiff;
+
+    // < 1 => ERRO: EXIGE CORREÇÃO!
     if (auxSomador < 1) {
-      // ALTERANDO OPERAÇÕES!
-      if (individual[i] < 2500) {
-        // std::cout << "WARNING! ALTERANDO individual COD0!" << std::endl;
+      if (isOperation(individual[i], OpType::BIN)) {
+        // Se BIN (<2500) vira PUSH
         individual[i] += 5000;
-      } else if (individual[i] >= 7500) {  // se der testar depois, no caso i=0
-        // std::cout << "WARNING! ALTERANDO individual COD1!" << std::endl;
+      } else if (isOperation(individual[i], OpType::SPECIAL)) {
+        // Se SPECIAL (>=7500) vira PUSH
         individual[i] -= 2500;
-      } else {  // se der testar depois, no caso i=0
-        // std::cout << "WARNING! ALTERANDO individual COD2!" << std::endl;
+      } else {
+        // Se UN vira PUSH
+        // Se PUSH vira SP (Não sei se cai aqui!!!)
         individual[i] += 2500;
       }
       auxSomador = somador + 1;
     }
+
+    // assert(auxSomador == somador); // errado!
+
     if (auxSomador > (stackLen - i)) {
       if (somador == 1) {
         // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
@@ -133,8 +136,7 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         if ((individual[i] >= 2500) && (individual[i] < 5000)) {
           // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
           individual[i] -= 2500;
-        } else if (individual[i] >=
-                   7500) {  // se der testar depois, no caso i=0
+        } else if (individual[i] >= 7500) {
           // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
           individual[i] -= 7500;
         } else {  // se der testar depois, no caso i=0
@@ -144,7 +146,9 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         auxSomador = somador - 1;
       }
     }
-    if ((stackDiff == 1) && idConst < 0) {
+
+    // SD1 (PUSH) + Constant
+    if ((stackDiff == 1) && idConstOrVar < 0) {
       contConst++;
       if (contConst > maxConst) {
         srand(seed);
@@ -155,7 +159,9 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         seed++;
       }
     }
+    //
     somador = auxSomador;
+    //
     if (individual[i] < 7500) trueStackLen++;
   }
   return trueStackLen;
