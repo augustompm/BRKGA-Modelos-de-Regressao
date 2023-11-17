@@ -34,6 +34,19 @@ bool isOperation(int rk, OpType op) {
   return false;
 }
 
+int makePUSH(int rk) {
+  if (isOperation(rk, OpType::BIN)) {
+    // Se BIN (<2500) vira PUSH
+    return rk + 5000;
+  } else if (isOperation(rk, OpType::SPECIAL)) {
+    // Se SPECIAL (>=7500) vira PUSH
+    return rk - 2500;
+  } else {
+    // Se UN vira PUSH
+    return rk + 2500;
+  }
+}
+
 opt<double> execBinaryOp(int idop, double v1, double v2,
                          const std::vector<char>& operationsBi) {
   if (operationsBi[idop] == '+') return std::make_optional<double>(v1 + v2);
@@ -88,8 +101,13 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
   int somador = 0;
   int contConst = 0;
+  // Significado: número de operações "boas" (não SPECIAL/NOP)
   int trueStackLen = 0;
+  //
   for (int i = 0; i < stackLen; i++) {
+    // invariante: 'somador' sempre >= 0
+    assert(somador >= 0);
+    //
     int stackDiff = 2;  // DEFAULT = 2 (FLAG)
     // Binary: remove two elements and add one
     // Unary: remove one element and add one
@@ -103,27 +121,29 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
     // idConstOrVar: constant is negative, var is non-negative
     int idConstOrVar = varConstInt - nConst;
-    //
+    // auxSomador é cópia local do somador
+    // aplica operação no 'auxSomador'
     int auxSomador = somador;
     //
     // if not flag, update 'auxSomador'
     if (stackDiff != 2) auxSomador += stackDiff;
 
     // < 1 => ERRO: EXIGE CORREÇÃO!
+    // SIGNIFICA: NENHUM OPERANDO APÓS OPERAÇÃO!
+    // OU ESTAVA VAZIO, E VEIO UM 'SPECIAL' (NOP) - ERRO! VIRA PUSH!
+    //    - Não permitido começar com NOP! ("NOP à esquerda")
+    // OU TINHA UM, E VEIO UMA BINARIA - ERRO! VIRA PUSH!
+    // OU ESTAVA VAZIO, E VEIO UMA UNARIA - ERRO! VIRA PUSH!
+    //
+    // CONSERTO: Transforma em PUSH a operação!
     if (auxSomador < 1) {
-      if (isOperation(individual[i], OpType::BIN)) {
-        // Se BIN (<2500) vira PUSH
-        individual[i] += 5000;
-      } else if (isOperation(individual[i], OpType::SPECIAL)) {
-        // Se SPECIAL (>=7500) vira PUSH
-        individual[i] -= 2500;
-      } else {
-        // Se UN vira PUSH
-        // Se PUSH vira SP (Não sei se cai aqui!!!)
-        individual[i] += 2500;
-      }
+      individual[i] = makePUSH(individual[i]);
+      assert(isOperation(individual[i], OpType::PUSH));
       auxSomador = somador + 1;
     }
+
+    // INVARIANTE Importante: Sempre alguém na pilha após "conserto"
+    assert(auxSomador >= 1);
 
     // assert(auxSomador == somador); // errado!
 
@@ -161,8 +181,8 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
     }
     //
     somador = auxSomador;
-    //
-    if (individual[i] < 7500) trueStackLen++;
+    // CONTA OPERAÇÕES "BOAS"/"ÚTEIS"
+    if (!isOperation(individual[i], OpType::SPECIAL)) trueStackLen++;
   }
   return trueStackLen;
 }
