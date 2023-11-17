@@ -110,18 +110,9 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   // problem
   int nVars = problem.nVars;
   int nConst = problem.nConst;
-  // int tests = problem.tests;
-  // const Vec<Vec<double>>& inputs = problem.inputs;
-  // const Vec<double>& outputs = problem.outputs;
-  // const Vec<Pair<double, double>>& vConst = problem.vConst;
   //
-  // auto& operationsBi = other.operationsBi;
-  // auto& operationsU = other.operationsU;
-
   int stackLen = other.stackLen;
   int maxConst = other.maxConst;
-  // int operationsBiLen = other.operationsBi.size();
-  // int operationsULen = other.operationsU.size();
   //
   for (int i = 0; i < (int)population.size(); i++) {
     if (population[i].cost == 0) {

@@ -20,6 +20,20 @@
 template <class T>
 using opt = std::optional<T>;
 
+enum class OpType { BIN, UN, PUSH, SPECIAL, SP_NOP };
+
+bool isOperation(int rk, OpType op) {
+  // BIN:  [0, 2500)
+  if ((op == OpType::BIN) && (rk < 2500) && (rk >= 0)) return true;
+  // UN:  [2500, 5000)
+  if ((op == OpType::UN) && (rk < 5000) && (rk >= 2500)) return true;
+  // PUSH:  [5000, 7500)
+  if ((op == OpType::PUSH) && (rk < 7500) && (rk >= 5000)) return true;
+  // SPECIAL:  [7500, 10000)
+  if ((op == OpType::SPECIAL) && (rk < 10000) && (rk >= 7500)) return true;
+  return false;
+}
+
 opt<double> execBinaryOp(int idop, double v1, double v2,
                          const std::vector<char>& operationsBi) {
   if (operationsBi[idop] == '+') return std::make_optional<double>(v1 + v2);
@@ -171,13 +185,66 @@ double solutionEvaluator(const RProblem& problem,
     int contSeed = 0;
 
     for (int j = 0; j < stackLen; j++) {
-      // cout << "begin var i=" << i << " / sol_size=" << rep.vstack.size() <<
-      // endl;
-      //  case: push
-      //  -1 0 1 2
-      //  2 3
-      // push variable or constant
-      if ((individual[j] < 7500) && (individual[j] >= 5000)) {
+      //
+      if (isOperation(individual[j], OpType::BIN)) {
+        // case: pop Binary Operation [0, 2500)
+        // pop operation
+        int idOpBi = floor(
+            (individual[2 * stackLen + j] / 10000.0) *
+            (double)other.operationsBi.size());  // 4 is lenght of operationBi
+        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
+        //
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] idOpBi=" << idOpBi << std::endl;
+        }
+        double v1 = stk.top();
+        stk.pop();
+        double v2 = stk.top();
+        stk.pop();
+        // RETORNAR opcional VAZIO!
+        opt<double> binResult =
+            execBinaryOp(idOpBi, v1, v2, other.operationsBi);
+        // error in binary operation
+        if (!binResult) {
+          // LIMPA PILHA E ABORTA TESTE!
+          while (stk.size() > 0) stk.pop();
+          stk.push(INFINITY);
+          break;
+        } else {
+          if (idSol == 0 && t == 0)
+            std::cout << "DEBUG[idSol=0] bin result: " << *binResult
+                      << std::endl;
+          stk.push(*binResult);
+        }
+      } else if (isOperation(individual[j], OpType::UN)) {
+        // pop: Unary Operation [2500, 5000)
+        int idOpU = floor(
+            (individual[2 * stackLen + j] / 10000.0) *
+            (double)other.operationsU.size());  // 3 is lenght of operationU
+        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
+        //
+        if (idSol == 0 && t == 0) {
+          std::cout << "DEBUG[idSol=0] idOpU=" << idOpU << std::endl;
+        }
+        double v1 = stk.top();
+        stk.pop();
+
+        opt<double> unResult = execUnaryOp(idOpU, v1, other.operationsU);
+
+        // error in unary operation
+        if (!unResult) {
+          // LIMPA PILHA E ABORTA TESTE!
+          while (stk.size() > 0) stk.pop();
+          stk.push(INFINITY);
+          break;
+        } else {
+          if (idSol == 0 && t == 0)
+            std::cout << "DEBUG[idSol=0] un result: " << *unResult << std::endl;
+
+          stk.push(*unResult);
+        }
+      } else if (isOperation(individual[j], OpType::PUSH)) {
+        // push variable or constant [5000,7500)
         int my_floor =
             ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
         int idVar = my_floor - nConst;
@@ -210,75 +277,16 @@ double solutionEvaluator(const RProblem& problem,
             contSeed++;
           }
         }
-      }
-
-      // case: pop Binary Operation
-      if (individual[j] < 2500) {
-        // pop operation
-        int idOpBi = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsBi.size());  // 4 is lenght of operationBi
-        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
-        //
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] idOpBi=" << idOpBi << std::endl;
-        }
-        double v1 = stk.top();
-        stk.pop();
-        double v2 = stk.top();
-        stk.pop();
-        // RETORNAR opcional VAZIO!
-        opt<double> binResult =
-            execBinaryOp(idOpBi, v1, v2, other.operationsBi);
-        // error in binary operation
-        if (!binResult) {
-          // LIMPA PILHA E ABORTA TESTE!
-          while (stk.size() > 0) stk.pop();
-          stk.push(INFINITY);
-          break;
-        } else {
-          if (idSol == 0 && t == 0)
-            std::cout << "DEBUG[idSol=0] bin result: " << *binResult
-                      << std::endl;
-          stk.push(*binResult);
-        }
-      }
-
-      // pop: Unary Operation
-      if ((individual[j] < 5000) && (individual[j] >= 2500)) {
-        int idOpU = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsU.size());  // 3 is lenght of operationU
-        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
-        //
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] idOpU=" << idOpU << std::endl;
-        }
-        double v1 = stk.top();
-        stk.pop();
-
-        opt<double> unResult = execUnaryOp(idOpU, v1, other.operationsU);
-
-        // error in unary operation
-        if (!unResult) {
-          // LIMPA PILHA E ABORTA TESTE!
-          while (stk.size() > 0) stk.pop();
-          stk.push(INFINITY);
-          break;
-        } else {
-          if (idSol == 0 && t == 0)
-            std::cout << "DEBUG[idSol=0] un result: " << *unResult << std::endl;
-
-          stk.push(*unResult);
-        }
-      }
-
-      if (individual[j] >= 7500) {
+      } else if (isOperation(individual[j], OpType::SPECIAL)) {
+        // special (currently: NOP): [7500, 10000)
         if (idSol == 0 && t == 0) {
           std::cout << "DEBUG[idSol=0] NOP" << std::endl;
         }
         //
         // cout << "i=" << i << " -> stack size = " << stk.size() << endl;
+      } else {
+        std::cout << "ERROR! UNKNOWN OPERATION " << individual[j] << std::endl;
+        return INFINITY;
       }
 
       //
