@@ -20,7 +20,7 @@
 template <class T>
 using opt = std::optional<T>;
 
-enum class OpType { BIN, UN, PUSH, SPECIAL, SP_NOP };
+enum class OpType { BIN, UN, PUSH, SPECIAL };
 
 bool isOperation(int rk, OpType op) {
   // BIN:  [0, 2500)
@@ -99,14 +99,14 @@ double computeError(double v1, double v2) {
 //
 int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
-  int somador = 0;
+  int stackCount = 0;
   int contConst = 0;
   // Significado: número de operações "boas" (não SPECIAL/NOP)
   int trueStackLen = 0;
   //
   for (int i = 0; i < stackLen; i++) {
-    // invariante: 'somador' sempre >= 0
-    assert(somador >= 0);
+    // invariante: 'stackCount' sempre >= 0
+    assert(stackCount >= 0);
     //
     int stackDiff = 2;  // DEFAULT = 2 (FLAG)
     // Binary: remove two elements and add one
@@ -121,12 +121,12 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
         ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
     // idConstOrVar: constant is negative, var is non-negative
     int idConstOrVar = varConstInt - nConst;
-    // auxSomador é cópia local do somador
-    // aplica operação no 'auxSomador'
-    int auxSomador = somador;
+    // stackCountAfterOperation é cópia local do stackCount
+    // aplica operação no 'stackCountAfterOperation'
+    int stackCountAfterOperation = stackCount;
     //
-    // if not flag, update 'auxSomador'
-    if (stackDiff != 2) auxSomador += stackDiff;
+    // if not flag, update 'stackCountAfterOperation'
+    if (stackDiff != 2) stackCountAfterOperation += stackDiff;
 
     // < 1 => ERRO: EXIGE CORREÇÃO!
     // SIGNIFICA: NENHUM OPERANDO APÓS OPERAÇÃO!
@@ -136,34 +136,43 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
     // OU ESTAVA VAZIO, E VEIO UMA UNARIA - ERRO! VIRA PUSH!
     //
     // CONSERTO: Transforma em PUSH a operação!
-    if (auxSomador < 1) {
+    if (stackCountAfterOperation < 1) {
       individual[i] = makePUSH(individual[i]);
       assert(isOperation(individual[i], OpType::PUSH));
-      auxSomador = somador + 1;
+      stackCountAfterOperation = stackCount + 1;
     }
 
     // INVARIANTE Importante: Sempre alguém na pilha após "conserto"
-    assert(auxSomador >= 1);
+    assert(stackCountAfterOperation >= 1);
 
     // assert(auxSomador == somador); // errado!
 
-    if (auxSomador > (stackLen - i)) {
-      if (somador == 1) {
+    // ===============================================================
+    // TOO MANY ELEMENTS IN STACK: MUST USE BINARY OPS TO REMOVE THEM!
+    // ===============================================================
+    // | PUSH | PUSH | PUSH |  ?  |  ?  |
+    //    0      1      i=2    3     4
+    // STRANGE... Must test if it covers all cases...
+    // stackCountAfterOperation=3  >  (5 - 2) = 3   (?)
+    if (stackCountAfterOperation > (stackLen - i)) {
+      if (stackCount == 1) {
         // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
         individual[i] += 2500;
-        auxSomador = 1;
-      } else if (somador > 1) {
-        if ((individual[i] >= 2500) && (individual[i] < 5000)) {
+        stackCountAfterOperation = 1;
+      } else if (stackCount > 1) {
+        if (isOperation(individual[i], OpType::UN)) {
           // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
+          // TODO: transforma em UN, já que não pode ser BIN?
           individual[i] -= 2500;
-        } else if (individual[i] >= 7500) {
+
+        } else if (isOperation(individual[i], OpType::SPECIAL)) {
           // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
           individual[i] -= 7500;
         } else {  // se der testar depois, no caso i=0
           // std::cout << "WARNING! ALTERANDO individual COD6!" << std::endl;
           individual[i] -= 5000;
         }
-        auxSomador = somador - 1;
+        stackCountAfterOperation = stackCount - 1;
       }
     }
 
@@ -180,7 +189,7 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
       }
     }
     //
-    somador = auxSomador;
+    stackCount = stackCountAfterOperation;
     // CONTA OPERAÇÕES "BOAS"/"ÚTEIS"
     if (!isOperation(individual[i], OpType::SPECIAL)) trueStackLen++;
   }
