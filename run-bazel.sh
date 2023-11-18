@@ -7,4 +7,6 @@ bazel build ... --config linux
 
 bazel run :refresh_compile_commands
 
+bazel test ... --config linux
+
 ./bazel-bin/app_demo

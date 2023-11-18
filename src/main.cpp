@@ -223,10 +223,39 @@ int main(int argc, char* argv[]) {
   // 5001   5001      0      3000  5001 5001  0 3000  3000        | 4000  2000
   // ?   ?  8000 6000 ?  ? ?      | ?   ?   4000  8000  ? ? 4000 8000  4000
 
-  Vec<chromosome> is_segI = {6000, 6000, 1000, 3500, 6000,
-                             6000, 1000, 3500, 1000, 3500};
-  Vec<chromosome> is_segII = {3000, 5000, 0, 0, 7000, 9000, 0, 0, 0, 0};
-  Vec<chromosome> is_segIII = {0, 0, 4000, 7000, 0, 0, 4000, 7000, 1500, 5500};
+  RKGenerator rkg;
+  rkg.operationsBi = other.operationsBi;
+  rkg.operationsU = other.operationsU;
+  rkg.nVars = problem.nVars;
+  rkg.nConst = problem.nConst;
+
+  // Vec<chromosome> is_segI = {6000, 6000, 1000, 3500, 6000,
+  //                            6000, 1000, 3500, 1000, 3500};
+  Vec<chromosome> is_segI = {rkg.getRK(OpType::PUSH), rkg.getRK(OpType::PUSH),
+                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN),
+                             rkg.getRK(OpType::PUSH), rkg.getRK(OpType::PUSH),
+                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN),
+                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN)};
+  Vec<chromosome> is_segII = {rkg.getRKvar(0),
+                              rkg.getRKvar(1),
+                              0,
+                              0,
+                              rkg.getRKvar(2),
+                              rkg.getRKvar(3),
+                              0,
+                              0,
+                              0,
+                              0};
+  Vec<chromosome> is_segIII = {0,
+                               0,
+                               rkg.getRKbi('-'),
+                               rkg.getRKun('a'),
+                               0,
+                               0,
+                               rkg.getRKbi('-'),
+                               rkg.getRKun('a'),
+                               rkg.getRKbi('+'),
+                               rkg.getRKun('r')};
   Vec<chromosome> initialSol;
   initialSol.insert(initialSol.end(), is_segI.begin(), is_segI.end());
   initialSol.insert(initialSol.end(), is_segII.begin(), is_segII.end());
@@ -240,8 +269,11 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (false) {
+  if (true) {
     assert((int)initialSol.size() == (int)other.individualLen);
+    std::cout << "INITIAL: ";
+    for (auto& k : initialSol) std::cout << k << " ";
+    std::cout << std::endl;
     opInitialSol = initialSol;
   }
   // ==========================

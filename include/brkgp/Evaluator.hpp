@@ -34,6 +34,53 @@ bool isOperation(int rk, OpType op) {
   return false;
 }
 
+struct RKGenerator {
+  std::vector<char> operationsBi;
+  std::vector<char> operationsU;
+  int nVars{0};
+  int nConst{0};
+
+  uint16_t getRK(OpType op) {
+    switch (op) {
+      case OpType::BIN:
+        return 1000;
+      case OpType::UN:
+        return 3500;
+      case OpType::PUSH:
+        return 6000;
+      default:
+        return 9999;
+    }
+  }
+
+  uint16_t getRKvar(int var) {
+    int segSize = 10000 / (nVars + nConst);
+    int varLower = var * segSize + nConst * segSize;
+    int varUpper = (var + 1) * segSize + nConst * segSize;
+    return (varLower + varUpper) / 2;
+  }
+
+  uint16_t getRKbi(char binaryOp) {
+    int segSize = 10000 / ((int)operationsBi.size());
+    int opId = -1;
+    for (int i = 0; i < (int)operationsBi.size(); i++)
+      if (operationsBi[i] == binaryOp) opId = i;
+    int opLower = opId * segSize;
+    int opUpper = (opId + 1) * segSize;
+    return (opLower + opUpper) / 2;
+  }
+
+  uint16_t getRKun(char unaryOp) {
+    int segSize = 10000 / ((int)operationsU.size());
+    int opId = -1;
+    for (int i = 0; i < (int)operationsU.size(); i++)
+      if (operationsU[i] == unaryOp) opId = i;
+    int opLower = opId * segSize;
+    int opUpper = (opId + 1) * segSize;
+    return (opLower + opUpper) / 2;
+  }
+};
+
 int makePUSH(int rk) {
   if (isOperation(rk, OpType::BIN)) {
     // Se BIN (<2500) vira PUSH
