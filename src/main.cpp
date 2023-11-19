@@ -229,41 +229,8 @@ int main(int argc, char* argv[]) {
   rkg.nVars = problem.nVars;
   rkg.nConst = problem.nConst;
 
-  // Vec<chromosome> is_segI = {6000, 6000, 1000, 3500, 6000,
-  //                            6000, 1000, 3500, 1000, 3500};
-  Vec<chromosome> is_segI = {rkg.getRK(OpType::PUSH), rkg.getRK(OpType::PUSH),
-                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN),
-                             rkg.getRK(OpType::PUSH), rkg.getRK(OpType::PUSH),
-                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN),
-                             rkg.getRK(OpType::BIN),  rkg.getRK(OpType::UN)};
-  Vec<chromosome> is_segII = {rkg.getRKvar(0),
-                              rkg.getRKvar(1),
-                              0,
-                              0,
-                              rkg.getRKvar(2),
-                              rkg.getRKvar(3),
-                              0,
-                              0,
-                              0,
-                              0};
-  Vec<chromosome> is_segIII = {0,
-                               0,
-                               rkg.getRKbi('-'),
-                               rkg.getRKun('a'),
-                               0,
-                               0,
-                               rkg.getRKbi('-'),
-                               rkg.getRKun('a'),
-                               rkg.getRKbi('+'),
-                               rkg.getRKun('r')};
-  Vec<chromosome> initialSol;
-  initialSol.insert(initialSol.end(), is_segI.begin(), is_segI.end());
-  initialSol.insert(initialSol.end(), is_segII.begin(), is_segII.end());
-  initialSol.insert(initialSol.end(), is_segIII.begin(), is_segIII.end());
-  Vec<chromosome> vMaxConst(other.maxConst, 0);
-  initialSol.insert(initialSol.end(), vMaxConst.begin(), vMaxConst.end());
-  initialSol.push_back(0);
-
+  auto initialSol =
+      rkg.getRKexpr("v0 v1 - a v2 v3 - a + r", other.stackLen, other.maxConst);
   std::optional<Vec<chromosome>> opInitialSol = std::nullopt;
 
   // =====================

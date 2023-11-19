@@ -11,8 +11,10 @@
 // C++
 #include <optional>
 #include <stack>
+#include <string>
 #include <vector>
 //
+#include <Scanner/Scanner.hpp>
 #include <brkgp/Evaluator.hpp>
 #include <brkgp/PrintIO.hpp>
 #include <kahan-float/kahan.hpp>
@@ -39,6 +41,61 @@ struct RKGenerator {
   std::vector<char> operationsU;
   int nVars{0};
   int nConst{0};
+
+  int inVStr(std::string s, std::vector<std::string> v) {
+    for (int idx = 0; idx < (int)v.size(); idx++)
+      if (s == v[idx]) return idx;
+    return -1;
+  }
+
+  Vec<chromosome> getRKexpr(std::string expr, int stackLen, int maxConst) {
+    std::vector<std::string> sopsBi;
+    std::vector<std::string> sopsU;
+    std::vector<std::string> svars;
+    std::vector<std::string> sconsts;
+    for (auto& i : operationsBi) sopsBi.push_back(std::string{i});
+    for (auto& i : operationsU) sopsU.push_back(std::string{i});
+    for (int id = 0; id < nVars; id++) {
+      std::stringstream ss;
+      ss << "v" << id;
+      svars.push_back(ss.str());
+    }
+
+    int individualLen = 3 * stackLen + maxConst + 1;
+
+    Vec<chromosome> v(individualLen, 0);
+    scannerpp::Scanner scanner{expr};
+
+    int idx = 0;
+    while (scanner.hasNext()) {
+      std::string op = scanner.next();
+      if (inVStr(op, svars) >= 0) {
+        v[idx] = getRK(OpType::PUSH);
+        v[idx + stackLen] = getRKvar(inVStr(op, svars));
+        idx++;
+      }
+      if (inVStr(op, sopsBi) >= 0) {
+        v[idx] = getRK(OpType::BIN);
+        v[idx + 2 * stackLen] = getRKbi(op[0]);
+        idx++;
+      }
+      if (inVStr(op, sopsU) >= 0) {
+        v[idx] = getRK(OpType::UN);
+        v[idx + 2 * stackLen] = getRKun(op[0]);
+        idx++;
+      }
+      if (inVStr(op, sconsts) >= 0) {
+        std::cout << "UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
+        exit(1);
+      }
+      if (idx > stackLen) {
+        std::cout << "ERROR IN PARSING! idx > stackLen: " << idx << std::endl;
+        exit(1);
+      }
+    }
+
+    return v;
+  }
 
   uint16_t getRK(OpType op) {
     switch (op) {

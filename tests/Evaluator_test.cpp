@@ -79,4 +79,7 @@ TEST_CASE("montando solucao para distancia euclideana") {
       3750, 8332, 1250, 4999, 0,    0,    0,    0,    0,    0,    0};
 
   REQUIRE(initialSol == initialTestSol);
+  //
+  auto sol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r", stackLen, maxConst);
+  REQUIRE(sol == initialTestSol);
 }
