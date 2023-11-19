@@ -85,4 +85,21 @@ TEST_CASE("montando solucao para distancia euclideana") {
   //
   auto sol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
   REQUIRE(sol == initialTestSol);
+  //
+  // TESTING 'SPECIAL/NOP' OPERATION
+  //
+  is_segI.push_back(9999);  // NOP
+  is_segII.push_back(0);    // whatever
+  is_segIII.push_back(0);   // whatever
+  Vec<chromosome> initialSol2;
+  initialSol2.insert(initialSol2.end(), is_segI.begin(), is_segI.end());
+  initialSol2.insert(initialSol2.end(), is_segII.begin(), is_segII.end());
+  initialSol2.insert(initialSol2.end(), is_segIII.begin(), is_segIII.end());
+  initialSol2.insert(initialSol2.end(), vMaxConst.begin(), vMaxConst.end());
+  initialSol2.push_back(0);
+  // increase stackLen to generate last NOP
+  rkg.stackLen++;
+  auto sol2 = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
+  REQUIRE(sol2[rkg.stackLen - 1] == 9999);
+  REQUIRE(sol2 == initialSol2);
 }

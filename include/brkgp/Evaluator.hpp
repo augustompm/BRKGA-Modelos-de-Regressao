@@ -36,111 +36,6 @@ bool isOperation(int rk, OpType op) {
   return false;
 }
 
-struct RKGenerator {
-  std::vector<char> operationsBi;
-  std::vector<char> operationsU;
-  int nVars{0};
-  int nConst{0};
-  int stackLen{0};
-  int maxConst{0};
-
-  int inVStr(std::string s, std::vector<std::string> v) {
-    for (int idx = 0; idx < (int)v.size(); idx++)
-      if (s == v[idx]) return idx;
-    return -1;
-  }
-
-  Vec<chromosome> getRKexpr(std::string expr) {
-    std::vector<std::string> sopsBi;
-    std::vector<std::string> sopsU;
-    std::vector<std::string> svars;
-    std::vector<std::string> sconsts;
-    for (auto& i : operationsBi) sopsBi.push_back(std::string{i});
-    for (auto& i : operationsU) sopsU.push_back(std::string{i});
-    for (int id = 0; id < nVars; id++) {
-      std::stringstream ss;
-      ss << "v" << id;
-      svars.push_back(ss.str());
-    }
-
-    int individualLen = 3 * stackLen + maxConst + 1;
-
-    Vec<chromosome> v(individualLen, 0);
-    scannerpp::Scanner scanner{expr};
-
-    int idx = 0;
-    while (scanner.hasNext()) {
-      std::string op = scanner.next();
-      if (inVStr(op, svars) >= 0) {
-        v[idx] = getRK(OpType::PUSH);
-        v[idx + stackLen] = getRKvar(inVStr(op, svars));
-        idx++;
-      }
-      if (inVStr(op, sopsBi) >= 0) {
-        v[idx] = getRK(OpType::BIN);
-        v[idx + 2 * stackLen] = getRKbi(op[0]);
-        idx++;
-      }
-      if (inVStr(op, sopsU) >= 0) {
-        v[idx] = getRK(OpType::UN);
-        v[idx + 2 * stackLen] = getRKun(op[0]);
-        idx++;
-      }
-      if (inVStr(op, sconsts) >= 0) {
-        std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
-        return Vec<chromosome>{};
-      }
-      if (idx > stackLen) {
-        std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
-                  << std::endl;
-        return Vec<chromosome>{};
-      }
-    }
-
-    return v;
-  }
-
-  uint16_t getRK(OpType op) {
-    switch (op) {
-      case OpType::BIN:
-        return 1000;
-      case OpType::UN:
-        return 3500;
-      case OpType::PUSH:
-        return 6000;
-      default:
-        return 9999;
-    }
-  }
-
-  uint16_t getRKvar(int var) {
-    int segSize = 10000 / (nVars + nConst);
-    int varLower = var * segSize + nConst * segSize;
-    int varUpper = (var + 1) * segSize + nConst * segSize;
-    return (varLower + varUpper) / 2;
-  }
-
-  uint16_t getRKbi(char binaryOp) {
-    int segSize = 10000 / ((int)operationsBi.size());
-    int opId = -1;
-    for (int i = 0; i < (int)operationsBi.size(); i++)
-      if (operationsBi[i] == binaryOp) opId = i;
-    int opLower = opId * segSize;
-    int opUpper = (opId + 1) * segSize;
-    return (opLower + opUpper) / 2;
-  }
-
-  uint16_t getRKun(char unaryOp) {
-    int segSize = 10000 / ((int)operationsU.size());
-    int opId = -1;
-    for (int i = 0; i < (int)operationsU.size(); i++)
-      if (operationsU[i] == unaryOp) opId = i;
-    int opLower = opId * segSize;
-    int opUpper = (opId + 1) * segSize;
-    return (opLower + opUpper) / 2;
-  }
-};
-
 int makePUSH(int rk) {
   if (isOperation(rk, OpType::BIN)) {
     // Se BIN (<2500) vira PUSH
@@ -470,3 +365,117 @@ double solutionEvaluator(const RProblem& problem,
   // printf("%f\n",solutionValue);
   return solutionValue;
 }
+
+// ===========
+// RKGenerator
+// -----------
+
+struct RKGenerator {
+  std::vector<char> operationsBi;
+  std::vector<char> operationsU;
+  int nVars{0};
+  int nConst{0};
+  int stackLen{0};
+  int maxConst{0};
+
+  int inVStr(std::string s, std::vector<std::string> v) {
+    for (int idx = 0; idx < (int)v.size(); idx++)
+      if (s == v[idx]) return idx;
+    return -1;
+  }
+
+  Vec<chromosome> getRKexpr(std::string expr) {
+    std::vector<std::string> sopsBi;
+    std::vector<std::string> sopsU;
+    std::vector<std::string> svars;
+    std::vector<std::string> sconsts;
+    for (auto& i : operationsBi) sopsBi.push_back(std::string{i});
+    for (auto& i : operationsU) sopsU.push_back(std::string{i});
+    for (int id = 0; id < nVars; id++) {
+      std::stringstream ss;
+      ss << "v" << id;
+      svars.push_back(ss.str());
+    }
+
+    int individualLen = 3 * stackLen + maxConst + 1;
+
+    Vec<chromosome> v(individualLen, 0);
+    scannerpp::Scanner scanner{expr};
+
+    int idx = 0;
+    while (scanner.hasNext()) {
+      std::string op = scanner.next();
+      if (inVStr(op, svars) >= 0) {
+        v[idx] = getRK(OpType::PUSH);
+        v[idx + stackLen] = getRKvar(inVStr(op, svars));
+        idx++;
+      }
+      if (inVStr(op, sopsBi) >= 0) {
+        v[idx] = getRK(OpType::BIN);
+        v[idx + 2 * stackLen] = getRKbi(op[0]);
+        idx++;
+      }
+      if (inVStr(op, sopsU) >= 0) {
+        v[idx] = getRK(OpType::UN);
+        v[idx + 2 * stackLen] = getRKun(op[0]);
+        idx++;
+      }
+      if (inVStr(op, sconsts) >= 0) {
+        std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
+        return Vec<chromosome>{};
+      }
+      if (idx > stackLen) {
+        std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
+                  << std::endl;
+        return Vec<chromosome>{};
+      }
+    }
+    // fill the rest with NOP's
+    while (idx < stackLen) {
+      v[idx] = getRK(OpType::SPECIAL);
+      idx++;
+    }
+
+    return v;
+  }
+
+  uint16_t getRK(OpType op) {
+    switch (op) {
+      case OpType::BIN:
+        return 1000;
+      case OpType::UN:
+        return 3500;
+      case OpType::PUSH:
+        return 6000;
+      default:
+        return 9999;
+    }
+  }
+
+  uint16_t getRKvar(int var) {
+    int segSize = 10000 / (nVars + nConst);
+    int varLower = var * segSize + nConst * segSize;
+    int varUpper = (var + 1) * segSize + nConst * segSize;
+    return (varLower + varUpper) / 2;
+  }
+
+  uint16_t getRKbi(char binaryOp) {
+    int segSize = 10000 / ((int)operationsBi.size());
+    int opId = -1;
+    for (int i = 0; i < (int)operationsBi.size(); i++)
+      if (operationsBi[i] == binaryOp) opId = i;
+    int opLower = opId * segSize;
+    int opUpper = (opId + 1) * segSize;
+    return (opLower + opUpper) / 2;
+  }
+
+  uint16_t getRKun(char unaryOp) {
+    int segSize = 10000 / ((int)operationsU.size());
+    int opId = -1;
+    for (int i = 0; i < (int)operationsU.size(); i++)
+      if (operationsU[i] == unaryOp) opId = i;
+    int opLower = opId * segSize;
+    int opUpper = (opId + 1) * segSize;
+    return (opLower + opUpper) / 2;
+  }
+};

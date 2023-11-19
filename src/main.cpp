@@ -224,10 +224,10 @@ int main(int argc, char* argv[]) {
   // ?   ?  8000 6000 ?  ? ?      | ?   ?   4000  8000  ? ? 4000 8000  4000
 
   RKGenerator rkg;
-  rkg.operationsBi = other.operationsBi;
-  rkg.operationsU = other.operationsU;
   rkg.nVars = problem.nVars;
   rkg.nConst = problem.nConst;
+  rkg.operationsBi = other.operationsBi;
+  rkg.operationsU = other.operationsU;
   rkg.stackLen = other.stackLen;
   rkg.maxConst = other.maxConst;
 
