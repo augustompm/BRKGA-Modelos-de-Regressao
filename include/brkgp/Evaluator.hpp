@@ -85,12 +85,13 @@ struct RKGenerator {
         idx++;
       }
       if (inVStr(op, sconsts) >= 0) {
-        std::cout << "UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
-        exit(1);
+        std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
+        return Vec<chromosome>{};
       }
       if (idx > stackLen) {
-        std::cout << "ERROR IN PARSING! idx > stackLen: " << idx << std::endl;
-        exit(1);
+        std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
+                  << std::endl;
+        return Vec<chromosome>{};
       }
     }
 
