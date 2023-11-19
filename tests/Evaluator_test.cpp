@@ -97,9 +97,15 @@ TEST_CASE("montando solucao para distancia euclideana") {
   initialSol2.insert(initialSol2.end(), is_segIII.begin(), is_segIII.end());
   initialSol2.insert(initialSol2.end(), vMaxConst.begin(), vMaxConst.end());
   initialSol2.push_back(0);
+  // ======================================
   // increase stackLen to generate last NOP
   rkg.stackLen++;
   auto sol2 = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
   REQUIRE(sol2[rkg.stackLen - 1] == 9999);
+  REQUIRE(sol2 == initialSol2);
+  // stack adjustment should not change this good solution
+  int usedOps = stackAdjustment(sol2, rkg.stackLen, rkg.nVars, rkg.nConst,
+                                rkg.maxConst, 0);
+  REQUIRE(usedOps == rkg.stackLen - 1);
   REQUIRE(sol2 == initialSol2);
 }
