@@ -32,6 +32,8 @@ TEST_CASE("montando solucao para distancia euclideana") {
   rkg.operationsU = std::vector<char>({'i', 'r', 'a'});
   rkg.nVars = 4;
   rkg.nConst = 1;
+  rkg.stackLen = 10;
+  rkg.maxConst = 6;
 
   // Vec<chromosome> is_segI = {6000, 6000, 1000, 3500, 6000,
   //                            6000, 1000, 3500, 1000, 3500};
@@ -60,17 +62,18 @@ TEST_CASE("montando solucao para distancia euclideana") {
                                rkg.getRKun('a'),
                                rkg.getRKbi('+'),
                                rkg.getRKun('r')};
-  int maxConst = 6;
+
   Vec<chromosome> initialSol;
   initialSol.insert(initialSol.end(), is_segI.begin(), is_segI.end());
   initialSol.insert(initialSol.end(), is_segII.begin(), is_segII.end());
   initialSol.insert(initialSol.end(), is_segIII.begin(), is_segIII.end());
-  Vec<chromosome> vMaxConst(maxConst, 0);
+  Vec<chromosome> vMaxConst(rkg.maxConst, 0);
   initialSol.insert(initialSol.end(), vMaxConst.begin(), vMaxConst.end());
   initialSol.push_back(0);
   //
-  int stackLen = 10;
-  int individualLen = 3 * stackLen + maxConst + 1;
+
+  //
+  int individualLen = 3 * rkg.stackLen + rkg.maxConst + 1;
   REQUIRE((int)initialSol.size() == individualLen);
   //
   Vec<chromosome> initialTestSol = {
@@ -80,6 +83,6 @@ TEST_CASE("montando solucao para distancia euclideana") {
 
   REQUIRE(initialSol == initialTestSol);
   //
-  auto sol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r", stackLen, maxConst);
+  auto sol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
   REQUIRE(sol == initialTestSol);
 }

@@ -228,9 +228,10 @@ int main(int argc, char* argv[]) {
   rkg.operationsU = other.operationsU;
   rkg.nVars = problem.nVars;
   rkg.nConst = problem.nConst;
+  rkg.stackLen = other.stackLen;
+  rkg.maxConst = other.maxConst;
 
-  auto initialSol =
-      rkg.getRKexpr("v0 v1 - a v2 v3 - a + r", other.stackLen, other.maxConst);
+  auto initialSol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
   std::optional<Vec<chromosome>> opInitialSol = std::nullopt;
 
   // =====================

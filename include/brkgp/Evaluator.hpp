@@ -41,6 +41,8 @@ struct RKGenerator {
   std::vector<char> operationsU;
   int nVars{0};
   int nConst{0};
+  int stackLen{0};
+  int maxConst{0};
 
   int inVStr(std::string s, std::vector<std::string> v) {
     for (int idx = 0; idx < (int)v.size(); idx++)
@@ -48,7 +50,7 @@ struct RKGenerator {
     return -1;
   }
 
-  Vec<chromosome> getRKexpr(std::string expr, int stackLen, int maxConst) {
+  Vec<chromosome> getRKexpr(std::string expr) {
     std::vector<std::string> sopsBi;
     std::vector<std::string> sopsU;
     std::vector<std::string> svars;
