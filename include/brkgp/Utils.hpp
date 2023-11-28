@@ -85,7 +85,7 @@ struct Scenario {
   std::vector<char> operationsU;
 
   // multiply ERROR by this weight, for every unused variable (minimum is ONE)
-  double weightPerUnusedVariable = 2;
+  double weightPerUnusedVariable = 5;
 
   int maxConst{0};
 

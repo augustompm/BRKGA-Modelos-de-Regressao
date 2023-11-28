@@ -206,7 +206,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // make outputs SQUARED
   // =====================
-  if (false) problem.make_squared();
+  if (true) problem.make_squared();
 
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
   printFile(problem);
