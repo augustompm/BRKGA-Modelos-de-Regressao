@@ -191,7 +191,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   bool end = false;
   int restart = 0;
   while (restart < restartMax) {
-    std::cout << "restart=" << restart << std::endl;
+    // std::cout << "restart=" << restart << std::endl;
     seed++;
     populationGenerator(mainPopulation, seed);
     if (initialSolution) {

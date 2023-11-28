@@ -142,7 +142,8 @@ int main(int argc, char* argv[]) {
   if (argc > 7) params.restartMax = atoi(argv[7]);
   if (argc > 8) params.noImprovementMax = atoi(argv[8]);
 
-  int training = 70;
+  // int training = 70;
+  int training = 100;
   if (argc > 9) training = atoi(argv[9]);
 
   if (argc > 10) {
@@ -257,48 +258,57 @@ int main(int argc, char* argv[]) {
     opInitialSol = initialSol;
   }
   // ==========================
-  std::cout << "run_brkga" << std::endl;
+  std::cout << "run_brkga:" << std::endl;
+  std::cout << "best=" << bestFoundSolution.cost << std::endl;
+
   run_brkga(problem, params, seed, bestFoundSolution, other, training,
             opInitialSol);
+
+  std::cout << "best=" << bestFoundSolution.cost << std::endl;
   // individualGenerator(bestFoundSolution.randomKeys,seed);
   // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
   // bestFoundSolution.cost =
   // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
-  printCodChromosome(bestFoundSolution.randomKeys);
-  printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
-  std::cout << "printSolution: NOT USED" << std::endl;
-  // printSolution(problem, bestFoundSolution.randomKeys, other);
+  //
+  // printCodChromosome(bestFoundSolution.randomKeys);
+  // printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
+  // std::cout << "printSolution: NOT USED" << std::endl;
+  printSolution(problem, bestFoundSolution.randomKeys, other);
   std::cout << "trueStackSize=" << bestFoundSolution.trueStackSize << std::endl;
   std::string eq = printSolution2(problem, bestFoundSolution.randomKeys, other);
   std::cout << "printSolution2: " << eq << std::endl;
-  bestFoundSolution.cost = solutionEvaluator(
-      problem, bestFoundSolution.randomKeys, other, training, -1);
-  printf("best: %lf \n", bestFoundSolution.cost);
+  // bestFoundSolution.cost = solutionEvaluator(
+  //     problem, bestFoundSolution.randomKeys, other, training, -1);
+  // printf("best: %lf \n", bestFoundSolution.cost);
+  //
   double auxBestFoundSolutionCost = bestFoundSolution.cost;
 
-  changeIO(problem.inputs, problem.outputs, training, problem.nVars,
-           problem.tests, problem.nConst);
-  printFile(problem);
-  run_brkga(problem, params, seed, bestFoundSolution, other, training,
-            opInitialSol);
-  // individualGenerator(bestFoundSolution.randomKeys,seed);
-  // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
-  // bestFoundSolution.cost =
-  // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
-  printCodChromosome(bestFoundSolution.randomKeys);
-  printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
-  std::cout << "printSolution (ENTENDER E REMOVER): " << std::endl;
-  printSolution(problem, bestFoundSolution.randomKeys, other);
-  std::string eq2 =
-      printSolution2(problem, bestFoundSolution.randomKeys, other);
-  std::cout << "printSolution2: " << eq2 << std::endl;
-  printf("best before: %lf\n", bestFoundSolution.cost);
-  bestFoundSolution.cost = solutionEvaluator(
-      problem, bestFoundSolution.randomKeys, other, training, -1);
-  printf("best after: %lf \n", bestFoundSolution.cost);
+  // SEGUNDO ROUND! DESATIVADO!!
+  if (false) {
+    changeIO(problem.inputs, problem.outputs, training, problem.nVars,
+             problem.tests, problem.nConst);
+    printFile(problem);
+    run_brkga(problem, params, seed, bestFoundSolution, other, training,
+              opInitialSol);
+    // individualGenerator(bestFoundSolution.randomKeys,seed);
+    // stackAdjustment(bestFoundSolution.randomKeys,N,nVars,nConst,MAXCONST,seed);
+    // bestFoundSolution.cost =
+    // solutionEvaluator(bestFoundSolution.randomKeys,operationsBi,operationsU,N,nVars,tests,inputs,outputs,vConstMin,vConstMax,nConst);
+    printCodChromosome(bestFoundSolution.randomKeys);
+    printDecodChromosome(bestFoundSolution.randomKeys, problem, other);
+    std::cout << "printSolution (ENTENDER E REMOVER): " << std::endl;
+    printSolution(problem, bestFoundSolution.randomKeys, other);
+    std::string eq2 =
+        printSolution2(problem, bestFoundSolution.randomKeys, other);
+    std::cout << "printSolution2: " << eq2 << std::endl;
+    printf("best before: %lf\n", bestFoundSolution.cost);
+    bestFoundSolution.cost = solutionEvaluator(
+        problem, bestFoundSolution.randomKeys, other, training, -1);
+    printf("best after: %lf \n", bestFoundSolution.cost);
 
-  printf("Validation Mean: %lf  \n",
-         (auxBestFoundSolutionCost + bestFoundSolution.cost) / 2);
+    printf("Validation Mean: %lf  \n",
+           (auxBestFoundSolutionCost + bestFoundSolution.cost) / 2);
+  }
 
   // código para medir o tempo, abaixo;
 
