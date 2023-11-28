@@ -88,42 +88,48 @@ double computeError(double v1, double v2) {
 
 // ============
 
-opt<std::string> execBinaryOpUnit(const RProblem& problem, int idop,
-                                  std::string v1Unit, std::string v2Unit,
-                                  const std::vector<char>& operationsBi) {
-  std::cout << "DEBUG: execBinaryOpUnit = " << idop << std::endl;
+opt<ex> execBinaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
+                         ex v2Unit, const std::vector<char>& operationsBi) {
+  // std::cout << "DEBUG: execBinaryOpUnit = " << idop << std::endl;
   if ((operationsBi[idop] == '+') || (operationsBi[idop] == '-')) {
-    if (v1Unit == v2Unit)
-      std::make_optional<std::string>(v1Unit);
-    else
+    // std::cout << "DEBUG: binary + ou -" << std::endl;
+    if (v1Unit == v2Unit) {
+      return std::make_optional<ex>(v1Unit);
+    } else {
+      std::cout << "WARNING: different UNITS in binary op!" << std::endl;
       return std::nullopt;
+    }
   }
   if ((operationsBi[idop] == '*') || (operationsBi[idop] == '/')) {
-    std::cout << "DEBUG: execBinaryOpUnit => * ou / " << std::endl;
-    std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e1" << std::endl;
-    ex e1 = ex(v1Unit, problem.syms);
-    std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e2" << std::endl;
-    ex e2 = ex(v2Unit, problem.syms);
-    std::cout << "DEBUG: execBinaryOpUnit =>  vai fazer assert " << std::endl;
+    // std::cout << "DEBUG: execBinaryOpUnit => * ou / " << std::endl;
+    // std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e1" << std::endl;
+    //  ex e1 = ex(v1Unit, problem.syms);
+    ex e1 = v1Unit;
+    // std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e2" << std::endl;
+    //  ex e2 = ex(v2Unit, problem.syms);
+    ex e2 = v2Unit;
+    // std::cout << "DEBUG: execBinaryOpUnit =>  vai fazer assert " <<
+    // std::endl;
     assert(e1 != 0);  // never is ZERO
     assert(e2 != 0);  // never is ZERO
-    std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e3 " << std::endl;
-    ex e3 = ex("1", problem.syms);
+    // std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e3 " << std::endl;
+    ex ex_one = ex("1", problem.syms);
+    ex e3 = ex_one;
     if (operationsBi[idop] == '*') e3 = e1 * e2;
     if (operationsBi[idop] == '/') e3 = e1 / e2;
     // check if it's adimensional ("numeric")
     // example: 2m / 1m = 2;  1m * (1/2m) = 1/2;
     assert(e3 != 0);  // never is ZERO
-    std::cout << "DEBUG: execBinaryOpUnit => e3:" << e3 << std::endl;
+    // std::cout << "DEBUG: execBinaryOpUnit => e3:" << e3 << std::endl;
     bool bnumeric = false;
     if (is_exactly_a<numeric>(e3)) bnumeric = true;
     // get text
-    std::stringstream ss;
-    ss << e3;
+    // std::stringstream ss;
+    // ss << e3;
     if (bnumeric)
-      return std::make_optional<std::string>("1");  // unit
+      return std::make_optional<ex>(ex_one);  // unit
     else
-      return std::make_optional<std::string>(ss.str());
+      return std::make_optional<ex>(e3);
   }
   return std::nullopt;
 }
@@ -146,19 +152,19 @@ bool fix_sqrt(ex& e, const lst& syms) {
   return false;
 }
 
-opt<std::string> execUnaryOpUnit(const RProblem& problem, int idop,
-                                 std::string v1Unit,
-                                 const std::vector<char>& operationsU) {
+opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
+                        const std::vector<char>& operationsU) {
   // RAD input -> adimensional output
   // if (operationsU[idop] == 's') return std::make_optional<double>(::sin(v1));
   // if (operationsU[idop] == 'c') return std::make_optional<double>(::cos(v1));
   //
   if (operationsU[idop] == 'i') {
-    return std::make_optional<std::string>(v1Unit);
+    return std::make_optional<ex>(v1Unit);
   }
   if ((operationsU[idop] == 'a') || (operationsU[idop] == 'v') ||
       (operationsU[idop] == 'r')) {
-    ex e1 = ex(v1Unit, problem.syms);
+    // ex e1 = ex(v1Unit, problem.syms);
+    ex e1 = v1Unit;
     ex e_out = ex("1", problem.syms);
     if (operationsU[idop] == 'a') e_out = e1 * e1;
     if (operationsU[idop] == 'v') e_out = e1 * e1 * e1;
@@ -168,12 +174,12 @@ opt<std::string> execUnaryOpUnit(const RProblem& problem, int idop,
       fix_sqrt(e_out, problem.syms);
     }
     // get text
-    std::stringstream ss;
-    ss << e_out;
-    std::cout << "DEBUG: Unary: " << ss.str() << std::endl;
-    ex new_ex(ss.str(), problem.syms);  // ERRO!
+    // std::stringstream ss;
+    // ss << e_out;
+    // std::cout << "DEBUG: Unary: " << ss.str() << std::endl;
+    // ex new_ex(ss.str(), problem.syms);  // ERRO!
     //
-    return std::make_optional<std::string>(ss.str());
+    return std::make_optional<ex>(e_out);
   }
   return std::nullopt;
 }
@@ -207,7 +213,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
   int trueStackLen = 0;
   //
   // unit on stack element; example: meter, second, ...
-  std::stack<std::string> stkUnit;  // stack for units!!
+  std::stack<ex> stkUnit;  // stack for units!!
   //
   for (int i = 0; i < stackLen; i++) {
     // std::cout << "DEBUG: stackAdjustment i=" << i << std::endl;
@@ -303,7 +309,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     // ===========================================
     // OPERAÇÕES JÁ CORRIGIDAS! VERIFICAR UNIDADES
     // -------------------------------------------
-    if (problem.hasUnits && false) {
+    if (problem.hasUnits) {
       // std::cout << "DEBUG: hasUnits!  i=" << i << std::endl;
       // problem instance SUPPORTS units!
       int j = i;  // workaround
@@ -319,14 +325,16 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         // push variable
         if (idVar >= 0) {
           varUnit = problem.varUnits[idVar];
-          stkUnit.push(varUnit);
+          ex exVar(varUnit, problem.syms);
+          stkUnit.push(exVar);
         } else {
           // push constant
           idVar += nConst;
           if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
             varUnit = problem.constUnits[idVar];
             if (varUnit == "*") varUnit = "1";  // "*" means adimensional
-            stkUnit.push(varUnit);
+            ex exVar(varUnit, problem.syms);
+            stkUnit.push(exVar);
           } else {
             std::cout << "ERROR! unsupported units on interval constants!"
                       << std::endl;
@@ -340,9 +348,9 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
             (individual[2 * stackLen + j] / 10000.0) *
             (double)other.operationsBi.size());  // 4 is lenght of operationBi
         assert(stkUnit.size() >= 2);
-        std::string v1Unit = stkUnit.top();
+        ex v1Unit = stkUnit.top();
         stkUnit.pop();
-        std::string v2Unit = stkUnit.top();
+        ex v2Unit = stkUnit.top();
         stkUnit.pop();
         // std::cout << "DEBUG: v1Unit: " << v1Unit << " v2Unit: " << v2Unit <<
         // std::endl;
@@ -367,12 +375,16 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         }  // ok fix binary
 
         // std::cout << "DEBUG: WILL EXEC v1Unit: " << v1Unit
-        //          << " v2Unit: " << v2Unit << " OP = " << idOpBi << std::endl;
-        // RETORNAR opcional VAZIO!
-        opt<std::string> binResult = execBinaryOpUnit(
-            problem, idOpBi, v1Unit, v2Unit, other.operationsBi);
+        //            << " v2Unit: " << v2Unit << " OP = " << idOpBi <<
+        //            std::endl;
+        //  RETORNAR opcional VAZIO!
+        opt<ex> binResult = execBinaryOpUnit(problem, idOpBi, v1Unit, v2Unit,
+                                             other.operationsBi);
         // error in binary operation
         if (!binResult) {
+          std::cout << "ERROR: binary operation UNIT failed!" << std::endl;
+          std::cout << "DEBUG: v1Unit: " << v1Unit << " v2Unit: " << v2Unit
+                    << " OP = " << idOpBi << std::endl;
           assert(false);
         } else {
           stkUnit.push(*binResult);
@@ -386,12 +398,12 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
         //
         assert(stkUnit.size() >= 1);
-        std::string v1Unit = stkUnit.top();
+        ex v1Unit = stkUnit.top();
         stkUnit.pop();
 
         // no fix necessary!
 
-        opt<std::string> unResult =
+        opt<ex> unResult =
             execUnaryOpUnit(problem, idOpU, v1Unit, other.operationsU);
 
         // error in unary operation
@@ -409,10 +421,13 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
   }
 
   std::string outUnit = "";
-  if (problem.hasUnits && false) {
+  if (problem.hasUnits) {
     assert(stkUnit.size() >= 1);  // TODO: improve!
-    outUnit = stkUnit.top();
+    std::stringstream ss;
+    ex last = stkUnit.top();
     stkUnit.pop();
+    ss << last;
+    outUnit = ss.str();
   }
 
   return StackInfo{trueStackLen, outUnit};

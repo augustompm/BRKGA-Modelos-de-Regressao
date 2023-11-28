@@ -115,31 +115,35 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   int maxConst = other.maxConst;
   //
   for (int i = 0; i < (int)population.size(); i++) {
-    std::cout << "DEBUG: will decode i=" << i << std::endl;
+    // std::cout << "DEBUG: will decode i=" << i << std::endl;
     if (population[i].cost == 0) {
       // store seed used on stack adjustment...
       population[i].seed = seed;
       // 'stackAdjustment' modifica as randomKeys...
 
-      std::cout << "DEBUG: will enter stackAdjustment" << std::endl;
-      population[i].print();
+      // std::cout << "DEBUG: will enter stackAdjustment" << std::endl;
+      // population[i].print();
+      //
       StackInfo si =
           stackAdjustment(problem, other, population[i].randomKeys, stackLen,
                           nVars, nConst, maxConst, population[i].seed);
       population[i].trueStackSize = si.trueStackLen;
-      std::cout << "DEBUG: finished stackAdjustment" << std::endl;
-      // std::cout << "i=" << i << " trueStackSize=" <<
-      // population[i].trueStackSize
-      //           << "/" << stackLen << " seed = " << seed << std::endl;
+      // std::cout << "DEBUG: finished stackAdjustment" << std::endl;
+      //  std::cout << "i=" << i << " trueStackSize=" <<
+      //  population[i].trueStackSize
+      //            << "/" << stackLen << " seed = " << seed << std::endl;
       int idSol = i;
       idSol = -1;  // DISABLE DEBUG
       population[i].cost =
           solutionEvaluator(problem, population[i].randomKeys, other, 0, idSol);
       //
-      if (problem.hasUnits && problem.outUnit != si.outUnit) {
-        std::cout << "WARNING: different output units!" << std::endl;
-        std::cout << "Expected: " << problem.outUnit << " and got "
-                  << si.outUnit << std::endl;
+      if (problem.hasUnits && (problem.outUnit != si.outUnit)) {
+        if (false) {
+          std::cout << "WARNING: different output units!" << std::endl;
+          std::cout << "Expected: '" << problem.outUnit << "' and got: '"
+                    << si.outUnit << "'" << std::endl;
+        }
+        population[i].cost += 10000.0;  // PENALIDADE DE UNIDADE FINAL ERRADA!
       }
     }
   }

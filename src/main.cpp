@@ -310,134 +310,136 @@ int main(int argc, char* argv[]) {
   std::cout << "Tempo de execucao: " << executionTime << " segundos"
             << std::endl;
 
-  std::cout << "BEGIN GINAC TESTS!" << std::endl;
+  if (false) {
+    std::cout << "BEGIN GINAC TESTS!" << std::endl;
 
-  // testing GINAC
-  {
-    unsigned result = 0;
+    // testing GINAC
     {
-      ex e;
-      symbol x("x");
-      lst syms = {x};
-      e =
-          ex("((x * x) + ((x - (x)) * {((x) + {(({-7^2} + ((((-1 - "
-             "((-1))))))))^2})^2}))",
-             syms);
-      cout << "equacao: " << flush;
-      std::cout << latex << e << std::endl;  // x^2
-      //
-      my_visitor v;
-      e.accept(v);
-      //
-      // Substitute values
-      ex substituted_expr = e.subs(x == 3);
+      unsigned result = 0;
+      {
+        ex e;
+        symbol x("x");
+        lst syms = {x};
+        e =
+            ex("((x * x) + ((x - (x)) * {((x) + {(({-7^2} + ((((-1 - "
+               "((-1))))))))^2})^2}))",
+               syms);
+        cout << "equacao: " << flush;
+        std::cout << latex << e << std::endl;  // x^2
+        //
+        my_visitor v;
+        e.accept(v);
+        //
+        // Substitute values
+        ex substituted_expr = e.subs(x == 3);
 
-      // Evaluate the substituted expression
-      numeric result = ex_to<numeric>(substituted_expr);
-      std::cout << e.subs(x == 3) << std::endl;
-      std::cout << e.subs(x == 5) << std::endl;
-      //
-      auto ex2 = ex("x+1/x", syms);
-      std::cout << ex2.subs(x == 3) << std::endl;
-      std::cout << ex2.subs(x == 1) << std::endl;
+        // Evaluate the substituted expression
+        numeric result = ex_to<numeric>(substituted_expr);
+        std::cout << e.subs(x == 3) << std::endl;
+        std::cout << e.subs(x == 5) << std::endl;
+        //
+        auto ex2 = ex("x+1/x", syms);
+        std::cout << ex2.subs(x == 3) << std::endl;
+        std::cout << ex2.subs(x == 1) << std::endl;
+      }
+      std::cout << "OK" << std::endl;
     }
-    std::cout << "OK" << std::endl;
-  }
-  // testing GINAC 2
-  std::cout << std::endl << std::endl << " ============== " << std::endl;
-  {
-    unsigned result = 0;
+    // testing GINAC 2
+    std::cout << std::endl << std::endl << " ============== " << std::endl;
     {
-      ex e =
-          ex("((m * m) + ((m - (m)) * {((m) + {(({-7^2} + ((((-1 - "
-             "((-1))))))))^2})^2}))",
-             problem.syms);
-      cout << "equacao: " << flush;
-      std::cout << latex << e << std::endl;  // m^2
-      //
-      ex e2 = ex("m^2", problem.syms);
-      std::cout << "e2: " << e2 << std::endl;
-      ex e3 = normal(e * e2);
-      std::cout << e3 << std::endl;  // m^2
-      //
-      bool bzero = (e3 == 0);
-      bool bone = (e3 == 1);
-      //
-      bool bnumeric = false;
-      if (is_exactly_a<numeric>(e3))
-        bnumeric = true;
-      else
-        bnumeric = false;
-      //
-      std::cout << "ZERO? " << bzero << std::endl;
-      std::cout << "ONE? " << bone << std::endl;
-      std::cout << "NUMERIC? " << bnumeric << std::endl;
-      //
-      ex e4 = sqrt(e3);
-      std::cout << "e4:" << normal(e4) << std::endl;
-      //
-      ex e_m = ex("m", problem.syms);
-      ex e5 = sqrt(pow(e_m, 4));
-      std::cout << "e5:" << evalf(e5) << std::endl;
-      //
-      ex e32(32);
-      ex e32_2 = pow(4 * sqrt(ex(2)), 2);
-      std::cout << "e32:" << e32 << std::endl;
-      std::cout << "e32_2:" << e32_2 << std::endl;
-      //
-      bool issame_ex = (e4 == e2);
-      std::cout << "same?" << issame_ex << std::endl;
-      std::cout << "same?" << ((bool)(e2 == e)) << std::endl;
-      //
-      ex e6 = pow(e4, 2);
-      std::cout << "e6:" << e6 << std::endl;
-      //
-      ex e7 = sqrt(e2);
-      std::cout << "e7:" << normal(e7) << std::endl;
-      //
-      ex e8 = e7 / e7;
-      std::cout << "e8:" << normal(e8) << std::endl;
-      //
-      ex e9 = e7 / e2;
-      std::cout << "e9:" << normal(e9) << std::endl;
-      //
-      ex e_sol =
-          ex("( 1 * m^2 - 2 * m^2 ) + ( 20 * m^2 - 10 * m^2 )", problem.syms);
-      e_sol = sqrt(e_sol) / 3;
-      std::cout << "e_sol:" << normal(e_sol) << std::endl;
-      std::cout << fix_sqrt(e_sol, problem.syms) << std::endl;
-      std::cout << "e_sol':   " << e_sol << std::endl;
-      //
-      ex e_sol2 = pow(e_sol, 2);
-      std::cout << "e_sol2:" << e_sol2 << std::endl;
-      std::cout << "e_sol2 = m ?:" << (bool)(e_sol2 == e2) << std::endl;
-      //
-      ex e11 = ex("1/m^4", problem.syms);
-      e11 = sqrt(e11);  // sqrt(1/m^4)
-      std::cout << "e11:   " << e11 << std::endl;
-      std::cout << "e11_2: " << pow(e11, 2) << std::endl;
-      std::cout << fix_sqrt(e11, problem.syms) << std::endl;
-      std::cout << "e11':   " << e11 << std::endl;
-      //
-      ex e12 = 1 / sqrt(e6);
-      std::cout << "e12:   " << e12 << std::endl;
-      std::cout << "e12_2: " << pow(e12, 2) << std::endl;
-      std::cout << fix_sqrt(e12, problem.syms) << std::endl;
-      std::cout << "e12':   " << e12 << std::endl;
-      //
-      ex e13 = 1 / sqrt(pow(e_m, 3));
-      std::cout << "e13:   " << e13 << std::endl;
-      std::cout << fix_sqrt(e13, problem.syms) << std::endl;
-      std::cout << "e13':   " << e13 << std::endl;
-      //
-      ex e14 = sqrt(e_m);
-      std::cout << "e14: " << e14 << std::endl;
-      std::stringstream ss;
-      ss << e14;
-      ex e15("sqrt(m)", problem.syms);
-      std::cout << "e15: " << e15 << std::endl;
+      unsigned result = 0;
+      {
+        ex e =
+            ex("((m * m) + ((m - (m)) * {((m) + {(({-7^2} + ((((-1 - "
+               "((-1))))))))^2})^2}))",
+               problem.syms);
+        cout << "equacao: " << flush;
+        std::cout << latex << e << std::endl;  // m^2
+        //
+        ex e2 = ex("m^2", problem.syms);
+        std::cout << "e2: " << e2 << std::endl;
+        ex e3 = normal(e * e2);
+        std::cout << e3 << std::endl;  // m^2
+        //
+        bool bzero = (e3 == 0);
+        bool bone = (e3 == 1);
+        //
+        bool bnumeric = false;
+        if (is_exactly_a<numeric>(e3))
+          bnumeric = true;
+        else
+          bnumeric = false;
+        //
+        std::cout << "ZERO? " << bzero << std::endl;
+        std::cout << "ONE? " << bone << std::endl;
+        std::cout << "NUMERIC? " << bnumeric << std::endl;
+        //
+        ex e4 = sqrt(e3);
+        std::cout << "e4:" << normal(e4) << std::endl;
+        //
+        ex e_m = ex("m", problem.syms);
+        ex e5 = sqrt(pow(e_m, 4));
+        std::cout << "e5:" << evalf(e5) << std::endl;
+        //
+        ex e32(32);
+        ex e32_2 = pow(4 * sqrt(ex(2)), 2);
+        std::cout << "e32:" << e32 << std::endl;
+        std::cout << "e32_2:" << e32_2 << std::endl;
+        //
+        bool issame_ex = (e4 == e2);
+        std::cout << "same?" << issame_ex << std::endl;
+        std::cout << "same?" << ((bool)(e2 == e)) << std::endl;
+        //
+        ex e6 = pow(e4, 2);
+        std::cout << "e6:" << e6 << std::endl;
+        //
+        ex e7 = sqrt(e2);
+        std::cout << "e7:" << normal(e7) << std::endl;
+        //
+        ex e8 = e7 / e7;
+        std::cout << "e8:" << normal(e8) << std::endl;
+        //
+        ex e9 = e7 / e2;
+        std::cout << "e9:" << normal(e9) << std::endl;
+        //
+        ex e_sol =
+            ex("( 1 * m^2 - 2 * m^2 ) + ( 20 * m^2 - 10 * m^2 )", problem.syms);
+        e_sol = sqrt(e_sol) / 3;
+        std::cout << "e_sol:" << normal(e_sol) << std::endl;
+        std::cout << fix_sqrt(e_sol, problem.syms) << std::endl;
+        std::cout << "e_sol':   " << e_sol << std::endl;
+        //
+        ex e_sol2 = pow(e_sol, 2);
+        std::cout << "e_sol2:" << e_sol2 << std::endl;
+        std::cout << "e_sol2 = m ?:" << (bool)(e_sol2 == e2) << std::endl;
+        //
+        ex e11 = ex("1/m^4", problem.syms);
+        e11 = sqrt(e11);  // sqrt(1/m^4)
+        std::cout << "e11:   " << e11 << std::endl;
+        std::cout << "e11_2: " << pow(e11, 2) << std::endl;
+        std::cout << fix_sqrt(e11, problem.syms) << std::endl;
+        std::cout << "e11':   " << e11 << std::endl;
+        //
+        ex e12 = 1 / sqrt(e6);
+        std::cout << "e12:   " << e12 << std::endl;
+        std::cout << "e12_2: " << pow(e12, 2) << std::endl;
+        std::cout << fix_sqrt(e12, problem.syms) << std::endl;
+        std::cout << "e12':   " << e12 << std::endl;
+        //
+        ex e13 = 1 / sqrt(pow(e_m, 3));
+        std::cout << "e13:   " << e13 << std::endl;
+        std::cout << fix_sqrt(e13, problem.syms) << std::endl;
+        std::cout << "e13':   " << e13 << std::endl;
+        //
+        ex e14 = sqrt(e_m);
+        std::cout << "e14: " << e14 << std::endl;
+        std::stringstream ss;
+        ss << e14;
+        ex e15("sqrt(m)", problem.syms);
+        std::cout << "e15: " << e15 << std::endl;
+      }
+      std::cout << "OK" << std::endl;
     }
-    std::cout << "OK" << std::endl;
   }
 
   std::cout << "FIM" << std::endl;
