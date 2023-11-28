@@ -83,6 +83,10 @@ struct Scenario {
   // concatenação de T1 e T2, nessa ordem
   std::vector<char> operationsBi;
   std::vector<char> operationsU;
+
+  // multiply ERROR by this weight, for every unused variable (minimum is ONE)
+  double weightPerUnusedVariable = 2;
+
   int maxConst{0};
 
   void setStackLen(int _stackLen, int _stackLenMax,

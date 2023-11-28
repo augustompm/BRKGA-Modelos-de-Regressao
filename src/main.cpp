@@ -132,8 +132,8 @@ int main(int argc, char* argv[]) {
   params.noImprovementMax = 10;
   //
   // params.restartMax = 1000;
-  // params.restartMax = 20;
-  params.restartMax = 10;
+  params.restartMax = 20;
+  // params.restartMax = 10;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
@@ -206,7 +206,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // make outputs SQUARED
   // =====================
-  problem.make_squared();
+  if (false) problem.make_squared();
 
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
   printFile(problem);

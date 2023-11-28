@@ -137,13 +137,19 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
       population[i].cost =
           solutionEvaluator(problem, population[i].randomKeys, other, 0, idSol);
       //
-      if (problem.hasUnits && (problem.outUnit != si.outUnit)) {
-        if (false) {
-          std::cout << "WARNING: different output units!" << std::endl;
-          std::cout << "Expected: '" << problem.outUnit << "' and got: '"
-                    << si.outUnit << "'" << std::endl;
+      if (problem.hasUnits) {
+        if (problem.outUnit != si.outUnit) {
+          if (false) {
+            std::cout << "WARNING: different output units!" << std::endl;
+            std::cout << "Expected: '" << problem.outUnit << "' and got: '"
+                      << si.outUnit << "'" << std::endl;
+          }
+          population[i].cost += 10000.0;  // PENALIDADE DE UNIDADE FINAL ERRADA!
         }
-        population[i].cost += 10000.0;  // PENALIDADE DE UNIDADE FINAL ERRADA!
+        // penalize if not all variables are used
+        if (si.usedVars < problem.nVars)
+          population[i].cost *=
+              (problem.nVars - si.usedVars) * other.weightPerUnusedVariable;
       }
     }
   }

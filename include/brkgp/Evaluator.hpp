@@ -202,6 +202,7 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
 struct StackInfo {
   int trueStackLen;
   std::string outUnit;
+  int usedVars;
 };
 
 StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
@@ -214,6 +215,8 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
   //
   // unit on stack element; example: meter, second, ...
   std::stack<ex> stkUnit;  // stack for units!!
+  int usedVars = 0;
+  std::vector<bool> vUsedVars(problem.nVars, false);
   //
   for (int i = 0; i < stackLen; i++) {
     // std::cout << "DEBUG: stackAdjustment i=" << i << std::endl;
@@ -324,6 +327,10 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         std::string varUnit = "_";  // adimensional?
         // push variable
         if (idVar >= 0) {
+          if (!vUsedVars[idVar]) {
+            usedVars++;
+            vUsedVars[idVar] = true;
+          }
           varUnit = problem.varUnits[idVar];
           ex exVar(varUnit, problem.syms);
           stkUnit.push(exVar);
@@ -430,7 +437,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     outUnit = ss.str();
   }
 
-  return StackInfo{trueStackLen, outUnit};
+  return StackInfo{trueStackLen, outUnit, usedVars};
 }
 
 double solutionEvaluator(const RProblem& problem,

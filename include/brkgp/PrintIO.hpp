@@ -32,6 +32,12 @@ void printFile(const RProblem& problem) {
     printf("%.4f\t%.4f\n", problem.vConst[i].first, problem.vConst[i].second);
   }
   std::cout << "isSquared? " << problem.isSquared() << std::endl;
+  if (problem.hasUnits) {
+    std::cout << "varUnits: ";
+    for (auto& i : problem.varUnits) std::cout << i << " ";
+    std::cout << std::endl;
+    std::cout << "outUnit: " << problem.outUnit << std::endl;
+  }
 }
 
 void printCodChromosome(const Vec<chromosome>& individual) {
