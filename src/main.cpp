@@ -95,6 +95,8 @@ int main(int argc, char* argv[]) {
   other.operationsBi.insert(other.operationsBi.end(),
                             other.operationsBiT2.begin(),
                             other.operationsBiT2.end());
+  // T1 and T2 must have same size!
+  assert(other.operationsBiT1.size() == other.operationsBiT2.size());
   // other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i', 'r', 'a'};
   // other.operationsU = {'i', 'a'};
@@ -103,7 +105,8 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.stackLen = 10;
+  other.stackLen = 20;
+  // other.stackLen = 10;
 
   // other.maxConst = 3;
   other.maxConst = 6;
@@ -130,7 +133,7 @@ int main(int argc, char* argv[]) {
   //
   // params.restartMax = 1000;
   // params.restartMax = 20;
-  params.restartMax = 5;
+  params.restartMax = 10;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
