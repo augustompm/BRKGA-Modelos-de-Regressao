@@ -104,8 +104,10 @@ TEST_CASE("montando solucao para distancia euclideana") {
   REQUIRE(sol2[rkg.stackLen - 1] == 9999);
   REQUIRE(sol2 == initialSol2);
   // stack adjustment should not change this good solution
-  int usedOps = stackAdjustment(sol2, rkg.stackLen, rkg.nVars, rkg.nConst,
-                                rkg.maxConst, 0);
+  RProblem problem;  // gambiarra!
+  Scenario other;    // gambiarra!
+  int usedOps = stackAdjustment(problem, other, sol2, rkg.stackLen, rkg.nVars,
+                                rkg.nConst, rkg.maxConst, 0);
   REQUIRE(usedOps == rkg.stackLen - 1);
   REQUIRE(sol2 == initialSol2);
 }

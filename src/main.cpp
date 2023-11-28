@@ -87,7 +87,15 @@ int main(int argc, char* argv[]) {
   int seed = 728462315;
 
   Scenario other;
-  other.operationsBi = {'+', '-', '*', '/'};
+  other.operationsBiT1 = {'+', '-'};  // bad with units
+  other.operationsBiT2 = {'*', '/'};  // ok with units
+  other.operationsBi.insert(other.operationsBi.end(),
+                            other.operationsBiT1.begin(),
+                            other.operationsBiT1.end());
+  other.operationsBi.insert(other.operationsBi.end(),
+                            other.operationsBiT2.begin(),
+                            other.operationsBiT2.end());
+  // other.operationsBi = {'+', '-', '*', '/'};
   other.operationsU = {'i', 'r', 'a'};
   // other.operationsU = {'i', 'a'};
 
@@ -237,7 +245,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (true) {
+  if (false) {
     assert((int)initialSol.size() == (int)other.individualLen);
     std::cout << "INITIAL: ";
     for (auto& k : initialSol) std::cout << k << " ";
@@ -331,6 +339,37 @@ int main(int argc, char* argv[]) {
       auto ex2 = ex("x+1/x", syms);
       std::cout << ex2.subs(x == 3) << std::endl;
       std::cout << ex2.subs(x == 1) << std::endl;
+    }
+    std::cout << "OK" << std::endl;
+  }
+  // testing GINAC 2
+  std::cout << std::endl << std::endl << " ============== " << std::endl;
+  {
+    unsigned result = 0;
+    {
+      ex e =
+          ex("((m * m) + ((m - (m)) * {((m) + {(({-7^2} + ((((-1 - "
+             "((-1))))))))^2})^2}))",
+             problem.syms);
+      cout << "equacao: " << flush;
+      std::cout << latex << e << std::endl;  // m^2
+      //
+      ex e2 = ex("m^2", problem.syms);
+      ex e3 = e / e2;
+      std::cout << e3 << std::endl;  // m^2
+      //
+      bool bzero = (e3 == 0);
+      bool bone = (e3 == 1);
+      //
+      bool bnumeric = false;
+      if (is_exactly_a<numeric>(e3))
+        bnumeric = true;
+      else
+        bnumeric = false;
+      //
+      std::cout << "ZERO? " << bzero << std::endl;
+      std::cout << "ONE? " << bone << std::endl;
+      std::cout << "NUMERIC? " << bnumeric << std::endl;
     }
     std::cout << "OK" << std::endl;
   }

@@ -76,6 +76,9 @@ void readIO(RProblem& problem, Scanner& scanner) {
   // print units (const)
   for (auto& cun : constUnits)
     std::cout << "const unit: '" << cun << "'" << std::endl;
+  // setup units for ginac
+  std::cout << "3.5) SETUP UNITS" << std::endl;
+  problem.setupUnits();
 
   std::cout << "4) FINISHED READING PROBLEM" << std::endl;
 }

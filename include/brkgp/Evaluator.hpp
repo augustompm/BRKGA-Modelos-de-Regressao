@@ -86,6 +86,39 @@ double computeError(double v1, double v2) {
   return ::sqrt((v1 - v2) * (v1 - v2));
 }
 
+opt<std::string> execBinaryOpUnit(const RProblem& problem, int idop,
+                                  std::string v1Unit, std::string v2Unit,
+                                  const std::vector<char>& operationsBi) {
+  if ((operationsBi[idop] == '+') || (operationsBi[idop] == '-')) {
+    if (v1Unit == v2Unit)
+      std::make_optional<std::string>(v1Unit);
+    else
+      return std::nullopt;
+  }
+  if ((operationsBi[idop] == '*') || (operationsBi[idop] == '/')) {
+    ex e1 = ex(v1Unit, problem.syms);
+    ex e2 = ex(v2Unit, problem.syms);
+    assert(e1 != 0);  // never is ZERO
+    assert(e2 != 0);  // never is ZERO
+    ex e3 = ex("1", problem.syms);
+    if (operationsBi[idop] == '*') e3 = e1 * e2;
+    if (operationsBi[idop] == '/') e3 = e1 / e2;
+    // check if it's adimensional ("numeric")
+    // example: 2m / 1m = 2;  1m * (1/2m) = 1/2;
+    assert(e3 != 0);  // never is ZERO
+    bool bnumeric = false;
+    if (is_exactly_a<numeric>(e3)) bnumeric = true;
+    // get text
+    std::stringstream ss;
+    ss << latex << e3;
+    if (bnumeric)
+      return std::make_optional<std::string>("1");  // unit
+    else
+      return std::make_optional<std::string>(ss.str());
+  }
+  return std::nullopt;
+}
+
 // stackAdjustment: ajusta chaves aleatórias do indivíduo, caso seja
 // impossível decodificá-lo! Por exemplo, operações binárias seguidas
 // sem operandos disponíveis na pilha!
@@ -99,12 +132,16 @@ double computeError(double v1, double v2) {
 // IDEIA 4: USAR UNIDADE SIMBOLICA COMO CRITERIO DE SIMPLICIDADE AO LONGO DA
 // EXECUCAO...
 //
-int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
+int stackAdjustment(const RProblem& problem, const Scenario& other,
+                    Vec<chromosome>& individual, int stackLen, int nVars,
                     int nConst, int maxConst, int seed) {
   int stackCount = 0;
   int contConst = 0;
   // Significado: número de operações "boas" (não SPECIAL/NOP)
   int trueStackLen = 0;
+  //
+  // unit on stack element; example: meter, second, ...
+  std::stack<std::string> stkUnit;  // stack for units!!
   //
   for (int i = 0; i < stackLen; i++) {
     // invariante: 'stackCount' sempre >= 0
@@ -194,6 +231,78 @@ int stackAdjustment(Vec<chromosome>& individual, int stackLen, int nVars,
     stackCount = stackCountAfterOperation;
     // CONTA OPERAÇÕES "BOAS"/"ÚTEIS"
     if (!isOperation(individual[i], OpType::SPECIAL)) trueStackLen++;
+    // ===========================================
+    // OPERAÇÕES JÁ CORRIGIDAS! VERIFICAR UNIDADES
+    // -------------------------------------------
+    if (problem.hasUnits && false) {
+      // problem instance SUPPORTS units!
+      int j = i;  // workaround
+      //
+      if (isOperation(individual[j], OpType::PUSH)) {
+        // push variable or constant [5000,7500)
+        int my_floor =
+            ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
+        int idVar = my_floor - nConst;
+        std::string varUnit = "_";  // adimensional?
+        // push variable
+        if (idVar >= 0) {
+          varUnit = problem.varUnits[idVar];
+          stkUnit.push(varUnit);
+        } else {
+          // push constant
+          idVar += nConst;
+          if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
+            varUnit = problem.constUnits[idVar];
+            stkUnit.push(varUnit);
+          } else {
+            std::cout << "ERROR! unsupported units on interval constants!"
+                      << std::endl;
+            assert(false);
+          }
+        }
+      }  // end-check units for PUSH
+      if (isOperation(individual[j], OpType::BIN)) {
+        // pop binary operation
+        int idOpBi = floor(
+            (individual[2 * stackLen + j] / 10000.0) *
+            (double)other.operationsBi.size());  // 4 is lenght of operationBi
+        assert(stkUnit.size() >= 2);
+        std::string v1Unit = stkUnit.top();
+        stkUnit.pop();
+        std::string v2Unit = stkUnit.top();
+        stkUnit.pop();
+        // CHECA UNIDADES!!! FASE 2!!!
+        if (v1Unit != v2Unit) {
+          // unidades diferentes!! Só permite em binárias TIPO 2, não TIPO 1
+          // verifica se é TIPO 1, se for, vira TIPO 2
+          if (idOpBi < other.operationsBiT1.size()) {
+            // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
+            // Muda "gene"... += 2 ops...
+            individual[2 * stackLen + j] =
+                individual[2 * stackLen + j] +
+                (chromosome)((10000.0 / (double)other.operationsBi.size()) *
+                             (double)other.operationsBiT1.size());
+            // lê chromossomo novamente! PARA GARANTIR!
+            idOpBi = floor((individual[2 * stackLen + j] / 10000.0) *
+                           (double)other.operationsBi
+                               .size());  // 4 is lenght of operationBi
+            // virou operação do TIPO 2
+            assert(idOpBi >= other.operationsBiT1.size());
+          }
+        }  // ok fix binary
+
+        // RETORNAR opcional VAZIO!
+        opt<std::string> binResult = execBinaryOpUnit(
+            problem, idOpBi, v1Unit, v2Unit, other.operationsBi);
+        // error in binary operation
+        if (!binResult) {
+          assert(false);
+        } else {
+          stkUnit.push(*binResult);
+        }
+      }
+
+    }  // end-if problem.hasUnits
   }
   return trueStackLen;
 }

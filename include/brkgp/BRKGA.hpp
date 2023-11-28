@@ -120,8 +120,8 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
       population[i].seed = seed;
       // 'stackAdjustment' modifica as randomKeys...
       population[i].trueStackSize =
-          stackAdjustment(population[i].randomKeys, stackLen, nVars, nConst,
-                          maxConst, population[i].seed);
+          stackAdjustment(problem, other, population[i].randomKeys, stackLen,
+                          nVars, nConst, maxConst, population[i].seed);
       // std::cout << "i=" << i << " trueStackSize=" <<
       // population[i].trueStackSize
       //           << "/" << stackLen << " seed = " << seed << std::endl;
