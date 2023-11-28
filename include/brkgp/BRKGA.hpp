@@ -115,13 +115,19 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   int maxConst = other.maxConst;
   //
   for (int i = 0; i < (int)population.size(); i++) {
+    std::cout << "DEBUG: will decode i=" << i << std::endl;
     if (population[i].cost == 0) {
       // store seed used on stack adjustment...
       population[i].seed = seed;
       // 'stackAdjustment' modifica as randomKeys...
-      population[i].trueStackSize =
+
+      std::cout << "DEBUG: will enter stackAdjustment" << std::endl;
+      population[i].print();
+      StackInfo si =
           stackAdjustment(problem, other, population[i].randomKeys, stackLen,
                           nVars, nConst, maxConst, population[i].seed);
+      population[i].trueStackSize = si.trueStackLen;
+      std::cout << "DEBUG: finished stackAdjustment" << std::endl;
       // std::cout << "i=" << i << " trueStackSize=" <<
       // population[i].trueStackSize
       //           << "/" << stackLen << " seed = " << seed << std::endl;
@@ -129,6 +135,12 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
       idSol = -1;  // DISABLE DEBUG
       population[i].cost =
           solutionEvaluator(problem, population[i].randomKeys, other, 0, idSol);
+      //
+      if (problem.hasUnits && problem.outUnit != si.outUnit) {
+        std::cout << "WARNING: different output units!" << std::endl;
+        std::cout << "Expected: " << problem.outUnit << " and got "
+                  << si.outUnit << std::endl;
+      }
     }
   }
 }
@@ -175,6 +187,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   bool end = false;
   int restart = 0;
   while (restart < restartMax) {
+    std::cout << "restart=" << restart << std::endl;
     seed++;
     populationGenerator(mainPopulation, seed);
     if (initialSolution) {
