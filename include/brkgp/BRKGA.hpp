@@ -111,7 +111,7 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   int nVars = problem.nVars;
   int nConst = problem.nConst;
   //
-  int stackLen = other.stackLen;
+  int stackLen = other.getStackLen();
   int maxConst = other.maxConst;
   //
   for (int i = 0; i < (int)population.size(); i++) {
@@ -164,7 +164,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   // -----
   // other
   // -----
-  int individualLen = other.individualLen;
+  int individualLen = other.getIndividualLen();
   //
   Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
   Vec<ValuedChromosome> auxPopulation(populationLen);

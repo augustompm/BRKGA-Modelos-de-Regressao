@@ -441,7 +441,7 @@ double solutionEvaluator(const RProblem& problem,
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
   // scenario
-  const int stackLen = other.stackLen;
+  const int stackLen = other.getStackLen();
   // local variables
   kahan::kfloat64 sum_error = 0;
   if (idSol == 0) {

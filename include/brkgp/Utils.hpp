@@ -45,6 +45,24 @@ struct RProblem {
       syms.unique();
     }
   }
+
+  void make_squared() {
+    squared = true;
+    for (auto i = 0; i < (int)outputs.size(); i++)
+      outputs[i] = (outputs[i] * outputs[i]);
+    if (hasUnits) {
+      ex ex_out(outUnit, syms);
+      ex_out = ex_out * ex_out;
+      std::stringstream ss;
+      ss << ex_out;
+      outUnit = ss.str();
+    }
+  }
+
+  bool isSquared() const { return squared; }
+
+ private:
+  bool squared{false};
 };
 
 struct BRKGAParams {
@@ -65,8 +83,28 @@ struct Scenario {
   // concatenação de T1 e T2, nessa ordem
   std::vector<char> operationsBi;
   std::vector<char> operationsU;
+  int maxConst{0};
+
+  void setStackLen(int _stackLen, int _stackLenMax,
+                   double _stackLenFactor = 2.0) {
+    assert(_stackLenFactor >= 1 && _stackLenFactor <= 3.0);
+    stackLenIncreaseFactor = _stackLenFactor;
+    stackLen = _stackLen;
+    assert(_stackLenMax >= _stackLen);
+    stackLenMax = _stackLenMax;
+    assert(maxConst > 0);
+    individualLen = 3 * stackLen + maxConst + 1;
+  }
+
+  int getStackLen() const { return stackLen; }
+  int getStackLenMax() const { return stackLenMax; }
+  double getStackLenIncreaseFactor() const { return stackLenIncreaseFactor; }
+  int getIndividualLen() const { return individualLen; }
+
+ private:
   int stackLen;
-  int maxConst;
+  int stackLenMax;
+  double stackLenIncreaseFactor;
   int individualLen;
 };
 

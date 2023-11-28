@@ -101,23 +101,23 @@ int main(int argc, char* argv[]) {
   other.operationsU = {'i', 'r', 'a'};
   // other.operationsU = {'i', 'a'};
 
-  // other.stackLen = 15;
-  // other.stackLen = 9;
-  //
-  // other.stackLen = 41;
-  other.stackLen = 20;
-  // other.stackLen = 10;
+  // if (argc > 1) other.stackLen = atoi(argv[1]);
+  if (argc > 2) other.maxConst = atoi(argv[2]);
 
   // other.maxConst = 3;
   other.maxConst = 6;
 
+  // other.stackLen = 15;
+  // other.stackLen = 9;
+  //
+  // other.stackLen = 41;
+  other.setStackLen(10, 41, 1.5);
+  // other.stackLen = 10;
+
   std::cout << "|ARGS| = " << argc << std::endl;
 
-  if (argc > 1) other.stackLen = atoi(argv[1]);
-  if (argc > 2) other.maxConst = atoi(argv[2]);
-
-  other.individualLen = 3 * other.stackLen + other.maxConst + 1;
-  std::cout << "individualLen:" << other.individualLen << std::endl;
+  // other.individualLen = 3 * other.stackLen + other.maxConst + 1;
+  std::cout << "individualLen:" << other.getIndividualLen() << std::endl;
 
   BRKGAParams params;
   // params.populationLen = 30;
@@ -171,7 +171,7 @@ int main(int argc, char* argv[]) {
   // printf("Aqui foi 1");
   ValuedChromosome bestFoundSolution;
   bestFoundSolution.cost = -1;
-  bestFoundSolution.randomKeys = Vec<chromosome>(other.individualLen, 0);
+  bestFoundSolution.randomKeys = Vec<chromosome>(other.getIndividualLen(), 0);
   bestFoundSolution.cost = INFINITY;
 
   // char instance[] = "instances/lit3_BSR_func1_1.in";
@@ -202,6 +202,12 @@ int main(int argc, char* argv[]) {
   //
   // readIO(inputs, outputs, scanner, nVars, tests, nConst, vConst);
   readIO(problem, scanner);
+
+  // =====================
+  // make outputs SQUARED
+  // =====================
+  problem.make_squared();
+
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
   printFile(problem);
 
@@ -241,7 +247,7 @@ int main(int argc, char* argv[]) {
   rkg.nConst = problem.nConst;
   rkg.operationsBi = other.operationsBi;
   rkg.operationsU = other.operationsU;
-  rkg.stackLen = other.stackLen;
+  rkg.stackLen = other.getStackLen();
   rkg.maxConst = other.maxConst;
 
   auto initialSol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
@@ -251,7 +257,8 @@ int main(int argc, char* argv[]) {
   // USE INITIAL SOLUTION?
   // =====================
   if (false) {
-    assert((int)initialSol.size() == (int)other.individualLen);
+    assert((int)initialSol.size() == (int)other.getIndividualLen());
+    assert(!problem.isSquared());
     std::cout << "INITIAL: ";
     for (auto& k : initialSol) std::cout << k << " ";
     std::cout << std::endl;

@@ -31,6 +31,7 @@ void printFile(const RProblem& problem) {
   for (int i = 0; i < nConst; i++) {
     printf("%.4f\t%.4f\n", problem.vConst[i].first, problem.vConst[i].second);
   }
+  std::cout << "isSquared? " << problem.isSquared() << std::endl;
 }
 
 void printCodChromosome(const Vec<chromosome>& individual) {
@@ -47,7 +48,7 @@ void printDecodChromosome(const Vec<chromosome>& individual,
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
   // scenario
-  const int stackLen = other.stackLen;
+  const int stackLen = other.getStackLen();
   //
   int decodValue;
   for (int i = 0; i < stackLen; i++) {
@@ -80,7 +81,7 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
   // scenario
-  const int stackLen = other.stackLen;
+  const int stackLen = other.getStackLen();
   //
   int decodValue;
   int cont = 0;
@@ -200,7 +201,7 @@ std::string printSolution2(const RProblem& problem,
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
   // scenario
-  const int stackLen = other.stackLen;
+  const int stackLen = other.getStackLen();
 
   std::stack<std::string> stk;
   int contSeed = 0;
@@ -222,14 +223,7 @@ std::string printSolution2(const RProblem& problem,
       if (idVar >= 0) {
         // VARIABLE NAME!
         std::stringstream ss;
-        if (idVar == 0)
-          ss << "x";
-        else if (idVar == 1)
-          ss << "y";
-        else if (idVar == 2)
-          ss << "z";
-        else
-          ss << "var" << idVar;
+        ss << "v" << idVar;
         stk.push(ss.str());
       } else {
         // push constant
