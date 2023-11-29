@@ -360,7 +360,8 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       bestFoundSolution = mainPopulation[0];
       std::cout << "BEST SOLUTION! cost=" << bestFoundSolution.cost << " ";
       printSolution(problem, bestFoundSolution.randomKeys, other);
-      for (int i = 0; i < 100; i++) {
+      // SOME "INTENSIFICATION"?
+      for (int i = 0; i < 1; i++) {
         auto sol2 = bestFoundSolution;
         compactIndividual(sol2.randomKeys, other.getStackLen(), problem, other);
         auto si = stackAdjustment(problem, other, sol2.randomKeys,
