@@ -210,6 +210,7 @@ struct StackInfo {
   int trueStackLen;
   std::string outUnit;
   int usedVars;
+  int firstFix{-1};
 };
 
 StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
@@ -221,7 +222,8 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
   int trueStackLen = 0;
   //
   // unit on stack element; example: meter, second, ...
-  std::stack<ex> stkUnit;  // stack for units!!
+  std::stack<ex> stkUnit;         // stack for units!!
+  int firstFix = 100 * stackLen;  // BIG NUMBER!!!
   int usedVars = 0;
   std::vector<bool> vUsedVars(problem.nVars, false);
   //
@@ -261,6 +263,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     //
     // CONSERTO: Transforma em PUSH a operação!
     if (stackCountAfterOperation < 1) {
+      if (i < firstFix) firstFix = i;
       individual[i] = makePUSH(individual[i]);
       assert(isOperation(individual[i], OpType::PUSH));
       stackCountAfterOperation = stackCount + 1;
@@ -280,6 +283,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     // stackCountAfterOperation=3  >  (5 - 2) = 3   (?)
     if (stackCountAfterOperation > (stackLen - i)) {
       if (stackCount == 1) {
+        if (i < firstFix) firstFix = i;
         // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
         individual[i] += 2500;
         stackCountAfterOperation = 1;
@@ -287,13 +291,16 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         if (isOperation(individual[i], OpType::UN)) {
           // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
           // TODO: transforma em UN, já que não pode ser BIN?
+          if (i < firstFix) firstFix = i;
           individual[i] -= 2500;
 
         } else if (isOperation(individual[i], OpType::SPECIAL)) {
           // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
+          if (i < firstFix) firstFix = i;
           individual[i] -= 7500;
         } else {  // se der testar depois, no caso i=0
           // std::cout << "WARNING! ALTERANDO individual COD6!" << std::endl;
+          if (i < firstFix) firstFix = i;
           individual[i] -= 5000;
         }
         stackCountAfterOperation = stackCount - 1;
@@ -306,6 +313,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
       if (contConst > maxConst) {
         srand(seed);
         // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
+        if ((stackLen + i) < firstFix) firstFix = stackLen + i;
         individual[stackLen + i] =
             ((10000.0 / (nVars + nConst)) * nConst) +
             ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);  // NOLINT
@@ -375,6 +383,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
           if (idOpBi < (int)other.operationsBiT1.size()) {
             // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
             // Muda "gene"... += 2 ops...
+            if ((2 * stackLen + j) < firstFix) firstFix = 2 * stackLen + j;
             individual[2 * stackLen + j] =
                 individual[2 * stackLen + j] +
                 (chromosome)((10000.0 / (double)other.operationsBi.size()) *
@@ -444,7 +453,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     outUnit = ss.str();
   }
 
-  return StackInfo{trueStackLen, outUnit, usedVars};
+  return StackInfo{trueStackLen, outUnit, usedVars, firstFix};
 }
 
 double solutionEvaluator(const RProblem& problem,
@@ -631,6 +640,42 @@ struct RKGenerator {
     for (int idx = 0; idx < (int)v.size(); idx++)
       if (s == v[idx]) return idx;
     return -1;
+  }
+
+  // INCREMENTAL check for stackAdjustment.
+  // INVARIANT IS: should never change last element i...
+  int checkRKexpr(std::string optimal, const RProblem& problem,
+                  const Scenario& other) {
+    std::cout << "checkRKexpr(optimal='" << optimal << "')" << std::endl;
+    int countElems = 0;
+    {
+      Scanner scanner(optimal);
+      while (scanner.hasNext()) {
+        scanner.next();
+        countElems++;
+      }
+    }
+
+    for (int i = 1; i <= countElems; i++) {
+      std::stringstream partialSol;
+      int count = 0;
+      Scanner scanner(optimal);
+      while (count < i) {
+        partialSol << scanner.next() << " ";
+        count++;
+      }
+      std::string target = Scanner::trim(partialSol.str());
+      std::cout << "i=" << i << " target = '" << target << "'" << std::endl;
+      //
+      auto testSol = getRKexpr(target);
+      StackInfo si =
+          stackAdjustment(problem, other, testSol, other.getStackLen(),
+                          problem.nVars, problem.nConst, other.maxConst, 0);
+      std::cout << "StackInfo firstFix=" << si.firstFix << std::endl;
+      assert(si.firstFix > i);
+    }
+
+    return countElems;
   }
 
   Vec<chromosome> getRKexpr(std::string expr) {

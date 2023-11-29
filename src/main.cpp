@@ -265,6 +265,15 @@ int main(int argc, char* argv[]) {
     std::cout << std::endl;
     opInitialSol = initialSol;
   }
+
+  if (!problem.isSquared()) {
+    int out = rkg.checkRKexpr(problem.solution, problem, other);
+    std::cout << "CHECK out = " << out << std::endl;
+  }
+
+  // int out = rkg.checkRKexpr("v2 v3 - a v3 a +", problem, other);
+  // std::cout << "CHECK out = " << out << std::endl;
+
   // ==========================
   std::cout << "run_brkga:" << std::endl;
   std::cout << "best=" << bestFoundSolution.cost << std::endl;
