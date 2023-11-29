@@ -313,7 +313,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
       if (contConst > maxConst) {
         srand(seed);
         // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
-        if ((stackLen + i) < firstFix) firstFix = stackLen + i;
+        if ((i) < firstFix) firstFix = i;
         individual[stackLen + i] =
             ((10000.0 / (nVars + nConst)) * nConst) +
             ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);  // NOLINT
@@ -383,7 +383,7 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
           if (idOpBi < (int)other.operationsBiT1.size()) {
             // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
             // Muda "gene"... += 2 ops...
-            if ((2 * stackLen + j) < firstFix) firstFix = 2 * stackLen + j;
+            if ((j) < firstFix) firstFix = j;
             individual[2 * stackLen + j] =
                 individual[2 * stackLen + j] +
                 (chromosome)((10000.0 / (double)other.operationsBi.size()) *

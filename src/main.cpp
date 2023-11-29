@@ -257,6 +257,8 @@ int main(int argc, char* argv[]) {
   // USE INITIAL SOLUTION?
   // =====================
   if (problem.hasSolution && false) {
+    int out = rkg.checkRKexpr(problem.solution, problem, other);
+    std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);
     assert((int)initialSol.size() == (int)other.getIndividualLen());
     assert(!problem.isSquared());
@@ -271,8 +273,15 @@ int main(int argc, char* argv[]) {
     std::cout << "CHECK out = " << out << std::endl;
   }
 
-  // int out = rkg.checkRKexpr("v2 v3 - a v3 a +", problem, other);
-  // std::cout << "CHECK out = " << out << std::endl;
+  // for squared on Euclidean...
+  if (problem.isSquared()) {
+    std::string testSol = "v2 v3 - a v2 v3 + a -";
+    int out = rkg.checkRKexpr(testSol, problem, other);
+    std::cout << "CHECK out = " << out << std::endl;
+    //
+    auto initialSol = rkg.getRKexpr(testSol);
+    opInitialSol = initialSol;
+  }
 
   // ==========================
   std::cout << "run_brkga:" << std::endl;
