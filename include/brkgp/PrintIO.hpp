@@ -92,8 +92,10 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
   int decodValue;
   int cont = 0;
   double rangeConst = 0;
+  std::vector<bool> empty(stackLen, false);
   std::cout << "stackLen: " << stackLen << " => ";
   for (int j = 0; j < stackLen; j++) {
+    if (individual[j] > (10000.0 / 4) * 3) empty[j] = true;
     decodValue = floor((individual[j] / 10000.0) * 4) - 1;
     // printf("")
     if (decodValue == -1) {
@@ -126,6 +128,8 @@ void printSolution(const RProblem& problem, const Vec<chromosome>& individual,
       }
     }
   }
+  printf("empty: ");
+  for (auto i = 0; i < stackLen; i++) printf("%d ", (int)empty[i]);
   printf("\n");
 }
 
