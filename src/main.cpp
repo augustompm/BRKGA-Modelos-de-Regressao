@@ -135,6 +135,8 @@ int main(int argc, char* argv[]) {
   params.restartMax = 50;
   // params.restartMax = 10;
 
+  params.moreDiversity = 20;  // after 20% restartMax
+
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
   if (argc > 5) params.mutantSize = atoi(argv[5]);

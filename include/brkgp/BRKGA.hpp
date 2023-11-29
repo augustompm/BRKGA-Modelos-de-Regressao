@@ -40,6 +40,65 @@ void individualGenerator(Vec<chromosome>& individual, int seed) {
   }
 }
 
+void compactIndividual(Vec<chromosome>& individual, int stackLen) {
+  // std::cout << "compactIndividual!" << std::endl;
+  for (int i = 0; i < stackLen; i++) {
+    if (isOperation(individual[i], OpType::SPECIAL)) {
+      // std::cout << "found empty i=" << i << std::endl;
+      for (int j = i; j < stackLen; j++) {
+        individual[j] = individual[j + 1];
+        individual[1 * stackLen + j] = individual[1 * stackLen + j + 1];
+        individual[2 * stackLen + j] = individual[2 * stackLen + j + 1];
+      }
+      individual[stackLen - 1] = 9999;
+      assert(isOperation(individual[stackLen - 1], OpType::SPECIAL));
+    }
+  }
+  // count empty spaces
+  int countEmpty = 0;
+  for (int i = 0; i < stackLen; i++)
+    if (isOperation(individual[i], OpType::SPECIAL)) countEmpty++;
+  // std::cout << "countEmpty=" << countEmpty << std::endl;
+  //
+  if (countEmpty < 2) {
+    // std::cout << "WARNING: no space for mutation! at least two..." <<
+    // std::endl;
+    return;
+  }
+  //
+  std::vector<int> pushes;
+  for (int i = 0; i < stackLen; i++)
+    if (isOperation(individual[i], OpType::PUSH)) pushes.push_back(i);
+  // std::cout << "pushes = " << pushes.size() << std::endl;
+  //
+  if (pushes.size() == 0) {
+    // std::cout << "WARNING: no push for mutation!" << std::endl;
+    return;
+  }
+
+  int k = rand() % pushes.size();
+  int i = pushes[k];
+  // Mutation: InsertBinaryOp after i... so, must PUSH then BIN
+  // Step 1: create two slots of space.
+  for (int j = stackLen - 2; j > i; j--) {
+    individual[j] = individual[j - 1];
+    individual[stackLen + j] = individual[stackLen + j - 1];
+    individual[2 * stackLen + j] = individual[2 * stackLen + j - 1];
+  }
+  for (int j = stackLen - 1; j > (i + 1); j--) {
+    individual[j] = individual[j - 1];
+    individual[stackLen + j] = individual[stackLen + j - 1];
+    individual[2 * stackLen + j] = individual[2 * stackLen + j - 1];
+  }
+  // now i and i+1 are empty
+  individual[i] = 9999;
+  individual[i + 1] = 9999;
+  // i will become push (the variable or const does not matter...)
+  individual[i] = 6000;
+  // i+1 will become binary (the operation does not matter...)
+  individual[i + 1] = 1250;
+}
+
 void mutantGenerator(Vec<ValuedChromosome>& population, int eliteSize,
                      int mutantSize, int seed) {
   for (int i = eliteSize; i < (eliteSize + mutantSize); i++) {
@@ -54,7 +113,8 @@ void mutantGenerator(Vec<ValuedChromosome>& population, int eliteSize,
 
 void crossover(const Vec<ValuedChromosome>& population,
                Vec<ValuedChromosome>& auxPopulation, int eliteSize,
-               int mutantSize, uint16_t eliteBias, int seed) {
+               int mutantSize, uint16_t eliteBias, int seed, bool doMutation,
+               int stackLen) {
   int parentA = 0;
   int parentB = 0;
 
@@ -87,6 +147,9 @@ void crossover(const Vec<ValuedChromosome>& population,
       else
         auxPopulation[i].randomKeys[j] = population[parentB].randomKeys[j];
       seed++;
+    }
+    if (doMutation) {
+      compactIndividual(auxPopulation[i].randomKeys, stackLen);
     }
     auxPopulation[i].cost = 0;
   }
@@ -175,8 +238,8 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   //
   Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
   Vec<ValuedChromosome> auxPopulation(populationLen);
-  // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d individualLen1:
-  // %d stackLen1:
+  // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d
+  // individualLen1: %d stackLen1:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
 
   for (int i = 0; i < populationLen; i++) {
@@ -188,8 +251,8 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
 
   eliteSize = percentToInt(eliteSize, populationLen);
   mutantSize = percentToInt(mutantSize, populationLen);
-  // printf("populationLen2: %d eliteSize2: %d mutanteSize2: %d individualLen2:
-  // %d stackLen2:
+  // printf("populationLen2: %d eliteSize2: %d mutanteSize2: %d
+  // individualLen2: %d stackLen2:
   // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
   // printf("%d\t%d\n",eliteSize,mutantSize);
   // 'noImprovement' is used to compute 'mutantGrow'
@@ -198,6 +261,8 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
   bool end = false;
   int restart = 0;
   while (restart < restartMax) {
+    // more diversity after X% iterations...
+    bool doMutation = (restart > restartMax * (params.moreDiversity / 100.0));
     // std::cout << "restart=" << restart << std::endl;
     seed++;
     populationGenerator(mainPopulation, seed);
@@ -231,7 +296,8 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
                       seed);
       crossover(mainPopulation, auxPopulation, eliteSize,
-                (mutantSize + mutationGrow), eliteBias, seed);
+                (mutantSize + mutationGrow), eliteBias, seed, doMutation,
+                other.getStackLen());
       seed += 2 * individualLen;
       decoder(auxPopulation, problem, other, seed);
       // printPopulationCost(auxPopulation,populationLen);

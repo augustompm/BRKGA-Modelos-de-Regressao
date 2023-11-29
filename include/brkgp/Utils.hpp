@@ -75,6 +75,7 @@ struct BRKGAParams {
   int noImprovementMax = 10;
   // int restartMax = 1000;
   int restartMax = 10;
+  int moreDiversity = 75;
 };
 
 struct Scenario {
