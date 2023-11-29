@@ -274,8 +274,8 @@ int main(int argc, char* argv[]) {
   }
 
   // for squared on Euclidean...
-  if (problem.isSquared()) {
-    std::string testSol = "v2 v3 - a v2 v3 + a -";
+  if (problem.isSquared() && false) {
+    std::string testSol = "v2 v3 - a v2 v3 - a +";
     int out = rkg.checkRKexpr(testSol, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     //
