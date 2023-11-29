@@ -358,6 +358,24 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       // bestFoundSolution.cost = mainPopulation[0].cost;
       // bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
       bestFoundSolution = mainPopulation[0];
+      std::cout << "BEST SOLUTION! cost=" << bestFoundSolution.cost << " ";
+      printSolution(problem, bestFoundSolution.randomKeys, other);
+      for (int i = 0; i < 100; i++) {
+        auto sol2 = bestFoundSolution;
+        compactIndividual(sol2.randomKeys, other.getStackLen(), problem, other);
+        auto si = stackAdjustment(problem, other, sol2.randomKeys,
+                                  other.getStackLen(), problem.nVars,
+                                  problem.nConst, other.maxConst, 0);
+        auto cost2 = solutionEvaluator(problem, sol2.randomKeys, other, 0, -1);
+        sol2.cost = cost2;
+        sol2.seed = 0;
+        sol2.trueStackSize = si.trueStackLen;
+        if ((bestFoundSolution.cost - sol2.cost) > 0.000001) {
+          std::cout << "COST2 IS BETTER!!!" << cost2 << std::endl;
+          bestFoundSolution = sol2;
+          mainPopulation[0] = bestFoundSolution;
+        }
+      }
       //
       // printf("Chegou\n");
       restart = 0;
