@@ -34,6 +34,8 @@ struct RProblem {
   std::string outUnit;
   Vec<std::string> constUnits;
   lst syms;  // ginac
+  bool hasSolution{false};
+  std::string solution;
 
   void setupUnits() {
     if (hasUnits) {

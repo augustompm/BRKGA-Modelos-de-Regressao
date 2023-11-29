@@ -56,8 +56,11 @@ void readIO(RProblem& problem, Scanner& scanner) {
   std::cout << "has_solution='" << has_solution << "' => '" << solution << "'"
             << std::endl;
   if (has_solution == "HAS_SOLUTION") {
+    problem.hasSolution = true;
+    problem.solution = solution;
     std::cout << "SOLUTION IS: '" << solution << "'";
   } else {
+    problem.hasSolution = false;
     assert(has_solution == "NO_SOLUTION");
   }
 

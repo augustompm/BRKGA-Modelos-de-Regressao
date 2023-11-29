@@ -129,10 +129,10 @@ int main(int argc, char* argv[]) {
   // params.eliteBias = 70;
   params.eliteBias = 85;
   // params.noImprovementMax = 20000;
-  params.noImprovementMax = 10;
+  params.noImprovementMax = 20;
   //
   // params.restartMax = 1000;
-  params.restartMax = 20;
+  params.restartMax = 50;
   // params.restartMax = 10;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
@@ -251,13 +251,13 @@ int main(int argc, char* argv[]) {
   rkg.stackLen = other.getStackLen();
   rkg.maxConst = other.maxConst;
 
-  auto initialSol = rkg.getRKexpr("v0 v1 - a v2 v3 - a + r");
   std::optional<Vec<chromosome>> opInitialSol = std::nullopt;
 
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (false) {
+  if (problem.hasSolution && false) {
+    auto initialSol = rkg.getRKexpr(problem.solution);
     assert((int)initialSol.size() == (int)other.getIndividualLen());
     assert(!problem.isSquared());
     std::cout << "INITIAL: ";
