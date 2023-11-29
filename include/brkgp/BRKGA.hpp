@@ -146,10 +146,11 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
           }
           population[i].cost += 10000.0;  // PENALIDADE DE UNIDADE FINAL ERRADA!
         }
-        // penalize if not all variables are used
+        // exponentially penalize if not all variables k are used
+        // if DISABLED, W=1.0, so 1^k = 1.0
         if (si.usedVars < problem.nVars)
-          population[i].cost *=
-              (problem.nVars - si.usedVars) * other.weightPerUnusedVariable;
+          population[i].cost *= ::pow(other.getWeightPerUnusedVariable(),
+                                      (problem.nVars - si.usedVars));
       }
     }
   }

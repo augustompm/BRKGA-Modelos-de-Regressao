@@ -84,9 +84,6 @@ struct Scenario {
   std::vector<char> operationsBi;
   std::vector<char> operationsU;
 
-  // multiply ERROR by this weight, for every unused variable (minimum is ONE)
-  double weightPerUnusedVariable = 5;
-
   int maxConst{0};
 
   void setStackLen(int _stackLen, int _stackLenMax,
@@ -105,11 +102,19 @@ struct Scenario {
   double getStackLenIncreaseFactor() const { return stackLenIncreaseFactor; }
   int getIndividualLen() const { return individualLen; }
 
+  void setWeightPerUnusedVariable(double W) {
+    assert(W >= 1.0);
+    weightPerUnusedVariable = W;
+  }
+  double getWeightPerUnusedVariable() const { return weightPerUnusedVariable; }
+
  private:
   int stackLen;
   int stackLenMax;
   double stackLenIncreaseFactor;
   int individualLen;
+  // multiply ERROR by this weight, for every unused variable (minimum is ONE)
+  double weightPerUnusedVariable = 1.0;
 };
 
 class ValuedChromosome {

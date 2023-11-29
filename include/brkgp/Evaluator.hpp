@@ -81,8 +81,15 @@ opt<double> execUnaryOp(int idop, double v1,
 }
 
 // error between values v1 and v2 RMSE
-double computeError(double v1, double v2) {
-  // square
+// 'problem' informs mode:
+//   * isSquared activated (force square root on both sides to correct it)
+double computeError(const RProblem& problem, double v1, double v2) {
+  if (problem.isSquared()) {
+    // must apply square root on both sides, to correct "squared" nature!
+    // v1 = ::sqrt(v1);
+    // v2 = ::sqrt(v2);
+  }
+  // RMSE
   return ::sqrt((v1 - v2) * (v1 - v2));
 }
 
@@ -587,7 +594,7 @@ double solutionEvaluator(const RProblem& problem,
       std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_error << std::endl;
     }
 
-    sum_error += computeError(val, problem.outputs[t]);
+    sum_error += computeError(problem, val, problem.outputs[t]);
 
     if (idSol == 0 && t == 0) {
       std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_error << std::endl;

@@ -207,6 +207,7 @@ int main(int argc, char* argv[]) {
   // make outputs SQUARED
   // =====================
   if (true) problem.make_squared();
+  other.setWeightPerUnusedVariable(1.0);  // disabled = 1.0
 
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
   printFile(problem);
