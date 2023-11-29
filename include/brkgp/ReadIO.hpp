@@ -51,6 +51,16 @@ void readIO(RProblem& problem, Scanner& scanner) {
     std::cout << "var unit: '" << vun << "'" << std::endl;
   std::cout << "out unit: '" << outUnit << "'" << std::endl;
 
+  std::string has_solution = scanner.next();
+  std::string solution = scanner.nextLine();
+  std::cout << "has_solution='" << has_solution << "' => '" << solution << "'"
+            << std::endl;
+  if (has_solution == "HAS_SOLUTION") {
+    std::cout << "SOLUTION IS: '" << solution << "'";
+  } else {
+    assert(has_solution == "NO_SOLUTION");
+  }
+
   std::cout << "2) READING PROBLEM TESTS" << std::endl;
 
   // for each test...
