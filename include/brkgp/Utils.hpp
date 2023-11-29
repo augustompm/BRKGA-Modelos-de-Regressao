@@ -33,16 +33,18 @@ struct RProblem {
   Vec<std::string> varUnits;
   std::string outUnit;
   Vec<std::string> constUnits;
+  std::vector<std::string> allUnits;
   lst syms;  // ginac
   bool hasSolution{false};
   std::string solution;
 
   void setupUnits() {
     if (hasUnits) {
-      for (unsigned i = 0; i < varUnits.size(); i++)
-        syms.append(symbol{varUnits[i]});
-      syms.append(symbol{outUnit});
-      // remove duplicates! sort + unique
+      for (const auto& u : allUnits) syms.append(symbol{u});
+      // for (unsigned i = 0; i < varUnits.size(); i++)
+      //   syms.append(symbol{varUnits[i]});
+      // syms.append(symbol{outUnit});
+      //  remove duplicates! sort + unique
       syms.sort();
       syms.unique();
     }

@@ -35,6 +35,15 @@ void readIO(RProblem& problem, Scanner& scanner) {
   std::string stype = scanner.nextLine();
   std::cout << "TYPE: '" << stype << "'" << std::endl;
   hasUnits = (stype == "HAS_UNITS");
+  std::string units = "";
+  std::string all_units = "";
+  if (hasUnits) {
+    units = scanner.next();
+    all_units = Scanner::trim(scanner.nextLine());
+    assert(units == "UNITS");
+    Scanner scan(all_units);
+    while (scan.hasNext()) problem.allUnits.push_back(scan.next());
+  }
 
   nVars = scanner.nextInt();
   tests = scanner.nextInt();
@@ -92,6 +101,9 @@ void readIO(RProblem& problem, Scanner& scanner) {
   // setup units for ginac
   std::cout << "3.5) SETUP UNITS" << std::endl;
   problem.setupUnits();
+  std::cout << "UNITS: ";
+  for (auto& i : problem.allUnits) std::cout << i << " ; ";
+  std::cout << std::endl;
 
   std::cout << "4) FINISHED READING PROBLEM" << std::endl;
 }
