@@ -189,6 +189,10 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
       // try to simplify sqrt... not perfect! TODO: improve!
       fix_sqrt(e_out, problem.syms);
     }
+    if (operationsU[idop] == 'e') e_out = exp(e1);               // e^x
+    if (operationsU[idop] == 'n') e_out = log(e1);               // ln(x)
+    if (operationsU[idop] == 'p') e_out = pow(2.0, e1);          // 2^x
+    if (operationsU[idop] == 'l') e_out = log(e1) / log(ex{2});  // log_2(x)
     // get text
     // std::stringstream ss;
     // ss << e_out;
