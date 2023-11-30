@@ -111,7 +111,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(10, 41, 1.5);
+  other.setStackLen(20, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
