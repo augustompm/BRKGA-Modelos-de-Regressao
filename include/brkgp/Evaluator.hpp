@@ -77,6 +77,15 @@ opt<double> execUnaryOp(int idop, double v1,
       // return std::make_optional<double>(::pow(v1, 1.0 / 2.0));
       return std::make_optional<double>(::sqrt(v1));
   }
+  if (operationsU[idop] == 'e')
+    return std::make_optional<double>(::exp(v1));  // e^x
+  if (operationsU[idop] == 'n')
+    return std::make_optional<double>(::log(v1));  // ln(x)
+  if (operationsU[idop] == 'p')
+    return std::make_optional<double>(::pow(2.0, v1));  // 2^x
+  if (operationsU[idop] == 'l')
+    return std::make_optional<double>(::log2(v1));  // log_2(x)
+
   return std::nullopt;
 }
 
