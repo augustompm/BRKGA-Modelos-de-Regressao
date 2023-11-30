@@ -40,8 +40,9 @@ void individualGenerator(Vec<chromosome>& individual, int seed) {
   }
 }
 
-void compactIndividual(Vec<chromosome>& individual, int stackLen,
-                       const RProblem& problem, const Scenario& other) {
+void compactIndividual(Vec<chromosome>& individual, int stackLen, long seed,
+                       int _k = -1) {
+  srand(seed);
   // std::cout << "compactIndividual!" << std::endl;
   for (int i = 0; i < stackLen; i++) {
     if (isOperation(individual[i], OpType::SPECIAL)) {
@@ -78,26 +79,31 @@ void compactIndividual(Vec<chromosome>& individual, int stackLen,
   }
 
   int k = rand() % pushes.size();
+  if (_k >= 0) k = _k;  // manual k
   int i = pushes[k];
-  // Mutation: InsertBinaryOp after i... so, must PUSH then BIN
+  // Mutation: InsertBinaryOp after i+1... so, must PUSH then BIN
   // Step 1: create two slots of space.
-  for (int j = stackLen - 2; j > i; j--) {
+  for (int j = stackLen - 2; j > (i + 1); j--) {
     individual[j] = individual[j - 1];
     individual[stackLen + j] = individual[stackLen + j - 1];
     individual[2 * stackLen + j] = individual[2 * stackLen + j - 1];
   }
-  for (int j = stackLen - 1; j > (i + 1); j--) {
+  for (int j = stackLen - 1; j > (i + 2); j--) {
     individual[j] = individual[j - 1];
     individual[stackLen + j] = individual[stackLen + j - 1];
     individual[2 * stackLen + j] = individual[2 * stackLen + j - 1];
   }
-  // now i and i+1 are empty
-  individual[i] = 9999;
+  // now i+1 and i+2 are empty
   individual[i + 1] = 9999;
-  // i will become push (the variable or const does not matter...)
-  individual[i] = 6000;
-  // i+1 will become binary (the operation does not matter...)
-  individual[i + 1] = 1250;
+  individual[i + 2] = 9999;
+  // i continues to be PUSH
+  assert(isOperation(individual[i], OpType::PUSH));
+  // i+1 will become push (the variable or const does not matter... so, repeat!)
+  individual[i + 1] = 6000;
+  individual[stackLen + i + 1] = individual[stackLen + i];
+  // i+2 will become binary (the operation does not matter...)
+  individual[i + 2] = 1250;
+  individual[2 * stackLen + i + 2] = rand() % 10000;
   //
   // std::cout << "MUTATION: " << std::endl;
   // printSolution(problem, individual, other);
@@ -153,7 +159,7 @@ void crossover(const Vec<ValuedChromosome>& population,
       seed++;
     }
     if (doMutation) {
-      compactIndividual(auxPopulation[i].randomKeys, stackLen, problem, other);
+      compactIndividual(auxPopulation[i].randomKeys, stackLen, seed);
     }
     auxPopulation[i].cost = 0;
   }
@@ -296,20 +302,37 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       int mutationGrow = percentToInt(
           5 * (5 * (noImprovement / noImprovementMax)), populationLen);
       // [0 ... eliteSize] is elite
+
+      if (doMutation) {
+        int target = eliteSize + 1;
+        // std::cout << "doMutation: BEST=";
+        // printSolution(problem, bestFoundSolution.randomKeys, other);
+        auxPopulation[target + 0] = bestFoundSolution;
+        auxPopulation[target + 0].cost = 0;
+        compactIndividual(auxPopulation[target + 0].randomKeys,
+                          other.getStackLen(), seed);
+        // std::cout << "doMutation: VARIANT=";
+        // printSolution(problem, auxPopulation[target + 0].randomKeys, other);
+      }
+
       // [eliteSize to mutantSize+mutationGrow] is mutant
       mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
                       seed);
       if (doMutation) {
-        for (int j = 0; j < 3; j++) {
-          auxPopulation[eliteSize + j] = auxPopulation[j];
-          auxPopulation[eliteSize + j].cost = 0;
-          compactIndividual(auxPopulation[eliteSize + j].randomKeys,
-                            other.getStackLen(), problem, other);
-        }
+        int target = eliteSize + 1;
+        // std::cout << "doMutation: BEST=";
+        // printSolution(problem, bestFoundSolution.randomKeys, other);
+        auxPopulation[target + 0] = bestFoundSolution;
+        auxPopulation[target + 0].cost = 0;
+        compactIndividual(auxPopulation[target + 0].randomKeys,
+                          other.getStackLen(), seed);
+        // std::cout << "doMutation: VARIANT=";
+        // printSolution(problem, auxPopulation[target + 0].randomKeys, other);
       }
       crossover(mainPopulation, auxPopulation, eliteSize,
                 (mutantSize + mutationGrow), eliteBias, seed, doMutation,
                 other.getStackLen(), problem, other);
+
       seed += 2 * individualLen;
       decoder(auxPopulation, problem, other, seed);
       // printPopulationCost(auxPopulation,populationLen);
@@ -363,7 +386,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       // SOME "INTENSIFICATION"?
       for (int i = 0; i < 1; i++) {
         auto sol2 = bestFoundSolution;
-        compactIndividual(sol2.randomKeys, other.getStackLen(), problem, other);
+        compactIndividual(sol2.randomKeys, other.getStackLen(), seed);
         auto si = stackAdjustment(problem, other, sol2.randomKeys,
                                   other.getStackLen(), problem.nVars,
                                   problem.nConst, other.maxConst, 0);

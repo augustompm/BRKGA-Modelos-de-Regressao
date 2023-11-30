@@ -5,6 +5,7 @@
 #include <catch2/catch_amalgamated.hpp>
 //
 #include <Scanner/Scanner.hpp>
+#include <brkgp/BRKGA.hpp>
 #include <brkgp/ReadIO.hpp>
 
 using namespace scannerpp;  // NOLINT
@@ -113,4 +114,43 @@ TEST_CASE("montando solucao para distancia euclideana") {
   int usedOps = si.trueStackLen;
   REQUIRE(usedOps == rkg.stackLen - 1);
   REQUIRE(sol2 == initialSol2);
+}
+
+TEST_CASE("testando mutacao") {
+  RKGenerator rkg;
+  rkg.operationsBi = std::vector<char>({'+', '-', '*', '/'});
+  rkg.operationsU = std::vector<char>({'i', 'r', 'a'});
+  rkg.nVars = 4;
+  rkg.nConst = 1;
+  rkg.stackLen = 10;
+  rkg.maxConst = 6;
+
+  std::string testSol = "v2 v3 - a v3 a +";
+  auto sol2 = rkg.getRKexpr(testSol);
+  REQUIRE(sol2[rkg.stackLen - 1] == 9999);
+  REQUIRE(isOperation(sol2[0], OpType::PUSH));
+  REQUIRE(isOperation(sol2[1], OpType::PUSH));
+  REQUIRE(isOperation(sol2[2], OpType::BIN));
+  REQUIRE(isOperation(sol2[3], OpType::UN));
+  REQUIRE(isOperation(sol2[4], OpType::PUSH));
+  REQUIRE(isOperation(sol2[5], OpType::UN));
+  REQUIRE(isOperation(sol2[6], OpType::BIN));
+  REQUIRE(isOperation(sol2[7], OpType::SPECIAL));
+  // variable _k = 2 in list [v2, v3, v3]
+  compactIndividual(sol2, rkg.stackLen, 0, 2);
+  //
+  REQUIRE(isOperation(sol2[0], OpType::PUSH));
+  REQUIRE(isOperation(sol2[1], OpType::PUSH));
+  REQUIRE(isOperation(sol2[2], OpType::BIN));
+  REQUIRE(isOperation(sol2[3], OpType::UN));
+  REQUIRE(isOperation(sol2[4], OpType::PUSH));
+  REQUIRE(isOperation(sol2[5], OpType::PUSH));
+  REQUIRE(sol2[rkg.stackLen + 5] == 9000);  // same variable as 4
+  REQUIRE(isOperation(sol2[6], OpType::BIN));
+  REQUIRE(isOperation(sol2[7], OpType::UN));
+  REQUIRE(isOperation(sol2[8], OpType::BIN));
+  REQUIRE(isOperation(sol2[9], OpType::SPECIAL));
+  //
+  REQUIRE(sol2[rkg.stackLen - 1] == 9999);
+  REQUIRE(true);
 }
