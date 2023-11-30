@@ -178,7 +178,9 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
     return std::make_optional<ex>(v1Unit);
   }
   if ((operationsU[idop] == 'a') || (operationsU[idop] == 'v') ||
-      (operationsU[idop] == 'r')) {
+      (operationsU[idop] == 'r') || (operationsU[idop] == 'e') ||
+      (operationsU[idop] == 'n') || (operationsU[idop] == 'p') ||
+      (operationsU[idop] == 'l')) {
     // ex e1 = ex(v1Unit, problem.syms);
     ex e1 = v1Unit;
     ex e_out = ex("1", problem.syms);
