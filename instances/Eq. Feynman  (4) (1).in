@@ -1,6 +1,14 @@
-STANDARD
+HAS_UNITS
+UNITS m
 6 10 1
-NO_SOLUTION *
+m
+m
+m
+m
+m
+m
+m^2
+HAS_SOLUTION v0 v1 * + v2 v3 * + v4 v5 * +
 -4	-4	-6	10	5	6	-14
 9	4	-1	5	-1	2	29
 -1	-7	-3	6	-2	-7	3
@@ -11,4 +19,4 @@ NO_SOLUTION *
 3	-9	7	5	1	-1	7
 4	7	-3	3	2	9	37
 -5	6	-4	4	-2	9	-64
-0 0
+1 1 *
