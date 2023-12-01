@@ -175,3 +175,24 @@ TEST_CASE("testando produto interno") {
   int out = rkg.checkRKexpr(testSol, problem, other);
   REQUIRE(out == 11);
 }
+
+TEST_CASE("testando equacao com luz") {
+  RKGenerator rkg;
+  rkg.operationsBi = std::vector<char>({'+', '-', '*', '/'});
+  rkg.operationsU = std::vector<char>({'i', 'r', 'a'});
+  rkg.nVars = 2;
+  rkg.nConst = 2;  // c0 = luz; c1 = 1
+  rkg.stackLen = 10;
+  rkg.maxConst = 6;
+
+  RProblem problem;
+  problem.nVars = rkg.nVars;
+  problem.hasUnits = false;
+  Scenario other;
+  other.maxConst = rkg.maxConst;
+  other.setStackLen(rkg.stackLen, 2 * rkg.stackLen);
+
+  std::string testSol = "c0 a v1 a / c1 - r v0 /";
+  int out = rkg.checkRKexpr(testSol, problem, other);
+  REQUIRE(out == 10);
+}

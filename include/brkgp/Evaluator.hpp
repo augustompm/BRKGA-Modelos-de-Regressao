@@ -230,7 +230,8 @@ struct StackInfo {
 
 StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
                           Vec<chromosome>& individual, int stackLen, int nVars,
-                          int nConst, int maxConst, int seed) {
+                          int nConst, int maxConst, int seed,
+                          bool printFix = false) {
   int stackCount = 0;
   int contConst = 0;
   // Significado: número de operações "boas" (não SPECIAL/NOP)
@@ -279,6 +280,10 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     // CONSERTO: Transforma em PUSH a operação!
     if (stackCountAfterOperation < 1) {
       if (i < firstFix) firstFix = i;
+      if (printFix)
+        std::cout
+            << "stackAdjustment fix: makePUSH stackCountAfterOperation < 1"
+            << std::endl;
       individual[i] = makePUSH(individual[i]);
       assert(isOperation(individual[i], OpType::PUSH));
       stackCountAfterOperation = stackCount + 1;
@@ -299,6 +304,10 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
     if (stackCountAfterOperation > (stackLen - i)) {
       if (stackCount == 1) {
         if (i < firstFix) firstFix = i;
+        if (printFix)
+          std::cout << "stackAdjustment fix: += 2500 stackCountAfterOperation "
+                       "> (stackLen - i)"
+                    << std::endl;
         // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
         individual[i] += 2500;
         stackCountAfterOperation = 1;
@@ -307,15 +316,22 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
           // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
           // TODO: transforma em UN, já que não pode ser BIN?
           if (i < firstFix) firstFix = i;
+          if (printFix)
+            std::cout << "stackAdjustment fix: -= 2500 (stackCount > 1) "
+                      << std::endl;
           individual[i] -= 2500;
 
         } else if (isOperation(individual[i], OpType::SPECIAL)) {
           // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
           if (i < firstFix) firstFix = i;
+          if (printFix)
+            std::cout << "stackAdjustment fix: -= 7500 (SPECIAL) " << std::endl;
           individual[i] -= 7500;
         } else {  // se der testar depois, no caso i=0
           // std::cout << "WARNING! ALTERANDO individual COD6!" << std::endl;
           if (i < firstFix) firstFix = i;
+          if (printFix)
+            std::cout << "stackAdjustment fix: -= 5000 (else) " << std::endl;
           individual[i] -= 5000;
         }
         stackCountAfterOperation = stackCount - 1;
@@ -329,6 +345,9 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         srand(seed);
         // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
         if ((i) < firstFix) firstFix = i;
+        if (printFix)
+          std::cout << "stackAdjustment fix:  SD1 (PUSH) + Constant"
+                    << std::endl;
         individual[stackLen + i] =
             ((10000.0 / (nVars + nConst)) * nConst) +
             ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);  // NOLINT
@@ -687,11 +706,15 @@ struct RKGenerator {
       std::cout << "i=" << i << " target = '" << target << "'" << std::endl;
       //
       auto testSol = getRKexpr(target);
-      StackInfo si =
-          stackAdjustment(problem, other, testSol, other.getStackLen(),
-                          problem.nVars, problem.nConst, other.maxConst, 0);
+      StackInfo si = stackAdjustment(problem, other, testSol,
+                                     other.getStackLen(), problem.nVars,
+                                     problem.nConst, other.maxConst, 0, true);
       std::cout << "StackInfo firstFix=" << si.firstFix << std::endl;
-      assert(si.firstFix > i);
+      if (!(si.firstFix >= i)) {
+        std::cout << "ERROR! fix at element i=" << i << "position " << (i - 1)
+                  << " firstFix = " << si.firstFix << std::endl;
+        assert(si.firstFix >= i);  // because i starts at 1... not zero.
+      }
     }
 
     return countElems;
@@ -709,6 +732,12 @@ struct RKGenerator {
       ss << "v" << id;
       svars.push_back(ss.str());
     }
+    // only fixed constants... not interval constant!
+    for (int id = 0; id < nConst; id++) {
+      std::stringstream ss;
+      ss << "c" << id;
+      sconsts.push_back(ss.str());
+    }
 
     int individualLen = 3 * stackLen + maxConst + 1;
 
@@ -722,26 +751,37 @@ struct RKGenerator {
         v[idx] = getRK(OpType::PUSH);
         v[idx + stackLen] = getRKvar(inVStr(op, svars));
         idx++;
-      }
-      if (inVStr(op, sopsBi) >= 0) {
+      } else if (inVStr(op, sconsts) >= 0) {
+        v[idx] = getRK(OpType::PUSH);
+        v[idx + stackLen] = getRKconst(inVStr(op, sconsts));
+        idx++;
+      } else if (inVStr(op, sopsBi) >= 0) {
         v[idx] = getRK(OpType::BIN);
         v[idx + 2 * stackLen] = getRKbi(op[0]);
         idx++;
-      }
-      if (inVStr(op, sopsU) >= 0) {
+      } else if (inVStr(op, sopsU) >= 0) {
         v[idx] = getRK(OpType::UN);
         v[idx + 2 * stackLen] = getRKun(op[0]);
         idx++;
-      }
-      if (inVStr(op, sconsts) >= 0) {
-        std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" << std::endl;
-        return Vec<chromosome>{};
-      }
-      if (idx > stackLen) {
+      } else if (idx > stackLen) {
         std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
                   << std::endl;
+        assert(false);
+        return Vec<chromosome>{};
+      } else {
+        std::cout << "Unknown operation '" << op << "'" << std::endl;
+        assert(false);
         return Vec<chromosome>{};
       }
+      // if (inVStr(op, sconsts) >= 0) {
+      //   std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" <<
+      //   std::endl; return Vec<chromosome>{};
+      // }
+      // if (idx > stackLen) {
+      //  std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
+      //            << std::endl;
+      //  return Vec<chromosome>{};
+      //}
     }
     // fill the rest with NOP's
     while (idx < stackLen) {
@@ -770,6 +810,13 @@ struct RKGenerator {
     int varLower = var * segSize + nConst * segSize;
     int varUpper = (var + 1) * segSize + nConst * segSize;
     return (varLower + varUpper) / 2;
+  }
+
+  uint16_t getRKconst(int c) {
+    int segSize = 10000 / (nVars + nConst);
+    int cLower = c * segSize;
+    int cUpper = (c + 1) * segSize;
+    return (cLower + cUpper) / 2;
   }
 
   uint16_t getRKbi(char binaryOp) {
