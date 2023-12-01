@@ -671,6 +671,10 @@ struct RKGenerator {
       }
     }
 
+    std::cout << "checkRKexpr countElems = " << countElems
+              << " stackLen = " << other.getStackLen() << std::endl;
+    assert(other.getStackLen() >= countElems);
+
     for (int i = 1; i <= countElems; i++) {
       std::stringstream partialSol;
       int count = 0;

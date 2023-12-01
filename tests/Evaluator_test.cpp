@@ -154,3 +154,24 @@ TEST_CASE("testando mutacao") {
   REQUIRE(sol2[rkg.stackLen - 1] == 9999);
   REQUIRE(true);
 }
+
+TEST_CASE("testando produto interno") {
+  RKGenerator rkg;
+  rkg.operationsBi = std::vector<char>({'+', '-', '*', '/'});
+  rkg.operationsU = std::vector<char>({'i', 'r', 'a'});
+  rkg.nVars = 6;
+  rkg.nConst = 1;
+  rkg.stackLen = 12;
+  rkg.maxConst = 6;
+
+  RProblem problem;
+  problem.nVars = rkg.nVars;
+  problem.hasUnits = false;
+  Scenario other;
+  other.maxConst = rkg.maxConst;
+  other.setStackLen(rkg.stackLen, 2 * rkg.stackLen);
+
+  std::string testSol = "v0 v1 * v2 v3 * v4 v5 * + +";
+  int out = rkg.checkRKexpr(testSol, problem, other);
+  REQUIRE(out == 11);
+}
