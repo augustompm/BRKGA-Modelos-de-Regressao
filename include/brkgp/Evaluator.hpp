@@ -92,7 +92,7 @@ opt<double> execUnaryOp(int idop, double v1,
 // error between values v1 and v2 RMSE
 // 'problem' informs mode:
 //   * isSquared activated (force square root on both sides to correct it)
-double computeError(const RProblem& problem, double v1, double v2) {
+double RMSE(const RProblem& problem, double v1, double v2) {
   if (problem.isSquared()) {
     // must apply square root on both sides, to correct "squared" nature!
     // v1 = ::sqrt(v1);
@@ -100,6 +100,13 @@ double computeError(const RProblem& problem, double v1, double v2) {
   }
   // RMSE
   return ::sqrt((v1 - v2) * (v1 - v2));
+}
+
+// Any value with MAPE below 0.2% is TECHNICALLY ZERO
+constexpr double MAPE_ZERO = 0.002;
+
+double MAPE(const RProblem& problem, double actual, double forecast) {
+  return ::abs((actual - forecast) / forecast);
 }
 
 // ============
@@ -500,9 +507,10 @@ double solutionEvaluator(const RProblem& problem,
   // scenario
   const int stackLen = other.getStackLen();
   // local variables
-  kahan::kfloat64 sum_error = 0;
+  kahan::kfloat64 sum_rmse = 0;
+  kahan::kfloat64 sum_mape = 0;
   if (idSol == 0) {
-    std::cout << "DEBUG[idSol=0] BEGIN sum_error:" << sum_error << std::endl;
+    std::cout << "DEBUG[idSol=0] BEGIN sum_rmse:" << sum_rmse << std::endl;
   }
   //
   const int realTests = problem.tests - training;
@@ -634,28 +642,36 @@ double solutionEvaluator(const RProblem& problem,
       std::cout << "DEBUG[idSol=0] val:" << val << std::endl;
       std::cout << "DEBUG[idSol=0] expected:" << problem.outputs[t]
                 << std::endl;
-      std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_error << std::endl;
+      std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_rmse << std::endl;
     }
 
-    sum_error += computeError(problem, val, problem.outputs[t]);
+    sum_rmse += RMSE(problem, val, problem.outputs[t]);
+    double mape = MAPE(problem, problem.outputs[t], val);
+    if (mape < MAPE_ZERO) mape = 0;
+    sum_mape += mape;
 
     if (idSol == 0 && t == 0) {
-      std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_error << std::endl;
+      std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_rmse << std::endl;
     }
     // printf("sum_error = %lf\n",sum_error);
   }
   // average erro
-  double solutionValue = (double)sum_error / realTests;
+  double avgRMSE = (double)sum_rmse / realTests;
+  double avgMAPE = (double)sum_mape / realTests;
+  // if avgMAPE is "technical zero", then RMSE is zero
+  if (avgMAPE < MAPE_ZERO) {
+    avgMAPE = 0;
+    avgRMSE = 0;
+  }
 
   if (idSol == 0) {
-    std::cout << "DEBUG[idSol=0] Final sum_error:" << sum_error << std::endl;
-    std::cout << "DEBUG[idSol=0] Final solutionValue:" << solutionValue
-              << std::endl;
+    std::cout << "DEBUG[idSol=0] Final sum_rmse:" << sum_rmse << std::endl;
+    std::cout << "DEBUG[idSol=0] Final solutionValue:" << avgRMSE << std::endl;
   }
   // printf("solutionValue = %lf\n",solutionValue);
   // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
   // printf("%f\n",solutionValue);
-  return solutionValue;
+  return avgRMSE;
 }
 
 // ===========
