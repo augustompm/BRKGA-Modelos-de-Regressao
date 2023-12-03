@@ -111,7 +111,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(10, 41, 1.5);
+  other.setStackLen(13, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -129,10 +129,10 @@ int main(int argc, char* argv[]) {
   // params.eliteBias = 70;
   params.eliteBias = 85;
   // params.noImprovementMax = 20000;
-  params.noImprovementMax = 20;
+  params.noImprovementMax = 10;
   //
   // params.restartMax = 1000;
-  params.restartMax = 50;
+  params.restartMax = 10;
   // params.restartMax = 10;
 
   params.moreDiversity = 10;  // after 20% restartMax
@@ -184,7 +184,16 @@ int main(int argc, char* argv[]) {
   // std::string instance = "instances/Eq. Feynman  (10) (4).in";
   //
   // std::string instance = "instances/Test.in";
-  std::string instance = "instances/Eq. Feynman  (1) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (1) (1).in";
+  //std::string instance = "instances/Eq. Feynman  (2) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (3) (1) .in";
+   //std::string instance = "instances/Eq. Feynman  (4) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (5) (1).in";
+  /* std::string instance = "instances/Eq. Feynman  (6) (1) .in";*/
+   //std::string instance = "instances/Eq. Feynman  (7) (1).in";
+  // std::string instance = "instances/Eq. Feynman  (8) (1).in";
+    std::string instance = "instances/Eq. Feynman  (9) (1).in";
+   //std::string instance = "instances/eq. feynman  (10) (1).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -208,7 +217,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // make outputs SQUARED
   // =====================
-  if (true) problem.make_squared();
+  if (false) problem.make_squared();
   other.setWeightPerUnusedVariable(1.0);  // disabled = 1.0
 
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
@@ -258,7 +267,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (problem.hasSolution && false) {
+  if (problem.hasSolution && true) {
     int out = rkg.checkRKexpr(problem.solution, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);

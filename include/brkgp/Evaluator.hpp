@@ -645,15 +645,18 @@ double solutionEvaluator(const RProblem& problem,
       std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_rmse << std::endl;
     }
 
+    std::cout << "val: " << val << " outputs: " << problem.outputs[t]<< std::endl;
     sum_rmse += RMSE(problem, val, problem.outputs[t]);
+    std::cout << "sum_rmse: " << sum_rmse << "t:" << t << std::endl;
     double mape = MAPE(problem, problem.outputs[t], val);
     if (mape < MAPE_ZERO) mape = 0;
     sum_mape += mape;
+    //printf("sum_mape= %lf\n", sum_mape);  // print para debugar
 
     if (idSol == 0 && t == 0) {
       std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_rmse << std::endl;
     }
-    // printf("sum_error = %lf\n",sum_error);
+     /*printf("sum_error = %lf\n",sum_error);*/
   }
   // average erro
   double avgRMSE = (double)sum_rmse / realTests;

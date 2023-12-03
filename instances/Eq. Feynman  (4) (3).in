@@ -8,7 +8,7 @@ m
 m
 m
 m^2
-HAS_SOLUTION v0 v1 * + v2 v3 * + v4 v5 * +
+HAS_SOLUTION v0 v1 * v2 v3 * v4 v5 * + +
 9	-2	-8	-4	3	-9	-13
 9	-2	7	3	1	-10	-7
 5	1	-4	7	-8	1	-31
