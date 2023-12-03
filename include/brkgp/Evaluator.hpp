@@ -645,9 +645,9 @@ double solutionEvaluator(const RProblem& problem,
       std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_rmse << std::endl;
     }
 
-    std::cout << "val: " << val << " outputs: " << problem.outputs[t]<< std::endl;
+    //std::cout << "val: " << val << " outputs: " << problem.outputs[t]<< std::endl;
     sum_rmse += RMSE(problem, val, problem.outputs[t]);
-    std::cout << "sum_rmse: " << sum_rmse << "t:" << t << std::endl;
+    //std::cout << "sum_rmse: " << sum_rmse << "t:" << t << std::endl;
     double mape = MAPE(problem, problem.outputs[t], val);
     if (mape < MAPE_ZERO) mape = 0;
     sum_mape += mape;
