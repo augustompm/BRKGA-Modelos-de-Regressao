@@ -99,7 +99,7 @@ int main(int argc, char* argv[]) {
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
   // other.operationsBi = {'+', '-', '*', '/'};
-  other.operationsU = {'i', 'r', 'a', 'e', 'n'};
+  other.operationsU = {'i', 'r', 'a'};
   // other.operationsU = {'i', 'a'};
 
   // if (argc > 1) other.stackLen = atoi(argv[1]);
@@ -192,9 +192,9 @@ int main(int argc, char* argv[]) {
    //std::string instance = "instances/Eq. Feynman  (5) (1).in";
   /* std::string instance = "instances/Eq. Feynman  (6) (1) .in";*/
    //std::string instance = "instances/Eq. Feynman  (7) (1).in";
-   std::string instance = "instances/Eq. Feynman  (8) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (8) (1).in";
     //std::string instance = "instances/Eq. Feynman  (9) (1).in";
-   //std::string instance = "instances/Eq. Feynman  (10) (1).in";
+   std::string instance = "instances/Eq. Feynman  (10) (1).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -268,7 +268,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (problem.hasSolution && false) {
+  if (problem.hasSolution && true) {
     int out = rkg.checkRKexpr(problem.solution, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);
