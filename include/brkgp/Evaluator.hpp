@@ -181,13 +181,12 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
   // if (operationsU[idop] == 's') return std::make_optional<double>(::sin(v1));
   // if (operationsU[idop] == 'c') return std::make_optional<double>(::cos(v1));
   //
+  // General unary functions: accept ANY unit (i r a)
   if (operationsU[idop] == 'i') {
     return std::make_optional<ex>(v1Unit);
   }
   if ((operationsU[idop] == 'a') || (operationsU[idop] == 'v') ||
-      (operationsU[idop] == 'r') || (operationsU[idop] == 'e') ||
-      (operationsU[idop] == 'n') || (operationsU[idop] == 'p') ||
-      (operationsU[idop] == 'l')) {
+      (operationsU[idop] == 'r')) {
     // ex e1 = ex(v1Unit, problem.syms);
     ex e1 = v1Unit;
     ex e_out = ex("1", problem.syms);
@@ -198,16 +197,23 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
       // try to simplify sqrt... not perfect! TODO: improve!
       fix_sqrt(e_out, problem.syms);
     }
-    if (operationsU[idop] == 'e') e_out = exp(e1);               // e^x
-    if (operationsU[idop] == 'n') e_out = log(e1);               // ln(x)
-    if (operationsU[idop] == 'p') e_out = pow(2.0, e1);          // 2^x
-    if (operationsU[idop] == 'l') e_out = log(e1) / log(ex{2});  // log_2(x)
-    // get text
-    // std::stringstream ss;
-    // ss << e_out;
-    // std::cout << "DEBUG: Unary: " << ss.str() << std::endl;
-    // ex new_ex(ss.str(), problem.syms);  // ERRO!
-    //
+
+    return std::make_optional<ex>(e_out);
+  }
+  // adimensional functions
+  if ((operationsU[idop] == 'e') || (operationsU[idop] == 'n') ||
+      (operationsU[idop] == 'p') || (operationsU[idop] == 'l')) {
+    // ex e1 = ex(v1Unit, problem.syms);
+    ex e1 = v1Unit;
+    ex e_out = ex("1", problem.syms);
+    if (e1 != e_out) {
+      // only adimensional accepted
+      std::cout << "WARNING: adimensional unary function receives UNIT!" << e1
+                << std::endl;
+      return std::nullopt;
+    }
+    // unary functions: e^x, ln(x), 2^x e  log_2(x)
+    // return "1"
     return std::make_optional<ex>(e_out);
   }
   return std::nullopt;
@@ -465,7 +471,31 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         ex v1Unit = stkUnit.top();
         stkUnit.pop();
 
-        // no fix necessary!
+        // needs fix for adimensional, when unit is dimensional!
+
+        // CHECA UNIDADES!!! FASE 2!!! T3 ou T4
+        if (v1Unit != ex("1", problem.syms)) {
+          // unidade DIMENSIONAL!! Só permite em unárias TIPO 4, não TIPO 3
+          // verifica se é TIPO 3, se for, vira TIPO 4
+          if (idOpU < (int)other.operationsUT3.size()) {
+            // TIPO 1! Exemplo, idOpU = 0... 1... e |UT3|=2
+            // Muda "gene"... += 2 ops...
+            // calculando alvo final!
+            int opFinal = ((int)other.operationsUT3.size()) +
+                          idOpU % ((int)other.operationsUT4.size());
+            if ((j) < firstFix) firstFix = j;
+            individual[2 * stackLen + j] =
+                individual[2 * stackLen + j] +
+                (chromosome)((10000.0 / (double)other.operationsU.size()) *
+                             opFinal);
+            // lê chromossomo novamente! PARA GARANTIR!
+            idOpU = floor((individual[2 * stackLen + j] / 10000.0) *
+                          (double)other.operationsU.size());
+            // virou operação do TIPO 4
+            assert(idOpU >= (int)other.operationsUT3.size());
+            assert(idOpU == opFinal);
+          }
+        }  // ok fix unary
 
         opt<ex> unResult =
             execUnaryOpUnit(problem, idOpU, v1Unit, other.operationsU);

@@ -98,7 +98,20 @@ int main(int argc, char* argv[]) {
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
   // other.operationsBi = {'+', '-', '*', '/'};
-  other.operationsU = {'i', 'r', 'a'};
+  // ===========
+  //    UNARY
+  // -----------
+  other.operationsUT3 = {'e'};            // adimensional always
+  other.operationsUT4 = {'i', 'r', 'a'};  // ok with units
+  other.operationsU.insert(other.operationsU.end(), other.operationsUT3.begin(),
+                           other.operationsUT3.end());
+  other.operationsU.insert(other.operationsU.end(), other.operationsUT4.begin(),
+                           other.operationsUT4.end());
+  // T3 and T4 can have different sizes, but T4 cannot be empty!
+  assert(other.operationsUT4.size() > 0);
+
+  // other.operationsU = {'i', 'r', 'a'};
+
   // other.operationsU = {'i', 'a'};
 
   // if (argc > 1) other.stackLen = atoi(argv[1]);

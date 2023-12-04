@@ -87,6 +87,11 @@ struct Scenario {
   std::vector<char> operationsBiT2;
   // concatenação de T1 e T2, nessa ordem
   std::vector<char> operationsBi;
+  // unárias tipo 3 (l, e, ...): são adimensionais sempre!
+  std::vector<char> operationsUT3;
+  // unárias tipo 4 (i, r, a, ...): podem com unidade arbitrária
+  std::vector<char> operationsUT4;
+  // concatenação de T3 e T4, nessa ordem
   std::vector<char> operationsU;
 
   int maxConst{0};
