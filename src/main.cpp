@@ -66,6 +66,7 @@ class my_visitor : public visitor,           // this is required
 #include <brkgp/ReadIO.hpp>
 #include <brkgp/Utils.hpp>
 
+
 int main(int argc, char* argv[]) {
   // BRKGA
   // Início da contagem de tempo
@@ -98,7 +99,7 @@ int main(int argc, char* argv[]) {
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
   // other.operationsBi = {'+', '-', '*', '/'};
-  other.operationsU = {'i', 'r', 'a'};
+  other.operationsU = {'i', 'r', 'a', 'e', 'n'};
   // other.operationsU = {'i', 'a'};
 
   // if (argc > 1) other.stackLen = atoi(argv[1]);
@@ -111,7 +112,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(13, 41, 1.5);
+  other.setStackLen(15, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -129,10 +130,10 @@ int main(int argc, char* argv[]) {
   // params.eliteBias = 70;
   params.eliteBias = 85;
   // params.noImprovementMax = 20000;
-  params.noImprovementMax = 10;
+  params.noImprovementMax = 100;
   //
   // params.restartMax = 1000;
-  params.restartMax = 10;
+  params.restartMax = 100;
   // params.restartMax = 10;
 
   params.moreDiversity = 10;  // after 20% restartMax
@@ -191,9 +192,9 @@ int main(int argc, char* argv[]) {
    //std::string instance = "instances/Eq. Feynman  (5) (1).in";
   /* std::string instance = "instances/Eq. Feynman  (6) (1) .in";*/
    //std::string instance = "instances/Eq. Feynman  (7) (1).in";
-  // std::string instance = "instances/Eq. Feynman  (8) (1).in";
-    std::string instance = "instances/Eq. Feynman  (9) (1).in";
-   //std::string instance = "instances/eq. feynman  (10) (1).in";
+   std::string instance = "instances/Eq. Feynman  (8) (1).in";
+    //std::string instance = "instances/Eq. Feynman  (9) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (10) (1).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -267,7 +268,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (problem.hasSolution && true) {
+  if (problem.hasSolution && false) {
     int out = rkg.checkRKexpr(problem.solution, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);

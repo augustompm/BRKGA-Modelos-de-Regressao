@@ -200,6 +200,26 @@ std::string stringExecUnaryOp(int idop, std::string v1,
     ss << "\\sqrt{" << v1 << "}";
     return ss.str();
   }
+  if (operationsU[idop] == 'e') {
+    std::stringstream ss;
+    ss << "\\exp(" << v1 << ")";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'n') {
+    std::stringstream ss;
+    ss << "\\log(" << v1 << ")";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'p') {
+    std::stringstream ss;
+    ss << "2^{" << v1 << "}";
+    return ss.str();
+  }
+  if (operationsU[idop] == 'l') {
+    std::stringstream ss;
+    ss << "\\log_2(" << v1 << ")";
+    return ss.str();
+  }
   // NOP UNARY
   return "NOPU";
 }
