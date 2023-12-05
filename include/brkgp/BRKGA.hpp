@@ -370,6 +370,7 @@ void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
       // printf("auxPopulation:%f\t
       // population:%f\n",auxPopulation[0].cost,population[0].cost);
     }
+
     // printf("Erro Atual: %f\t",population[0].cost);
     // printf("Erro Best: %f\n",bestFoundSolution.cost);
     if ((bestFoundSolution.cost - mainPopulation[0].cost) >

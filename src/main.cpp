@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(12, 41, 1.5);
+  other.setStackLen(19, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -199,7 +199,7 @@ int main(int argc, char* argv[]) {
   // std::string instance = "instances/Test.in";
   //
   // std::string instance = "instances/Eq. Feynman  (1) (1).in";
-  std::string instance = "instances/Eq. Feynman  (7) (1).in";
+  std::string instance = "instances/Eq. Feynman  (6) (1) .in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -283,6 +283,12 @@ int main(int argc, char* argv[]) {
     for (auto& k : initialSol) std::cout << k << " ";
     std::cout << std::endl;
     opInitialSol = initialSol;
+    //
+    StackInfo si =
+        stackAdjustment(problem, other, initialSol, other.getStackLen(),
+                        problem.nVars, problem.nConst, other.maxConst, 0);
+    auto cost = solutionEvaluator(problem, initialSol, other, 0, -1);
+    std::cout << "INITIAL cost=" << cost << std::endl;
   }
 
   if (!problem.isSquared()) {
