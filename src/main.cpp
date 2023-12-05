@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(10, 41, 1.5);
+  other.setStackLen(12, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -197,7 +197,9 @@ int main(int argc, char* argv[]) {
   // std::string instance = "instances/Eq. Feynman  (10) (4).in";
   //
   // std::string instance = "instances/Test.in";
-  std::string instance = "instances/Eq. Feynman  (1) (1).in";
+  //
+  // std::string instance = "instances/Eq. Feynman  (1) (1).in";
+  std::string instance = "instances/Eq. Feynman  (7) (1).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -221,7 +223,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // make outputs SQUARED
   // =====================
-  if (true) problem.make_squared();
+  if (false) problem.make_squared();
   other.setWeightPerUnusedVariable(1.0);  // disabled = 1.0
 
   // printFile(nVars, tests, nConst, inputs, outputs, vConst);
@@ -271,7 +273,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (problem.hasSolution && false) {
+  if (problem.hasSolution) {
     int out = rkg.checkRKexpr(problem.solution, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);
