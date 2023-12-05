@@ -199,7 +199,7 @@ int main(int argc, char* argv[]) {
   // std::string instance = "instances/Test.in";
   //
   // std::string instance = "instances/Eq. Feynman  (1) (1).in";
-  std::string instance = "instances/Eq. Feynman  (8) (1).in";
+  std::string instance = "instances/Eq. Feynman  (10) (1).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
