@@ -1,0 +1,505 @@
+|ARGS| = 2
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+checkRKexpr(optimal=' c0 c1 * r c0 v0 a c1 c1 - - / e /')
+checkRKexpr countElems = 14 stackLen = 30
+i=1 target = 'c0'
+StackInfo firstFix=3000
+i=2 target = 'c0 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=3 target = 'c0 c1 *'
+StackInfo firstFix=3000
+i=4 target = 'c0 c1 * r'
+StackInfo firstFix=3000
+i=5 target = 'c0 c1 * r c0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=6 target = 'c0 c1 * r c0 v0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=7 target = 'c0 c1 * r c0 v0 a'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=8 target = 'c0 c1 * r c0 v0 a c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=9 target = 'c0 c1 * r c0 v0 a c1 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=26
+i=10 target = 'c0 c1 * r c0 v0 a c1 c1 -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=11 target = 'c0 c1 * r c0 v0 a c1 c1 - -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=12 target = 'c0 c1 * r c0 v0 a c1 c1 - - /'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=13 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=14 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e /'
+StackInfo firstFix=3000
+CHECK out = 14
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0231521 stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.023152	stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=0.0111812 stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0.0111722 stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.011172	stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00429119 stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+trueStackSize=18
+printSolution2: (({v0^2} + 2)/(3.14159 + (2 - ({\exp({v0^2})^2}/(\exp(2) + 3.14159)))))
+Tempo de execucao: 433.889 segundos
+FIM
+|ARGS| = 2
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+checkRKexpr(optimal=' c0 c1 * r c0 v0 a c1 c1 - - / e /')
+checkRKexpr countElems = 14 stackLen = 30
+i=1 target = 'c0'
+StackInfo firstFix=3000
+i=2 target = 'c0 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=3 target = 'c0 c1 *'
+StackInfo firstFix=3000
+i=4 target = 'c0 c1 * r'
+StackInfo firstFix=3000
+i=5 target = 'c0 c1 * r c0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=6 target = 'c0 c1 * r c0 v0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=7 target = 'c0 c1 * r c0 v0 a'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=8 target = 'c0 c1 * r c0 v0 a c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=9 target = 'c0 c1 * r c0 v0 a c1 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=26
+i=10 target = 'c0 c1 * r c0 v0 a c1 c1 -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=11 target = 'c0 c1 * r c0 v0 a c1 c1 - -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=12 target = 'c0 c1 * r c0 v0 a c1 c1 - - /'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=13 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=14 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e /'
+StackInfo firstFix=3000
+CHECK out = 14
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0231521 stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.023152	stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=0.0111812 stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0.0111722 stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.011172	stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00429119 stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+trueStackSize=18
+printSolution2: (({v0^2} + 2)/(3.14159 + (2 - ({\exp({v0^2})^2}/(\exp(2) + 3.14159)))))
+Tempo de execucao: 433.362 segundos
+FIM
+|ARGS| = 2
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+checkRKexpr(optimal=' c0 c1 * r c0 v0 a c1 c1 - - / e /')
+checkRKexpr countElems = 14 stackLen = 30
+i=1 target = 'c0'
+StackInfo firstFix=3000
+i=2 target = 'c0 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=3 target = 'c0 c1 *'
+StackInfo firstFix=3000
+i=4 target = 'c0 c1 * r'
+StackInfo firstFix=3000
+i=5 target = 'c0 c1 * r c0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=6 target = 'c0 c1 * r c0 v0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=7 target = 'c0 c1 * r c0 v0 a'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=8 target = 'c0 c1 * r c0 v0 a c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=9 target = 'c0 c1 * r c0 v0 a c1 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=26
+i=10 target = 'c0 c1 * r c0 v0 a c1 c1 -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=11 target = 'c0 c1 * r c0 v0 a c1 c1 - -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=12 target = 'c0 c1 * r c0 v0 a c1 c1 - - /'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=13 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=14 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e /'
+StackInfo firstFix=3000
+CHECK out = 14
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0231521 stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.023152	stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=0.0111812 stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0.0111722 stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.011172	stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00429119 stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+trueStackSize=18
+printSolution2: (({v0^2} + 2)/(3.14159 + (2 - ({\exp({v0^2})^2}/(\exp(2) + 3.14159)))))
+Tempo de execucao: 422.245 segundos
+FIM
+|ARGS| = 2
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+checkRKexpr(optimal=' c0 c1 * r c0 v0 a c1 c1 - - / e /')
+checkRKexpr countElems = 14 stackLen = 30
+i=1 target = 'c0'
+StackInfo firstFix=3000
+i=2 target = 'c0 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=3 target = 'c0 c1 *'
+StackInfo firstFix=3000
+i=4 target = 'c0 c1 * r'
+StackInfo firstFix=3000
+i=5 target = 'c0 c1 * r c0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=6 target = 'c0 c1 * r c0 v0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=7 target = 'c0 c1 * r c0 v0 a'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=8 target = 'c0 c1 * r c0 v0 a c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=9 target = 'c0 c1 * r c0 v0 a c1 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=26
+i=10 target = 'c0 c1 * r c0 v0 a c1 c1 -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=11 target = 'c0 c1 * r c0 v0 a c1 c1 - -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=12 target = 'c0 c1 * r c0 v0 a c1 c1 - - /'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=13 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=14 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e /'
+StackInfo firstFix=3000
+CHECK out = 14
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0231521 stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.023152	stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=0.0111812 stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0.0111722 stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.011172	stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00429119 stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+trueStackSize=18
+printSolution2: (({v0^2} + 2)/(3.14159 + (2 - ({\exp({v0^2})^2}/(\exp(2) + 3.14159)))))
+Tempo de execucao: 417.852 segundos
+FIM
+|ARGS| = 2
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+checkRKexpr(optimal=' c0 c1 * r c0 v0 a c1 c1 - - / e /')
+checkRKexpr countElems = 14 stackLen = 30
+i=1 target = 'c0'
+StackInfo firstFix=3000
+i=2 target = 'c0 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=3 target = 'c0 c1 *'
+StackInfo firstFix=3000
+i=4 target = 'c0 c1 * r'
+StackInfo firstFix=3000
+i=5 target = 'c0 c1 * r c0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=6 target = 'c0 c1 * r c0 v0'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=7 target = 'c0 c1 * r c0 v0 a'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=8 target = 'c0 c1 * r c0 v0 a c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=9 target = 'c0 c1 * r c0 v0 a c1 c1'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=26
+i=10 target = 'c0 c1 * r c0 v0 a c1 c1 -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=27
+i=11 target = 'c0 c1 * r c0 v0 a c1 c1 - -'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=28
+i=12 target = 'c0 c1 * r c0 v0 a c1 c1 - - /'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=13 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e'
+stackAdjustment fix: -= 7500 (SPECIAL) 
+StackInfo firstFix=29
+i=14 target = 'c0 c1 * r c0 v0 a c1 c1 - - / e /'
+StackInfo firstFix=3000
+CHECK out = 14
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0231521 stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.023152	stackLen: 30 => 3.141593  2.000000  2.000000  / 2.000000  3.141593  e V0  2.000000  V0  V0  - + - / V0  a - + r * / empty: 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=0.0111812 stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.011181	stackLen: 30 => 3.141593  e n 3.141593  V0  * a - 3.141593  - 3.141593  e + 2.000000  / 3.141593  i * 2.000000  * empty: 0 1 1 0 0 1 1 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0.0111722 stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.011172	stackLen: 30 => 2.000000  3.141593  + 2.000000  V0  3.141593  2.000000  / 2.000000  2.000000  3.141593  + * i r / V0  / + a 2.000000  a + - / empty: 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00429119 stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 0 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+restart = 1 	 best= 0.004291	stackLen: 30 => 3.141593  2.000000  r V0  a V0  - / 3.141593  + V0  V0  e 2.000000  * 2.000000  + - / / empty: 0 0 1 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 3.141593  2.000000  e + V0  a e a / 2.000000  - 3.141593  + 2.000000  V0  a + / empty: 0 1 0 1 0 0 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 
+trueStackSize=18
+printSolution2: (({v0^2} + 2)/(3.14159 + (2 - ({\exp({v0^2})^2}/(\exp(2) + 3.14159)))))
+Tempo de execucao: 415.611 segundos
+FIM

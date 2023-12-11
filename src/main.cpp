@@ -67,6 +67,8 @@ class my_visitor : public visitor,           // this is required
 #include <brkgp/Utils.hpp>
 
 
+
+
 int main(int argc, char* argv[]) {
   // BRKGA
   // Início da contagem de tempo
@@ -86,6 +88,7 @@ int main(int argc, char* argv[]) {
   // 11: 't' or 'e' (adds functions 's' and 'c' OR 'a', 'v' and 'r')
 
   int seed = 728462315;
+  //789123456 543210987 245678901 728462315 876543210
 
   Scenario other;
   other.operationsBiT1 = {'+', '-'};  // bad with units
@@ -98,8 +101,10 @@ int main(int argc, char* argv[]) {
                             other.operationsBiT2.end());
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
-  // other.operationsBi = {'+', '-', '*', '/'};
-  other.operationsU = {'i', 'r', 'a'};
+   //other.operationsBi = {'+', '-', '*', '/'};
+  other.operationsU = {'i', 'r', 'a', 'e', 'n'};
+     //other.operationsU = {'i', 'r', 'a'};
+     //other.operationsU = { 'e'};
   // other.operationsU = {'i', 'a'};
 
   // if (argc > 1) other.stackLen = atoi(argv[1]);
@@ -112,7 +117,7 @@ int main(int argc, char* argv[]) {
   // other.stackLen = 9;
   //
   // other.stackLen = 41;
-  other.setStackLen(15, 41, 1.5);
+  other.setStackLen(30, 41, 1.5);
   // other.stackLen = 10;
 
   std::cout << "|ARGS| = " << argc << std::endl;
@@ -130,7 +135,7 @@ int main(int argc, char* argv[]) {
   // params.eliteBias = 70;
   params.eliteBias = 85;
   // params.noImprovementMax = 20000;
-  params.noImprovementMax = 100;
+  params.noImprovementMax = 50;
   //
   // params.restartMax = 1000;
   params.restartMax = 100;
@@ -185,16 +190,16 @@ int main(int argc, char* argv[]) {
   // std::string instance = "instances/Eq. Feynman  (10) (4).in";
   //
   // std::string instance = "instances/Test.in";
-   //std::string instance = "instances/Eq. Feynman  (1) (1).in";
-  //std::string instance = "instances/Eq. Feynman  (2) (1).in";
-   //std::string instance = "instances/Eq. Feynman  (3) (1) .in";
-   //std::string instance = "instances/Eq. Feynman  (4) (1).in";
-   //std::string instance = "instances/Eq. Feynman  (5) (1).in";
-  /* std::string instance = "instances/Eq. Feynman  (6) (1) .in";*/
-   //std::string instance = "instances/Eq. Feynman  (7) (1).in";
-   //std::string instance = "instances/Eq. Feynman  (8) (1).in";
-    //std::string instance = "instances/Eq. Feynman  (9) (1).in";
-   std::string instance = "instances/Eq. Feynman  (10) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (1) (3).in";
+  //std::string instance = "instances/Eq. Feynman  (2) (3).in";
+   //std::string instance = "instances/Eq. Feynman  (3) (3) .in";
+   //std::string instance = "instances/Eq. Feynman  (4) (3).in";
+   //std::string instance = "instances/Eq. Feynman  (5) (3).in";
+   //std::string instance = "instances/Eq. Feynman  (6) (3) .in";
+   //std::string instance = "instances/Eq. Feynman  (7) (3).in";
+   std::string instance = "instances/Eq. Feynman  (8) (1).in";
+    //std::string instance = "instances/Eq. Feynman  (9) (3).in";
+   //std::string instance = "instances/Eq. Feynman  (10) (3).in";
 
   //  std::string instance = "instances/xcubic_xsquare_px_5.in";
 
@@ -268,7 +273,7 @@ int main(int argc, char* argv[]) {
   // =====================
   // USE INITIAL SOLUTION?
   // =====================
-  if (problem.hasSolution && true) {
+  if (problem.hasSolution && false) {
     int out = rkg.checkRKexpr(problem.solution, problem, other);
     std::cout << "CHECK out = " << out << std::endl;
     auto initialSol = rkg.getRKexpr(problem.solution);
