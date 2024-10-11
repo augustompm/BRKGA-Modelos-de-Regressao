@@ -8,7 +8,7 @@ conan profile detect
 VCPKG_DIR=./tools/vcpkg
 VCPKG_TRIPLET=x64-windows-static
 VCPKG_BOOTSTRAP=bootstrap-vcpkg.sh
-USE_PRESET=win-x64-release
+USE_PRESET=win-x64-release./
 # VCPKG_BOOTSTRAP=bootstrap-vcpkg.bat # NEVER RUN .bat here on .sh environment!
 
 COUNT_LINUX=`conan profile show | grep Linux | wc -l`

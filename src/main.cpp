@@ -197,7 +197,8 @@ int main(int argc, char* argv[]) {
    //std::string instance = "instances/Eq. Feynman  (5) (3).in";
    //std::string instance = "instances/Eq. Feynman  (6) (3) .in";
    //std::string instance = "instances/Eq. Feynman  (7) (3).in";
-   std::string instance = "instances/Eq. Feynman  (8) (1).in";
+   //std::string instance = "instances/Eq. Feynman  (8) (1).in";
+   std::string instance = "instance1.in";
     //std::string instance = "instances/Eq. Feynman  (9) (3).in";
    //std::string instance = "instances/Eq. Feynman  (10) (3).in";
 

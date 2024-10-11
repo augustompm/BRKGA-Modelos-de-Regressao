@@ -1,0 +1,8 @@
+Package: gmp
+Version: 6.2.1
+Port-Version: 21
+Depends: vcpkg-cmake-get-vars
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 033647624ca35d6e34c9d2c40f32453c98367b8fd99f0f674cce485aafd90124
+Description: The GNU Multiple Precision Arithmetic Library

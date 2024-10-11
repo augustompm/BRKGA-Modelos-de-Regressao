@@ -1,12 +1,16 @@
 #!/bin/bash
 set -e
 
-echo "REMEMBER TO RUN: vcpkg-install.sh"
+echo "LEMBRE-SE DE EXECUTAR: vcpkg-install.sh"
 
-bazel build ... --config linux
+OUTPUT_USER_ROOT="/dados/home/tesla-dados/.cache/bazel"
 
-bazel run :refresh_compile_commands
+mkdir -p "$OUTPUT_USER_ROOT"
 
-bazel test ... --config linux
+bazel --output_user_root="$OUTPUT_USER_ROOT" build //... --config=linux
+
+bazel --output_user_root="$OUTPUT_USER_ROOT" run :refresh_compile_commands
+
+bazel --output_user_root="$OUTPUT_USER_ROOT" test //... --config=linux
 
 ./bazel-bin/app_demo
