@@ -1,7 +1,7 @@
 #!/bin/bash
 # New Runner @aug
 seeds="789123456 543210987 245678901 728462315 876543210 123456789 987654321 654321098 567890123 345678912"
-instances=("Distancia_euclidiana_10.in" "Distancia_euclidiana_20.in" "Distancia_euclidiana_40.in")
+instances=("Lentes_delgadas_10.in" "Lentes_delgadas_20.in" "Lentes_delgadas_40.in" "Produto_interno_10.in" "Produto_interno_20.in" "Produto_interno_40.in")
 results_dir="results"
 mkdir -p "$results_dir"
 
