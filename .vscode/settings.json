@@ -75,5 +75,6 @@
         "queue": "cpp",
         "random": "cpp"
     },
-    "cmake.sourceDirectory": "${workspaceFolder}/CMakeProject2/."
+    "cmake.sourceDirectory": "${workspaceFolder}/CMakeProject2/.",
+    "cmake.ignoreCMakeListsMissing": true
 }
