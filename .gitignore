@@ -380,3 +380,6 @@ bazel-*
 # Ignore the directory in which `clangd` stores its local index.
 /.cache/
 vgcore.*
+# Feynman dataset
+feynman-data/
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 # New Runner @aug
 seeds="789123456 543210987 245678901 728462315 876543210 123456789 987654321 654321098 567890123 345678912"
-instances=("Periodo_orbital_10.in" "Periodo_orbital_20.in" "Periodo_orbital_40.in")
+instances=("Massa_relativ_10.in" "Massa_relativ_20.in" "Massa_relativ_40.in")
 results_dir="results"
 mkdir -p "$results_dir"
 
