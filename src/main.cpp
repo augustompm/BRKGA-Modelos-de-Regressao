@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
                             other.operationsBiT2.end());
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
-  other.operationsU = {'i', 'r', 'a'};
+  other.operationsU = {'i', 'r', 'a','e'};
 
   if (argc > 2) other.maxConst = atoi(argv[2]);
 
