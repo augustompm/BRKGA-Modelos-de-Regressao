@@ -1,0 +1,52 @@
+|ARGS| = 3
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'STANDARD'
+var unit: '*'
+out unit: ''
+has_solution='HAS_SOLUTION' => ' c0 c1 * r c0 v0 a c1 c1 - - / e /'
+SOLUTION IS: ' c0 c1 * r c0 v0 a c1 c1 - - / e /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+3.5) SETUP UNITS
+UNITS: 
+4) FINISHED READING PROBLEM
+1 10 2
+-0.69	0.51
+-0.84	0.57
+0.40	0.43
+0.73	0.52
+-0.47	0.45
+0.73	0.52
+-0.22	0.41
+0.62	0.48
+-0.24	0.41
+-0.60	0.48
+2.0000	2.0000
+3.1416	3.1416
+isSquared? 0
+training=10
+run_brkga:
+best=inf
+BEST SOLUTION! cost=0.0255276 stackLen: 30 => 2.000000  a V0  a i 3.141593  * 2.000000  e a r 3.141593  / a / + 2.000000  / empty: 0 0 0 0 1 1 0 0 1 1 0 0 1 0 1 0 0 1 0 1 0 1 1 0 1 0 0 0 0 1 
+restart = 0 	 best= 0.025528	stackLen: 30 => 2.000000  a V0  a i 3.141593  * 2.000000  e a r 3.141593  / a / + 2.000000  / empty: 0 0 0 0 1 1 0 0 1 1 0 0 1 0 1 0 0 1 0 1 0 1 1 0 1 0 0 0 0 1 
+BEST SOLUTION! cost=0.0204447 stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 0 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 1 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 2 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 3 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 4 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+restart = 5 	 best= 0.020445	stackLen: 30 => 3.141593  r r 3.141593  + 2.000000  2.000000  3.141593  - 3.141593  V0  / V0  V0  V0  V0  V0  * V0  - * * * + / + / empty: 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=0.00419789 stackLen: 30 => 3.141593  2.000000  3.141593  2.000000  / e 2.000000  r V0  a 2.000000  V0  V0  * - + / / + / empty: 0 0 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 
+restart = 0 	 best= 0.004198	stackLen: 30 => 3.141593  2.000000  3.141593  2.000000  / e 2.000000  r V0  a 2.000000  V0  V0  * - + / / + / empty: 0 0 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 
+restart = 1 	 best= 0.004198	stackLen: 30 => 3.141593  2.000000  3.141593  2.000000  / e 2.000000  r V0  a 2.000000  V0  V0  * - + / / + / empty: 0 0 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 
+BEST SOLUTION! cost=0 stackLen: 30 => 2.000000  r 3.141593  3.141593  3.141593  a e V0  / 3.141593  + V0  a e / r - + / empty: 0 1 0 1 0 0 1 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 
+restart = 0 	 best= 0.000000	stackLen: 30 => 2.000000  r 3.141593  3.141593  3.141593  a e V0  / 3.141593  + V0  a e / r - + / empty: 0 1 0 1 0 0 1 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 30 => 2.000000  r 3.141593  3.141593  3.141593  a e V0  / 3.141593  + V0  a e / r - + / empty: 0 1 0 1 0 0 1 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 0 0 0 0 0 0 0 1 
+trueStackSize=19
+printSolution2: (((\sqrt{(\exp({v0^2})/(3.14159 + (v0/\exp({3.14159^2}))))} - 3.14159) + 3.14159)/\sqrt{2})
+Tempo de execucao: 6.14244 segundos
+FIM
