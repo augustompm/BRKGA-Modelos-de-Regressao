@@ -226,5 +226,5 @@ best=0.0396544
 stackLen: 30 => 0.001381  r 0.000663  r r r 0.000663  V1  V1  r r V1  + + V0  a 10000000000.000000  V0  10000000000.000000  0.001381  * V1  * + * / * + - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 trueStackSize=30
 printSolution2: ((((((((v1 * (0.00138065 * 1e+10)) + v0) * 1e+10)/{v0^2}) * ((v1 + \sqrt{\sqrt{v1}}) + v1)) + 0.000662607) - \sqrt{\sqrt{\sqrt{0.000662607}}}) + \sqrt{0.00138065})
-Tempo de execucao: 151.361 segundos
+Tempo de execucao: 151.352 segundos
 FIM

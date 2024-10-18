@@ -178,5 +178,5 @@ best=0.0014338
 stackLen: 30 => 3.141593  3.141593  / e 3.141593  * r 2.000000  e + i 3.141593  V0  V0  V0  i * r a e V0  + V0  V0  * + - + / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 trueStackSize=29
 printSolution2: (((((v0 * v0) + (v0 + \exp({\sqrt{((v0) * v0)}^2}))) - v0) + 3.14159)/((\exp(2) + \sqrt{(3.14159 * \exp((3.14159/3.14159)))})))
-Tempo de execucao: 78.148 segundos
+Tempo de execucao: 78.1776 segundos
 FIM

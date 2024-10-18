@@ -220,5 +220,5 @@ best=0.00162765
 stackLen: 30 => 2.000000  2.000000  i a 3.141593  3.141593  2.000000  V0  V0  V0  + V0  V0  V0  i a * a * a V0  - + * * / + / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 trueStackSize=29
 printSolution2: ((((((((v0 - {({({(v0)^2} * v0)^2} * v0)^2}) + (v0 + v0)) * v0) * 2)/3.14159) + 3.14159)/{(2)^2})/2)
-Tempo de execucao: 104.982 segundos
+Tempo de execucao: 105.139 segundos
 FIM

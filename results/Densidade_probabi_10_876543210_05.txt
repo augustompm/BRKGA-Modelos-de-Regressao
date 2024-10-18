@@ -200,5 +200,5 @@ best=0.00239723
 stackLen: 30 => 2.000000  a 3.141593  V0  V0  * V0  * V0  - V0  - V0  - i a + 3.141593  3.141593  / / r 3.141593  3.141593  / V0  a + + / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 trueStackSize=30
 printSolution2: ((({v0^2} + (3.14159/3.14159)) + \sqrt{((3.14159/3.14159)/({((v0 - (v0 - (v0 - (v0 * (v0 * v0))))))^2} + 3.14159))})/{2^2})
-Tempo de execucao: 88.5709 segundos
+Tempo de execucao: 88.7658 segundos
 FIM
