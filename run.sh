@@ -1,18 +1,10 @@
 #!/bin/bash
 # New Runner @aug
-seeds="789123456 543210987 245678901 728462315 876543210"
+seeds="789123456 543210987 245678901 728462315 876543210 123456789 987654321 654321098 567890123 345678912"
 
 instances=(
-"Bose_einstein_10.in"
-"Campo_eletrico_10.in"
-"Densidade_probabi_10.in"
-"Distancia_euclidiana_10.in"
-"Forca_gravit_10.in"
-"Lentes_delgadas_10.in"
-"Massa_relativ_10.in"
-"Ondas_eletromag_10.in"
-"Periodo_orbital_10.in"
-"Produto_interno_10.in"
+"bose-einstein-new-test.in" 
+"distribuicao-probabilidade-new-test.in"
 )
 
 results_dir="results"
