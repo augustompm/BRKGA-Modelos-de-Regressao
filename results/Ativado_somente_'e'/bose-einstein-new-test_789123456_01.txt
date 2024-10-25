@@ -195,3 +195,42 @@ trueStackSize=30
 printSolution2: (((v0/(v0/v0))/({\sqrt{(1e+10/(1e+10/(v0 + v0)))}^2} + v0)) + ({(v0/v0)^2} * (v1/(v1 + (v1 * 1)))))
 Tempo de execucao: 844.298 segundos
 FIM
+|ARGS| = 3
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+var unit: 's^-1'
+var unit: 'k'
+out unit: '1'
+has_solution='HAS_SOLUTION' => ' c3 c0 v1 * c1 v0 * / e - c3 /'
+SOLUTION IS: ' c3 c0 v1 * c1 v0 * / e - c3 /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+const unit: 'm^2 * kg * s^-2 * k^-1'
+const unit: 'm^2 * kg * s^-1'
+const unit: '*'
+const unit: '*'
+3.5) SETUP UNITS
+UNITS: s ; k ; kg ; m ; 
+4) FINISHED READING PROBLEM
+2 10 4
+511000000000000.00	45024.00	1.38
+400000000000000.00	7176.00	0.07
+487000000000000.00	92969.00	3.50
+608000000000000.00	4366.00	0.00
+562000000000000.00	54101.00	1.55
+745000000000000.00	43510.00	0.78
+502000000000000.00	33422.00	0.95
+588000000000000.00	36330.00	0.85
+643000000000000.00	41419.00	0.90
+675000000000000.00	25053.00	0.38
+0.0014	0.0014
+0.0007	0.0007
+10000000000.0000	10000000000.0000
+1.0000	1.0000
+isSquared? 0
+varUnits: s^-1 k 
+outUnit: 1
+training=10
+run_brkga:
+best=inf

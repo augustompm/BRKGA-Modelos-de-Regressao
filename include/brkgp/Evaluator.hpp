@@ -133,6 +133,10 @@ opt<ex> execBinaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
     ex e2 = v2Unit;
     // std::cout << "DEBUG: execBinaryOpUnit =>  vai fazer assert " <<
     // std::endl;
+    if(e1 == 0) 
+      std::cout << "ERROR Evaluator: UNIT e1 == 0" << std::endl;
+    if(e2 == 0) 
+      std::cout << "ERROR Evaluator: UNIT e2 == 0" << std::endl;
     assert(e1 != 0);  // never is ZERO
     assert(e2 != 0);  // never is ZERO
     // std::cout << "DEBUG: execBinaryOpUnit =>  vai computar e3 " << std::endl;
@@ -187,7 +191,8 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
   if ((operationsU[idop] == 'a') || (operationsU[idop] == 'v') ||
       (operationsU[idop] == 'r') || (operationsU[idop] == 'e') ||
       (operationsU[idop] == 'n') || (operationsU[idop] == 'p') ||
-      (operationsU[idop] == 'l')) {
+      (operationsU[idop] == 'l') || (operationsU[idop] == 's') ||
+      (operationsU[idop] == 'c')) {
     // ex e1 = ex(v1Unit, problem.syms);
     ex e1 = v1Unit;
     ex e_out = ex("1", problem.syms);
@@ -198,10 +203,62 @@ opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
       // try to simplify sqrt... not perfect! TODO: improve!
       fix_sqrt(e_out, problem.syms);
     }
-    if (operationsU[idop] == 'e') e_out = exp(e1);               // e^x
-    if (operationsU[idop] == 'n') e_out = log(e1);               // ln(x)
-    if (operationsU[idop] == 'p') e_out = pow(2.0, e1);          // 2^x
-    if (operationsU[idop] == 'l') e_out = log(e1) / log(ex{2});  // log_2(x)
+    if (operationsU[idop] == 'e') {
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 'e'! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+      // e_out = exp(e1);               // e^x
+    }
+    if (operationsU[idop] == 'n') {
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 'n' (operation log)! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+        // e_out = log(e1);               // ln(x)
+    }
+    if (operationsU[idop] == 'p') { 
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 'p' (operation 2^x)! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+      //e_out = pow(2.0, e1);          // 2^x
+    }
+    if (operationsU[idop] == 'l') {
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 'l' (operation log_2)! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+      // e_out = log(e1) / log(ex{2});  // log_2(x)
+    }
+    if (operationsU[idop] == 's') {
+        // TODO: ignoring RADIAN situation... assuming Adimensional input!
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 's' (operation sin)! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+      // e_out = sin...
+    }
+    if (operationsU[idop] == 'c') {
+        // TODO: ignoring RADIAN situation... assuming Adimensional input!
+        if(e1 == 1)
+          return e1;
+        else {
+          std::cout << "WARNING: strange unit on 'c' (operation cos)! e1 = " << e1 << std::endl;
+          return std::nullopt;
+        }
+      // e_out = cos...
+    }
     // get text
     // std::stringstream ss;
     // ss << e_out;
@@ -465,13 +522,40 @@ StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
         ex v1Unit = stkUnit.top();
         stkUnit.pop();
 
-        // no fix necessary!
+        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
+        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
+        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
+        // CHECA UNIDADES!!! FASE 2!!!
+        if (v1Unit != 1) {
+          // std::cout << "v1Unit = " << v1Unit << std::endl;
+          // std::cout << "idOpU=" << idOpU << " other.operationsUT1.size()=" << other.operationsUT1.size() << std::endl;
+          // std::cout << other.operationsU[idOpU] << std::endl;
+          //
+          // unidades DIMENSIONAL (não adimensional)!! Só permite em unárias TIPO 2, não TIPO 1
+          // verifica se é TIPO 1, se for, vira TIPO 2
+          if (idOpU < (int)other.operationsUT1.size()) {
+            // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
+            // Muda "gene"... += 2 ops...
+            if ((j) < firstFix) firstFix = j;
+            individual[2 * stackLen + j] =
+                individual[2 * stackLen + j] +
+                (chromosome)((10000.0 / (double)other.operationsU.size()) *
+                             (double)other.operationsUT1.size());
+            // lê chromossomo novamente! PARA GARANTIR!
+            idOpU = floor((individual[2 * stackLen + j] / 10000.0) *
+                           (double)other.operationsU
+                               .size());  // 4 is lenght of operationBi
+            // virou operação do TIPO 2
+            assert(idOpU >= (int)other.operationsUT1.size());
+          }
+        }  // ok fix binary
 
         opt<ex> unResult =
             execUnaryOpUnit(problem, idOpU, v1Unit, other.operationsU);
 
         // error in unary operation
         if (!unResult) {
+          std::cout << "ERROR: did not treat case for std::nullopt on execUnaryOpUnit" << std::endl;
           assert(false);
         } else {
           stkUnit.push(*unResult);

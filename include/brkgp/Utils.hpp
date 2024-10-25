@@ -87,9 +87,46 @@ struct Scenario {
   std::vector<char> operationsBiT2;
   // concatenação de T1 e T2, nessa ordem
   std::vector<char> operationsBi;
+  //
   std::vector<char> operationsU;
+  std::vector<char> operationsUT1;
+  std::vector<char> operationsUT2;
 
   int maxConst{0};
+
+  void separateT1T2() {
+    // MUST ensure that T1 comes BEFORE T2
+    bool isT2 = false;
+    for(auto& op: operationsBi) {
+      if((op == '+') || (op == '-')) {
+        assert(!isT2);
+        operationsBiT1.push_back(op);
+      }
+      else if((op == '*') || (op == '/')) {
+        operationsBiT2.push_back(op);
+        isT2 = true;
+      }
+      else {
+        std::cout << "ERROR: UNKNOWN OPERATION " << op << std::endl;
+        assert(false);
+      }
+    }
+    isT2 = false; // MUST ensure that T1 comes BEFORE T2
+    for(auto& op: operationsU) {
+      if((op == 's') || (op == 'c')|| (op == 'e')|| (op == 'n')|| (op == 'p')|| (op == 'l')) {
+        assert(!isT2);
+        operationsUT1.push_back(op);
+      }
+      else if((op == 'a') || (op == 'i') || (op == 'r') || (op == 'v')) {
+        operationsUT2.push_back(op);
+        isT2 = true;
+      }
+      else {
+        std::cout << "ERROR: UNKNOWN OPERATION " << op << std::endl;
+        assert(false);
+      }
+    }
+  }
 
   void setStackLen(int _stackLen, int _stackLenMax,
                    double _stackLenFactor = 2.0) {

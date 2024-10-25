@@ -82,6 +82,9 @@ int main(int argc, char* argv[]) {
   std::string instance = argv[2];  
 
   Scenario other;
+  other.operationsBi = {'+', '-', '*', '/'};
+ 
+  /*
   other.operationsBiT1 = {'+', '-'};  // bad with units
   other.operationsBiT2 = {'*', '/'};  // ok with units
   other.operationsBi.insert(other.operationsBi.end(),
@@ -92,9 +95,27 @@ int main(int argc, char* argv[]) {
                             other.operationsBiT2.end());
   // T1 and T2 must have same size!
   assert(other.operationsBiT1.size() == other.operationsBiT2.size());
+  */
+
   //other.operationsU = {'i', 'r', 'a'};
-  other.operationsU = {'i', 'r', 'a', 'e'};
-  //other.operationsU = {'i', 'r', 'a', 'e', 'n'};
+  // other.operationsU = {'i', 'r', 'a', 'e'};
+  other.operationsU = {'e', 'i', 'r', 'a'};
+  //other.operationsU = {'e'};
+
+  other.separateT1T2();
+  
+  std::cout << "Bi T1: " << other.operationsBiT1.size() << ":";
+  for(auto& op: other.operationsBiT1) std::cout << op;
+  std::cout << std::endl;
+  std::cout << "Bi T2: " << other.operationsBiT2.size() << ":";
+  for(auto& op: other.operationsBiT2) std::cout << op;
+  std::cout << std::endl;
+  std::cout << "U T1: " << other.operationsUT1.size() << ":";
+  for(auto& op: other.operationsUT1) std::cout << op;
+  std::cout << std::endl;
+  std::cout << "U T2: " << other.operationsUT2.size() << ":";
+  for(auto& op: other.operationsUT2) std::cout << op;
+  std::cout << std::endl;
 
   if (argc > 2) other.maxConst = atoi(argv[2]);
 
