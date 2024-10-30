@@ -3,19 +3,12 @@
 seeds="789123456 543210987 245678901 728462315 876543210 123456789 987654321 654321098 567890123 345678912"
 
 instances=(
-"Bose_einstein_10.in"
-"Densidade_probabi_10.in"
-"Forca_gravit_10.in"
-"Massa_relativ_10.in"
-"Produto_interno_10.in"
-"Ondas_eletromag_10.in"
-"Lentes_delgadas_10.in"
-"Campo_eletrico_10.in"
-"Distancia_euclidiana_10.in"
-"Massa_relativ_10.in"
-"Periodo_orbital_10.in"
-"bose-einstein-new-test.in"
-"distribuicao-probabilidade-new-test.in"
+"Força_Atrito_10(I.12.1).in"
+"Força_Atrito_20(I.12.1).in"
+"Força_Atrito_40(I.12.1).in"
+"Força_duas_cargas_10(I.12.2).in"
+"Força_duas_cargas_20(I.12.2).in"
+"Força_duas_cargas_40(I.12.2).in"
 )
 
 
@@ -26,7 +19,7 @@ mkdir -p "$results_dir"
 for instance in "${instances[@]}"; do
     echo "Executando para a instância $instance..."
     
-    # Seeds
+    # Seeds $seeds
     i=01
     for s in $seeds; do
         output_file="${results_dir}/${instance%.in}_${s}_$i.txt"
