@@ -1,16 +1,21 @@
 #!/bin/bash
 # New Runner @aug
-seeds="789123456 543210987 245678901 728462315 876543210 123456789 987654321 654321098 567890123 345678912"
+seeds="100031 100032 100033 100034 100035 100036 100037 100038 100039 100040 100041 100042 100043 100044 100045 100046 100047 100048 100049 100050 100051 100052 100053 100054 100055 100056 100057 100058 100059 100060"
 
 instances=(
-"Força_Atrito_10(I.12.1).in"
-"Força_Atrito_20(I.12.1).in"
-"Força_Atrito_40(I.12.1).in"
-"Força_duas_cargas_10(I.12.2).in"
-"Força_duas_cargas_20(I.12.2).in"
-"Força_duas_cargas_40(I.12.2).in"
-)
-
+    "test-Distancia_Euclidiana_10.in"
+    "test-Distancia_euclidiana_20.in"
+    "test-Distancia_euclidiana_40.in"
+    "test-Distancia_euclidiana_80.in"
+    "test-Produto_Interno_10.in"
+    "test-Produto_Interno_20.in"
+    "test-Produto_Interno_40.in"
+    "test-Produto_Interno_80.in"
+    "test-Densidade_probabi_10.in"
+    "test-Densidade_probabi_20.in"
+    "test-Densidade_probabi_40.in"
+    "test-Densidade_probabi_80.in"    
+) 
 
 results_dir="results"
 mkdir -p "$results_dir"
