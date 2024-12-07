@@ -229,14 +229,21 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
   }
 }
 
-void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
+void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
-               int training, std::optional<Vec<chromosome>> initialSolution) {
+               int training, std::optional<Vec<chromosome>> initialSolution,
+               const std::vector<std::vector<double>>& fullInputs,
+               const std::vector<double>& fullOutputs) {
+
   int localReset = params.reset;
   ValuedChromosome globalBestSolution;    
-  globalBestSolution.cost = INFINITY;     
+  globalBestSolution.cost = INFINITY;
 
+  // alteração para reset      
   while (localReset > 0) {
+
+    // alteração para buscar 10
+    selectRandom10(problem, seed, fullInputs, fullOutputs);
     // ------ 
     // params
     // ------

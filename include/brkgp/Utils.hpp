@@ -165,13 +165,6 @@ class ValuedChromosome {
   Vec<chromosome> randomKeys;
   double cost;
   int trueStackSize;
-  // seed parameter used during StackAdjustment!
-  // Why seed?
-  // - initial generation / mutant (OK)
-  // - given input solution (PROBLEM)
-  // - crossover solution (PROBLEM)
-  // IDEA: seed could be used ONLY on StackAdjustment,
-  // not for random key generation...
   int seed;
 
   void print() const {
@@ -182,3 +175,35 @@ class ValuedChromosome {
     std::cout << std::endl;
   }
 };
+inline void selectRandom10(RProblem &problem, int seed,
+      const std::vector<std::vector<double>>& fullInputs,
+      const std::vector<double>& fullOutputs) {
+
+    srand(seed); 
+    std::vector<int> idx(100);
+    for (int i = 0; i < 100; i++) idx[i] = i;
+
+    // Embaralha os índices
+    for (int i = 0; i < 100; i++) {
+        int r = i + rand() % (100 - i);
+        std::swap(idx[i], idx[r]);
+    }
+
+    // idx[0..9] são os 10 selecionados
+    problem.tests = 10;
+    problem.inputs.clear();
+    problem.inputs.resize(problem.tests, std::vector<double>(problem.nVars));
+    problem.outputs.clear();
+    problem.outputs.resize(problem.tests);
+
+    for (int i = 0; i < 10; i++) {
+        int sel = idx[i];
+        for (int v = 0; v < problem.nVars; v++)
+            problem.inputs[i][v] = fullInputs[sel][v];
+        problem.outputs[i] = fullOutputs[sel];
+    }
+
+    std::cout << "SELECTED: [";
+    for (int i = 0; i < 10; i++) std::cout << idx[i] << " ";
+    std::cout << "]" << std::endl;
+}
