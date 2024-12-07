@@ -76,8 +76,9 @@ struct BRKGAParams {
   uint16_t eliteBias = 70;
   int noImprovementMax = 10;
   // int restartMax = 1000;
-  int restartMax = 10;
+  int iterationMax = 10;
   int moreDiversity = 75;
+  int reset = 5;
 };
 
 struct Scenario {

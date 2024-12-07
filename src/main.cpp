@@ -131,35 +131,37 @@ int main(int argc, char* argv[]) {
   params.mutantSize = 10;
   params.eliteBias = 85;
   params.noImprovementMax = 50;
-  params.restartMax = 100;
+  params.iterationMax = 10;
   params.moreDiversity = 10;
+  params.reset = 5;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);
   if (argc > 4) params.eliteSize = atoi(argv[4]);
   if (argc > 5) params.mutantSize = atoi(argv[5]);
   if (argc > 6) params.eliteBias = atoi(argv[6]);
-  if (argc > 7) params.restartMax = atoi(argv[7]);
+  if (argc > 7) params.iterationMax = atoi(argv[7]);
   if (argc > 8) params.noImprovementMax = atoi(argv[8]);
+  if (argc > 9) params.reset = atoi(argv[9]);
 
   int training = 100;
-  if (argc > 9) training = atoi(argv[9]);
-
-  if (argc > 10) {
-    if (argv[10][0] == 't') {
-      other.operationsU.push_back('s');
-      other.operationsU.push_back('c');
-    } else if (argv[10][0] == 'e') {
-      other.operationsU.push_back('a');
-      other.operationsU.push_back('v');
-      other.operationsU.push_back('r');
-    }
-  }
+  if (argc > 10) training = atoi(argv[10]);
 
   if (argc > 11) {
     if (argv[11][0] == 't') {
       other.operationsU.push_back('s');
       other.operationsU.push_back('c');
     } else if (argv[11][0] == 'e') {
+      other.operationsU.push_back('a');
+      other.operationsU.push_back('v');
+      other.operationsU.push_back('r');
+    }
+  }
+
+  if (argc > 12) {
+    if (argv[12][0] == 't') {
+      other.operationsU.push_back('s');
+      other.operationsU.push_back('c');
+    } else if (argv[12][0] == 'e') {
       other.operationsU.push_back('a');
       other.operationsU.push_back('v');
       other.operationsU.push_back('r');

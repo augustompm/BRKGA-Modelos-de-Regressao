@@ -3,7 +3,7 @@
 seeds="100031"
 
 instances=(
-    "test-Distancia_Euclidiana_10.in" 
+    "Distancia_euclidiana_100.in" 
 ) 
 
 results_dir="results"

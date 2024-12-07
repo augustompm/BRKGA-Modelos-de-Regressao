@@ -232,188 +232,154 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
 void run_brkga(const RProblem& problem, const BRKGAParams& params, int seed,
                ValuedChromosome& bestFoundSolution, const Scenario& other,
                int training, std::optional<Vec<chromosome>> initialSolution) {
-  // ------
-  // params
-  // ------
-  int restartMax = params.restartMax;
-  int noImprovementMax = params.noImprovementMax;
-  int eliteSize = params.eliteSize;
-  int mutantSize = params.mutantSize;
-  uint16_t eliteBias = params.eliteBias;
-  int populationLen = params.populationLen;
-  // -----
-  // other
-  // -----
-  int individualLen = other.getIndividualLen();
-  //
-  Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
-  Vec<ValuedChromosome> auxPopulation(populationLen);
-  // printf("populationLen1: %d eliteSize1: %d mutanteSize1: %d
-  // individualLen1: %d stackLen1:
-  // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
+  int localReset = params.reset;
+  ValuedChromosome globalBestSolution;    
+  globalBestSolution.cost = INFINITY;     
 
-  for (int i = 0; i < populationLen; i++) {
-    auxPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
-    mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
-  }
+  while (localReset > 0) {
+    // ------ 
+    // params
+    // ------
+    int iterationMax = params.iterationMax;
+    int noImprovementMax = params.noImprovementMax;
+    int eliteSize = params.eliteSize;
+    int mutantSize = params.mutantSize;
+    uint16_t eliteBias = params.eliteBias;
+    int populationLen = params.populationLen;
+    // -----
+    // other
+    // -----
+    int individualLen = other.getIndividualLen();
 
-  bestFoundSolution.cost = INFINITY;
+    Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
+    Vec<ValuedChromosome> auxPopulation(populationLen);
 
-  eliteSize = percentToInt(eliteSize, populationLen);
-  mutantSize = percentToInt(mutantSize, populationLen);
-  // printf("populationLen2: %d eliteSize2: %d mutanteSize2: %d
-  // individualLen2: %d stackLen2:
-  // %d\n",populationLen,eliteSize,mutantSize,individualLen,stackLen);
-  // printf("%d\t%d\n",eliteSize,mutantSize);
-  // 'noImprovement' is used to compute 'mutantGrow'
-  int noImprovement = 0;
-  // int noImprovement = 5000;
-  bool end = false;
-  int restart = 0;
-  while (restart < restartMax) {
-    // more diversity after X% iterations...
-    bool doMutation = (restart > restartMax * (params.moreDiversity / 100.0));
-    // std::cout << "restart=" << restart << std::endl;
-    seed++;
-    populationGenerator(mainPopulation, seed);
-    if (initialSolution) {
-      std::cout << "WARNING: BRKGP RECEIVED INITIAL SOLUTION!" << std::endl;
-      // if exists 'initialSolution'
-      mainPopulation[0].randomKeys = *initialSolution;
-      // TODO: what to do with 'seed' here? seed=-1? flag as unused?
-      initialSolution = std::nullopt;  // disable optional input
+    for (int i = 0; i < populationLen; i++) {
+      auxPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
+      mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
     }
-    decoder(mainPopulation, problem, other, seed);
-    if (false) {
-      mainPopulation[0].print();
-      std::cout << "after decode mainPopulation[0].cost: "
-                << mainPopulation[0].cost << std::endl;
-    }
-    std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
-    if (false) {
-      std::cout << "after sort mainPopulation[0].cost: "
-                << mainPopulation[0].cost << std::endl;
-    }
-    end = false;
-    while (!end) {
-      assert(auxPopulation.size() == mainPopulation.size());  // NOLINT
-      auxPopulation = mainPopulation;                         // copy population
-      // use 'noImprovement' to grow mutation
-      int mutationGrow = percentToInt(
-          5 * (5 * (noImprovement / noImprovementMax)), populationLen);
-      // [0 ... eliteSize] is elite
 
-      if (doMutation) {
-        int target = eliteSize + 1;
-        // std::cout << "doMutation: BEST=";
-        // printSolution(problem, bestFoundSolution.randomKeys, other);
-        auxPopulation[target + 0] = bestFoundSolution;
-        auxPopulation[target + 0].cost = 0;
-        compactIndividual(auxPopulation[target + 0].randomKeys,
-                          other.getStackLen(), seed);
-        // std::cout << "doMutation: VARIANT=";
-        // printSolution(problem, auxPopulation[target + 0].randomKeys, other);
+    bestFoundSolution.cost = INFINITY; // cada reset começa do zero
+
+    eliteSize = percentToInt(eliteSize, populationLen);
+    mutantSize = percentToInt(mutantSize, populationLen);
+
+    int noImprovement = 0;
+    bool end = false;
+    int iteration = 0;
+
+    while (iteration < iterationMax) {
+      bool doMutation = (iteration > iterationMax * (params.moreDiversity / 100.0));
+      seed++;
+      populationGenerator(mainPopulation, seed);
+      if (initialSolution) {
+        std::cout << "WARNING: BRKGP RECEIVED INITIAL SOLUTION!" << std::endl;
+        mainPopulation[0].randomKeys = *initialSolution;
+        initialSolution = std::nullopt;  // disable optional input
       }
+      decoder(mainPopulation, problem, other, seed);
+      std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
+      end = false;
+      while (!end) {
+        assert(auxPopulation.size() == mainPopulation.size());  // NOLINT
+        auxPopulation = mainPopulation;                         // copy population
+        int mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)), populationLen);
 
-      // [eliteSize to mutantSize+mutationGrow] is mutant
-      mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow),
-                      seed);
-      if (doMutation) {
-        int target = eliteSize + 1;
-        // std::cout << "doMutation: BEST=";
-        // printSolution(problem, bestFoundSolution.randomKeys, other);
-        auxPopulation[target + 0] = bestFoundSolution;
-        auxPopulation[target + 0].cost = 0;
-        compactIndividual(auxPopulation[target + 0].randomKeys,
-                          other.getStackLen(), seed);
-        // std::cout << "doMutation: VARIANT=";
-        // printSolution(problem, auxPopulation[target + 0].randomKeys, other);
-      }
-      crossover(mainPopulation, auxPopulation, eliteSize,
-                (mutantSize + mutationGrow), eliteBias, seed, doMutation,
-                other.getStackLen(), problem, other);
-
-      seed += 2 * individualLen;
-      decoder(auxPopulation, problem, other, seed);
-      // printPopulationCost(auxPopulation,populationLen);
-      //
-      std::sort(auxPopulation.begin(), auxPopulation.end(), menorQue);
-      //
-      // printPopulationCost(auxPopulation,populationLen);
-      // printSolution(auxPopulation[0].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
-      // printf("cost = %f No Improviments =
-      // %d\n",auxPopulation[0].cost,noImproviment);
-      //
-      //
-      const ValuedChromosome& newBest = auxPopulation[0];
-      const ValuedChromosome& prevBest = mainPopulation[0];
-
-      // check best (old method 'isRestart')
-      if (newBest.cost < prevBest.cost)
-        noImprovement = 0;
-      else
-        noImprovement++;
-      if (noImprovement == noImprovementMax) {
-        //|| (auxPopulation[0].cost <= 0.00001))
-        noImprovement = 0;
-        end = true;
-      } else {
-        end = false;
-      }
-
-      // printSolution(auxPopulation[20].randomKeys,stackLen,nVars,nConst,operationsBi,operationsU,vConstMin,vConstMax);
-      // for (int i = 0; i < populationLen; i++) {
-      //  mainPopulation[i].randomKeys = auxPopulation[i].randomKeys;
-      //  mainPopulation[i].cost = auxPopulation[i].cost;
-      //}
-      mainPopulation = auxPopulation;  // copy
-      // printf("auxPopulation:%f\t
-      // population:%f\n",auxPopulation[0].cost,population[0].cost);
-    }
-
-    // printf("Erro Atual: %f\t",population[0].cost);
-    // printf("Erro Best: %f\n",bestFoundSolution.cost);
-    if ((bestFoundSolution.cost - mainPopulation[0].cost) >
-        0.000001) {  //|| (((bestFoundSolution->cost - mainPopulation->cost )<
-                     // 0.0000001)  && (mainPopulation->trueStackSize <
-                     // bestFoundSolution->trueStackSize))){
-      // printf("Erro Melhorado: %f\n",population[0].cost);
-      //
-      // bestFoundSolution.cost = mainPopulation[0].cost;
-      // bestFoundSolution.randomKeys = mainPopulation[0].randomKeys;
-      bestFoundSolution = mainPopulation[0];
-      std::cout << "BEST SOLUTION! cost=" << bestFoundSolution.cost << " ";
-      printSolution(problem, bestFoundSolution.randomKeys, other);
-      // SOME "INTENSIFICATION"?
-      for (int i = 0; i < 1; i++) {
-        auto sol2 = bestFoundSolution;
-        compactIndividual(sol2.randomKeys, other.getStackLen(), seed);
-        auto si = stackAdjustment(problem, other, sol2.randomKeys,
-                                  other.getStackLen(), problem.nVars,
-                                  problem.nConst, other.maxConst, 0);
-        auto cost2 = solutionEvaluator(problem, sol2.randomKeys, other, 0, -1);
-        sol2.cost = cost2;
-        sol2.seed = 0;
-        sol2.trueStackSize = si.trueStackLen;
-        if ((bestFoundSolution.cost - sol2.cost) > 0.000001) {
-          std::cout << "COST2 IS BETTER!!!" << cost2 << std::endl;
-          bestFoundSolution = sol2;
-          mainPopulation[0] = bestFoundSolution;
+        if (doMutation) {
+          int target = eliteSize + 1;
+          auxPopulation[target] = bestFoundSolution;
+          auxPopulation[target].cost = 0;
+          compactIndividual(auxPopulation[target].randomKeys, other.getStackLen(), seed);
         }
+
+        mutantGenerator(auxPopulation, eliteSize, (mutantSize + mutationGrow), seed);
+
+        if (doMutation) {
+          int target = eliteSize + 1;
+          auxPopulation[target] = bestFoundSolution;
+          auxPopulation[target].cost = 0;
+          compactIndividual(auxPopulation[target].randomKeys, other.getStackLen(), seed);
+        }
+
+        crossover(mainPopulation, auxPopulation, eliteSize,
+                  (mutantSize + mutationGrow), eliteBias, seed, doMutation,
+                  other.getStackLen(), problem, other);
+
+        seed += 2 * individualLen;
+        decoder(auxPopulation, problem, other, seed);
+        std::sort(auxPopulation.begin(), auxPopulation.end(), menorQue);
+
+        const ValuedChromosome& newBest = auxPopulation[0];
+        const ValuedChromosome& prevBest = mainPopulation[0];
+
+        if (newBest.cost < prevBest.cost)
+          noImprovement = 0;
+        else
+          noImprovement++;
+
+        if (noImprovement == noImprovementMax) {
+          noImprovement = 0;
+          end = true;
+        } else {
+          end = false;
+        }
+
+        mainPopulation = auxPopulation;  // copy
       }
-      //
-      // printf("Chegou\n");
-      restart = 0;
-      //
+
+      if ((bestFoundSolution.cost - mainPopulation[0].cost) > 0.000001) {
+        bestFoundSolution = mainPopulation[0];
+        std::cout << "BEST SOLUTION! cost=" << bestFoundSolution.cost << " ";
+        printSolution(problem, bestFoundSolution.randomKeys, other);
+        for (int i = 0; i < 1; i++) {
+          auto sol2 = bestFoundSolution;
+          compactIndividual(sol2.randomKeys, other.getStackLen(), seed);
+          auto si = stackAdjustment(problem, other, sol2.randomKeys,
+                                    other.getStackLen(), problem.nVars,
+                                    problem.nConst, other.maxConst, 0);
+          auto cost2 = solutionEvaluator(problem, sol2.randomKeys, other, 0, -1);
+          sol2.cost = cost2;
+          sol2.seed = 0;
+          sol2.trueStackSize = si.trueStackLen;
+          if ((bestFoundSolution.cost - sol2.cost) > 0.000001) {
+            std::cout << "COST2 IS BETTER!!!" << cost2 << std::endl;
+            bestFoundSolution = sol2;
+            mainPopulation[0] = bestFoundSolution;
+          }
+        }
+        iteration = 0;
+      }
+
+      printf("iteration = %d \t best= %f\t", iteration, bestFoundSolution.cost);
+      printSolution(problem, bestFoundSolution.randomKeys, other);
+      iteration++;
+
+      if (bestFoundSolution.cost < 0.00001) {
+        std::cout << "OPTIMAL FOUND! ABORTING..." << std::endl;
+        localReset = 0;
+        break;
+      }
     }
-    // printf("Chegou");
-    printf("restart = %d \t best= %f\t", restart, bestFoundSolution.cost);
-    printSolution(problem, bestFoundSolution.randomKeys, other);
-    restart++;
-    if (bestFoundSolution.cost < 0.00001) {
-      std::cout << "OPTIMAL FOUND! ABORTING..." << std::endl;
-      break;
+
+    // verifica se a solução local é melhor que a global
+    if (bestFoundSolution.cost < globalBestSolution.cost) { 
+      globalBestSolution = bestFoundSolution;              
+    }
+
+    if (bestFoundSolution.cost >= 0.00001) {
+      localReset--;
+      if (localReset > 0) {
+        std::cout << "RESET TRIGGERED! TRYING AGAIN... (remaining resets: " << localReset << ")" << std::endl;
+      } else {
+        std::cout << "NO MORE RESETS LEFT. FINISHING." << std::endl;
+      }
     }
   }
+
+  // término de todos os resets, garantir que bestFoundSolution seja global
+  if (globalBestSolution.cost < bestFoundSolution.cost) { 
+    bestFoundSolution = globalBestSolution;               
+  }
+
   std::cout << "FINISHED BRKGP!" << std::endl;
 }
