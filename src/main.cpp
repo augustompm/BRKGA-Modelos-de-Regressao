@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
   params.eliteBias = 85;
   params.noImprovementMax = 50;
   params.iterationMax = 50;
-  params.moreDiversity = 10;
+  params.moreDiversity = 20;
   params.reset = 5;
 
   if (argc > 3) params.populationLen = atoi(argv[3]);

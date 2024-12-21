@@ -1,0 +1,331 @@
+# BRKGA-Modelos-de-Regressao
+
+Análise gerada em: 2024-12-21 17:42:58
+
+## Sobre o Projeto
+Título: Modelos de Regressão Simbólica Através de Biased Random-Key Genetic Programming em Aplicações na Física
+Autor: Filipe Pessôa Sousa
+Orientadores: Igor Machado Coelho, Cristiane Oliveira de Faria
+Instituição: UERJ - Instituto de Matemática e Estatística
+Programa: Mestrado em Ciências Computacionais
+Ano: 2023
+
+### Resumo
+Este trabalho foca na aplicação do BRKGP em Regressão Simbólica para 
+        descobrir funções físicas a partir de dados numéricos. Utiliza pilha para avaliação de 
+        expressões e análise dimensional com GiNaC.
+
+## Aspectos Técnicos
+### Ambiente
+- Linguagem: C++20
+- Build System: Bazel 7.4.1
+- Sistema: Ubuntu 22
+
+### Componentes Principais
+- Meta-heurística: BRKGP (Biased Random-Key Genetic Programming)
+- Manipulação Simbólica: GiNaC
+- Precisão Numérica: CLN & Kahan
+- Paralelização: OpenMP
+- Parser de Entrada: Scanner
+
+## Estrutura do Código
+
+### include/brkgp/BRKGA.hpp
+
+Dependências principais:
+- brkgp/BRKGA.hpp
+- brkgp/Evaluator.hpp
+- brkgp/PrintIO.hpp
+- brkgp/Utils.hpp
+
+Funções principais:
+- auxPopulation
+- ceil
+- compactIndividual
+- crossover
+- decoder
+- end
+- for
+- if
+- individualGenerator
+- mainPopulation
+- menorQue
+- mutantGenerator
+- percentToInt
+- populationGenerator
+- pow
+- push_back
+- rand
+- return
+- run_brkga
+- selectRandom10
+- size
+- solutionEvaluator
+- sort
+- srand
+- stackAdjustment
+- while
+
+
+### include/brkgp/Evaluator.hpp
+
+Dependências principais:
+- Scanner/Scanner.hpp
+- brkgp/Evaluator.hpp
+- brkgp/PrintIO.hpp
+
+Classes/Estruturas:
+- OpType
+- RKGenerator
+- StackInfo
+- T
+
+Funções principais:
+- 2500
+- 5000
+- 7500
+- MAPE
+- RMSE
+- SD1
+- abs
+- checkRKexpr
+- cos
+- ex
+- exVar
+- execBinaryOp
+- execBinaryOpUnit
+- execUnaryOp
+- execUnaryOpUnit
+- exp
+- fix_sqrt
+- floor
+- for
+- if
+- inVStr
+- isOperation
+- log
+- log2
+- makePUSH
+- next
+- pop
+- pow
+- push
+- push_back
+- rand
+- return
+- scanner
+- sin
+- size
+- solutionEvaluator
+- sqrt
+- srand
+- stackAdjustment
+- str
+- switch
+- top
+- trim
+- v
+- vUsedVars
+- while
+
+
+### include/brkgp/PrintIO.hpp
+
+Dependências principais:
+- brkgp/Utils.hpp
+
+Funções principais:
+- cos
+- empty
+- exp
+- floor
+- for
+- if
+- isSquared
+- log
+- log_2
+- pop
+- push
+- rand
+- sin
+- size
+- srand
+- str
+- stringExecBinaryOp
+- stringExecUnaryOp
+- top
+
+
+### include/brkgp/ReadIO.hpp
+
+Dependências principais:
+- Scanner/Scanner.hpp
+- brkgp/Evaluator.hpp
+- brkgp/PrintIO.hpp
+- brkgp/ReadIO.hpp
+- brkgp/Utils.hpp
+
+Funções principais:
+- auxInputs
+- auxOutputs
+- changeIO
+- for
+- if
+- next
+- nextDouble
+- nextInt
+- nextLine
+- push_back
+- readIO
+- resize
+- scan
+- trim
+- while
+
+
+### include/brkgp/Utils.hpp
+
+Classes/Estruturas:
+- BRKGAParams
+- RProblem
+- Scenario
+- ValuedChromosome
+
+Funções principais:
+- ValuedChromossome
+- append
+- clear
+- ex_out
+- for
+- idx
+- if
+- isSquared
+- make_squared
+- push_back
+- rand
+- resize
+- selectRandom10
+- separateT1T2
+- size
+- sort
+- srand
+- str
+- swap
+- unique
+
+
+### src/main-original.cpp
+
+Dependências principais:
+- Scanner/Scanner.hpp
+- brkgp/BRKGA.hpp
+- brkgp/Evaluator.hpp
+- brkgp/PrintIO.hpp
+- brkgp/ReadIO.hpp
+- brkgp/Utils.hpp
+
+Classes/Estruturas:
+- my_visitor
+
+Funções principais:
+- accept
+- atoi
+- begin
+- changeIO
+- checkRKexpr
+- count
+- e15
+- e32
+- end
+- evalf
+- ex
+- fix_sqrt
+- for
+- if
+- insert
+- main
+- make_squared
+- normal
+- now
+- op
+- percentToInt
+- pow
+- push_back
+- readIO
+- run_brkga
+- scanner
+- size
+- solutionEvaluator
+- sqrt
+- subs
+- visit
+- x
+
+
+### src/main.cpp
+
+Dependências principais:
+- Scanner/Scanner.hpp
+- brkgp/BRKGA.hpp
+- brkgp/Evaluator.hpp
+- brkgp/PrintIO.hpp
+- brkgp/ReadIO.hpp
+- brkgp/Utils.hpp
+
+Classes/Estruturas:
+- my_visitor
+
+Funções principais:
+- accept
+- atoi
+- changeIO
+- count
+- for
+- if
+- main
+- make_squared
+- now
+- op
+- percentToInt
+- push_back
+- readIO
+- run_brkga
+- scanner
+- separateT1T2
+- size
+- solutionEvaluator
+- visit
+
+## Build e Execução
+
+### Build (build.sh)
+```bash
+# Configuração do compilador
+export CC=gcc CXX=g++
+
+# Flags de otimização
+OPTS='-c opt --copt=-march=native --copt=-O3 --copt=-fopenmp'
+
+# Build principal
+bazel build $OPTS //src:brkga-regress
+```
+
+### Execução (run.sh)
+```bash
+BINARY='bazel-bin/src/brkga-regress'
+ARGS='input.txt 30 100 25 10 85 100 100 80 1'
+
+# Parâmetros:
+#  - input.txt: arquivo de entrada
+#  - 30: maxConst (número máximo de constantes)
+#  - 100: populationLen (tamanho da população)
+#  - 25: eliteSize (% elite)
+#  - 10: mutantSize (% mutantes)
+#  - 85: eliteBias (viés para elite)
+#  - 100: restartMax (máx. reinícios)
+#  - 100: noImprovementMax (gerações sem melhoria)
+#  - 80: training (% dados para treino)
+#  - 1: seed (semente aleatória)
+
+$BINARY $ARGS
+```
