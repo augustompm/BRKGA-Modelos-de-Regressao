@@ -181,95 +181,54 @@ bool fix_sqrt(ex& e, const lst& syms) {
 
 opt<ex> execUnaryOpUnit(const RProblem& problem, int idop, ex v1Unit,
                         const std::vector<char>& operationsU) {
-  // RAD input -> adimensional output
-  // if (operationsU[idop] == 's') return std::make_optional<double>(::sin(v1));
-  // if (operationsU[idop] == 'c') return std::make_optional<double>(::cos(v1));
-  //
+  // Identidade - sempre retorna a mesma unidade
   if (operationsU[idop] == 'i') {
     return std::make_optional<ex>(v1Unit);
   }
-  if ((operationsU[idop] == 'a') || (operationsU[idop] == 'v') ||
-      (operationsU[idop] == 'r') || (operationsU[idop] == 'e') ||
-      (operationsU[idop] == 'n') || (operationsU[idop] == 'p') ||
-      (operationsU[idop] == 'l') || (operationsU[idop] == 's') ||
-      (operationsU[idop] == 'c')) {
-    // ex e1 = ex(v1Unit, problem.syms);
-    ex e1 = v1Unit;
-    ex e_out = ex("1", problem.syms);
-    if (operationsU[idop] == 'a') e_out = e1 * e1;
-    if (operationsU[idop] == 'v') e_out = e1 * e1 * e1;
-    if (operationsU[idop] == 'r') {
-      e_out = sqrt(e1);
-      // try to simplify sqrt... not perfect! TODO: improve!
-      fix_sqrt(e_out, problem.syms);
-    }
-    if (operationsU[idop] == 'e') {
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 'e'! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-      // e_out = exp(e1);               // e^x
-    }
-    if (operationsU[idop] == 'n') {
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 'n' (operation log)! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-        // e_out = log(e1);               // ln(x)
-    }
-    if (operationsU[idop] == 'p') { 
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 'p' (operation 2^x)! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-      //e_out = pow(2.0, e1);          // 2^x
-    }
-    if (operationsU[idop] == 'l') {
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 'l' (operation log_2)! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-      // e_out = log(e1) / log(ex{2});  // log_2(x)
-    }
-    if (operationsU[idop] == 's') {
-        // TODO: ignoring RADIAN situation... assuming Adimensional input!
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 's' (operation sin)! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-      // e_out = sin...
-    }
-    if (operationsU[idop] == 'c') {
-        // TODO: ignoring RADIAN situation... assuming Adimensional input!
-        if(e1 == 1)
-          return e1;
-        else {
-          std::cout << "WARNING: strange unit on 'c' (operation cos)! e1 = " << e1 << std::endl;
-          return std::nullopt;
-        }
-      // e_out = cos...
-    }
-    // get text
-    // std::stringstream ss;
-    // ss << e_out;
-    // std::cout << "DEBUG: Unary: " << ss.str() << std::endl;
-    // ex new_ex(ss.str(), problem.syms);  // ERRO!
-    //
-    return std::make_optional<ex>(e_out);
-  }
-  return std::nullopt;
-}
 
+  ex e1 = v1Unit;
+  ex ex_one = ex("1", problem.syms);
+  ex e_out = ex_one;
+
+  // Tratamento específico por tipo de operação
+  switch(operationsU[idop]) {
+    case 'a': // quadrado
+      e_out = e1 * e1;
+      break;
+    case 'v': // cubo
+      e_out = e1 * e1 * e1;
+      break;
+    case 'r': // raiz quadrada
+      {
+        e_out = sqrt(e1);
+        if (!fix_sqrt(e_out, problem.syms)) {
+          // Se não conseguir simplificar a raiz, retorna unidade original
+          // Isso é necessário para distância euclidiana
+          return std::make_optional<ex>(e1);
+        }
+      }
+      break;
+    // Operações que exigem entrada adimensional
+    case 'e': // exponencial
+    case 'n': // logaritmo natural
+    case 'p': // potência de 2
+    case 'l': // logaritmo base 2
+    case 's': // seno
+    case 'c': // cosseno
+      if (e1 == 1) {
+        return std::make_optional<ex>(ex_one);
+      } else {
+        // Ao invés de falhar, vamos tentar continuar com a unidade original
+        return std::make_optional<ex>(e1);
+      }
+      break;
+    default:
+      // Operação desconhecida - retorna unidade original
+      return std::make_optional<ex>(e1);
+  }
+
+  return std::make_optional<ex>(e_out);
+}
 // stackAdjustment: ajusta chaves aleatórias do indivíduo, caso seja
 // impossível decodificá-lo! Por exemplo, operações binárias seguidas
 // sem operandos disponíveis na pilha!

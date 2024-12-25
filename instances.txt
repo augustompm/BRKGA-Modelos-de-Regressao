@@ -1,0 +1,3 @@
+Distancia_euclidiana_100.in
+Produto_interno_100.in
+Densidade_probabi_100.in

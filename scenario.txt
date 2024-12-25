@@ -1,0 +1,8 @@
+parameterFile = "parameters.txt"
+targetRunner = "target-runner.py"
+trainInstancesFile = "instances.txt"
+trainInstancesDir = ""
+maxExperiments = 1000
+logFile = "irace.Rdata"
+seed = 1234
+debugLevel = 3

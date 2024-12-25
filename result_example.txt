@@ -1,0 +1,258 @@
+Bi T1: 2:+-
+Bi T2: 2:*/
+U T1: 1:e
+U T2: 3:ira
+|ARGS| = 11
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+var unit: 'm'
+var unit: 'm'
+var unit: 'm'
+var unit: 'm'
+out unit: 'm'
+has_solution='HAS_SOLUTION' => ' v0 v1 - a v2 v3 - a + r'
+SOLUTION IS: ' v0 v1 - a v2 v3 - a + r'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+const unit: '*'
+3.5) SETUP UNITS
+UNITS: m ; 
+4) FINISHED READING PROBLEM
+4 100 1
+1.00	8.00	-7.00	4.00	13.04
+9.00	7.00	-1.00	-1.00	2.00
+10.00	6.00	-2.00	-10.00	8.94
+8.00	-5.00	7.00	7.00	13.00
+-1.00	10.00	-1.00	-9.00	13.60
+-9.00	0.00	5.00	-6.00	14.21
+8.00	-4.00	-1.00	-1.00	12.00
+-5.00	-6.00	3.00	5.00	2.24
+-3.00	0.00	-9.00	-1.00	8.54
+10.00	-3.00	3.00	5.00	13.15
+4.00	0.00	-7.00	-8.00	4.12
+3.00	1.00	-1.00	9.00	10.20
+-1.00	4.00	-4.00	5.00	10.30
+-9.00	-2.00	-3.00	-6.00	7.62
+-2.00	5.00	3.00	-8.00	13.04
+-10.00	-1.00	2.00	1.00	9.06
+8.00	10.00	-8.00	-6.00	2.83
+-1.00	7.00	-6.00	-9.00	8.54
+4.00	10.00	-7.00	5.00	13.42
+-9.00	6.00	-1.00	-8.00	16.55
+-9.00	0.00	5.00	-7.00	15.00
+-2.00	6.00	5.00	-9.00	16.12
+7.00	5.00	3.00	1.00	2.83
+9.00	7.00	-4.00	-5.00	2.24
+4.00	3.00	-3.00	8.00	11.05
+-1.00	4.00	-4.00	-2.00	5.39
+-9.00	-9.00	8.00	1.00	7.00
+-1.00	1.00	1.00	-1.00	2.83
+-4.00	-6.00	5.00	2.00	3.61
+-7.00	1.00	5.00	-5.00	12.81
+1.00	-8.00	-2.00	4.00	10.82
+-10.00	-3.00	5.00	-6.00	13.04
+1.00	-9.00	3.00	10.00	12.21
+-4.00	0.00	2.00	-4.00	7.21
+0.00	10.00	-1.00	10.00	14.87
+4.00	5.00	-9.00	-1.00	8.06
+3.00	-6.00	10.00	-9.00	21.02
+2.00	-4.00	5.00	5.00	6.00
+4.00	5.00	-9.00	7.00	16.03
+2.00	1.00	-5.00	-2.00	3.16
+9.00	8.00	6.00	1.00	5.10
+10.00	-6.00	4.00	-9.00	20.62
+-8.00	6.00	8.00	3.00	14.87
+7.00	-6.00	-1.00	-9.00	15.26
+1.00	-9.00	-7.00	3.00	14.14
+-9.00	1.00	-3.00	0.00	10.44
+5.00	4.00	5.00	-1.00	6.08
+9.00	-1.00	1.00	-5.00	11.66
+-7.00	-3.00	2.00	-7.00	9.85
+-1.00	6.00	1.00	0.00	7.07
+-10.00	0.00	-4.00	3.00	12.21
+2.00	-10.00	-4.00	7.00	16.28
+9.00	0.00	9.00	-2.00	14.21
+-6.00	2.00	2.00	6.00	8.94
+3.00	-1.00	1.00	10.00	9.85
+7.00	9.00	-2.00	-4.00	2.83
+5.00	-1.00	-8.00	10.00	18.97
+-7.00	3.00	-10.00	-9.00	10.05
+-7.00	1.00	0.00	-9.00	12.04
+-5.00	-10.00	-4.00	5.00	10.30
+-5.00	1.00	-8.00	-8.00	6.00
+9.00	2.00	1.00	2.00	7.07
+-2.00	1.00	-7.00	4.00	11.40
+7.00	1.00	-4.00	-10.00	8.49
+4.00	-8.00	6.00	9.00	12.37
+2.00	0.00	4.00	0.00	4.47
+-4.00	6.00	-8.00	-4.00	10.77
+8.00	7.00	-2.00	-6.00	4.12
+-3.00	-9.00	3.00	-8.00	12.53
+1.00	-2.00	7.00	-4.00	11.40
+-3.00	-4.00	6.00	0.00	6.08
+-2.00	-6.00	3.00	1.00	4.47
+-3.00	-3.00	7.00	3.00	4.00
+5.00	-8.00	10.00	0.00	16.40
+10.00	-4.00	-10.00	-1.00	16.64
+-9.00	-5.00	-7.00	6.00	13.60
+7.00	-5.00	-6.00	-4.00	12.17
+-3.00	4.00	2.00	9.00	9.90
+7.00	3.00	8.00	-1.00	9.85
+8.00	1.00	-5.00	6.00	13.04
+0.00	-10.00	-4.00	6.00	14.14
+8.00	10.00	-1.00	-6.00	5.39
+3.00	2.00	-4.00	-5.00	1.41
+8.00	-4.00	10.00	4.00	13.42
+-4.00	1.00	0.00	2.00	5.39
+-2.00	4.00	0.00	2.00	6.32
+9.00	0.00	2.00	8.00	10.82
+8.00	-5.00	8.00	-4.00	17.69
+-7.00	9.00	0.00	-3.00	16.28
+0.00	0.00	-10.00	-7.00	3.00
+9.00	-3.00	2.00	-1.00	12.37
+-9.00	6.00	-7.00	7.00	20.52
+2.00	-5.00	7.00	4.00	7.62
+3.00	7.00	8.00	8.00	4.00
+5.00	-6.00	-2.00	4.00	12.53
+-6.00	4.00	-5.00	-9.00	10.77
+5.00	5.00	8.00	-8.00	16.00
+-7.00	8.00	-10.00	8.00	23.43
+4.00	-2.00	6.00	-3.00	10.82
+6.00	1.00	4.00	-8.00	13.00
+1.0000	1.0000
+isSquared? 0
+varUnits: m m m m 
+outUnit: m
+training=30
+run_brkga:
+best=inf
+SELECTED: [40 38 0 17 45 72 61 3 49 71 ]
+BEST SOLUTION! cost=5.34271 stackLen: 10 => 1.00  V0  a r i * empty: 0 1 1 0 1 0 0 1 0 0 
+iteration = 0 	 best= 5.342705	stackLen: 10 => 1.00  V0  a r i * empty: 0 1 1 0 1 0 0 1 0 0 
+iteration = 1 	 best= 5.342705	stackLen: 10 => 1.00  V0  a r i * empty: 0 1 1 0 1 0 0 1 0 0 
+BEST SOLUTION! cost=4.65692 stackLen: 10 => V2  a r 1.00  * empty: 0 1 0 1 1 1 0 0 0 1 
+iteration = 0 	 best= 4.656919	stackLen: 10 => V2  a r 1.00  * empty: 0 1 0 1 1 1 0 0 0 1 
+iteration = 1 	 best= 4.656919	stackLen: 10 => V2  a r 1.00  * empty: 0 1 0 1 1 1 0 0 0 1 
+iteration = 2 	 best= 4.656919	stackLen: 10 => V2  a r 1.00  * empty: 0 1 0 1 1 1 0 0 0 1 
+BEST SOLUTION! cost=4.03977 stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 0 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 1 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 2 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 3 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 4 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 5 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+iteration = 6 	 best= 4.039766	stackLen: 10 => V2  V2  + a r 1.00  * empty: 0 0 0 0 1 0 0 0 1 1 
+BEST SOLUTION! cost=3.14373 stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 3.143735	stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 4)
+SELECTED: [1 68 81 74 37 95 77 36 24 90 ]
+BEST SOLUTION! cost=7.28964 stackLen: 15 => V1  V1  * r i 1.00  1.00  / * empty: 0 1 0 1 0 0 0 1 1 0 1 0 0 0 1 
+iteration = 0 	 best= 7.289641	stackLen: 15 => V1  V1  * r i 1.00  1.00  / * empty: 0 1 0 1 0 0 0 1 1 0 1 0 0 0 1 
+iteration = 1 	 best= 7.289641	stackLen: 15 => V1  V1  * r i 1.00  1.00  / * empty: 0 1 0 1 0 0 0 1 1 0 1 0 0 0 1 
+BEST SOLUTION! cost=5.18964 stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+iteration = 0 	 best= 5.189641	stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+iteration = 1 	 best= 5.189641	stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+iteration = 2 	 best= 5.189641	stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+iteration = 3 	 best= 5.189641	stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+iteration = 4 	 best= 5.189641	stackLen: 15 => 1.00  i V3  a / i r empty: 0 0 1 0 0 1 1 1 0 1 1 0 0 1 1 
+BEST SOLUTION! cost=4.55077 stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 4.550767	stackLen: 15 => 1.00  1.00  1.00  r V3  / V3  V3  + * a / r r * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 3)
+SELECTED: [18 55 51 50 68 3 34 71 19 54 ]
+BEST SOLUTION! cost=29.8105 stackLen: 22 => V2  i a i 1.00  / r V0  V3  + V1  V3  + - V0  * i * empty: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 
+iteration = 0 	 best= 29.810523	stackLen: 22 => V2  i a i 1.00  / r V0  V3  + V1  V3  + - V0  * i * empty: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 
+BEST SOLUTION! cost=3.49302 stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 1 0 0 1 
+iteration = 0 	 best= 3.493022	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 1 0 0 1 
+iteration = 1 	 best= 3.493022	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 1 0 0 1 
+iteration = 2 	 best= 3.493022	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 1 0 0 1 
+BEST SOLUTION! cost=3.40002 stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 0 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 1 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 2 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 3 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 4 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 5 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 6 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 7 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 8 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 9 	 best= 3.400018	stackLen: 22 => 1.00  1.00  * r V1  V0  i - i a r V2  V2  - - a r / empty: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 2)
+SELECTED: [38 40 67 30 13 39 57 53 10 6 ]
+BEST SOLUTION! cost=30.1628 stackLen: 30 => 1.00  V1  i * 1.00  * V3  a 1.00  V3  / V2  - 1.00  V2  * * i 1.00  * i / * empty: 0 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 
+iteration = 0 	 best= 30.162846	stackLen: 30 => 1.00  V1  i * 1.00  * V3  a 1.00  V3  / V2  - 1.00  V2  * * i 1.00  * i / * empty: 0 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 
+BEST SOLUTION! cost=8.29775 stackLen: 30 => 1.00  e r 1.00  i r 1.00  1.00  / e a + i 1.00  * V3  / / empty: 0 0 1 0 0 0 1 0 0 1 0 1 0 1 1 0 1 0 1 0 0 1 1 0 0 1 0 0 1 0 
+COST2 IS BETTER!!!8.29299
+iteration = 0 	 best= 8.292988	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  / / empty: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 1 	 best= 8.292988	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  / / empty: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 2 	 best= 8.292988	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  / / empty: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 3 	 best= 8.292988	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  / / empty: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=8.19653 stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  V3  - / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 0 	 best= 8.196530	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  V3  - / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 1 	 best= 8.196530	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  V3  - / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 2 	 best= 8.196530	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  V3  - / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
+iteration = 3 	 best= 8.196530	stackLen: 30 => 1.00  e r 1.00  1.00  + i r 1.00  1.00  / e a + i 1.00  * V3  V3  - / / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=7.70485 stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+iteration = 0 	 best= 7.704849	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+iteration = 1 	 best= 7.704849	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+iteration = 2 	 best= 7.704849	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+BEST SOLUTION! cost=7.47727 stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 0 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 1 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 2 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 3 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 4 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 5 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 6 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 7 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 8 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 9 	 best= 7.477269	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 1)
+SELECTED: [34 1 51 39 45 54 85 49 95 60 ]
+iteration = 0 	 best= inf	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 1 	 best= inf	stackLen: 30 => 1.00  e r 1.00  1.00  + i i 1.00  1.00  / e a + i 1.00  * V3  V3  V3  + V3  + V3  - - / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+BEST SOLUTION! cost=10076.2 stackLen: 30 => 1.00  a a 1.00  r 1.00  V3  V0  V2  * 1.00  i * * / / / empty: 0 0 0 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 
+iteration = 0 	 best= 10076.174001	stackLen: 30 => 1.00  a a 1.00  r 1.00  V3  V0  V2  * 1.00  i * * / / / empty: 0 0 0 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 
+BEST SOLUTION! cost=8.74748 stackLen: 30 => 1.00  i 1.00  a * 1.00  V1  V0  V2  - - a r / * V2  / V1  * empty: 0 1 0 0 0 0 0 1 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0 1 0 1 0 0 0 0 
+COST2 IS BETTER!!!8.69404
+iteration = 0 	 best= 8.694041	stackLen: 30 => 1.00  i 1.00  1.00  + a * 1.00  V1  V0  V2  - - a r / * V2  / V1  * empty: 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 
+BEST SOLUTION! cost=8.67623 stackLen: 30 => 1.00  V3  V1  a V0  a r / a i * / V3  V3  V3  - 1.00  * * * empty: 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0 
+iteration = 0 	 best= 8.676228	stackLen: 30 => 1.00  V3  V1  a V0  a r / a i * / V3  V3  V3  - 1.00  * * * empty: 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0 
+iteration = 1 	 best= 8.676228	stackLen: 30 => 1.00  V3  V1  a V0  a r / a i * / V3  V3  V3  - 1.00  * * * empty: 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0 
+BEST SOLUTION! cost=6.49125 stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 0 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 1 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 2 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 3 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 4 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 5 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 6 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 7 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 8 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+iteration = 9 	 best= 6.491245	stackLen: 30 => 1.00  a e V2  1.00  e i r a V0  a / V1  a V1  / * - / empty: 0 1 0 1 1 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 0 0 0 0 1 
+NO MORE RESETS LEFT. FINISHING.
+FINISHED BRKGP!
+best=3.14373
+stackLen: 10 => V1  V2  - V0  + a 1.00  * r empty: 0 0 0 0 0 0 0 0 0 1 
+trueStackSize=9
+printSolution2: \sqrt{(1 * {(V0 + (V2 - V1))^2})}
+Tempo de execucao: 13.0066 segundos
+FIM

@@ -230,35 +230,35 @@ void decoder(Vec<ValuedChromosome>& population, const RProblem& problem,
 }
 
 void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
-               ValuedChromosome& bestFoundSolution, const Scenario& other,
+               ValuedChromosome& bestFoundSolution, Scenario& other,
                int training, std::optional<Vec<chromosome>> initialSolution,
                const std::vector<std::vector<double>>& fullInputs,
                const std::vector<double>& fullOutputs) {
+  static std::vector<int> stackPlan = {10, 15, 22, 30, 30, 30};
+  static int resetIndex = 0;
 
   int localReset = params.reset;
-  ValuedChromosome globalBestSolution;    
+  ValuedChromosome globalBestSolution;
   globalBestSolution.cost = INFINITY;
 
-  // alteração para reset      
   while (localReset > 0) {
+    if (resetIndex < (int)stackPlan.size()) {
+      other.setStackLen(stackPlan[resetIndex], other.getStackLenMax(), other.getStackLenIncreaseFactor());
+    } else {
+      other.setStackLen(other.getStackLenMax(), other.getStackLenMax(), other.getStackLenIncreaseFactor());
+    }
 
-    // alteração para buscar 10
     selectRandom10(problem, seed, fullInputs, fullOutputs);
-    // ------ 
-    // params
-    // ------
+
     int iterationMax = params.iterationMax;
     int noImprovementMax = params.noImprovementMax;
     int eliteSize = params.eliteSize;
     int mutantSize = params.mutantSize;
     uint16_t eliteBias = params.eliteBias;
     int populationLen = params.populationLen;
-    // -----
-    // other
-    // -----
     int individualLen = other.getIndividualLen();
 
-    Vec<ValuedChromosome> mainPopulation(populationLen);  // populationLen
+    Vec<ValuedChromosome> mainPopulation(populationLen);
     Vec<ValuedChromosome> auxPopulation(populationLen);
 
     for (int i = 0; i < populationLen; i++) {
@@ -266,8 +266,7 @@ void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
       mainPopulation[i].randomKeys = Vec<chromosome>(individualLen, 0);
     }
 
-    bestFoundSolution.cost = INFINITY; // cada reset começa do zero
-
+    bestFoundSolution.cost = INFINITY;
     eliteSize = percentToInt(eliteSize, populationLen);
     mutantSize = percentToInt(mutantSize, populationLen);
 
@@ -282,14 +281,14 @@ void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
       if (initialSolution) {
         std::cout << "WARNING: BRKGP RECEIVED INITIAL SOLUTION!" << std::endl;
         mainPopulation[0].randomKeys = *initialSolution;
-        initialSolution = std::nullopt;  // disable optional input
+        initialSolution = std::nullopt;
       }
       decoder(mainPopulation, problem, other, seed);
       std::sort(mainPopulation.begin(), mainPopulation.end(), menorQue);
       end = false;
       while (!end) {
-        assert(auxPopulation.size() == mainPopulation.size());  // NOLINT
-        auxPopulation = mainPopulation;                         // copy population
+        assert(auxPopulation.size() == mainPopulation.size());
+        auxPopulation = mainPopulation;
         int mutationGrow = percentToInt(5 * (5 * (noImprovement / noImprovementMax)), populationLen);
 
         if (doMutation) {
@@ -331,7 +330,7 @@ void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
           end = false;
         }
 
-        mainPopulation = auxPopulation;  // copy
+        mainPopulation = auxPopulation;
       }
 
       if ((bestFoundSolution.cost - mainPopulation[0].cost) > 0.000001) {
@@ -368,9 +367,8 @@ void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
       }
     }
 
-    // verifica se a solução local é melhor que a global
-    if (bestFoundSolution.cost < globalBestSolution.cost) { 
-      globalBestSolution = bestFoundSolution;              
+    if (bestFoundSolution.cost < globalBestSolution.cost) {
+      globalBestSolution = bestFoundSolution;
     }
 
     if (bestFoundSolution.cost >= 0.00001) {
@@ -381,11 +379,12 @@ void run_brkga(RProblem& problem, const BRKGAParams& params, int seed,
         std::cout << "NO MORE RESETS LEFT. FINISHING." << std::endl;
       }
     }
+
+    resetIndex++;
   }
 
-  // término de todos os resets, garantir que bestFoundSolution seja global
-  if (globalBestSolution.cost < bestFoundSolution.cost) { 
-    bestFoundSolution = globalBestSolution;               
+  if (globalBestSolution.cost < bestFoundSolution.cost) {
+    bestFoundSolution = globalBestSolution;
   }
 
   std::cout << "FINISHED BRKGP!" << std::endl;

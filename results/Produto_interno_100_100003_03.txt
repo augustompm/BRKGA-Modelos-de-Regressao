@@ -3,7 +3,7 @@ Bi T2: 2:*/
 U T1: 1:e
 U T2: 3:ira
 |ARGS| = 3
-individualLen:97
+individualLen:37
 Leitura feita com sucesso 
 1) READING PROBLEM
 TYPE: 'HAS_UNITS'
@@ -130,515 +130,454 @@ training=100
 run_brkga:
 best=inf
 SELECTED: [18 68 61 86 72 90 7 83 16 1 ]
-BEST SOLUTION! cost=33.4 stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 0 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 1 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 2 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 3 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 4 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 5 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 6 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-iteration = 7 	 best= 33.400000	stackLen: 30 => V2  a 1.000000  * i 1.000000  i / V2  V2  V4  V1  i * * * * empty: 0 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 0 1 
-BEST SOLUTION! cost=32.8084 stackLen: 30 => V2  a 1.000000  1.000000  + 1.000000  * 1.000000  + * i 1.000000  1.000000  * e / V2  V2  V4  V1  i * * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
-iteration = 0 	 best= 32.808392	stackLen: 30 => V2  a 1.000000  1.000000  + 1.000000  * 1.000000  + * i 1.000000  1.000000  * e / V2  V2  V4  V1  i * * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
-iteration = 1 	 best= 32.808392	stackLen: 30 => V2  a 1.000000  1.000000  + 1.000000  * 1.000000  + * i 1.000000  1.000000  * e / V2  V2  V4  V1  i * * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
-iteration = 2 	 best= 32.808392	stackLen: 30 => V2  a 1.000000  1.000000  + 1.000000  * 1.000000  + * i 1.000000  1.000000  * e / V2  V2  V4  V1  i * * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
-BEST SOLUTION! cost=32.2785 stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 0 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 1 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 2 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 3 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 4 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 5 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 6 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 7 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 8 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 9 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 10 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 11 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 12 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 13 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 14 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 15 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 16 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 17 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 18 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 19 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 20 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 21 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 22 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 23 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 24 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 25 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 26 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 27 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 28 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 29 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 30 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 31 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 32 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 33 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 34 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 35 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-iteration = 36 	 best= 32.278545	stackLen: 30 => V0  V4  1.000000  * a r + V4  a V5  a / * V1  * empty: 0 0 0 1 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 0 0 0 
-BEST SOLUTION! cost=27.4 stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 0 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 1 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 2 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 3 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 4 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 5 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 6 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 7 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 8 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 9 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 10 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 11 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 12 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 13 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 14 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 15 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 16 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 17 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 18 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 19 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 20 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 21 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 22 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 23 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 24 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 25 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 26 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 27 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 28 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 29 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 30 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 31 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 32 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 33 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 34 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 35 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 36 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 37 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 38 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 39 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 40 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 41 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 42 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 43 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 44 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 45 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 46 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 47 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 48 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 49 	 best= 27.400000	stackLen: 30 => V0  V0  + V0  V0  V0  - - + V3  1.000000  * a r + V5  a V5  a / * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=33.4 stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 0 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 1 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 2 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 3 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 4 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 5 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 6 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 7 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 8 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 9 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 10 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 11 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 12 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 13 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 14 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+iteration = 15 	 best= 33.400000	stackLen: 10 => V4  V1  * empty: 0 1 1 1 0 1 1 1 0 1 
+BEST SOLUTION! cost=28.3 stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 28.300000	stackLen: 10 => V2  V3  1.000000  * * V4  V1  * + empty: 0 0 0 0 0 0 0 0 0 1 
 RESET TRIGGERED! TRYING AGAIN... (remaining resets: 4)
-SELECTED: [1 70 65 72 80 19 77 91 17 26 ]
-BEST SOLUTION! cost=33.6 stackLen: 30 => 1.000000  V5  * V1  a i r r a * empty: 0 1 1 1 1 1 1 1 1 1 1 0 1 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 
-iteration = 0 	 best= 33.600000	stackLen: 30 => 1.000000  V5  * V1  a i r r a * empty: 0 1 1 1 1 1 1 1 1 1 1 0 1 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 1 
-BEST SOLUTION! cost=22 stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 0 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 1 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 2 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 3 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 4 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 5 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 6 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 7 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-iteration = 8 	 best= 22.000000	stackLen: 30 => 1.000000  V0  / V4  - V1  - 1.000000  * V0  * empty: 0 1 1 1 0 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 
-BEST SOLUTION! cost=19.4 stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 0 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 1 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 2 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 3 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 4 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 5 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 6 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 7 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 8 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 9 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 10 	 best= 19.400000	stackLen: 30 => 1.000000  V0  / V4  V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=18.35 stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 0 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 1 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 2 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 3 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 4 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-iteration = 5 	 best= 18.350000	stackLen: 30 => 1.000000  1.000000  + V0  / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=17.3 stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 0 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 1 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 2 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 3 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 4 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 5 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 6 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 7 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 8 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 9 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 10 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 11 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 12 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 13 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 14 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 15 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 16 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 17 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 18 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 19 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 20 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-iteration = 21 	 best= 17.300000	stackLen: 30 => 1.000000  1.000000  + V0  V3  + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
-BEST SOLUTION! cost=16.35 stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 0 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 1 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 2 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 3 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 4 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 5 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 6 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 7 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 8 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 9 	 best= 16.350000	stackLen: 30 => 1.000000  1.000000  + V0  V3  V1  + + / V4  V4  - V4  + V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-BEST SOLUTION! cost=15.5388 stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 0 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 1 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 2 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 3 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 4 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 5 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 6 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 7 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 8 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 9 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 10 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 11 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 12 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 13 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 14 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 15 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 16 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 17 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 18 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 19 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 20 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 21 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 22 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 23 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 24 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 25 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 26 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 27 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 28 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 29 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 30 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 31 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 32 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 33 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 34 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 35 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 36 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 37 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 38 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 39 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 40 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 41 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 42 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 43 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 44 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 45 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 46 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 47 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 48 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-iteration = 49 	 best= 15.538846	stackLen: 30 => 1.000000  1.000000  e V0  V3  V1  + + / V4  V4  - V4  - V1  - + V2  - 1.000000  1.000000  1.000000  1.000000  / - - * V0  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+SELECTED: [28 9 82 16 49 12 33 96 89 26 ]
+BEST SOLUTION! cost=43.4 stackLen: 15 => V0  V4  V1  V1  1.000000  * + + * empty: 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 
+iteration = 0 	 best= 43.400000	stackLen: 15 => V0  V4  V1  V1  1.000000  * + + * empty: 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 
+iteration = 1 	 best= 43.400000	stackLen: 15 => V0  V4  V1  V1  1.000000  * + + * empty: 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 
+iteration = 2 	 best= 43.400000	stackLen: 15 => V0  V4  V1  V1  1.000000  * + + * empty: 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 
+iteration = 3 	 best= 43.400000	stackLen: 15 => V0  V4  V1  V1  1.000000  * + + * empty: 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 
+BEST SOLUTION! cost=35.3 stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 0 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 1 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 2 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 3 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 4 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 5 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 6 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 7 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 8 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 9 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 10 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 11 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 12 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 13 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 14 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 15 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 16 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 17 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 18 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 19 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 20 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 21 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 22 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 23 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+iteration = 24 	 best= 35.300000	stackLen: 15 => 1.000000  V5  V0  V4  - * / empty: 0 1 1 1 0 0 0 1 1 1 0 1 0 0 1 
+BEST SOLUTION! cost=33.1 stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 33.100000	stackLen: 15 => 1.000000  V5  / V4  * i V0  1.000000  V0  V3  + * * + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 RESET TRIGGERED! TRYING AGAIN... (remaining resets: 3)
-SELECTED: [16 23 98 63 95 60 24 70 7 27 ]
-BEST SOLUTION! cost=32.8911 stackLen: 30 => V1  V5  * V4  V3  a r 1.000000  a / * * empty: 0 1 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 
-iteration = 0 	 best= 32.891111	stackLen: 30 => V1  V5  * V4  V3  a r 1.000000  a / * * empty: 0 1 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 
-BEST SOLUTION! cost=21.6 stackLen: 30 => V5  1.000000  V4  1.000000  * * * empty: 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 0 0 1 
-iteration = 0 	 best= 21.600000	stackLen: 30 => V5  1.000000  V4  1.000000  * * * empty: 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 0 0 1 
-iteration = 1 	 best= 21.600000	stackLen: 30 => V5  1.000000  V4  1.000000  * * * empty: 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 0 0 1 
-iteration = 2 	 best= 21.600000	stackLen: 30 => V5  1.000000  V4  1.000000  * * * empty: 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 0 0 1 
-iteration = 3 	 best= 21.600000	stackLen: 30 => V5  1.000000  V4  1.000000  * * * empty: 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 0 0 1 
-BEST SOLUTION! cost=18.4 stackLen: 30 => 1.000000  V5  a r V1  1.000000  * * / empty: 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 0 0 1 0 
-iteration = 0 	 best= 18.400000	stackLen: 30 => 1.000000  V5  a r V1  1.000000  * * / empty: 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 0 0 1 0 
-iteration = 1 	 best= 18.400000	stackLen: 30 => 1.000000  V5  a r V1  1.000000  * * / empty: 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 0 0 1 0 
-BEST SOLUTION! cost=14.8 stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 0 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 1 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 2 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 3 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 4 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 5 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 6 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 7 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 8 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 9 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 10 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 11 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 12 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 13 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 14 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 15 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 16 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 17 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 18 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 19 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 20 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 21 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 22 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 23 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 24 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 25 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 26 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 27 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 28 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 29 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 30 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 31 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 32 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 33 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 34 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 35 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 36 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 37 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 38 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 39 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 40 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 41 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 42 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 43 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 44 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 45 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 46 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 47 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 48 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
-iteration = 49 	 best= 14.800000	stackLen: 30 => V5  V1  V2  - + V4  V3  a * V3  a a V3  a / * * empty: 0 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 
+SELECTED: [99 64 14 43 24 77 65 3 62 47 ]
+BEST SOLUTION! cost=37.2 stackLen: 22 => 1.000000  i a V1  V5  + V4  * / empty: 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 0 0 1 
+iteration = 0 	 best= 37.200000	stackLen: 22 => 1.000000  i a V1  V5  + V4  * / empty: 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 0 0 1 
+iteration = 1 	 best= 37.200000	stackLen: 22 => 1.000000  i a V1  V5  + V4  * / empty: 0 0 0 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 0 0 1 
+BEST SOLUTION! cost=33.3 stackLen: 22 => 1.000000  V5  V3  V1  + + V2  * / empty: 0 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 0 0 1 
+iteration = 0 	 best= 33.300000	stackLen: 22 => 1.000000  V5  V3  V1  + + V2  * / empty: 0 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 0 0 1 
+iteration = 1 	 best= 33.300000	stackLen: 22 => 1.000000  V5  V3  V1  + + V2  * / empty: 0 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 0 0 1 
+iteration = 2 	 best= 33.300000	stackLen: 22 => 1.000000  V5  V3  V1  + + V2  * / empty: 0 1 1 1 1 0 1 0 1 0 1 1 1 0 1 0 1 1 0 0 0 1 
+BEST SOLUTION! cost=30.8 stackLen: 22 => 1.000000  V1  a / V0  V3  V1  - V0  V0  V3  V5  + + + + * - empty: 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 
+iteration = 0 	 best= 30.800000	stackLen: 22 => 1.000000  V1  a / V0  V3  V1  - V0  V0  V3  V5  + + + + * - empty: 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 
+iteration = 1 	 best= 30.800000	stackLen: 22 => 1.000000  V1  a / V0  V3  V1  - V0  V0  V3  V5  + + + + * - empty: 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 
+iteration = 2 	 best= 30.800000	stackLen: 22 => 1.000000  V1  a / V0  V3  V1  - V0  V0  V3  V5  + + + + * - empty: 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 
+BEST SOLUTION! cost=26 stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 0 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 1 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 2 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 3 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 4 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 5 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 6 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+iteration = 7 	 best= 26.000000	stackLen: 22 => V0  V3  V3  V1  + i - V0  V4  - - V5  - * empty: 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 1 0 1 0 0 0 0 
+BEST SOLUTION! cost=23.4 stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 0 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 1 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 2 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 3 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 4 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 5 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 6 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 7 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 8 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 9 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 10 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 11 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 12 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 13 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 14 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 15 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 16 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+iteration = 17 	 best= 23.400000	stackLen: 22 => 1.000000  V2  / V3  V4  1.000000  * - + V5  * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1 1 0 0 0 0 0 
+BEST SOLUTION! cost=19.6775 stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 19.677505	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + r e * V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=19.5695 stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 19.569516	stackLen: 22 => 1.000000  1.000000  / 1.000000  1.000000  + + e r V0  / V3  1.000000  V4  V2  + * - + V5  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 RESET TRIGGERED! TRYING AGAIN... (remaining resets: 2)
-SELECTED: [60 48 20 21 86 81 88 62 25 10 ]
-BEST SOLUTION! cost=26 stackLen: 30 => V4  V1  - V4  + V5  V5  - a r - 1.000000  * V4  V2  - * empty: 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 
-iteration = 0 	 best= 26.000000	stackLen: 30 => V4  V1  - V4  + V5  V5  - a r - 1.000000  * V4  V2  - * empty: 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 
-BEST SOLUTION! cost=18.9 stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 0 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 1 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 2 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 3 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 4 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 5 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 6 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 7 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 8 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 9 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 10 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 11 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 12 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 13 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 14 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 15 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 16 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 17 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 18 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 19 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 20 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 21 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 22 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 23 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 24 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 25 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 26 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 27 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 28 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 29 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 30 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 31 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 32 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 33 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 34 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 35 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 36 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 37 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 38 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 39 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 40 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 41 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-iteration = 42 	 best= 18.900000	stackLen: 30 => V2  1.000000  V3  i / 1.000000  a * * empty: 0 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 
-BEST SOLUTION! cost=18.781 stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 0 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 1 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 2 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 3 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 4 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 5 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 6 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 7 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 8 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 9 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 10 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 11 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 12 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 13 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 14 	 best= 18.781023	stackLen: 30 => V2  1.000000  * 1.000000  1.000000  + V3  i / 1.000000  1.000000  * e r * * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=18.6502 stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 0 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 1 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 2 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 3 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 4 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 5 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 6 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 7 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 8 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 9 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 10 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 11 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 12 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 13 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 14 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 15 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 16 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 17 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 18 	 best= 18.650250	stackLen: 30 => V2  V2  - V2  + 1.000000  * 1.000000  1.000000  1.000000  + + V3  i / 1.000000  1.000000  * e i * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=12.4854 stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 0 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 1 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 2 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 3 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 4 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 5 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 6 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 7 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 8 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 9 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 10 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 11 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 12 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 13 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 14 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 15 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 16 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 17 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 18 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 19 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 20 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 21 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 22 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 23 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 24 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 25 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 26 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 27 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 28 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 29 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 30 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 31 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 32 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 33 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 34 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 35 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 36 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 37 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 38 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 39 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 40 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 41 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 42 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 43 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 44 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 45 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 46 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 47 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 48 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-iteration = 49 	 best= 12.485447	stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+SELECTED: [87 59 56 93 94 30 54 69 12 70 ]
+BEST SOLUTION! cost=46.7 stackLen: 30 => 1.000000  1.000000  1.000000  V3  a V3  V2  V3  * * / / a / / empty: 0 1 0 1 0 0 0 1 1 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 
+iteration = 0 	 best= 46.700000	stackLen: 30 => 1.000000  1.000000  1.000000  V3  a V3  V2  V3  * * / / a / / empty: 0 1 0 1 0 0 0 1 1 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 
+BEST SOLUTION! cost=41.3524 stackLen: 30 => V0  1.000000  * V5  V0  V3  a 1.000000  e V5  * / * * * empty: 0 1 0 1 0 1 1 0 1 1 0 1 0 0 1 0 1 0 1 1 1 0 1 1 0 1 0 0 0 0 
+iteration = 0 	 best= 41.352436	stackLen: 30 => V0  1.000000  * V5  V0  V3  a 1.000000  e V5  * / * * * empty: 0 1 0 1 0 1 1 0 1 1 0 1 0 0 1 0 1 0 1 1 1 0 1 1 0 1 0 0 0 0 
+BEST SOLUTION! cost=38 stackLen: 30 => V2  V4  1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 1 1 1 1 0 1 0 1 0 1 1 1 1 0 1 0 1 1 0 1 1 0 0 1 0 0 0 1 
+COST2 IS BETTER!!!36.1
+iteration = 0 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 1 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 2 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 3 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 4 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 5 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 6 	 best= 36.100000	stackLen: 30 => V2  V4  V4  + 1.000000  V2  1.000000  * / - 1.000000  1.000000  * * * empty: 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=29 stackLen: 30 => 1.000000  V2  V2  V1  1.000000  a V5  * + + * * empty: 0 0 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 0 0 0 1 1 0 1 0 0 1 
+iteration = 0 	 best= 29.000000	stackLen: 30 => 1.000000  V2  V2  V1  1.000000  a V5  * + + * * empty: 0 0 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 0 0 0 1 1 0 1 0 0 1 
+BEST SOLUTION! cost=27.6 stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 0 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 1 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 2 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 3 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 4 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 5 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 6 	 best= 27.600000	stackLen: 30 => V1  V5  1.000000  1.000000  / V4  i * - * empty: 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 0 0 1 
+BEST SOLUTION! cost=22.4598 stackLen: 30 => 1.000000  1.000000  * e V5  * V1  V5  * a r r - V1  * empty: 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 
+iteration = 0 	 best= 22.459814	stackLen: 30 => 1.000000  1.000000  * e V5  * V1  V5  * a r r - V1  * empty: 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 
+iteration = 1 	 best= 22.459814	stackLen: 30 => 1.000000  1.000000  * e V5  * V1  V5  * a r r - V1  * empty: 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 
+iteration = 2 	 best= 22.459814	stackLen: 30 => 1.000000  1.000000  * e V5  * V1  V5  * a r r - V1  * empty: 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 1 1 1 0 1 
+BEST SOLUTION! cost=14.8 stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 14.800000	stackLen: 30 => V1  V5  1.000000  V1  * V5  + V1  1.000000  * V0  + - - * empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 
 RESET TRIGGERED! TRYING AGAIN... (remaining resets: 1)
-SELECTED: [62 54 52 64 26 3 33 49 63 11 ]
-BEST SOLUTION! cost=38.6 stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 0 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 1 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 2 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 3 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 4 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 5 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 6 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 7 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 8 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 9 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-iteration = 10 	 best= 38.600000	stackLen: 30 => 1.000000  i 1.000000  / V5  V4  * / empty: 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 
-BEST SOLUTION! cost=36.65 stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 0 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 1 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 2 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 3 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 4 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 5 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 6 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 7 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 8 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 9 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 10 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 11 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-iteration = 12 	 best= 36.650000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V3  * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=36.35 stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V1  V3  V3  + + * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-iteration = 0 	 best= 36.350000	stackLen: 30 => 1.000000  i 1.000000  1.000000  1.000000  + 1.000000  / 1.000000  - / V1  V3  V3  + + * V5  + V4  * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 
-BEST SOLUTION! cost=35.7865 stackLen: 30 => 1.000000  V4  1.000000  V5  1.000000  1.000000  e a V2  / * + i / * * empty: 0 1 0 1 1 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 0 1 
-iteration = 0 	 best= 35.786507	stackLen: 30 => 1.000000  V4  1.000000  V5  1.000000  1.000000  e a V2  / * + i / * * empty: 0 1 0 1 1 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 0 1 
-iteration = 1 	 best= 35.786507	stackLen: 30 => 1.000000  V4  1.000000  V5  1.000000  1.000000  e a V2  / * + i / * * empty: 0 1 0 1 1 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 0 1 
-iteration = 2 	 best= 35.786507	stackLen: 30 => 1.000000  V4  1.000000  V5  1.000000  1.000000  e a V2  / * + i / * * empty: 0 1 0 1 1 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 0 1 
-iteration = 3 	 best= 35.786507	stackLen: 30 => 1.000000  V4  1.000000  V5  1.000000  1.000000  e a V2  / * + i / * * empty: 0 1 0 1 1 1 0 1 1 0 0 1 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 0 1 
-BEST SOLUTION! cost=29.5336 stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 0 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 1 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 2 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 3 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 4 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 5 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 6 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 7 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 8 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 9 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 10 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 11 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 12 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 13 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 14 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 15 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 16 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 17 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 18 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 19 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 20 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 21 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 22 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 23 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 24 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 25 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 26 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 27 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 28 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 29 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 30 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 31 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 32 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 33 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 34 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 35 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 36 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 37 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 38 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 39 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 40 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 41 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 42 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 43 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 44 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 45 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 46 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 47 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 48 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
-iteration = 49 	 best= 29.533647	stackLen: 30 => V5  V4  a V1  V0  * 1.000000  * / a * V5  + V4  * empty: 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 
+SELECTED: [43 92 84 73 99 1 11 19 21 64 ]
+BEST SOLUTION! cost=29.4 stackLen: 45 => 1.000000  V2  * V1  * V2  1.000000  V2  a V0  / * * * empty: 0 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 1 1 0 0 1 0 0 1 1 1 1 0 1 1 0 1 1 1 0 1 1 0 0 1 
+iteration = 0 	 best= 29.400000	stackLen: 45 => 1.000000  V2  * V1  * V2  1.000000  V2  a V0  / * * * empty: 0 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 1 1 1 0 0 1 0 0 1 1 1 1 0 1 1 0 1 1 1 0 1 1 0 0 1 
+BEST SOLUTION! cost=22.5 stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 0 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 1 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 2 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 3 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 4 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 5 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 6 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 7 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 8 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 9 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 10 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 11 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 12 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 13 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 14 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 15 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 16 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 17 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 18 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 19 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 20 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 21 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 22 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 23 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 24 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 25 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 26 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 27 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 28 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 29 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 30 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 31 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 32 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 33 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 34 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 35 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 36 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+iteration = 37 	 best= 22.500000	stackLen: 45 => 1.000000  a 1.000000  V2  V4  V1  - 1.000000  * 1.000000  1.000000  * * V3  V5  - - * * * empty: 0 1 1 0 1 1 1 1 1 1 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 0 0 0 0 1 
+BEST SOLUTION! cost=21.4 stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 0 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 1 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 2 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 3 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 4 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 5 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 6 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 7 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 8 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 9 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 10 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 11 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 12 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 13 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 14 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 15 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 16 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 17 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 18 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 19 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 20 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 21 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 22 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 23 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 24 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 25 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 26 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 27 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 28 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 29 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 30 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 31 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 32 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 33 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 34 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 35 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 36 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 37 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 38 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 39 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 40 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 41 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 42 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 43 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 44 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 45 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 46 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 47 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 48 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
+iteration = 49 	 best= 21.400000	stackLen: 45 => 1.000000  1.000000  / r a 1.000000  V2  V4  V4  V4  - V1  + - 1.000000  * 1.000000  1.000000  * * V3  V0  V5  V5  V5  - + + - - * * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 
 NO MORE RESETS LEFT. FINISHING.
 FINISHED BRKGP!
-best=12.4854
-stackLen: 30 => V2  V0  V2  V2  V2  + + - + V1  + 1.000000  1.000000  1.000000  1.000000  / 1.000000  * i / e V5  V1  V2  - - / / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-trueStackSize=29
-printSolution2: (((((v2 - v1) - v5)/\exp((((1 * (1/1)))/1)))/1) * (v1 + ((((v2 + v2) + v2) - v0) + v2)))
-Tempo de execucao: 1190.28 segundos
-FIM
+best=14.8
+stackLen: 45 => 1.000000  V4  V3  V1  - V0  * V1  V1  / V0  - + + - r * * * r r * r V1  V3  empty: 0 1 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0 1 0 
+trueStackSize=15

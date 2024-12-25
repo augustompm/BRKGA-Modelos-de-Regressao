@@ -1,14 +1,11 @@
 # BRKGA-Modelos-de-Regressao
 
-Análise gerada em: 2024-12-21 17:42:58
+Nova análise gerada em: 2024-12-21 17:42:58 por @aug
 
 ## Sobre o Projeto
 Título: Modelos de Regressão Simbólica Através de Biased Random-Key Genetic Programming em Aplicações na Física
 Autor: Filipe Pessôa Sousa
 Orientadores: Igor Machado Coelho, Cristiane Oliveira de Faria
-Instituição: UERJ - Instituto de Matemática e Estatística
-Programa: Mestrado em Ciências Computacionais
-Ano: 2023
 
 ### Resumo
 Este trabalho foca na aplicação do BRKGP em Regressão Simbólica para 
@@ -310,12 +307,12 @@ OPTS='-c opt --copt=-march=native --copt=-O3 --copt=-fopenmp'
 bazel build $OPTS //src:brkga-regress
 ```
 
-### Execução (run.sh)
+### Execução padrão (irace diferente) (run.sh)
 ```bash
 BINARY='bazel-bin/src/brkga-regress'
 ARGS='input.txt 30 100 25 10 85 100 100 80 1'
 
-# Parâmetros:
+# Parâmetros padrão (irace diferente):
 #  - input.txt: arquivo de entrada
 #  - 30: maxConst (número máximo de constantes)
 #  - 100: populationLen (tamanho da população)

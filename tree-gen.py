@@ -1,26 +1,18 @@
 import os
 
-# Caminho base do projeto
 base_path = os.getcwd()
-
-# Nome do arquivo de saída
 output_file = "tree.txt"
-
-# Pastas a serem ignoradas
 ignored_dirs = {"tools", "thirdparty", "feynman-data"}
-
-# Prefixos de pastas a serem ignoradas
 ignored_prefixes = ("bazel-",)
 
 def write_tree(path, level=0, file=None):
     """
     Função recursiva para varrer a estrutura de diretórios e arquivos
     """
-    indent = "    " * level  # Indentação para exibir a hierarquia
+    indent = "    " * level 
     base_name = os.path.basename(path)
 
     if os.path.isdir(path):
-        # Ignorar pastas específicas
         if base_name in ignored_dirs or base_name.startswith(ignored_prefixes):
             return
         file.write(f"{indent}{base_name}/\n")
@@ -47,7 +39,6 @@ def generate_tree(base_path, output_file):
     with open(output_file, "w") as file:
         file.write(f"Estrutura do projeto em {base_path}\n\n")
         write_tree(base_path, file=file)
-        # Incluir conteúdos de run.sh e build.sh
         include_file_contents(os.path.join(base_path, "run.sh"), file)
         include_file_contents(os.path.join(base_path, "build.sh"), file)
 
