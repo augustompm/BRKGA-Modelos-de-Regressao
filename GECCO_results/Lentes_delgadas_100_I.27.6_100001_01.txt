@@ -1,0 +1,15 @@
+Bi T1: 2:+-
+Bi T2: 2:*/
+U T1: 1:e
+U T2: 3:ira
+|ARGS| = 11
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+var unit: 'm'
+var unit: 'm'
+var unit: '1'
+out unit: 'm'
+has_solution='HAS_SOLUTION' => ' v0  v1  / v2  + v1  /'
+SOLUTION IS: ' v0  v1  / v2  + v1  /'2) READING PROBLEM TESTS

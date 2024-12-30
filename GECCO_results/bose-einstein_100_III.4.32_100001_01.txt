@@ -1,0 +1,212 @@
+Bi T1: 2:+-
+Bi T2: 2:*/
+U T1: 1:e
+U T2: 3:ira
+|ARGS| = 11
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+var unit: 's^-1'
+var unit: 'k'
+out unit: '1'
+has_solution='HAS_SOLUTION' => ' c3 c0 v1 * c1 v0 * / e - c3 /'
+SOLUTION IS: ' c3 c0 v1 * c1 v0 * / e - c3 /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
+const unit: 'm^2 * kg * s^-2 * k^-1'
+const unit: 'm^2 * kg * s^-1'
+const unit: '*'
+const unit: '*'
+3.5) SETUP UNITS
+UNITS: s ; k ; kg ; m ; 
+4) FINISHED READING PROBLEM
+2 100 4
+64600.00	0.00	104.00
+9330.00	0.00	7460.00
+17000.00	0.00	4160.00
+90000.00	0.00	927.00
+61000.00	0.00	1560.00
+1910.00	0.00	66900.00
+11000.00	0.00	6120.00
+66700.00	0.00	634.00
+1500.00	0.00	69400.00
+16900.00	0.00	2100.00
+55300.00	0.00	1040.00
+69500.00	0.00	147.00
+65500.00	0.00	50.10
+23200.00	0.00	5430.00
+71500.00	0.00	1530.00
+24500.00	0.00	3720.00
+33200.00	0.00	1610.00
+74900.00	0.00	302.00
+65300.00	0.00	313.00
+85100.00	0.00	385.00
+66100.00	0.00	1090.00
+57300.00	0.00	1630.00
+10300.00	0.00	8410.00
+37400.00	0.00	979.00
+27300.00	0.00	4590.00
+25200.00	0.00	3840.00
+97300.00	0.00	745.00
+39900.00	0.00	2010.00
+89300.00	0.00	615.00
+63500.00	0.00	510.00
+79700.00	0.00	584.00
+50800.00	0.00	1950.00
+58100.00	0.00	31.90
+49800.00	0.00	305.00
+20300.00	0.00	296.00
+72500.00	0.00	73.00
+28800.00	0.00	3890.00
+3410.00	0.00	27000.00
+64900.00	0.00	956.00
+18500.00	0.00	691.00
+94100.00	0.00	683.00
+95400.00	0.00	649.00
+91600.00	0.00	247.00
+37600.00	0.00	1510.00
+2530.00	0.00	20600.00
+92900.00	0.00	867.00
+43400.00	0.00	1920.00
+96700.00	0.00	60.80
+96400.00	0.00	508.00
+85400.00	0.00	958.00
+30200.00	0.00	2180.00
+39100.00	0.00	2870.00
+85300.00	0.00	1010.00
+32400.00	0.00	658.00
+17800.00	0.00	519.00
+56100.00	0.00	1500.00
+93700.00	0.00	36.60
+69900.00	0.00	1100.00
+57400.00	0.00	2140.00
+10600.00	0.00	7090.00
+61900.00	0.00	821.00
+99000.00	0.00	850.00
+14900.00	0.00	4030.00
+52300.00	0.00	1370.00
+87900.00	0.00	1400.00
+74300.00	0.00	680.00
+70000.00	0.00	1800.00
+70500.00	0.00	1680.00
+36600.00	0.00	700.00
+30100.00	0.00	302.00
+81100.00	0.00	162.00
+81200.00	0.00	28.90
+86800.00	0.00	142.00
+91400.00	0.00	978.00
+51600.00	0.00	180.00
+50700.00	0.00	824.00
+80000.00	0.00	1380.00
+65300.00	0.00	46.10
+70500.00	0.00	1510.00
+79800.00	0.00	462.00
+89100.00	0.00	173.00
+34500.00	0.00	2650.00
+38200.00	0.00	2160.00
+10300.00	0.00	11100.00
+58200.00	0.00	1650.00
+4560.00	0.00	23100.00
+47100.00	0.00	784.00
+54700.00	0.00	424.00
+29400.00	0.00	3350.00
+59500.00	0.00	1780.00
+4020.00	0.00	32300.00
+4700.00	0.00	11500.00
+82400.00	0.00	590.00
+36700.00	0.00	2770.00
+13600.00	0.00	3290.00
+52700.00	0.00	2310.00
+77200.00	0.00	1450.00
+22400.00	0.00	2510.00
+62700.00	0.00	1570.00
+9450.00	0.00	10500.00
+0.0014	0.0014
+0.0001	0.0001
+10000000000.0000	10000000000.0000
+1.0000	1.0000
+isSquared? 0
+varUnits: s^-1 k 
+outUnit: 1
+training=5
+run_brkga:
+best=inf
+SELECTED: [45 72 43 97 29 60 75 96 2 81 ]
+BEST SOLUTION! cost=1429.31 stackLen: 10 => V1  V1  r / 1.00  e * empty: 0 1 0 0 0 0 1 1 0 0 
+iteration = 0 	 best= 1429.309402	stackLen: 10 => V1  V1  r / 1.00  e * empty: 0 1 0 0 0 0 1 1 0 0 
+BEST SOLUTION! cost=1101.18 stackLen: 10 => 10000000000.00  r 1.00  e * r empty: 0 0 0 0 1 0 1 1 0 1 
+iteration = 0 	 best= 1101.177133	stackLen: 10 => 10000000000.00  r 1.00  e * r empty: 0 0 0 0 1 0 1 1 0 1 
+BEST SOLUTION! cost=966.871 stackLen: 10 => 1.00  e a e empty: 0 1 1 1 0 0 0 1 1 1 
+iteration = 0 	 best= 966.871197	stackLen: 10 => 1.00  e a e empty: 0 1 1 1 0 0 0 1 1 1 
+BEST SOLUTION! cost=913.081 stackLen: 10 => 1.00  e 10000000000.00  r r * empty: 0 0 0 0 0 1 1 1 0 1 
+iteration = 0 	 best= 913.080762	stackLen: 10 => 1.00  e 10000000000.00  r r * empty: 0 0 0 0 0 1 1 1 0 1 
+BEST SOLUTION! cost=911.6 stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 0 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 1 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 2 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 3 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 4 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 5 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 6 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 7 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 8 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 9 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 10 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 11 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 12 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 13 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 14 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 15 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 16 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 17 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 18 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 19 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 20 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 21 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 22 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 23 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 24 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 25 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 26 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 27 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 28 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 29 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 30 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 31 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 32 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 33 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 34 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 35 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 36 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 37 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 38 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 39 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 40 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 41 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 42 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 43 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 44 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 45 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 46 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 47 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 48 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 49 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 50 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 51 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 52 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 53 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 54 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 55 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 56 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 57 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+iteration = 58 	 best= 911.600000	stackLen: 10 => 0.00  0.00  r r / empty: 0 1 1 1 1 0 0 0 0 1 
+BEST SOLUTION! cost=0 stackLen: 10 => 10000000000.00  0.00  V0  0.00  V1  / / * * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 0.000000	stackLen: 10 => 10000000000.00  0.00  V0  0.00  V1  / / * * empty: 0 0 0 0 0 0 0 0 0 1 
+OPTIMAL FOUND! ABORTING...
+FINISHED BRKGP!
+best=0
+stackLen: 10 => 10000000000.00  0.00  V0  0.00  V1  / / * * empty: 0 0 0 0 0 0 0 0 0 1 
+trueStackSize=9
+printSolution2: ((((V1/0.0001054)/V0) * 0.00138) * 1e+10)
+Tempo de execucao: 254.31 segundos
+FIM

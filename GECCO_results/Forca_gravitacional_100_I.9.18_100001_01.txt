@@ -1,0 +1,19 @@
+Bi T1: 2:+-
+Bi T2: 2:*/
+U T1: 1:e
+U T2: 3:ira
+|ARGS| = 11
+individualLen:97
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+var unit: 'km'
+var unit: 'km'
+var unit: 'km'
+var unit: 'km'
+var unit: 'km'
+var unit: 'km'
+out unit: 'N'
+has_solution='HAS_SOLUTION' => ' v0 v1 - a v2 v3 - a v4 v5 - a + + c0 c1 c2 * * c3 c3 c3 * * * /'
+SOLUTION IS: ' v0 v1 - a v2 v3 - a v4 v5 - a + + c0 c1 c2 * * c3 c3 c3 * * * /'2) READING PROBLEM TESTS
+3) READING PROBLEM CONSTANTS
