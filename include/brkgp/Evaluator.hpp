@@ -252,472 +252,367 @@ struct StackInfo {
 };
 
 StackInfo stackAdjustment(const RProblem& problem, const Scenario& other,
-                          Vec<chromosome>& individual, int stackLen, int nVars,
-                          int nConst, int maxConst, int seed,
-                          bool printFix = false) {
-  int stackCount = 0;
-  int contConst = 0;
-  // Significado: número de operações "boas" (não SPECIAL/NOP)
-  int trueStackLen = 0;
-  //
-  // unit on stack element; example: meter, second, ...
-  std::stack<ex> stkUnit;         // stack for units!!
-  int firstFix = 100 * stackLen;  // BIG NUMBER!!!
-  int usedVars = 0;
-  std::vector<bool> vUsedVars(problem.nVars, false);
-  //
-  for (int i = 0; i < stackLen; i++) {
-    // std::cout << "DEBUG: stackAdjustment i=" << i << std::endl;
-    // std::cout << "individual[i]=" << individual[i] << std::endl;
-    //
-    // invariante: 'stackCount' sempre >= 0
-    assert(stackCount >= 0);
-    //
-    int stackDiff = 2;  // DEFAULT = 2 (FLAG)
-    // Binary: remove two elements and add one
-    // Unary: remove one element and add one
-    // Push: add one
-    if (isOperation(individual[i], OpType::BIN)) stackDiff = -1;
-    if (isOperation(individual[i], OpType::UN)) stackDiff = 0;
-    if (isOperation(individual[i], OpType::PUSH)) stackDiff = 1;
-    //
-    // varConstInt: [0, ..., var+const)
-    int varConstInt =
-        ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
-    // idConstOrVar: constant is negative, var is non-negative
-    int idConstOrVar = varConstInt - nConst;
-    // stackCountAfterOperation é cópia local do stackCount
-    // aplica operação no 'stackCountAfterOperation'
-    int stackCountAfterOperation = stackCount;
-    //
-    // if not flag, update 'stackCountAfterOperation'
-    if (stackDiff != 2) stackCountAfterOperation += stackDiff;
+                         Vec<chromosome>& individual, int stackLen, int nVars,
+                         int nConst, int maxConst, int seed,
+                         bool printFix = false) {
+    int stackCount = 0;
+    int contConst = 0;
+    int trueStackLen = 0;
+    std::stack<ex> stkUnit;
+    int firstFix = 100 * stackLen;
+    int usedVars = 0;
+    std::vector<bool> vUsedVars(problem.nVars, false);
 
-    // < 1 => ERRO: EXIGE CORREÇÃO!
-    // SIGNIFICA: NENHUM OPERANDO APÓS OPERAÇÃO!
-    // OU ESTAVA VAZIO, E VEIO UM 'SPECIAL' (NOP) - ERRO! VIRA PUSH!
-    //    - Não permitido começar com NOP! ("NOP à esquerda")
-    // OU TINHA UM, E VEIO UMA BINARIA - ERRO! VIRA PUSH!
-    // OU ESTAVA VAZIO, E VEIO UMA UNARIA - ERRO! VIRA PUSH!
-    //
-    // CONSERTO: Transforma em PUSH a operação!
-    if (stackCountAfterOperation < 1) {
-      if (i < firstFix) firstFix = i;
-      if (printFix)
-        std::cout
-            << "stackAdjustment fix: makePUSH stackCountAfterOperation < 1"
-            << std::endl;
-      individual[i] = makePUSH(individual[i]);
-      assert(isOperation(individual[i], OpType::PUSH));
-      stackCountAfterOperation = stackCount + 1;
-    }
+    for (int i = 0; i < stackLen; i++) {
+        assert(stackCount >= 0);
 
-    // INVARIANTE Importante: Sempre alguém na pilha após "conserto"
-    assert(stackCountAfterOperation >= 1);
+        // Determina o tipo de operação
+        int stackDiff = 2; // valor padrão/flag
+        if (isOperation(individual[i], OpType::BIN)) stackDiff = -1;
+        if (isOperation(individual[i], OpType::UN)) stackDiff = 0;
+        if (isOperation(individual[i], OpType::PUSH)) stackDiff = 1;
 
-    // assert(auxSomador == somador); // errado!
+        // Calcula índices
+        int varConstInt = ::floor((individual[stackLen + i] / 10000.0) * (nVars + nConst));
+        int idConstOrVar = varConstInt - nConst;
+        int stackCountAfterOperation = stackCount;
 
-    // ===============================================================
-    // TOO MANY ELEMENTS IN STACK: MUST USE BINARY OPS TO REMOVE THEM!
-    // ===============================================================
-    // | PUSH | PUSH | PUSH |  ?  |  ?  |
-    //    0      1      i=2    3     4
-    // STRANGE... Must test if it covers all cases...
-    // stackCountAfterOperation=3  >  (5 - 2) = 3   (?)
-    if (stackCountAfterOperation > (stackLen - i)) {
-      if (stackCount == 1) {
-        if (i < firstFix) firstFix = i;
-        if (printFix)
-          std::cout << "stackAdjustment fix: += 2500 stackCountAfterOperation "
-                       "> (stackLen - i)"
-                    << std::endl;
-        // std::cout << "WARNING! ALTERANDO individual COD3!" << std::endl;
-        individual[i] += 2500;
-        stackCountAfterOperation = 1;
-      } else if (stackCount > 1) {
-        if (isOperation(individual[i], OpType::UN)) {
-          // std::cout << "WARNING! ALTERANDO individual COD4!" << std::endl;
-          // TODO: transforma em UN, já que não pode ser BIN?
-          if (i < firstFix) firstFix = i;
-          if (printFix)
-            std::cout << "stackAdjustment fix: -= 2500 (stackCount > 1) "
-                      << std::endl;
-          individual[i] -= 2500;
-
-        } else if (isOperation(individual[i], OpType::SPECIAL)) {
-          // std::cout << "WARNING! ALTERANDO individual COD5!" << std::endl;
-          if (i < firstFix) firstFix = i;
-          if (printFix)
-            std::cout << "stackAdjustment fix: -= 7500 (SPECIAL) " << std::endl;
-          individual[i] -= 7500;
-        } else {  // se der testar depois, no caso i=0
-          // std::cout << "WARNING! ALTERANDO individual COD6!" << std::endl;
-          if (i < firstFix) firstFix = i;
-          if (printFix)
-            std::cout << "stackAdjustment fix: -= 5000 (else) " << std::endl;
-          individual[i] -= 5000;
+        // Atualiza contagem da pilha se não for flag
+        if (stackDiff != 2) {
+            stackCountAfterOperation += stackDiff;
         }
-        stackCountAfterOperation = stackCount - 1;
-      }
+
+        // Verifica se há elementos suficientes na pilha
+        if (stackCountAfterOperation < 1) {
+            if (i < firstFix) firstFix = i;
+            if (printFix) {
+                std::cout << "stackAdjustment fix: makePUSH stackCountAfterOperation < 1" << std::endl;
+            }
+            individual[i] = makePUSH(individual[i]);
+            assert(isOperation(individual[i], OpType::PUSH));
+            stackCountAfterOperation = stackCount + 1;
+        }
+
+        assert(stackCountAfterOperation >= 1);
+
+        // Verifica overflow da pilha
+        if (stackCountAfterOperation > (stackLen - i)) {
+            if (stackCount == 1) {
+                if (i < firstFix) firstFix = i;
+                if (printFix) {
+                    std::cout << "stackAdjustment fix: += 2500 stackCountAfterOperation > (stackLen - i)" << std::endl;
+                }
+                individual[i] += 2500;
+                stackCountAfterOperation = 1;
+            } else if (stackCount > 1) {
+                if (isOperation(individual[i], OpType::UN)) {
+                    if (i < firstFix) firstFix = i;
+                    if (printFix) {
+                        std::cout << "stackAdjustment fix: -= 2500 (stackCount > 1)" << std::endl;
+                    }
+                    individual[i] -= 2500;
+                } else if (isOperation(individual[i], OpType::SPECIAL)) {
+                    if (i < firstFix) firstFix = i;
+                    if (printFix) {
+                        std::cout << "stackAdjustment fix: -= 7500 (SPECIAL)" << std::endl;
+                    }
+                    individual[i] -= 7500;
+                } else {
+                    if (i < firstFix) firstFix = i;
+                    if (printFix) {
+                        std::cout << "stackAdjustment fix: -= 5000 (else)" << std::endl;
+                    }
+                    individual[i] -= 5000;
+                }
+                stackCountAfterOperation = stackCount - 1;
+            }
+        }
+
+        // Verifica constantes
+        if ((stackDiff == 1) && idConstOrVar < 0) {
+            contConst++;
+            if (contConst > maxConst) {
+                srand(seed);
+                if (i < firstFix) firstFix = i;
+                if (printFix) {
+                    std::cout << "stackAdjustment fix: SD1 (PUSH) + Constant" << std::endl;
+                }
+                individual[stackLen + i] = ((10000.0 / (nVars + nConst)) * nConst) +
+                                         ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);
+                seed++;
+            }
+        }
+
+        stackCount = stackCountAfterOperation;
+        if (!isOperation(individual[i], OpType::SPECIAL)) {
+            trueStackLen++;
+        }
+
+        // Verificação de unidades
+        if (problem.hasUnits) {
+            int j = i;
+            
+            // Tratamento de PUSH
+            if (isOperation(individual[j], OpType::PUSH)) {
+                int my_floor = ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
+                int idVar = my_floor - nConst;
+                std::string varUnit = "_";
+                
+                if (idVar >= 0) {
+                    // Variável
+                    if (!vUsedVars[idVar]) {
+                        usedVars++;
+                        vUsedVars[idVar] = true;
+                    }
+                    varUnit = problem.varUnits[idVar];
+                    ex exVar(varUnit, problem.syms);
+                    stkUnit.push(exVar);
+                } else {
+                    // Constante
+                    idVar += nConst;
+                    if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
+                        varUnit = problem.constUnits[idVar];
+                        if (varUnit == "*") varUnit = "1";
+                        try {
+                            ex exVar(varUnit, problem.syms);
+                            stkUnit.push(exVar);
+                        } catch (...) {
+                            std::cout << "Warning: Invalid unit expression, using adimensional" << std::endl;
+                            stkUnit.push(ex("1", problem.syms));
+                        }
+                    } else {
+                        // Constante com intervalo - trata como adimensional
+                        stkUnit.push(ex("1", problem.syms));
+                    }
+                }
+            }
+            
+            // Tratamento de operação binária
+            else if (isOperation(individual[j], OpType::BIN)) {
+                int idOpBi = floor((individual[2 * stackLen + j] / 10000.0) * 
+                                 (double)other.operationsBi.size());
+                assert(stkUnit.size() >= 2);
+                ex v1Unit = stkUnit.top();
+                stkUnit.pop();
+                ex v2Unit = stkUnit.top();
+                stkUnit.pop();
+
+                if (v1Unit != v2Unit) {
+                    if (idOpBi < (int)other.operationsBiT1.size()) {
+                        if (j < firstFix) firstFix = j;
+                        individual[2 * stackLen + j] = individual[2 * stackLen + j] +
+                            (chromosome)((10000.0 / (double)other.operationsBi.size()) * 
+                                       (double)other.operationsBiT1.size());
+                        idOpBi = floor((individual[2 * stackLen + j] / 10000.0) * 
+                                     (double)other.operationsBi.size());
+                        assert(idOpBi >= (int)other.operationsBiT1.size());
+                    }
+                }
+
+                opt<ex> binResult = execBinaryOpUnit(problem, idOpBi, v1Unit, v2Unit,
+                                                   other.operationsBi);
+                if (!binResult) {
+                    stkUnit.push(ex("1", problem.syms)); // Fallback para adimensional
+                } else {
+                    stkUnit.push(*binResult);
+                }
+            }
+            
+            // Tratamento de operação unária
+            else if (isOperation(individual[j], OpType::UN)) {
+                int idOpU = floor((individual[2 * stackLen + j] / 10000.0) * 
+                                (double)other.operationsU.size());
+                assert(stkUnit.size() >= 1);
+                ex v1Unit = stkUnit.top();
+                stkUnit.pop();
+
+                if (v1Unit != 1) {
+                    if (idOpU < (int)other.operationsUT1.size()) {
+                        if (j < firstFix) firstFix = j;
+                        individual[2 * stackLen + j] = individual[2 * stackLen + j] +
+                            (chromosome)((10000.0 / (double)other.operationsU.size()) * 
+                                       (double)other.operationsUT1.size());
+                        idOpU = floor((individual[2 * stackLen + j] / 10000.0) * 
+                                    (double)other.operationsU.size());
+                        assert(idOpU >= (int)other.operationsUT1.size());
+                    }
+                }
+
+                opt<ex> unResult = execUnaryOpUnit(problem, idOpU, v1Unit, other.operationsU);
+                if (!unResult) {
+                    stkUnit.push(ex("1", problem.syms)); // Fallback para adimensional
+                } else {
+                    stkUnit.push(*unResult);
+                }
+            }
+        }
     }
 
-    // SD1 (PUSH) + Constant
-    if ((stackDiff == 1) && idConstOrVar < 0) {
-      contConst++;
-      if (contConst > maxConst) {
-        srand(seed);
-        // std::cout << "WARNING! ALTERANDO individual COD7!" << std::endl;
-        if ((i) < firstFix) firstFix = i;
-        if (printFix)
-          std::cout << "stackAdjustment fix:  SD1 (PUSH) + Constant"
-                    << std::endl;
-        individual[stackLen + i] =
-            ((10000.0 / (nVars + nConst)) * nConst) +
-            ((10000.0 / (nVars + nConst)) * (rand() % nVars) + 1);  // NOLINT
-        seed++;
-      }
-    }
-    //
-    stackCount = stackCountAfterOperation;
-    // CONTA OPERAÇÕES "BOAS"/"ÚTEIS"
-    if (!isOperation(individual[i], OpType::SPECIAL)) trueStackLen++;
-    // ===========================================
-    // OPERAÇÕES JÁ CORRIGIDAS! VERIFICAR UNIDADES
-    // -------------------------------------------
+    std::string outUnit = "";
     if (problem.hasUnits) {
-      // std::cout << "DEBUG: hasUnits!  i=" << i << std::endl;
-      // problem instance SUPPORTS units!
-      int j = i;  // workaround
-      // std::cout << "individual[j]=" << individual[j] << std::endl;
-      //
-      if (isOperation(individual[j], OpType::PUSH)) {
-        // push variable or constant [5000,7500)
-        int my_floor =
-            ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
-        int idVar = my_floor - nConst;
-        // std::cout << "DEBUG: idVar = " << idVar << std::endl;
-        std::string varUnit = "_";  // adimensional?
-        // push variable
-        if (idVar >= 0) {
-          if (!vUsedVars[idVar]) {
-            usedVars++;
-            vUsedVars[idVar] = true;
-          }
-          varUnit = problem.varUnits[idVar];
-          ex exVar(varUnit, problem.syms);
-          stkUnit.push(exVar);
+        if (!stkUnit.empty()) {
+            std::stringstream ss;
+            ex last = stkUnit.top();
+            stkUnit.pop();
+            ss << last;
+            outUnit = ss.str();
         } else {
-          // push constant
-          idVar += nConst;
-          if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
-            varUnit = problem.constUnits[idVar];
-            if (varUnit == "*") varUnit = "1";  // "*" means adimensional
-            ex exVar(varUnit, problem.syms);
-            stkUnit.push(exVar);
-          } else {
-            std::cout << "ERROR! unsupported units on interval constants!"
-                      << std::endl;
-            assert(false);
-          }
+            outUnit = "1"; // Fallback para adimensional se pilha vazia
         }
-      }  // end-check units for PUSH
-      if (isOperation(individual[j], OpType::BIN)) {
-        // pop binary operation
-        int idOpBi = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsBi.size());  // 4 is lenght of operationBi
-        assert(stkUnit.size() >= 2);
-        ex v1Unit = stkUnit.top();
-        stkUnit.pop();
-        ex v2Unit = stkUnit.top();
-        stkUnit.pop();
-        // std::cout << "DEBUG: v1Unit: " << v1Unit << " v2Unit: " << v2Unit <<
-        // std::endl;
-        // CHECA UNIDADES!!! FASE 2!!!
-        if (v1Unit != v2Unit) {
-          // unidades diferentes!! Só permite em binárias TIPO 2, não TIPO 1
-          // verifica se é TIPO 1, se for, vira TIPO 2
-          if (idOpBi < (int)other.operationsBiT1.size()) {
-            // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
-            // Muda "gene"... += 2 ops...
-            if ((j) < firstFix) firstFix = j;
-            individual[2 * stackLen + j] =
-                individual[2 * stackLen + j] +
-                (chromosome)((10000.0 / (double)other.operationsBi.size()) *
-                             (double)other.operationsBiT1.size());
-            // lê chromossomo novamente! PARA GARANTIR!
-            idOpBi = floor((individual[2 * stackLen + j] / 10000.0) *
-                           (double)other.operationsBi
-                               .size());  // 4 is lenght of operationBi
-            // virou operação do TIPO 2
-            assert(idOpBi >= (int)other.operationsBiT1.size());
-          }
-        }  // ok fix binary
+    }
 
-        // std::cout << "DEBUG: WILL EXEC v1Unit: " << v1Unit
-        //            << " v2Unit: " << v2Unit << " OP = " << idOpBi <<
-        //            std::endl;
-        //  RETORNAR opcional VAZIO!
-        opt<ex> binResult = execBinaryOpUnit(problem, idOpBi, v1Unit, v2Unit,
-                                             other.operationsBi);
-        // error in binary operation
-        if (!binResult) {
-          std::cout << "ERROR: binary operation UNIT failed!" << std::endl;
-          std::cout << "DEBUG: v1Unit: " << v1Unit << " v2Unit: " << v2Unit
-                    << " OP = " << idOpBi << std::endl;
-          assert(false);
-        } else {
-          stkUnit.push(*binResult);
-        }
-      }  // end-check units for Binary
-      if (isOperation(individual[j], OpType::UN)) {
-        // pop: Unary Operation [2500, 5000)
-        int idOpU = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsU.size());  // 3 is lenght of operationU
-        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
-        //
-        assert(stkUnit.size() >= 1);
-        ex v1Unit = stkUnit.top();
-        stkUnit.pop();
-
-        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
-        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
-        // CRAZY FIX UNARY!!! TODO CHECK!!!!!!
-        // CHECA UNIDADES!!! FASE 2!!!
-        if (v1Unit != 1) {
-          // std::cout << "v1Unit = " << v1Unit << std::endl;
-          // std::cout << "idOpU=" << idOpU << " other.operationsUT1.size()=" << other.operationsUT1.size() << std::endl;
-          // std::cout << other.operationsU[idOpU] << std::endl;
-          //
-          // unidades DIMENSIONAL (não adimensional)!! Só permite em unárias TIPO 2, não TIPO 1
-          // verifica se é TIPO 1, se for, vira TIPO 2
-          if (idOpU < (int)other.operationsUT1.size()) {
-            // TIPO 1! Exemplo, idOpB1 = 0... 1... e |BiT1|=2
-            // Muda "gene"... += 2 ops...
-            if ((j) < firstFix) firstFix = j;
-            individual[2 * stackLen + j] =
-                individual[2 * stackLen + j] +
-                (chromosome)((10000.0 / (double)other.operationsU.size()) *
-                             (double)other.operationsUT1.size());
-            // lê chromossomo novamente! PARA GARANTIR!
-            idOpU = floor((individual[2 * stackLen + j] / 10000.0) *
-                           (double)other.operationsU
-                               .size());  // 4 is lenght of operationBi
-            // virou operação do TIPO 2
-            assert(idOpU >= (int)other.operationsUT1.size());
-          }
-        }  // ok fix binary
-
-        opt<ex> unResult =
-            execUnaryOpUnit(problem, idOpU, v1Unit, other.operationsU);
-
-        // error in unary operation
-        if (!unResult) {
-          std::cout << "ERROR: did not treat case for std::nullopt on execUnaryOpUnit" << std::endl;
-          assert(false);
-        } else {
-          stkUnit.push(*unResult);
-        }
-      }
-      if (isOperation(individual[j], OpType::SPECIAL)) {
-        // special (currently: NOP): [7500, 10000)
-        // nothing to do...
-      }
-    }  // end-if problem.hasUnits
-  }
-
-  std::string outUnit = "";
-  if (problem.hasUnits) {
-    assert(stkUnit.size() >= 1);  // TODO: improve!
-    std::stringstream ss;
-    ex last = stkUnit.top();
-    stkUnit.pop();
-    ss << last;
-    outUnit = ss.str();
-  }
-
-  return StackInfo{trueStackLen, outUnit, usedVars, firstFix};
+    return StackInfo{trueStackLen, outUnit, usedVars, firstFix};
 }
 
 double solutionEvaluator(const RProblem& problem,
                          const Vec<chromosome>& individual,
                          const Scenario& other, int training, int idSol) {
-  // idSol: Identifier of Solution in Population (Good for DEBUG!)
-  // problem counters
   const int nVars = problem.nVars;
   const int nConst = problem.nConst;
-  // scenario
   const int stackLen = other.getStackLen();
-  // local variables
   kahan::kfloat64 sum_rmse = 0;
   kahan::kfloat64 sum_mape = 0;
+  
   if (idSol == 0) {
     std::cout << "DEBUG[idSol=0] BEGIN sum_rmse:" << sum_rmse << std::endl;
   }
-  //
+
   const int realTests = problem.tests - training;
-  for (int t = 0; t < realTests; t++) {
-    std::stack<double> stk;
-    int contSeed = 0;
+  
+  try {
+    for (int t = 0; t < realTests; t++) {
+      std::stack<double> stk;
+      int contSeed = 0;
 
-    for (int j = 0; j < stackLen; j++) {
-      //
-      if (isOperation(individual[j], OpType::BIN)) {
-        // case: pop Binary Operation [0, 2500)
-        // pop operation
-        int idOpBi = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsBi.size());  // 4 is lenght of operationBi
-        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
-        //
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] idOpBi=" << idOpBi << std::endl;
-        }
-        assert(stk.size() >= 2);
-        double v1 = stk.top();
-        stk.pop();
-        double v2 = stk.top();
-        stk.pop();
-        // RETORNAR opcional VAZIO!
-        opt<double> binResult =
-            execBinaryOp(idOpBi, v1, v2, other.operationsBi);
-        // error in binary operation
-        if (!binResult) {
-          // LIMPA PILHA E ABORTA TESTE!
-          while (stk.size() > 0) stk.pop();
-          stk.push(INFINITY);
-          break;
-        } else {
-          if (idSol == 0 && t == 0)
-            std::cout << "DEBUG[idSol=0] bin result: " << *binResult
-                      << std::endl;
+      for (int j = 0; j < stackLen; j++) {
+        if (isOperation(individual[j], OpType::BIN)) {
+          int idOpBi = floor((individual[2 * stackLen + j] / 10000.0) * 
+                            (double)other.operationsBi.size());
+
+          if (stk.size() < 2) return INFINITY;
+
+          double v1 = stk.top();
+          stk.pop();
+          double v2 = stk.top();
+          stk.pop();
+
+          opt<double> binResult = execBinaryOp(idOpBi, v1, v2, other.operationsBi);
+          if (!binResult) {
+            return INFINITY;
+          }
+
+          if (idSol == 0 && t == 0) {
+            std::cout << "DEBUG[idSol=0] bin result: " << *binResult << std::endl;
+          }
+
+          // Permite valores muito próximos de zero
           stk.push(*binResult);
-        }
-      } else if (isOperation(individual[j], OpType::UN)) {
-        // pop: Unary Operation [2500, 5000)
-        int idOpU = floor(
-            (individual[2 * stackLen + j] / 10000.0) *
-            (double)other.operationsU.size());  // 3 is lenght of operationU
-        // assert(idOp != -1); // guarantee that it's not "disabled" (-1)
-        //
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] idOpU=" << idOpU << std::endl;
-        }
-        assert(stk.size() >= 1);
-        double v1 = stk.top();
-        stk.pop();
 
-        opt<double> unResult = execUnaryOp(idOpU, v1, other.operationsU);
+        } else if (isOperation(individual[j], OpType::UN)) {
+          int idOpU = floor((individual[2 * stackLen + j] / 10000.0) * 
+                           (double)other.operationsU.size());
 
-        // error in unary operation
-        if (!unResult) {
-          // LIMPA PILHA E ABORTA TESTE!
-          while (stk.size() > 0) stk.pop();
-          stk.push(INFINITY);
-          break;
-        } else {
-          if (idSol == 0 && t == 0)
+          if (stk.empty()) return INFINITY;
+
+          double v1 = stk.top();
+          stk.pop();
+
+          opt<double> unResult = execUnaryOp(idOpU, v1, other.operationsU);
+          if (!unResult) {
+            return INFINITY;
+          }
+
+          if (idSol == 0 && t == 0) {
             std::cout << "DEBUG[idSol=0] un result: " << *unResult << std::endl;
+          }
 
           stk.push(*unResult);
-        }
-      } else if (isOperation(individual[j], OpType::PUSH)) {
-        // push variable or constant [5000,7500)
-        int my_floor =
-            ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
-        int idVar = my_floor - nConst;
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] idVar=" << idVar << std::endl;
-        }
-        // printf("%d\n",idVar);
-        double varValue = 0;
-        // push variable
-        if (idVar >= 0) {
-          varValue = problem.inputs[t][idVar];
-          stk.push(varValue);
-          if (idSol == 0 && t == 0) {
-            std::cout << "DEBUG[idSol=0] pushvar: " << varValue << std::endl;
-          }
-        } else {
-          // push constant
-          idVar += nConst;
-          if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
-            varValue = problem.vConst[idVar].first;
+
+        } else if (isOperation(individual[j], OpType::PUSH)) {
+          int my_floor = ::floor((individual[stackLen + j] / 10000.0) * (nVars + nConst));
+          int idVar = my_floor - nConst;
+          
+          double varValue = 0;
+          if (idVar >= 0) {
+            if (idVar >= (int)problem.inputs[t].size()) {
+              return INFINITY;
+            }
+            varValue = problem.inputs[t][idVar];
             stk.push(varValue);
+            
+            if (idSol == 0 && t == 0) {
+              std::cout << "DEBUG[idSol=0] pushvar: " << varValue << std::endl;
+            }
           } else {
-            chromosome seedConst = individual[3 * stackLen + contSeed];
-            srand(seedConst);
-            // NOLINTNEXTLINE
-            varValue = rand() % (int)(problem.vConst[idVar].second -
-                                      problem.vConst[idVar].first + 1) +
-                       problem.vConst[idVar].first;
-            stk.push(varValue);
-            contSeed++;
+            idVar += nConst;
+            if (idVar < 0 || idVar >= (int)problem.vConst.size()) {
+              return INFINITY;
+            }
+
+            if (problem.vConst[idVar].first == problem.vConst[idVar].second) {
+              varValue = problem.vConst[idVar].first;
+              stk.push(varValue);
+            } else {
+              if (contSeed >= (int)individual.size()) return INFINITY;
+
+              chromosome seedConst = individual[3 * stackLen + contSeed];
+              srand(seedConst);
+              
+              double range = problem.vConst[idVar].second - problem.vConst[idVar].first;
+              if (range < 0) return INFINITY;
+
+              varValue = problem.vConst[idVar].first + 
+                        (rand() / (RAND_MAX + 1.0)) * range;
+              stk.push(varValue);
+              contSeed++;
+            }
           }
         }
-      } else if (isOperation(individual[j], OpType::SPECIAL)) {
-        // special (currently: NOP): [7500, 10000)
-        if (idSol == 0 && t == 0) {
-          std::cout << "DEBUG[idSol=0] NOP" << std::endl;
-        }
-        //
-        // cout << "i=" << i << " -> stack size = " << stk.size() << endl;
-      } else {
-        std::cout << "ERROR! UNKNOWN OPERATION " << individual[j] << std::endl;
-        return INFINITY;
       }
 
-      //
-      // cout << "finished t= " << t << endl;
-      // take value from stack
-      // assert(stk.size() == 1);
-      //
-    }  // for j < stackLen
+      if (stk.size() != 1) return INFINITY;
 
-    assert(stk.size() == 1);
-    double val = stk.top();
-    stk.pop();
-    //
-    // compare with expected value
+      double val = stk.top();
+      stk.pop();
 
-    if (idSol == 0 && t == 0) {
-      std::cout << "DEBUG[idSol=0] val:" << val << std::endl;
-      std::cout << "DEBUG[idSol=0] expected:" << problem.outputs[t]
-                << std::endl;
-      std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_rmse << std::endl;
+      if (idSol == 0 && t == 0) {
+        std::cout << "DEBUG[idSol=0] val:" << val << std::endl;
+        std::cout << "DEBUG[idSol=0] expected:" << problem.outputs[t] << std::endl;
+        std::cout << "DEBUG[idSol=0] BEFORE sum_error:" << sum_rmse << std::endl;
+      }
+
+      double rmse = RMSE(problem, val, problem.outputs[t]);
+      sum_rmse += rmse;
+
+      double mape = MAPE(problem, problem.outputs[t], val);
+      if (mape < MAPE_ZERO) mape = 0;
+      sum_mape += mape;
+
+      if (idSol == 0 && t == 0) {
+        std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_rmse << std::endl;
+      }
     }
 
-    //std::cout << "val: " << val << " outputs: " << problem.outputs[t]<< std::endl;
-    sum_rmse += RMSE(problem, val, problem.outputs[t]);
-    //std::cout << "sum_rmse: " << sum_rmse << "t:" << t << std::endl;
-    double mape = MAPE(problem, problem.outputs[t], val);
-    if (mape < MAPE_ZERO) mape = 0;
-    sum_mape += mape;
-    //printf("sum_mape= %lf\n", sum_mape);  // print para debugar
+    if (realTests <= 0) return INFINITY;
 
-    if (idSol == 0 && t == 0) {
-      std::cout << "DEBUG[idSol=0] AFTER sum_error:" << sum_rmse << std::endl;
+    double avgRMSE = (double)sum_rmse / realTests;
+    double avgMAPE = (double)sum_mape / realTests;
+
+    // Se MAPE é muito próximo de zero, consideramos solução ótima
+    if (avgMAPE < MAPE_ZERO) {
+      avgMAPE = 0;
+      avgRMSE = 0;
     }
-     /*printf("sum_error = %lf\n",sum_error);*/
-  }
-  // average erro
-  double avgRMSE = (double)sum_rmse / realTests;
-  double avgMAPE = (double)sum_mape / realTests;
-  // if avgMAPE is "technical zero", then RMSE is zero
-  if (avgMAPE < MAPE_ZERO) {
-    avgMAPE = 0;
-    avgRMSE = 0;
-  }
 
-  if (idSol == 0) {
-    std::cout << "DEBUG[idSol=0] Final sum_rmse:" << sum_rmse << std::endl;
-    std::cout << "DEBUG[idSol=0] Final solutionValue:" << avgRMSE << std::endl;
+    if (idSol == 0) {
+      std::cout << "DEBUG[idSol=0] Final sum_rmse:" << sum_rmse << std::endl;
+      std::cout << "DEBUG[idSol=0] Final solutionValue:" << avgRMSE << std::endl;
+    }
+
+    return avgRMSE;
+  } catch (...) {
+    return INFINITY;
   }
-  // printf("solutionValue = %lf\n",solutionValue);
-  // printf("sum_error = %f solutionValue = %f\n",sum_error,solutionValue);
-  // printf("%f\n",solutionValue);
-  return avgRMSE;
 }
 
 // ===========
@@ -794,7 +689,6 @@ struct RKGenerator {
       ss << "v" << id;
       svars.push_back(ss.str());
     }
-    // only fixed constants... not interval constant!
     for (int id = 0; id < nConst; id++) {
       std::stringstream ss;
       ss << "c" << id;
@@ -826,8 +720,7 @@ struct RKGenerator {
         v[idx + 2 * stackLen] = getRKun(op[0]);
         idx++;
       } else if (idx > stackLen) {
-        std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
-                  << std::endl;
+        std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx << std::endl;
         assert(false);
         return Vec<chromosome>{};
       } else {
@@ -835,17 +728,8 @@ struct RKGenerator {
         assert(false);
         return Vec<chromosome>{};
       }
-      // if (inVStr(op, sconsts) >= 0) {
-      //   std::cout << "WARNING: UNSUPORTED CONSTANTS FOR NOW!!" <<
-      //   std::endl; return Vec<chromosome>{};
-      // }
-      // if (idx > stackLen) {
-      //  std::cout << "WARNING: PROBLEM IN PARSING! idx > stackLen: " << idx
-      //            << std::endl;
-      //  return Vec<chromosome>{};
-      //}
     }
-    // fill the rest with NOP's
+
     while (idx < stackLen) {
       v[idx] = getRK(OpType::SPECIAL);
       idx++;

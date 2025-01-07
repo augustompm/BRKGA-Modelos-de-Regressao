@@ -1,0 +1,1269 @@
+Bi T1: 2:+-
+Bi T2: 2:*/
+U T1: 1:e
+U T2: 3:ira
+|ARGS| = 11
+individualLen:97
+Debug: Iniciando leitura do arquivo...
+Leitura feita com sucesso 
+1) READING PROBLEM
+TYPE: 'HAS_UNITS'
+Debug: nVars=3, tests=100, nConst=2
+var unit: 'km'
+var unit: 'km / s'
+var unit: 's'
+out unit: 'km'
+has_solution='HAS_SOLUTION' => ' '
+SOLUTION IS: ' '2) READING PROBLEM TESTS
+var[0] = 0.375 var[1] = 8490 var[2] = 6.42 output = -54500
+var[0] = 0.951 var[1] = 172000 var[2] = 0.841 output = -176000
+var[0] = 0.732 var[1] = 84900 var[2] = 1.62 output = -143000
+var[0] = 0.599 var[1] = 137000 var[2] = 8.99 output = -1.39e+06
+var[0] = 0.156 var[1] = 245000 var[2] = 6.06 output = -2.58e+06
+var[0] = 0.156 var[1] = 67300 var[2] = 0.092 output = -6350
+var[0] = 0.0581 var[1] = 111000 var[2] = 1.01 output = -121000
+var[0] = 0.866 var[1] = 204000 var[2] = 6.64 output = -1.85e+06
+var[0] = 0.601 var[1] = 61800 var[2] = 0.0506 output = -3190
+var[0] = 0.708 var[1] = 20800 var[2] = 1.61 output = -33500
+var[0] = 0.0206 var[1] = 78200 var[2] = 5.49 output = -445000
+var[0] = 0.97 var[1] = 43500 var[2] = 6.92 output = -304000
+var[0] = 0.832 var[1] = 251000 var[2] = 6.52 output = -2.99e+06
+var[0] = 0.212 var[1] = 218000 var[2] = 2.24 output = -713000
+var[0] = 0.182 var[1] = 171000 var[2] = 7.12 output = -1.48e+06
+var[0] = 0.183 var[1] = 235000 var[2] = 2.37 output = -900000
+var[0] = 0.304 var[1] = 217000 var[2] = 3.25 output = -1.02e+06
+var[0] = 0.525 var[1] = 50400 var[2] = 7.46 output = -381000
+var[0] = 0.432 var[1] = 241000 var[2] = 6.5 output = -2.63e+06
+var[0] = 0.291 var[1] = 146000 var[2] = 8.49 output = -1.41e+06
+var[0] = 0.612 var[1] = 218000 var[2] = 6.58 output = -2.09e+06
+var[0] = 0.139 var[1] = 242000 var[2] = 5.68 output = -2.33e+06
+var[0] = 0.292 var[1] = 85900 var[2] = 0.937 output = -83900
+var[0] = 0.366 var[1] = 29700 var[2] = 3.68 output = -110000
+var[0] = 0.456 var[1] = 61500 var[2] = 2.65 output = -167000
+var[0] = 0.785 var[1] = 115000 var[2] = 2.44 output = -305000
+var[0] = 0.2 var[1] = 221000 var[2] = 9.73 output = -3.18e+06
+var[0] = 0.514 var[1] = 232000 var[2] = 3.93 output = -1.44e+06
+var[0] = 0.592 var[1] = 1880 var[2] = 8.92 output = -16700
+var[0] = 0.0465 var[1] = 138000 var[2] = 6.31 output = -980000
+var[0] = 0.608 var[1] = 113000 var[2] = 7.95 output = -967000
+var[0] = 0.171 var[1] = 60000 var[2] = 5.03 output = -308000
+var[0] = 0.0651 var[1] = 32400 var[2] = 5.77 output = -188000
+var[0] = 0.949 var[1] = 91200 var[2] = 4.93 output = -471000
+var[0] = 0.966 var[1] = 255000 var[2] = 1.95 output = -940000
+var[0] = 0.808 var[1] = 87300 var[2] = 7.22 output = -659000
+var[0] = 0.305 var[1] = 140000 var[2] = 2.81 output = -445000
+var[0] = 0.0977 var[1] = 190000 var[2] = 0.243 output = -59600
+var[0] = 0.684 var[1] = 98200 var[2] = 6.45 output = -671000
+var[0] = 0.44 var[1] = 262000 var[2] = 1.77 output = -958000
+var[0] = 0.122 var[1] = 260000 var[2] = 9.4 output = -4.89e+06
+var[0] = 0.495 var[1] = 68000 var[2] = 9.54 output = -666000
+var[0] = 0.0344 var[1] = 134000 var[2] = 9.15 output = -1.37e+06
+var[0] = 0.909 var[1] = 81200 var[2] = 3.7 output = -312000
+var[0] = 0.259 var[1] = 76900 var[2] = 0.155 output = -12300
+var[0] = 0.663 var[1] = 9960 var[2] = 9.28 output = -92500
+var[0] = 0.312 var[1] = 165000 var[2] = 4.28 output = -843000
+var[0] = 0.52 var[1] = 136000 var[2] = 9.67 output = -1.47e+06
+var[0] = 0.547 var[1] = 13900 var[2] = 9.64 output = -134000
+var[0] = 0.185 var[1] = 75200 var[2] = 8.53 output = -663000
+var[0] = 0.97 var[1] = 245000 var[2] = 2.94 output = -1.25e+06
+var[0] = 0.775 var[1] = 64700 var[2] = 3.85 output = -255000
+var[0] = 0.939 var[1] = 39100 var[2] = 8.51 output = -336000
+var[0] = 0.895 var[1] = 132000 var[2] = 3.17 output = -467000
+var[0] = 0.598 var[1] = 266000 var[2] = 1.69 output = -977000
+var[0] = 0.922 var[1] = 65400 var[2] = 5.57 output = -373000
+var[0] = 0.0885 var[1] = 181000 var[2] = 9.36 output = -2.13e+06
+var[0] = 0.196 var[1] = 206000 var[2] = 6.96 output = -1.97e+06
+var[0] = 0.0452 var[1] = 64200 var[2] = 5.7 output = -374000
+var[0] = 0.325 var[1] = 197000 var[2] = 0.972 output = -253000
+var[0] = 0.389 var[1] = 99300 var[2] = 6.15 output = -647000
+var[0] = 0.271 var[1] = 171000 var[2] = 9.9 output = -2.06e+06
+var[0] = 0.829 var[1] = 171000 var[2] = 1.4 output = -292000
+var[0] = 0.357 var[1] = 145000 var[2] = 5.18 output = -856000
+var[0] = 0.281 var[1] = 24400 var[2] = 8.77 output = -215000
+var[0] = 0.543 var[1] = 226000 var[2] = 7.41 output = -2.53e+06
+var[0] = 0.141 var[1] = 86600 var[2] = 6.97 output = -631000
+var[0] = 0.802 var[1] = 50400 var[2] = 7.02 output = -359000
+var[0] = 0.0746 var[1] = 11000 var[2] = 3.59 output = -39600
+var[0] = 0.987 var[1] = 160000 var[2] = 2.94 output = -553000
+var[0] = 0.772 var[1] = 183000 var[2] = 8.09 output = -1.87e+06
+var[0] = 0.199 var[1] = 4480 var[2] = 8.1 output = -36300
+var[0] = 0.00552 var[1] = 138000 var[2] = 8.67 output = -1.35e+06
+var[0] = 0.815 var[1] = 61200 var[2] = 9.13 output = -570000
+var[0] = 0.707 var[1] = 174000 var[2] = 5.11 output = -1.09e+06
+var[0] = 0.729 var[1] = 47100 var[2] = 5.02 output = -239000
+var[0] = 0.771 var[1] = 187000 var[2] = 7.98 output = -1.9e+06
+var[0] = 0.074 var[1] = 104000 var[2] = 6.5 output = -724000
+var[0] = 0.358 var[1] = 253000 var[2] = 7.02 output = -3.3e+06
+var[0] = 0.116 var[1] = 37100 var[2] = 7.96 output = -298000
+var[0] = 0.863 var[1] = 92100 var[2] = 8.9 output = -861000
+var[0] = 0.623 var[1] = 30600 var[2] = 3.38 output = -104000
+var[0] = 0.331 var[1] = 250000 var[2] = 3.76 output = -1.69e+06
+var[0] = 0.0636 var[1] = 237000 var[2] = 0.94 output = -363000
+var[0] = 0.311 var[1] = 69600 var[2] = 5.78 output = -414000
+var[0] = 0.325 var[1] = 178000 var[2] = 0.359 output = -79600
+var[0] = 0.73 var[1] = 221000 var[2] = 4.66 output = -1.52e+06
+var[0] = 0.638 var[1] = 150000 var[2] = 5.43 output = -939000
+var[0] = 0.887 var[1] = 143000 var[2] = 2.87 output = -466000
+var[0] = 0.472 var[1] = 65300 var[2] = 5.91 output = -395000
+var[0] = 0.12 var[1] = 25100 var[2] = 0.305 output = -7690
+var[0] = 0.713 var[1] = 242000 var[2] = 0.373 output = -153000
+var[0] = 0.761 var[1] = 243000 var[2] = 8.23 output = -3.41e+06
+var[0] = 0.561 var[1] = 171000 var[2] = 3.6 output = -749000
+var[0] = 0.771 var[1] = 91500 var[2] = 1.27 output = -122000
+var[0] = 0.494 var[1] = 94300 var[2] = 5.22 output = -519000
+var[0] = 0.523 var[1] = 196000 var[2] = 7.7 output = -1.99e+06
+var[0] = 0.428 var[1] = 242000 var[2] = 2.16 output = -886000
+var[0] = 0.0254 var[1] = 240000 var[2] = 6.23 output = -2.48e+06
+var[0] = 0.108 var[1] = 211000 var[2] = 0.853 output = -252000
+3) READING PROBLEM CONSTANTS
+Lendo constante 1: '3.0 3.0 km / s'
+Constante lida: 3 3 km / s
+Lendo constante 2: '100000 100000 *'
+Constante lida: 100000 100000 *
+const unit: 'km / s'
+const unit: '*'
+3.5) SETUP UNITS
+UNITS: km ; s ; 
+4) FINISHED READING PROBLEM
+Leitura feita com sucesso
+3 100 2
+0.38	8490.00	6.42	-54500.00
+0.95	172000.00	0.84	-176000.00
+0.73	84900.00	1.62	-143000.00
+0.60	137000.00	8.99	-1390000.00
+0.16	245000.00	6.06	-2580000.00
+0.16	67300.00	0.09	-6350.00
+0.06	111000.00	1.01	-121000.00
+0.87	204000.00	6.64	-1850000.00
+0.60	61800.00	0.05	-3190.00
+0.71	20800.00	1.61	-33500.00
+0.02	78200.00	5.49	-445000.00
+0.97	43500.00	6.92	-304000.00
+0.83	251000.00	6.52	-2990000.00
+0.21	218000.00	2.24	-713000.00
+0.18	171000.00	7.12	-1480000.00
+0.18	235000.00	2.37	-900000.00
+0.30	217000.00	3.25	-1020000.00
+0.53	50400.00	7.46	-381000.00
+0.43	241000.00	6.50	-2630000.00
+0.29	146000.00	8.49	-1410000.00
+0.61	218000.00	6.58	-2090000.00
+0.14	242000.00	5.68	-2330000.00
+0.29	85900.00	0.94	-83900.00
+0.37	29700.00	3.68	-110000.00
+0.46	61500.00	2.65	-167000.00
+0.79	115000.00	2.44	-305000.00
+0.20	221000.00	9.73	-3180000.00
+0.51	232000.00	3.93	-1440000.00
+0.59	1880.00	8.92	-16700.00
+0.05	138000.00	6.31	-980000.00
+0.61	113000.00	7.95	-967000.00
+0.17	60000.00	5.03	-308000.00
+0.07	32400.00	5.77	-188000.00
+0.95	91200.00	4.93	-471000.00
+0.97	255000.00	1.95	-940000.00
+0.81	87300.00	7.22	-659000.00
+0.30	140000.00	2.81	-445000.00
+0.10	190000.00	0.24	-59600.00
+0.68	98200.00	6.45	-671000.00
+0.44	262000.00	1.77	-958000.00
+0.12	260000.00	9.40	-4890000.00
+0.49	68000.00	9.54	-666000.00
+0.03	134000.00	9.15	-1370000.00
+0.91	81200.00	3.70	-312000.00
+0.26	76900.00	0.15	-12300.00
+0.66	9960.00	9.28	-92500.00
+0.31	165000.00	4.28	-843000.00
+0.52	136000.00	9.67	-1470000.00
+0.55	13900.00	9.64	-134000.00
+0.18	75200.00	8.53	-663000.00
+0.97	245000.00	2.94	-1250000.00
+0.78	64700.00	3.85	-255000.00
+0.94	39100.00	8.51	-336000.00
+0.90	132000.00	3.17	-467000.00
+0.60	266000.00	1.69	-977000.00
+0.92	65400.00	5.57	-373000.00
+0.09	181000.00	9.36	-2130000.00
+0.20	206000.00	6.96	-1970000.00
+0.05	64200.00	5.70	-374000.00
+0.33	197000.00	0.97	-253000.00
+0.39	99300.00	6.15	-647000.00
+0.27	171000.00	9.90	-2060000.00
+0.83	171000.00	1.40	-292000.00
+0.36	145000.00	5.18	-856000.00
+0.28	24400.00	8.77	-215000.00
+0.54	226000.00	7.41	-2530000.00
+0.14	86600.00	6.97	-631000.00
+0.80	50400.00	7.02	-359000.00
+0.07	11000.00	3.59	-39600.00
+0.99	160000.00	2.94	-553000.00
+0.77	183000.00	8.09	-1870000.00
+0.20	4480.00	8.10	-36300.00
+0.01	138000.00	8.67	-1350000.00
+0.81	61200.00	9.13	-570000.00
+0.71	174000.00	5.11	-1090000.00
+0.73	47100.00	5.02	-239000.00
+0.77	187000.00	7.98	-1900000.00
+0.07	104000.00	6.50	-724000.00
+0.36	253000.00	7.02	-3300000.00
+0.12	37100.00	7.96	-298000.00
+0.86	92100.00	8.90	-861000.00
+0.62	30600.00	3.38	-104000.00
+0.33	250000.00	3.76	-1690000.00
+0.06	237000.00	0.94	-363000.00
+0.31	69600.00	5.78	-414000.00
+0.33	178000.00	0.36	-79600.00
+0.73	221000.00	4.66	-1520000.00
+0.64	150000.00	5.43	-939000.00
+0.89	143000.00	2.87	-466000.00
+0.47	65300.00	5.91	-395000.00
+0.12	25100.00	0.30	-7690.00
+0.71	242000.00	0.37	-153000.00
+0.76	243000.00	8.23	-3410000.00
+0.56	171000.00	3.60	-749000.00
+0.77	91500.00	1.27	-122000.00
+0.49	94300.00	5.22	-519000.00
+0.52	196000.00	7.70	-1990000.00
+0.43	242000.00	2.16	-886000.00
+0.03	240000.00	6.23	-2480000.00
+0.11	211000.00	0.85	-252000.00
+3.0000	3.0000
+100000.0000	100000.0000
+isSquared? 0
+varUnits: km km / s s 
+outUnit: km
+training=5
+run_brkga:
+best=inf
+SELECTED: [59 95 21 11 0 55 22 39 2 36 ]
+BEST SOLUTION! cost=214193 stackLen: 10 => V2  V0  / r V1  3.00  - / empty: 0 1 0 0 1 0 0 0 0 0 
+iteration = 0 	 best= 214192.933776	stackLen: 10 => V2  V0  / r V1  3.00  - / empty: 0 1 0 0 1 0 0 0 0 0 
+BEST SOLUTION! cost=161015 stackLen: 10 => 3.00  V1  3.00  - - V2  * empty: 0 1 0 0 0 0 0 1 0 1 
+iteration = 0 	 best= 161015.150000	stackLen: 10 => 3.00  V1  3.00  - - V2  * empty: 0 1 0 0 0 0 0 1 0 1 
+iteration = 1 	 best= 161015.150000	stackLen: 10 => 3.00  V1  3.00  - - V2  * empty: 0 1 0 0 0 0 0 1 0 1 
+iteration = 2 	 best= 161015.150000	stackLen: 10 => 3.00  V1  3.00  - - V2  * empty: 0 1 0 0 0 0 0 1 0 1 
+BEST SOLUTION! cost=161008 stackLen: 10 => V2  V1  3.00  100000.00  3.00  / - - * empty: 0 1 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 161007.626375	stackLen: 10 => V2  V1  3.00  100000.00  3.00  / - - * empty: 0 1 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=145701 stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 145701.206480	stackLen: 10 => V2  V1  * 3.00  3.00  r - * empty: 0 1 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=140604 stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 140603.950325	stackLen: 10 => V1  i V2  V2  V2  r - - * empty: 0 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=140604 stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 19 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 20 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 21 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 22 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 23 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 24 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 25 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 26 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 27 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 28 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 29 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 30 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 31 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 32 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 33 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 34 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 35 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 36 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 37 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 38 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 39 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 40 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 41 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 42 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 43 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 44 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 45 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 46 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 47 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 48 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 49 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 50 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 51 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 52 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 53 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 54 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 55 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 56 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 57 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 58 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 59 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 60 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 61 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 62 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 63 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 64 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 65 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 66 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 67 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 68 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 69 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 70 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 71 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 72 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 73 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 74 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 75 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 76 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 77 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 78 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 79 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 80 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 81 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 82 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 83 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 84 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 85 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 86 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 87 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 88 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 89 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 90 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 91 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 92 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 93 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 94 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 95 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 96 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 97 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 98 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 99 	 best= 140603.690125	stackLen: 10 => V1  V2  V2  V2  r - - * V0  + empty: 0 0 0 0 0 0 0 0 0 0 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 4)
+SELECTED: [28 49 80 63 3 79 58 34 89 95 ]
+BEST SOLUTION! cost=128430 stackLen: 15 => 3.00  3.00  / V2  V1  V0  V2  100000.00  / * - * * empty: 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 128429.940000	stackLen: 15 => 3.00  3.00  / V2  V1  V0  V2  100000.00  / * - * * empty: 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=86964.2 stackLen: 15 => 3.00  100000.00  V1  r / - V1  * V2  r * empty: 0 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+iteration = 0 	 best= 86964.154852	stackLen: 15 => 3.00  100000.00  V1  r / - V1  * V2  r * empty: 0 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+BEST SOLUTION! cost=81558.4 stackLen: 15 => V1  3.00  r r - V2  3.00  3.00  / * * empty: 0 0 0 1 0 0 0 1 1 0 0 0 0 0 1 
+iteration = 0 	 best= 81558.364038	stackLen: 15 => V1  3.00  r r - V2  3.00  3.00  / * * empty: 0 0 0 1 0 0 0 1 1 0 0 0 0 0 1 
+BEST SOLUTION! cost=81551.9 stackLen: 15 => V2  V1  V1  V2  / r V1  V0  / / - * empty: 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 81551.858962	stackLen: 15 => V2  V1  V1  V2  / r V1  V0  / / - * empty: 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 81551.858962	stackLen: 15 => V2  V1  V1  V2  / r V1  V0  / / - * empty: 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 81551.858962	stackLen: 15 => V2  V1  V1  V2  / r V1  V0  / / - * empty: 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 81551.858962	stackLen: 15 => V2  V1  V1  V2  / r V1  V0  / / - * empty: 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=73474.1 stackLen: 15 => 3.00  r r r r V2  * V1  3.00  - * empty: 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 
+COST2 IS BETTER!!!63485.4
+iteration = 0 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 1 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 2 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 3 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 4 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 5 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 6 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 7 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 8 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 9 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 10 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 11 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 12 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 13 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 14 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 15 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 16 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 17 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 18 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 19 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 20 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 21 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 22 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 23 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 24 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 25 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 26 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 27 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 28 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 29 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 30 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 31 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 32 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 33 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 34 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+iteration = 35 	 best= 63485.376423	stackLen: 15 => 3.00  r r r r V2  * V1  3.00  3.00  - - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+BEST SOLUTION! cost=60944.1 stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 60944.096619	stackLen: 15 => V2  r r r r V2  + V1  3.00  3.00  3.00  * / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=52078.2 stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 0 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 1 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 2 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 3 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 4 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 5 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 6 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 7 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 8 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 9 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 10 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 11 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 12 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 13 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 14 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 15 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 16 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 17 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 18 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 19 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+iteration = 20 	 best= 52078.207122	stackLen: 15 => V1  V2  3.00  r V0  100000.00  e V0  / - / - * empty: 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 
+BEST SOLUTION! cost=38489.8 stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 19 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 20 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 21 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 22 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 23 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 24 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 25 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 26 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 27 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 28 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 29 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 30 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 31 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 32 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 33 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 34 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 35 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 36 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 37 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 38 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 39 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 40 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 41 	 best= 38489.828091	stackLen: 15 => V1  V2  3.00  r V0  V0  + 100000.00  e V0  / - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=37290.4 stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 19 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 20 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 21 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 22 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 23 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 24 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 25 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 26 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 27 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 28 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 29 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 30 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 31 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 32 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 33 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 34 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 35 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 36 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 37 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 38 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 39 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 40 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 41 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 42 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 43 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 44 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 45 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 46 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 47 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 48 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 49 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 50 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 51 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 52 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 53 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 54 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 55 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 56 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 57 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 58 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 59 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 60 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 61 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 62 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 63 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 64 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 65 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 66 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 67 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 68 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 69 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 70 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 71 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 72 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 73 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 74 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 75 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 76 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 77 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 78 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 79 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 80 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 81 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 82 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 83 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 84 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 85 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 86 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 87 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 88 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 89 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 90 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 91 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 92 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 93 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 94 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 95 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 96 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 97 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 98 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 99 	 best= 37290.356675	stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 3)
+SELECTED: [31 39 62 34 15 16 38 6 7 91 ]
+BEST SOLUTION! cost=131735 stackLen: 22 => V1  3.00  r r + V2  r V2  3.00  * V0  - / * empty: 0 0 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 0 0 0 0 1 
+COST2 IS BETTER!!!121732
+iteration = 0 	 best= 121731.658367	stackLen: 22 => V1  3.00  3.00  - r r + V2  r V2  3.00  * V0  - / * empty: 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 1 1 
+iteration = 1 	 best= 121731.658367	stackLen: 22 => V1  3.00  3.00  - r r + V2  r V2  3.00  * V0  - / * empty: 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 1 1 
+BEST SOLUTION! cost=104724 stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+iteration = 0 	 best= 104723.816262	stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+iteration = 1 	 best= 104723.816262	stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+iteration = 2 	 best= 104723.816262	stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+iteration = 3 	 best= 104723.816262	stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+iteration = 4 	 best= 104723.816262	stackLen: 22 => 3.00  r V2  r r r V2  V1  3.00  - * / * empty: 0 0 0 0 1 0 1 1 1 1 1 1 1 0 0 0 0 1 0 0 0 0 
+BEST SOLUTION! cost=65721.8 stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 0 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 1 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 2 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 3 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 4 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 5 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 6 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 7 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 8 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 9 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 10 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 11 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 12 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 13 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 14 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 15 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 16 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 17 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 18 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 19 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 20 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 21 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 22 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 23 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 24 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 25 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+iteration = 26 	 best= 65721.834769	stackLen: 22 => V2  V2  + V2  - 100000.00  V1  * r V1  a / * empty: 0 0 0 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 
+BEST SOLUTION! cost=65721.7 stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 65721.718878	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / * V0  V0  - + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=65721.6 stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 19 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 20 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 21 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 22 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 23 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 24 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 25 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 26 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 27 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 28 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 29 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 30 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 31 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 32 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 33 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 34 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 35 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 36 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 37 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 38 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 39 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 40 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 41 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 42 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 43 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 44 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 45 	 best= 65721.597268	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i V2  V0  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=65721.4 stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 9 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 10 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 11 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 12 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 13 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 14 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 15 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 16 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 17 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 18 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 19 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+iteration = 20 	 best= 65721.362582	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  / 100000.00  - V1  * r V1  a / i 100000.00  V1  / + * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=65685.1 stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 50 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 51 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 52 	 best= 65685.099725	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r 100000.00  - V1  * r V1  a / i 100000.00  * / * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=65157.9 stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 50 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 51 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 52 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 53 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 54 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 55 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 56 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 57 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 58 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 59 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 60 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 61 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 62 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 63 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 64 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 65 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 66 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 67 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 68 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 69 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 70 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 71 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 72 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 73 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 74 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 75 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 76 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 77 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 78 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 79 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 80 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 81 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 82 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 83 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 84 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 85 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 86 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 87 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 88 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 89 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 90 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 91 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 92 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 93 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 94 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 95 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 96 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 97 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 98 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 99 	 best= 65157.939831	stackLen: 22 => V2  V2  + V2  - 100000.00  100000.00  r * r 100000.00  - V1  * r V1  / i * V1  * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 2)
+SELECTED: [42 12 60 57 80 28 71 87 66 9 ]
+BEST SOLUTION! cost=163078 stackLen: 30 => V2  3.00  V1  i r r i r V2  r / r V1  V1  V1  3.00  - - - / / * empty: 0 0 0 0 1 0 1 1 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 
+COST2 IS BETTER!!!153081
+iteration = 0 	 best= 153081.477242	stackLen: 30 => V2  3.00  V1  i r r i r V2  r / r V1  V1  V1  3.00  3.00  - - - - / / * empty: 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+iteration = 1 	 best= 153081.477242	stackLen: 30 => V2  3.00  V1  i r r i r V2  r / r V1  V1  V1  3.00  3.00  - - - - / / * empty: 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+iteration = 2 	 best= 153081.477242	stackLen: 30 => V2  3.00  V1  i r r i r V2  r / r V1  V1  V1  3.00  3.00  - - - - / / * empty: 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 
+BEST SOLUTION! cost=134383 stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 134382.738200	stackLen: 30 => 100000.00  V1  V1  3.00  a r r r V0  * V0  V2  * 3.00  V0  V0  * / - / * * / empty: 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=112062 stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  - * * / empty: 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 0 1 0 0 0 0 
+COST2 IS BETTER!!!102047
+iteration = 0 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 1 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 2 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 3 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 4 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 5 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 6 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 7 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 8 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 9 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 10 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 11 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 12 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 13 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 14 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 15 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 16 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 17 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 18 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 19 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 20 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 21 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 22 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 23 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 24 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 25 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+iteration = 26 	 best= 102047.449600	stackLen: 30 => V2  r 100000.00  V1  / r * V0  / 3.00  V0  V1  3.00  3.00  + - * * / empty: 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=93633 stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 0 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 1 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 2 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 3 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 4 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 5 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 6 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 7 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 8 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+iteration = 9 	 best= 93632.961574	stackLen: 30 => V2  V2  / r 100000.00  V1  / r * V0  / V2  V0  V1  3.00  3.00  3.00  / / 3.00  * 3.00  * - * * / empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 
+BEST SOLUTION! cost=93632 stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 0 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 1 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 2 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 3 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 4 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 5 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 6 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 7 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 8 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 9 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 10 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 11 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 12 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 13 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 14 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 15 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 16 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 17 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 18 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 19 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+iteration = 20 	 best= 93631.956656	stackLen: 30 => V0  V1  3.00  r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 
+BEST SOLUTION! cost=93630.6 stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 0 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 1 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 2 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 3 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 4 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 5 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 6 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 7 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 8 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 9 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 10 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 11 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 12 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 13 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 14 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 15 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 16 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 17 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 18 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 19 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 20 	 best= 93630.583914	stackLen: 30 => V0  V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  * * / * V2  * empty: 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 
+BEST SOLUTION! cost=83630.6 stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 1 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 2 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 3 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 4 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 5 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 6 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 7 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 8 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 9 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 10 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 11 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 12 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 13 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 14 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 15 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 16 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 17 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 18 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 19 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 20 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 21 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 22 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 23 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 24 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 25 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 26 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 27 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 28 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 29 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 30 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 31 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 32 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 33 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 34 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 35 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 36 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 37 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 38 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 39 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 40 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 41 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 42 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 43 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 44 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 45 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 46 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 47 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 48 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 49 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 50 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 51 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 52 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 53 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 54 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 55 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 56 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 57 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 58 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 59 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 60 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 61 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 62 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 63 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 64 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 65 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 66 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 67 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 68 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 69 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 70 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 71 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 72 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 73 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 74 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 75 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 76 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 77 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 78 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 79 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 80 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 81 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 82 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 83 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 84 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 85 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 86 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 87 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 88 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 89 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 90 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 91 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 92 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 93 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 94 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 95 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 96 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 97 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 98 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+iteration = 99 	 best= 83630.583914	stackLen: 30 => V0  3.00  * V1  3.00  3.00  - r - / 3.00  3.00  100000.00  V1  / i r V0  V0  + V0  + * * / i V2  * * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+RESET TRIGGERED! TRYING AGAIN... (remaining resets: 1)
+SELECTED: [95 63 16 90 25 59 99 42 91 92 ]
+BEST SOLUTION! cost=814569 stackLen: 30 => 100000.00  V0  V0  * r / i V0  V2  100000.00  V2  / / * - empty: 0 0 0 1 0 1 0 1 0 0 0 1 1 0 0 1 1 0 1 1 0 0 1 1 0 1 1 1 0 1 
+COST2 IS BETTER!!!814569
+iteration = 0 	 best= 814568.999998	stackLen: 30 => 100000.00  V0  V0  * r / i V0  V2  100000.00  100000.00  + V2  / / * - empty: 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 1 0 1 1 1 1 1 1 1 1 
+BEST SOLUTION! cost=218975 stackLen: 30 => 100000.00  V1  r * V1  / r V2  3.00  3.00  100000.00  / / r / V1  3.00  - / / 3.00  a * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 
+iteration = 0 	 best= 218974.673609	stackLen: 30 => 100000.00  V1  r * V1  / r V2  3.00  3.00  100000.00  / / r / V1  3.00  - / / 3.00  a * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 
+iteration = 1 	 best= 218974.673609	stackLen: 30 => 100000.00  V1  r * V1  / r V2  3.00  3.00  100000.00  / / r / V1  3.00  - / / 3.00  a * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 
+iteration = 2 	 best= 218974.673609	stackLen: 30 => 100000.00  V1  r * V1  / r V2  3.00  3.00  100000.00  / / r / V1  3.00  - / / 3.00  a * empty: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 1 0 0 1 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=155781 stackLen: 30 => V2  3.00  3.00  a 3.00  r V1  i 3.00  V1  - 3.00  - - * / * * empty: 0 0 1 0 0 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 
+iteration = 0 	 best= 155780.959850	stackLen: 30 => V2  3.00  3.00  a 3.00  r V1  i 3.00  V1  - 3.00  - - * / * * empty: 0 0 1 0 0 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 
+iteration = 1 	 best= 155780.959850	stackLen: 30 => V2  3.00  3.00  a 3.00  r V1  i 3.00  V1  - 3.00  - - * / * * empty: 0 0 1 0 0 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 
+iteration = 2 	 best= 155780.959850	stackLen: 30 => V2  3.00  3.00  a 3.00  r V1  i 3.00  V1  - 3.00  - - * / * * empty: 0 0 1 0 0 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=142629 stackLen: 30 => V0  r V2  3.00  a V0  / r r V0  V1  3.00  - / / * * V0  * empty: 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+iteration = 0 	 best= 142629.436139	stackLen: 30 => V0  r V2  3.00  a V0  / r r V0  V1  3.00  - / / * * V0  * empty: 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+iteration = 1 	 best= 142629.436139	stackLen: 30 => V0  r V2  3.00  a V0  / r r V0  V1  3.00  - / / * * V0  * empty: 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+iteration = 2 	 best= 142629.436139	stackLen: 30 => V0  r V2  3.00  a V0  / r r V0  V1  3.00  - / / * * V0  * empty: 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+iteration = 3 	 best= 142629.436139	stackLen: 30 => V0  r V2  3.00  a V0  / r r V0  V1  3.00  - / / * * V0  * empty: 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 
+BEST SOLUTION! cost=88688.7 stackLen: 30 => V2  100000.00  / V0  V1  3.00  r r V0  * V1  V1  r V0  V0  / * - / * * / empty: 0 1 0 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 
+iteration = 0 	 best= 88688.705946	stackLen: 30 => V2  100000.00  / V0  V1  3.00  r r V0  * V1  V1  r V0  V0  / * - / * * / empty: 0 1 0 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 
+iteration = 1 	 best= 88688.705946	stackLen: 30 => V2  100000.00  / V0  V1  3.00  r r V0  * V1  V1  r V0  V0  / * - / * * / empty: 0 1 0 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 
+iteration = 2 	 best= 88688.705946	stackLen: 30 => V2  100000.00  / V0  V1  3.00  r r V0  * V1  V1  r V0  V0  / * - / * * / empty: 0 1 0 0 1 0 0 0 1 1 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 
+BEST SOLUTION! cost=59584 stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  - / / * * empty: 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 1 0 0 0 0 0 1 
+COST2 IS BETTER!!!49583.1
+iteration = 0 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 1 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 2 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 3 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 4 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 5 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 6 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 7 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 8 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 9 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 10 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 11 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 12 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 13 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 14 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 15 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 16 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 17 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 18 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 19 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 20 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 21 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 22 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 23 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 24 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 25 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 26 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 27 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 28 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 29 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 30 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 31 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 32 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 33 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 34 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 35 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 36 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 37 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 38 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 39 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 40 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 41 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 42 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 43 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 44 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 45 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 46 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 47 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 48 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 49 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 50 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 51 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 52 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 53 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 54 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 55 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 56 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 57 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 58 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 59 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 60 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 61 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 62 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 63 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 64 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 65 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 66 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 67 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 68 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 69 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 70 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 71 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 72 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 73 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 74 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 75 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 76 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 77 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 78 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 79 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 80 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 81 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 82 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 83 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 84 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 85 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 86 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 87 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 88 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 89 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 90 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 91 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 92 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 93 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 94 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 95 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 96 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 97 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 98 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+iteration = 99 	 best= 49583.136807	stackLen: 30 => V2  V1  r 3.00  i 3.00  / 100000.00  / r V0  V0  / V1  3.00  3.00  + - / / * * empty: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 
+NO MORE RESETS LEFT. FINISHING.
+FINISHED BRKGP!
+best=37290.4
+stackLen: 15 => V1  V2  3.00  r V0  V0  + V0  r V0  - - / - * empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+trueStackSize=15
+printSolution2: (((((V0 - \sqrt{V0}) - (V0 + V0))/\sqrt{3}) - V2) * V1)
+Tempo de execucao: 4768.93 segundos
+FIM
