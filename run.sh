@@ -2,35 +2,23 @@
 # Runner aug01
 
 # seeds 
-seeds="100001 100002 100003 100004 100005"
+seeds="100006 100007 100008 100009 100010 100011 100012 100013 100014 100015 100016 100017 100018 100019 100020 100021 100022 100023 100024 100025 100026 100027 100028 100029 100030"
+
 
 # instâncias 
 instances=(
 "Bose-einstein_100_III.4.32.in"
 "Campo_eletrico_100_I.12.4.in"
-"Campo_eletrico_gerado_por_dipolo_100_II.6.15a.in"
-"Campo_magnetico_em_torno_de_um_fio_100_II.13.17.in"
-"Densidade_de_energia_eletrica_100_II.8.31.in"
 "Densidade_de_probabilidade_100_I.6.20a.in"
 "Distancia_Euclidiana_100_I.8.14.in"
-"Energia_cinetica_total_100_I.13.4.in"
 "Energia_potencial_Elastica_mola_100_I.14.4.in"
-"Energia_potencial_Gravitacional_100_I.14.3.in"
 "Energia_potencial_gravitacional_com_constante_gravitacional_100_I.13.12.in"
 "Energia_total_com_frequencia_100_l.24.6.in"
-"Forca_gravitacional_100_I.9.18.in"
 "Força_Atrito_100_I.12.1.in"
 "Força_eletrica_100_I.12.5.in"
 "Força_eletrica_entre_duas_cargas_100_I.12.2.in"
-"Lentes_delgadas_100_I.27.6.in"
 "Massa_relativistica_100_I.10.7.in"
-"Momento_relativistico_100_I.15.10.in"
 "Ondas_eletromagneticas_100_II.24.17.in"
-"Periodo_orbital_100_Goldstein 3.74 (Kepler).in"
-"Posição_centro_de_massa_100_I.18.4.in"
-"Produto_interno_100_I.11.19.in"
-"Transformação_Lorentz_100_I.15.3x.in"
-"Transformação_Lorentz_tempo_100_I.15.3t.in"
 )
 
 
