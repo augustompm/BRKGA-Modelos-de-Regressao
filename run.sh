@@ -7,16 +7,6 @@ seeds="100006 100007 100008 100009 100010 100011 100012 100013 100014 100015 100
 
 # instâncias 
 instances=(
-"Bose-einstein_100_III.4.32.in"
-"Campo_eletrico_100_I.12.4.in"
-"Densidade_de_probabilidade_100_I.6.20a.in"
-"Distancia_Euclidiana_100_I.8.14.in"
-"Energia_potencial_Elastica_mola_100_I.14.4.in"
-"Energia_potencial_gravitacional_com_constante_gravitacional_100_I.13.12.in"
-"Energia_total_com_frequencia_100_l.24.6.in"
-"Força_Atrito_100_I.12.1.in"
-"Força_eletrica_100_I.12.5.in"
-"Força_eletrica_entre_duas_cargas_100_I.12.2.in"
 "Massa_relativistica_100_I.10.7.in"
 "Ondas_eletromagneticas_100_II.24.17.in"
 )
