@@ -1,5 +1,8 @@
-STANDARD
+HAS_UNITS
+UNITS 1
 1 12 2
+1
+1
 HAS_SOLUTION c1 * v0 e c0 *
 1 33.97
 2 20.71
@@ -13,5 +16,5 @@ HAS_SOLUTION c1 * v0 e c0 *
 10 2.49
 11 0.50
 12 0.00
-0.8 0.8 
--0.6 -0.6 
+0.8 0.8 *
+-0.6 -0.6 * 

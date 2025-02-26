@@ -180,6 +180,17 @@ public:
     }
 };
 
+
+inline void selectRandom10(RProblem &problem, int seed,
+    const std::vector<std::vector<double>>& fullInputs,
+    const std::vector<double>& fullOutputs) {
+
+    std::cout << "skipping..." << std::endl;
+    return;
+}
+
+/*
+
 // Selecionar aleatoriamente 10 amostras
 inline void selectRandom10(RProblem &problem, int seed,
       const std::vector<std::vector<double>>& fullInputs,
@@ -212,3 +223,4 @@ inline void selectRandom10(RProblem &problem, int seed,
     for (int i = 0; i < 10; i++) std::cout << idx[i] << " ";
     std::cout << "]" << std::endl;
 }
+*/
