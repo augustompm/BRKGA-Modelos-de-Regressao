@@ -58,27 +58,27 @@ training=1
 run_brkga:
 best=inf
 skipping...
-BEST SOLUTION! cost=7.26083 stackLen: 10 => 0.80  e 0.80  e * empty: 0 0 0 1 1 1 0 1 0 1 
-iteration = 0 	 best= 7.260833	stackLen: 10 => 0.80  e 0.80  e * empty: 0 0 0 1 1 1 0 1 0 1 
-BEST SOLUTION! cost=4.15263 stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 0 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 1 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 2 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 3 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 4 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 5 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-iteration = 6 	 best= 4.152634	stackLen: 10 => V0  V0  0.80  r e + / e empty: 0 0 0 1 0 0 1 0 0 0 
-BEST SOLUTION! cost=2.85674 stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 0 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 1 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 2 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 3 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 4 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 5 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 6 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 7 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 8 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
-iteration = 9 	 best= 2.856736	stackLen: 10 => V0  0.80  r e e r e / empty: 0 0 0 0 0 0 1 0 1 0 
+BEST SOLUTION! cost=5.43439 stackLen: 10 => 0.80  V0  - a V0  / 0.80  e + empty: 0 0 0 0 0 0 0 0 0 1 
+iteration = 0 	 best= 5.434395	stackLen: 10 => 0.80  V0  - a V0  / 0.80  e + empty: 0 0 0 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=3.22774 stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 0 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 1 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 2 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 3 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 4 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+iteration = 5 	 best= 3.227742	stackLen: 10 => V0  -0.60  0.80  - a a e / empty: 0 0 1 0 0 0 0 0 0 1 
+BEST SOLUTION! cost=2.33807 stackLen: 10 => V0  0.80  a 0.80  e a a / / empty: 0 0 0 0 0 1 0 0 0 0 
+iteration = 0 	 best= 2.338071	stackLen: 10 => V0  0.80  a 0.80  e a a / / empty: 0 0 0 0 0 1 0 0 0 0 
+BEST SOLUTION! cost=2.19774 stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 0 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 1 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 2 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 3 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 4 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 5 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 6 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 7 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
+iteration = 8 	 best= 2.197745	stackLen: 10 => V0  0.80  0.80  e 0.80  e + * e / empty: 0 0 0 0 0 0 0 0 0 0 
 BEST SOLUTION! cost=1.69738 stackLen: 10 => V0  r e 0.80  e e a / empty: 0 0 0 0 0 0 1 0 0 1 
 iteration = 0 	 best= 1.697377	stackLen: 10 => V0  r e 0.80  e e a / empty: 0 0 0 0 0 0 1 0 0 1 
 iteration = 1 	 best= 1.697377	stackLen: 10 => V0  r e 0.80  e e a / empty: 0 0 0 0 0 0 1 0 0 1 
@@ -1489,5 +1489,5 @@ best=0.632722
 stackLen: 30 => V0  V0  * V0  * V0  * e 0.80  -0.60  + * 0.80  / -0.60  V0  e - V0  a 0.80  e e + a / + 0.80  + empty: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 trueStackSize=29
 printSolution2: (0.8 + (({(\exp(\exp(0.8)) + {V0^2})^2}/(\exp(V0) - -0.6)) + (0.8/((-0.6 + 0.8) * \exp((V0 * (V0 * (V0 * V0))))))))
-Tempo de execucao: 3955.37 segundos
+Tempo de execucao: 3943.71 segundos
 FIM
